@@ -37,8 +37,8 @@ Shader "psx/vertexlit" {
 						float4 snapToPixel = UnityObjectToClipPos(v.vertex);
 						float4 vertex = snapToPixel;
 						vertex.xyz = snapToPixel.xyz / snapToPixel.w;
-						vertex.x = floor(90 * vertex.x) / 90;
-						vertex.y = floor(70 * vertex.y) / 70;
+						vertex.x = floor(140 * vertex.x) / 140;
+						vertex.y = floor(120 * vertex.y) / 120;
 						vertex.xyz *= snapToPixel.w;
 						o.pos = vertex;
 
