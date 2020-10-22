@@ -45,7 +45,7 @@ public class PlayerInput : MonoBehaviour
         if (canInput)
         {
             // Move forward
-            if (Input.GetKeyDown("up"))
+            if (Input.GetKey("up"))
             {
                 IsWalking = true;
 
@@ -56,11 +56,11 @@ public class PlayerInput : MonoBehaviour
                     Bump = true;
             }
             // Look Up
-            else if (Input.GetKeyDown("down")) LookUp = true;
+            else if (Input.GetKey("down")) LookUp = true;
             // Rotate Left
-            else if (Input.GetKeyDown("left")) IsLookingLeft = true;
+            else if (Input.GetKey("left")) IsLookingLeft = true;
             // Rotate Right
-            else if (Input.GetKeyDown("right")) IsLookingRight = true;
+            else if (Input.GetKey("right")) IsLookingRight = true;
         }
     }
 }
