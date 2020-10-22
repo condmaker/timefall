@@ -17,6 +17,9 @@ public class PlayerInput : MonoBehaviour
     public float MoveDistance { get => moveDistance; }
     public float MoveTime { get => moveTime; }
 
+    // Bool that specidifies if the player is pressing the interact key
+    public bool IsInteracting  { get; set; }
+
     // Movement state bools
     public bool LookUp         { get; set; }
     public bool IsWalking      { get; set; }
@@ -61,6 +64,13 @@ public class PlayerInput : MonoBehaviour
             else if (Input.GetKey("left")) IsLookingLeft = true;
             // Rotate Right
             else if (Input.GetKey("right")) IsLookingRight = true;
+
+
+
+
+
+            // Pressed interact key
+            else if (Input.GetKey("e")) IsInteracting = true;  
         }
     }
 }
