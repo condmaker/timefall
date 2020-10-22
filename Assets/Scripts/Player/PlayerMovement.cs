@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿// TO-DO 
+// Fix the bug where looking up on other rotations makes the player look 
+// sideways or down
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,8 +14,10 @@ public class PlayerMovement : MonoBehaviour
     private float moveTime;
 
     private Rigidbody playerBody;
+    private Animator playerAnim;
     private float timeCounter;
     private Vector3 zeroedVector;
+    private Vector3 adjustPos;
 
     private bool lookUp = false;
     private bool isRotating = false;
@@ -24,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerBody = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
+
         timeCounter = moveTime;
         isWalking = false;
         zeroedVector = new Vector3(0.0f, 0.0f, 0.0f);
@@ -46,16 +54,16 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isWalking && !isLookingUp)
+        if (isWalking)
         {
-            // Sets the player speed
-            playerBody.velocity = transform.forward * (
-                moveDistance / moveTime);
-            // Ticks down the timer so that the player stops at the desired
-            // distance
-            timeCounter -= Time.fixedDeltaTime;
-
-            if (timeCounter <= 0) playerBody.velocity = zeroedVector;
+            if (Physics.Raycast(transform.position, transform.forward, 4))
+            {
+                MovePlayer(true);
+            }
+            else if (!isLookingUp)
+            {
+                MovePlayer();
+            }
         }
         else if (isLookingLeft && !isLookingUp)
         {
@@ -80,6 +88,26 @@ public class PlayerMovement : MonoBehaviour
             isLookingRight = false;
             lookUp = false;
             timeCounter = moveTime;
+        }
+    }
+
+    private void MovePlayer(bool bump = false)
+    {
+        playerBody.velocity = transform.forward * (
+                moveDistance / moveTime);
+
+        if (bump)
+        {
+            if (timeCounter == moveTime) adjustPos = transform.position;
+            if (timeCounter <= moveTime / 2) playerBody.velocity *= -1;
+        }
+
+        timeCounter -= Time.fixedDeltaTime;
+
+        if (timeCounter <= 0)
+        {
+            playerBody.velocity = zeroedVector;
+            if (bump) transform.position = adjustPos;
         }
     }
 
