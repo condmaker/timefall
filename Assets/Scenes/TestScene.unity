@@ -500,37 +500,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256872353}
   m_CullTransparentMesh: 0
---- !u!21 &271160516
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!224 &285611282 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8774092682080959016, guid: 0d938516c5423ef4299d973d4884d3d3, type: 3}
@@ -5924,6 +5893,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761197172}
   m_CullTransparentMesh: 0
+--- !u!21 &763367606
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &806336992
 GameObject:
   m_ObjectHideFlags: 0
@@ -6500,7 +6500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e77671a9d83004e9fe9bcce9a723a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 271160516}
+  material: {fileID: 763367606}
   colorPrecision: 32
   usePalette: 0
   palette: {fileID: 0}
@@ -7735,6 +7735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005057709}
+  - component: {fileID: 2005057710}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -7763,6 +7764,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2005057710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005057708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9bbff0c9ebf3c747b285360e4abd5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots: []
 --- !u!1 &2038528086
 GameObject:
   m_ObjectHideFlags: 0
