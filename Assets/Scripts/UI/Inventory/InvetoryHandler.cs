@@ -1,0 +1,44 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class InvetoryHandler : MonoBehaviour
+{
+
+    public InventorySlot[] slots;  
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    /// <summary>
+    /// Adds the given item to an empty slot in the invetory
+    /// </summary>
+    /// <param name="item">ScriptableObject that contains the item data</param>
+    public void AddItem(ObjectData item)
+    {
+        foreach(InventorySlot s in slots)
+        {
+            if (!s.IsEmpty)
+            {
+                s.DisplayItem(item);
+            }
+        }
+    }
+
+    public void DropItem()
+    {
+
+    }
+
+
+
+}

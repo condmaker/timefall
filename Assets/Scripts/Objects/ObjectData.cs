@@ -13,7 +13,6 @@ public class ObjectData : ScriptableObject
     private string     description;
     [SerializeField]
     private int        iD;
-    [SerializeField]
-    private Sprite     inventoryImage;
+    public Sprite      inventoryImage;
 
 }
