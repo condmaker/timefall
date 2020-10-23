@@ -9,16 +9,16 @@ public class InventorySlot : MonoBehaviour
     public bool IsEmpty { get; set; }
     [SerializeField]
     private Image itemImage;
-    private ObjectData currentItem;    
+    private ItemData currentItem;    
 
     /// <summary>
     /// Displays the given item in the invetory slot
     /// </summary>
     /// <param name="item">ScriptableObject that contains the item data</param>
-    public void DisplayItem(ObjectData item)
+    public void DisplayItem(ItemData item)
     {
         currentItem = item;
-        itemImage.sprite = item.inventoryImage;
+        itemImage.sprite = item.UIobjectSprite;
         IsEmpty = true;
     }
 

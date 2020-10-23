@@ -13,6 +13,7 @@ public class ObjectManager : MonoBehaviour
 
     void LoadObject(ObjectData _data)
     {
+
     }
 
     // Update is called once per frame

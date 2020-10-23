@@ -5,26 +5,33 @@ using UnityEngine;
 
 public class MessageDisplay : MonoBehaviour
 {
-    private EntityDetection eD;
-    private GameObject entityObject;
     private TextMeshProUGUI textToDisplay;
 
     void Start()
     {
         textToDisplay = GetComponent<TextMeshProUGUI>();
-        entityObject = GameObject.Find("EntityDetection");
-        eD = entityObject.GetComponent<EntityDetection>();
     }
 
-    void Update()
+    public void DisplayMessage(ObjectData _objectData)
     {
-        if (eD.ObjectIsGrabable)
-            textToDisplay.text = ("pick-up " + eD.objectTouchedName);
-        else if (eD.ObjectIsUsable)
-            textToDisplay.text = ("Use " + eD.objectTouchedName);
-        else if (eD.ObjectIsNPC)
-            textToDisplay.text = ("Talk to " + eD.objectTouchedName);
-        else
+        switch (_objectData.InteractionType)
+        {
+            case InteractionType.isGrabable:
+            textToDisplay.text = ("pick-up " + _objectData.name);
+                break;
+            case InteractionType.isUsable:
+            textToDisplay.text = ("Use " + _objectData.name);
+                break;
+            case InteractionType.isNPC:
+            textToDisplay.text = ("Talk to " + _objectData.name);
+                break;
+            default:
             textToDisplay.text = " ";
+                break;
+        }
+    }
+    public void CleanMessage()
+    {
+        textToDisplay.text = " ";
     }
 }

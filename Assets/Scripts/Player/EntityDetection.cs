@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using UnityEditorInternal;
 using UnityEngine;
 
 // !!! Sync EntityDetection with PlayerInput after timers have been sorted
 
 public class EntityDetection : MonoBehaviour
 {
+    [SerializeField]
     private PlayerInput pI;
 
     [SerializeField]
@@ -15,72 +17,56 @@ public class EntityDetection : MonoBehaviour
     // Variable that stores the GameObject collided with
     [SerializeField]
     private GameObject objectTouched;
+    [SerializeField]
+    private MessageDisplay mD;
     public string objectTouchedName;
+    private ObjectData objectData;
 
     // Bool that specifies is the player is colliding with an object
     private bool isColliding;
-    public bool ObjectIsNPC { get; set; }
-    public bool ObjectIsUsable { get; set; }
-    public bool ObjectIsGrabable { get; set; }
 
-    void Start()
-    {
-        pI = GetComponentInParent<PlayerInput>();
-    }
 
     void FixedUpdate()
     {
         //Some pf this can be placed in OTriggerEnter
         if (objectTouched != null)
         {
-            CheckTag(objectTouched);
             objectTouchedName = objectTouched.name;
-            if (!pI.IsWalking && Input.GetKey("e") && isColliding)
-            {              
-                if (ObjectIsGrabable)
+            if (!pI.IsWalking && Input.GetKeyDown("e") && isColliding)
+            {
+                switch (objectData.InteractionType)
                 {
-                    inventory.AddItem(objectTouched.GetComponent<DataHolder>().GetData());
-                    Destroy(objectTouched);
-                    ResetBools();
+                    case InteractionType.isGrabable:
+                        inventory.AddItem(objectData as ItemData);
+                        Destroy(objectTouched);
+                        mD.CleanMessage();
+                        break;
+                    case InteractionType.isUsable:
+                        // use (door)
+                        break;
+                    case InteractionType.isNPC:
+                        // talk
+                        break;
+                    default:
+                        print("Porque é que essa coisa é trigger ?");
+                        break;
                 }
-                if (ObjectIsNPC) { }
-                //talk
-                if (ObjectIsUsable) { }
-                //use (door)
             }
         }
     }
     // This method is called when the EntityDetection object collides with other triggers
     private void OnTriggerEnter(Collider other)
     {
-        isColliding = true;
         objectTouched = other.gameObject;
-
-        
-
+        //maybe muda isto se arranjarmos algo melhor
+        objectData = objectTouched.GetComponent<DataHolder>().GetData();
+        mD.DisplayMessage(objectData);
+        isColliding = true;
     }
     // This method is called when the EntityDetetction object stops colliding with other triggers
     private void OnTriggerExit(Collider other)
     {
-        ResetBools();
         objectTouched = null;
-    }
-    private void CheckTag(GameObject _objectTouched)
-    {
-            if (objectTouched.tag == "Grabable")
-                ObjectIsGrabable = true;
-
-            if (objectTouched.tag == "Usable")
-                ObjectIsUsable = true;
-
-            if (objectTouched.tag == "NPC")
-                ObjectIsNPC = true;
-    }
-    private void ResetBools()
-    {
-        isColliding = false;
-        ObjectIsGrabable = false;
-        ObjectIsUsable = false;
-        ObjectIsNPC = false;
+        mD.CleanMessage();
     }
 }

@@ -1,18 +1,20 @@
 ﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-[CreateAssetMenu(fileName = "DataAsset", menuName = "DataAssets/Objects")]
-public class ObjectData : ScriptableObject
+
+
+public abstract class ObjectData : ScriptableObject
 {
     [SerializeField]
-    private GameObject model;
+    private InteractionType interactionType;
+    public InteractionType InteractionType { get => interactionType; }
     [SerializeField]
     private string     description;
     [SerializeField]
     private int        iD;
-    public Sprite      inventoryImage;
-
 }
+
+
