@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InvetoryHandler : MonoBehaviour
 {
-
-    public InventorySlot[] slots;  
+    [SerializeField]
+    private InventorySlot[] slots;  
 
     // Start is called before the first frame update
     void Start()

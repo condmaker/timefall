@@ -7,7 +7,8 @@ public class InventorySlot : MonoBehaviour
 {
 
     public bool IsEmpty { get; set; }
-    public Image itemImage;
+    [SerializeField]
+    private Image itemImage;
     private ObjectData currentItem;    
 
     /// <summary>
