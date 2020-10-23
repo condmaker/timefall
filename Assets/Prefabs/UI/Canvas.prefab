@@ -182,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7315080026778571107}
   - component: {fileID: 3591285260247553628}
+  - component: {fileID: 2946659077633928898}
   - component: {fileID: 8534332864471316257}
   m_Layer: 0
   m_Name: InteractionDisplay
@@ -217,6 +218,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2865031487500740467}
   m_CullTransparentMesh: 0
+--- !u!114 &2946659077633928898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2865031487500740467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85488a617fcaca54289666dede2f965f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8534332864471316257
 MonoBehaviour:
   m_ObjectHideFlags: 0
