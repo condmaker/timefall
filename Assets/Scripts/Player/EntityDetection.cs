@@ -9,6 +9,9 @@ public class EntityDetection : MonoBehaviour
 {
     private PlayerInput pI;
 
+    [SerializeField]
+    private InventoryHandler inventory;
+
     // Variable that stores the GameObject collided with
     [SerializeField]
     private GameObject objectTouched;
@@ -27,17 +30,18 @@ public class EntityDetection : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Some pf this can be placed in OTriggerEnter
         if (objectTouched != null)
         {
             CheckTag(objectTouched);
             objectTouchedName = objectTouched.name;
             if (!pI.IsWalking && Input.GetKey("e") && isColliding)
-            {
+            {              
                 if (ObjectIsGrabable)
-                { 
-                  //put in inventory
-                  Destroy(objectTouched);
-                  ResetBools();
+                {
+                    inventory.AddItem(objectTouched.GetComponent<DataHolder>().GetData());
+                    Destroy(objectTouched);
+                    ResetBools();
                 }
                 if (ObjectIsNPC) { }
                 //talk
@@ -51,6 +55,9 @@ public class EntityDetection : MonoBehaviour
     {
         isColliding = true;
         objectTouched = other.gameObject;
+
+        
+
     }
     // This method is called when the EntityDetetction object stops colliding with other triggers
     private void OnTriggerExit(Collider other)

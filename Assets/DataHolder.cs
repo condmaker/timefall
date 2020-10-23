@@ -8,7 +8,7 @@ public class DataHolder : MonoBehaviour
     [SerializeField]
     private ObjectData itemData;
     
-    public Object GetData()
+    public ObjectData GetData()
     {
         return itemData;
     }

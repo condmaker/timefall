@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InvetoryHandler : MonoBehaviour
+public class InventoryHandler : MonoBehaviour
 {
     [SerializeField]
-    private InventorySlot[] slots;  
+    private InventorySlot[] slots;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     /// <summary>
@@ -25,11 +25,12 @@ public class InvetoryHandler : MonoBehaviour
     /// <param name="item">ScriptableObject that contains the item data</param>
     public void AddItem(ObjectData item)
     {
-        foreach(InventorySlot s in slots)
+        foreach (InventorySlot s in slots)
         {
             if (!s.IsEmpty)
             {
                 s.DisplayItem(item);
+                break;
             }
         }
     }
@@ -38,7 +39,4 @@ public class InvetoryHandler : MonoBehaviour
     {
 
     }
-
-
-
 }
