@@ -6,24 +6,31 @@ using UnityEngine;
 public class Toggler : MonoBehaviour
 {
     [SerializeField]
-    private GameObject gameobject1, gameobject2, gameobject3;
-    private Animator gameobject1Anim, gameobject2Anim, gameobject3Anim;
+    private List<GameObject> objectToggleList;
+    private List<Animator> objectAnimToggleList;
+    [SerializeField]
+    private string animationVariableName = "Status";
 
     private void Awake()
     {
-        gameobject1Anim = gameobject1.GetComponent<Animator>();
-    }
-    private void Update()
-    {
-
+        MakeList();
+        print(objectAnimToggleList);
     }
     public void Toggle()
     {
-        if (gameobject1Anim.GetBool("OpenStatus") == true)
-            gameobject1Anim.SetBool("OpenStatus", false);
+        foreach (Animator animator in objectAnimToggleList)
+        {
+        if (animator.GetBool(animationVariableName) == true)
+            animator.SetBool(animationVariableName, false);
         else
-            gameobject1Anim.SetBool("OpenStatus", true);
-
-
+            animator.SetBool(animationVariableName, true);
+        }
+    }
+    private void MakeList()
+    {
+        foreach (GameObject gameobject in objectToggleList)
+        {
+            objectAnimToggleList.Add(gameobject.GetComponent<Animator>());
+        }
     }
 }

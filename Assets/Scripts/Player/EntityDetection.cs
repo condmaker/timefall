@@ -62,7 +62,8 @@ public class EntityDetection : MonoBehaviour
     {
         objectTouched = other.gameObject;
         //maybe muda isto se arranjarmos algo melhor
-        objectData = objectTouched.GetComponent<DataHolder>().GetData();
+        if (objectTouched.GetComponent<DataHolder>().GetData() != null)
+            objectData = objectTouched.GetComponent<DataHolder>().GetData();
         mD.DisplayMessage(objectData);
         isColliding = true;
     }
