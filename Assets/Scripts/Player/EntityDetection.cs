@@ -44,8 +44,6 @@ public class EntityDetection : MonoBehaviour
                         //objectTouched.toggle? (switches bool )
                         toggler = objectTouched.GetComponent<Toggler>();
                         toggler.Toggle();
-                        
-                        print("test");
                         break;
                     case InteractionType.isNPC:
                         // talk

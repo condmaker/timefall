@@ -7,17 +7,18 @@ public class Toggler : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> objectToggleList;
-    private List<Animator> objectAnimToggleList;
-    [SerializeField]
-    private string animationVariableName = "Status";
+    //private List<Animator> objectAnimToggleList;
+    //mudar este nome
+    private GateScript gate;
 
-    private void Awake()
-    {
-        MakeList();
-        print(objectAnimToggleList);
-    }
     public void Toggle()
     {
+        foreach (GameObject gameobject in objectToggleList)
+        {
+            gate = gameobject.GetComponent<GateScript>();
+            gate.Toggle();
+        }
+        /*
         foreach (Animator animator in objectAnimToggleList)
         {
         if (animator.GetBool(animationVariableName) == true)
@@ -25,12 +26,7 @@ public class Toggler : MonoBehaviour
         else
             animator.SetBool(animationVariableName, true);
         }
+        */
     }
-    private void MakeList()
-    {
-        foreach (GameObject gameobject in objectToggleList)
-        {
-            objectAnimToggleList.Add(gameobject.GetComponent<Animator>());
-        }
-    }
+    
 }
