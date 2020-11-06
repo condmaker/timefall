@@ -19,19 +19,18 @@ public class EntityDetection : MonoBehaviour
     private GameObject objectTouched;
     [SerializeField]
     private MessageDisplay mD;
-    public string objectTouchedName;
     private ObjectData objectData;
+    private Toggler toggler;
 
     // Bool that specifies is the player is colliding with an object
     private bool isColliding;
 
 
-    void Update()
+    private void FixedUpdate()
     {
         //Some pf this can be placed in OTriggerEnter
         if (objectTouched != null)
         {
-            objectTouchedName = objectTouched.name;
             if (!pI.IsWalking && Input.GetKeyDown("e") && isColliding)
             {
                 switch (objectData.InteractionType)
@@ -42,7 +41,11 @@ public class EntityDetection : MonoBehaviour
                         mD.CleanMessage();
                         break;
                     case InteractionType.isUsable:
-                        // use (door)
+                        //objectTouched.toggle? (switches bool )
+                        toggler = objectTouched.GetComponent<Toggler>();
+                        toggler.Toggle();
+                        
+                        print("test");
                         break;
                     case InteractionType.isNPC:
                         // talk
@@ -59,7 +62,8 @@ public class EntityDetection : MonoBehaviour
     {
         objectTouched = other.gameObject;
         //maybe muda isto se arranjarmos algo melhor
-        objectData = objectTouched.GetComponent<DataHolder>().GetData();
+        if (objectTouched.GetComponent<DataHolder>().GetData() != null)
+            objectData = objectTouched.GetComponent<DataHolder>().GetData();
         mD.DisplayMessage(objectData);
         isColliding = true;
     }
