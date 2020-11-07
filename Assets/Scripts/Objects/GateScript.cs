@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This is very strange and breaks encapsulation. We should make it inherit
+// ObjectData or something that signals that the gate is an World Object.
 public class GateScript : MonoBehaviour
 {
-    [SerializeField]
-    private string state = "Status";
     private Animator gateAnimator;
+    // This is inefficient, we should change it to ID later
+    private const string state = "Status";
 
     private void Start()
     {
@@ -14,13 +16,9 @@ public class GateScript : MonoBehaviour
     }
     public void Toggle()
     {
-        print("should be changing");
-        print(gateAnimator);
-        if (gateAnimator.GetBool("Status") == true)
-        {
-            gateAnimator.SetBool("Status", true);
-        }
+        if (gateAnimator.GetBool(state) == false)
+            gateAnimator.SetBool(state, true);
         else
-            gateAnimator.SetBool("Status", false);
+            gateAnimator.SetBool(state, false);
     }
 }
