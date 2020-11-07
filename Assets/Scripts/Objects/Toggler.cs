@@ -14,7 +14,7 @@ public class Toggler : MonoBehaviour
     //mudar este nome
     private GateScript gate;
 
-    public void Toggler()
+    public void Toggle()
     {
         foreach (GameObject gameobject in objectToggleList)
         {
