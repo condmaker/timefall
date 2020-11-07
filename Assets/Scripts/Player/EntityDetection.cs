@@ -26,7 +26,7 @@ public class EntityDetection : MonoBehaviour
     private bool isColliding;
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         //Some pf this can be placed in OTriggerEnter
         if (objectTouched != null)
