@@ -66,10 +66,6 @@ public class PlayerInput : MonoBehaviour
             // Rotate Right
             else if (Input.GetKey("right") && !IsLookingUp) 
                 IsLookingRight = true;
-
-
-
-
             // Pressed interact key
             else if (Input.GetKey("e")) IsInteracting = true;  
         }

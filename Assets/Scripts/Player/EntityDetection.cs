@@ -57,7 +57,7 @@ public class EntityDetection : MonoBehaviour
     }
     // This method is called when the EntityDetection object collides with other triggers
     private void OnTriggerEnter(Collider other)
-    {
+    {   
         objectTouched = other.gameObject;
         //maybe muda isto se arranjarmos algo melhor
         if (objectTouched.GetComponent<DataHolder>().GetData() != null)

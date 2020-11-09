@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (bump)
         {
             if (TimeCounter == pI.MoveTime) adjustPos = transform.position;
-            if (TimeCounter <= pI.MoveTime / 2) playerBody.velocity *= -1;
+            if (TimeCounter <= pI.MoveTime/1.15) playerBody.velocity *= -0.15f;
         }
 
         TimeCounter -= Time.fixedDeltaTime;
