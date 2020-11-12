@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // We need to change all of this to namespaces and use it directly instead of
-// getting multiple instances of scripts
+// getting multiple instances of scripts.
 public class PlayerInput : MonoBehaviour
 {
     private PlayerMovement  pm;
@@ -58,7 +58,8 @@ public class PlayerInput : MonoBehaviour
 
                 // Checks if there is an object in front of the player, 
                 // preventing movement
-                if (ed.IsColliding && ed.ObjectTouched.layer != 9)
+                if (ed.IsColliding && ed.ObjectTouched != null && 
+                    ed.ObjectTouched.layer != 9)
                     Bump = true;
             }
             // Look Up

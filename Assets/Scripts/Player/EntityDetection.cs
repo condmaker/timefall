@@ -6,8 +6,8 @@ using UnityEngine;
 
 // !!! Sync EntityDetection with PlayerInput after timers have been sorted
 
-// Anything that is related with detecting and acting upon objects in the 
-// world go here (Raycasts, for example)
+// Everything related to the player interacting in any way with the environment
+// is treated here (like Raycasts for example)
 
 public class EntityDetection : MonoBehaviour
 {
@@ -34,14 +34,17 @@ public class EntityDetection : MonoBehaviour
     {
         if (IsColliding && pI.IsStopped())
         {
-            // Definetly change this to do it one time after 'colliding'
+            // Definetly change this to do it one time.
             ObjectTouched = currentWorldObject.transform.gameObject;
-            // This could be better and rely on actual code
-            if ((ObjectTouched.layer != 8) || (ObjectTouched.layer != 9))
-                objectData = 
-                    ObjectTouched.GetComponent<DataHolder>().GetData();
-
-            mD.DisplayMessage(objectData);
+            // This could be better
+            if ((ObjectTouched.layer == 8) || (ObjectTouched.layer == 9))
+            {
+                objectData = ObjectTouched.GetComponent<DataHolder>().GetData;
+                // This only appears for certain objects like levers and stuff,
+                // but not for other world objects like walls, so we need to 
+                // code that in
+                mD.DisplayMessage(objectData);
+            }
         }
         else
         {
