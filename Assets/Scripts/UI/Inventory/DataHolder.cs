@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class DataHolder : MonoBehaviour
 {
-
     [SerializeField]
     private ObjectData itemData;
     
-    public ObjectData GetData()
-    {
-        return itemData;
-    }
+    public ObjectData GetData() => itemData;
 }
