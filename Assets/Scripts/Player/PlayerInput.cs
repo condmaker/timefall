@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// We need to change all of this to namespaces and use it directly instead of
+// getting multiple instances of scripts
 public class PlayerInput : MonoBehaviour
 {
-    private PlayerMovement pm;
-    private PlayerCamera   pc;
+    private PlayerMovement  pm;
+    private PlayerCamera    pc;
+    private EntityDetection ed;
 
     // May become readonly later for performance purposes, support variables
     // for move distance and time wasted on each step/rotation
@@ -17,17 +20,17 @@ public class PlayerInput : MonoBehaviour
     public float MoveDistance { get => moveDistance; }
     public float MoveTime { get => moveTime; }
 
-    // Bool that specidifies if the player is pressing the interact key
+    // Bool that specifies if the player is pressing the interact key
     public bool IsInteracting  { get; set; }
 
-    // Movement state bools
+    // Movement state bools (we may need to change this because it breaks 
+    // encapsulation
     public bool LookUp         { get; set; }
     public bool IsWalking      { get; set; }
     public bool Bump           { get; set; }
     public bool IsLookingUp    { get; set; }
     public bool IsLookingLeft  { get; set; }
     public bool IsLookingRight { get; set; }
-    public Vector3 ZeroedVector { get; } = new Vector3(0.0f, 0.0f, 0.0f);
 
     // Bool that specifies if the player can move or not
     private bool canInput;
@@ -36,6 +39,7 @@ public class PlayerInput : MonoBehaviour
     {
         pm = GetComponent<PlayerMovement>();
         pc = GetComponent<PlayerCamera>();
+        ed = GetComponent<EntityDetection>();
     }
 
     void Update()
@@ -54,8 +58,7 @@ public class PlayerInput : MonoBehaviour
 
                 // Checks if there is an object in front of the player, 
                 // preventing movement
-                if (Physics.Raycast(
-                    transform.position, transform.forward, MoveDistance))
+                if (ed.IsColliding && ed.ObjectTouched.layer != 9)
                     Bump = true;
             }
             // Look Up
@@ -69,5 +72,12 @@ public class PlayerInput : MonoBehaviour
             // Pressed interact key
             else if (Input.GetKey("e")) IsInteracting = true;  
         }
+    }
+
+    public bool IsStopped()
+    {
+        if (!IsWalking && !IsLookingUp && !IsLookingLeft && !IsLookingRight)
+            return true;
+        return false;
     }
 }

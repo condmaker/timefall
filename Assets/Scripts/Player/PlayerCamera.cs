@@ -46,7 +46,7 @@ public class PlayerCamera : MonoBehaviour
         if (TimeCounter <= 0)
         {
             pI.IsLookingUp = lUp;
-            playerBody.angularVelocity = pI.ZeroedVector;
+            playerBody.angularVelocity = Vector3.zero;
         }
 
     }

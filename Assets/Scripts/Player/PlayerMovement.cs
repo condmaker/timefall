@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (TimeCounter <= 0)
         {
-            playerBody.velocity = pI.ZeroedVector;
+            playerBody.velocity = Vector3.zero;
             if (bump) transform.position = adjustPos;
         }
     }
@@ -84,6 +84,6 @@ public class PlayerMovement : MonoBehaviour
         TimeCounter -= Time.fixedDeltaTime;
 
         if (TimeCounter <= 0)
-            playerBody.angularVelocity = pI.ZeroedVector;
+            playerBody.angularVelocity = Vector3.zero;
     }
 }

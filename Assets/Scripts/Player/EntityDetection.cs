@@ -6,6 +6,9 @@ using UnityEngine;
 
 // !!! Sync EntityDetection with PlayerInput after timers have been sorted
 
+// Anything that is related with detecting and acting upon objects in the 
+// world go here (Raycasts, for example)
+
 public class EntityDetection : MonoBehaviour
 {
     [SerializeField]
@@ -15,34 +18,52 @@ public class EntityDetection : MonoBehaviour
     private InventoryHandler inventory;
 
     // Variable that stores the GameObject collided with
-    [SerializeField]
-    private GameObject objectTouched;
+    public GameObject ObjectTouched { get; private set; }
+
     [SerializeField]
     private MessageDisplay mD;
     private ObjectData objectData;
     private Toggler toggler;
 
     // Bool that specifies is the player is colliding with an object
-    private bool isColliding;
+    public bool IsColliding { get; private set; }
+    private RaycastHit currentWorldObject;
 
 
     private void Update()
     {
-        //Some pf this can be placed in OTriggerEnter
-        if (objectTouched != null)
+        if (IsColliding && pI.IsStopped())
         {
-            if (!pI.IsWalking && Input.GetKeyDown("e") && isColliding)
+            // Definetly change this to do it one time after 'colliding'
+            ObjectTouched = currentWorldObject.transform.gameObject;
+            // This could be better and rely on actual code
+            if ((ObjectTouched.layer != 8) || (ObjectTouched.layer != 9))
+                objectData = 
+                    ObjectTouched.GetComponent<DataHolder>().GetData();
+
+            mD.DisplayMessage(objectData);
+        }
+        else
+        {
+            ObjectTouched = null;
+            mD.CleanMessage();
+        }
+
+        // Some of this can be placed in OTriggerEnter
+        if (ObjectTouched != null)
+        {
+            if (!pI.IsWalking && Input.GetKeyDown("e") && IsColliding)
             {
                 switch (objectData.InteractionType)
                 {
                     case InteractionType.isGrabable:
                         inventory.AddItem(objectData as ItemData);
-                        Destroy(objectTouched);
+                        Destroy(ObjectTouched);
                         mD.CleanMessage();
                         break;
                     case InteractionType.isUsable:
                         //objectTouched.toggle? (switches bool )
-                        toggler = objectTouched.GetComponent<Toggler>();
+                        toggler = ObjectTouched.GetComponent<Toggler>();
                         toggler.Toggle();
                         break;
                     case InteractionType.isNPC:
@@ -55,20 +76,11 @@ public class EntityDetection : MonoBehaviour
             }
         }
     }
-    // This method is called when the EntityDetection object collides with other triggers
-    private void OnTriggerEnter(Collider other)
-    {   
-        objectTouched = other.gameObject;
-        //maybe muda isto se arranjarmos algo melhor
-        if (objectTouched.GetComponent<DataHolder>().GetData() != null)
-            objectData = objectTouched.GetComponent<DataHolder>().GetData();
-        mD.DisplayMessage(objectData);
-        isColliding = true;
-    }
-    // This method is called when the EntityDetetction object stops colliding with other triggers
-    private void OnTriggerExit(Collider other)
+
+    void FixedUpdate()
     {
-        objectTouched = null;
-        mD.CleanMessage();
+        IsColliding = Physics.Raycast(
+            transform.position, transform.forward, out currentWorldObject, 
+            pI.MoveDistance);
     }
 }
