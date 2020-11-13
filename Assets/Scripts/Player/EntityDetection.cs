@@ -58,11 +58,15 @@ public class EntityDetection : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         objectTouched = other.gameObject;
-        //maybe muda isto se arranjarmos algo melhor
-        objectData = objectTouched.GetComponent<DataHolder>().GetData();
-        mD.DisplayMessage(objectData);
-        isColliding = true;
+        //maybe muda isto se arranjarmos algo melho
+        if (objectTouched.GetComponent<DataHolder>() != null)
+        { 
+            objectData = objectTouched.GetComponent<DataHolder>().GetData();
+            mD.DisplayMessage(objectData);
+            isColliding = true;
+        }
     }
+
     // This method is called when the EntityDetetction object stops colliding with other triggers
     private void OnTriggerExit(Collider other)
     {
