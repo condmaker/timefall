@@ -74,11 +74,4 @@ public class PlayerInput : MonoBehaviour
             else if (Input.GetKey("e")) IsInteracting = true;  
         }
     }
-
-    public bool IsStopped()
-    {
-        if (!IsWalking && !IsLookingUp && !IsLookingLeft && !IsLookingRight)
-            return true;
-        return false;
-    }
 }

@@ -32,7 +32,7 @@ public class EntityDetection : MonoBehaviour
 
     private void Update()
     {
-        if (IsColliding && pI.IsStopped())
+        if (IsColliding)
         {
             // Definetly change this to do it one time.
             ObjectTouched = currentWorldObject.transform.gameObject;
