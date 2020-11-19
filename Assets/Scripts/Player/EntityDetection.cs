@@ -32,6 +32,10 @@ public class EntityDetection : MonoBehaviour
 
     private void Update()
     {
+        IsColliding = Physics.Raycast(
+            transform.position, transform.forward, out currentWorldObject,
+            pI.MoveDistance);
+
         if (IsColliding)
         {
             // Definetly change this to do it one time.
@@ -48,15 +52,18 @@ public class EntityDetection : MonoBehaviour
         }
         else
         {
+            IsColliding = false;
+            objectData = null;
             ObjectTouched = null;
             mD.CleanMessage();
         }
 
-        // Some of this can be placed in OTriggerEnter
         if (ObjectTouched != null)
         {
             if (!pI.IsWalking && Input.GetKeyDown("e") && IsColliding)
             {
+                if (objectData == null) return;
+
                 switch (objectData.InteractionType)
                 {
                     case InteractionType.isGrabable:
@@ -80,10 +87,4 @@ public class EntityDetection : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        IsColliding = Physics.Raycast(
-            transform.position, transform.forward, out currentWorldObject, 
-            pI.MoveDistance);
-    }
 }
