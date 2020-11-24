@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerBody;
     private Vector3 adjustPos;
 
-    void Start()
+    private void Start()
     {
         playerBody = GetComponent<Rigidbody>();
         pI =         GetComponent<PlayerInput>();
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         pI.IsWalking = false;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (pI.IsWalking)
         {

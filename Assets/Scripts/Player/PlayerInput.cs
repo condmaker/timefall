@@ -6,9 +6,8 @@ using UnityEngine;
 // getting multiple instances of scripts.
 public class PlayerInput : MonoBehaviour
 {
-    private PlayerMovement  pm;
-    private PlayerCamera    pc;
-    private EntityDetection ed;
+    private PlayerMovement  pM;
+    private EntityDetection eD;
 
     // May become readonly later for performance purposes, support variables
     // for move distance and time wasted on each step/rotation
@@ -33,23 +32,22 @@ public class PlayerInput : MonoBehaviour
     public bool IsLookingRight { get; set; }
 
     // Bool that specifies if the player can move or not
-    private bool canInput;
+    public bool CanInput { get; private set; }
 
-    void Start()
+    private void Start()
     {
-        pm = GetComponent<PlayerMovement>();
-        pc = GetComponent<PlayerCamera>();
-        ed = GetComponent<EntityDetection>();
+        pM = GetComponent<PlayerMovement>();
+        eD = GetComponent<EntityDetection>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (pm.TimeCounter == MoveTime && pc.TimeCounter == MoveTime)
-            canInput = true;
+        if (pM.TimeCounter == MoveTime)
+            CanInput = true;
         else
-            canInput = false;
+            CanInput = false;
 
-        if (canInput)
+        if (CanInput)
         {
             // Move forward
             if (Input.GetKey("up"))
@@ -58,8 +56,8 @@ public class PlayerInput : MonoBehaviour
 
                 // Checks if there is an object in front of the player, 
                 // preventing movement
-                if (ed.IsColliding && ed.ObjectTouched != null && 
-                    ed.ObjectTouched.layer != 9)
+                if (eD.IsColliding && eD.ObjectTouched != null && 
+                    eD.ObjectTouched.layer != 9)
                     Bump = true;
             }
             // Look Up

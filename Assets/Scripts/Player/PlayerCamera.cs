@@ -8,16 +8,15 @@ public class PlayerCamera : MonoBehaviour
 
     private PlayerInput pI;
     private Rigidbody playerBody;
-    private Vector3 rotVect;
 
-    void Start()
+    private void Start()
     {
         playerBody = GetComponent<Rigidbody>();
         pI = GetComponent<PlayerInput>();
         TimeCounter = pI.MoveTime;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (pI.LookUp)
         {
