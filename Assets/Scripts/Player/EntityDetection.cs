@@ -36,6 +36,8 @@ public class EntityDetection : MonoBehaviour
             transform.position, transform.forward, out currentWorldObject,
             pI.MoveDistance);
 
+        if (!pI.CanInput) return;
+
         if (IsColliding)
         {
             // Definetly change this to do it one time.
