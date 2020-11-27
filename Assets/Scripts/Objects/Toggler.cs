@@ -6,6 +6,13 @@ using UnityEngine;
 // This should be more global, since this will only work with gates. Maybe make
 // GateScript inherit from InteractibleScript and then make BridgeScript and
 // FireScript inherit from that too
+
+/* Made some changes to this script, its purpose now is to work on most world objects
+you must select on the inspector if the object islocked or not and then you need to
+drag the item you wish to use to unlock said object into the objectToggleList.
+you must also select if the object you are placing the script on main purpose 
+is to toggle other objects(lever) or to toggle itself(door).
+*/
 public class Toggler : MonoBehaviour
 {
     // Maybe a list isn't that efficient since it will be static
@@ -13,10 +20,16 @@ public class Toggler : MonoBehaviour
     private List<GameObject> objectToggleList;
     //mudar este nome
     private OpenObject objectToOpen;
+    private OpenObject selfToggle;
 
     private ObjectData unlocker;
     private InventorySlot inventorySlot;
-    private GameObject inventory;
+    private GameObject inventory; 
+    //this is unecessary because i could get inventorySlot
+    //in just 1 line, ill deal with this later
+
+    [SerializeField]
+    private bool indirectInteraction, isLocked;
     /*this bool is defined by us in the inspector when the script is placed
     in an object. 
     Its defines if the script is in an object that changes its own state
@@ -29,19 +42,19 @@ public class Toggler : MonoBehaviour
     */
     // Should this be in 2 separate scripts ? I like it like this actually
     // you pick things in the inspector since the script is very global
-    [SerializeField]
-    private bool indirectInteraction, isLocked;
+
 
     private void Awake()
     {
-        if(isLocked)
+        selfToggle = gameObject.GetComponent<OpenObject>();
+        if (isLocked)
         unlocker = objectToggleList[0].GetComponent<DataHolder>().GetData;
     }
     public void Toggle()
     {
+        //this is in case the object toggles other things, lever for eg.
         if (indirectInteraction)
         {
-            //toggle of its own animation needed (lever go left for example)
             if (objectToggleList.Count > 1)
             {
                 foreach (GameObject gameobject in objectToggleList)
@@ -55,10 +68,12 @@ public class Toggler : MonoBehaviour
                 objectToOpen = objectToggleList[0].GetComponent<OpenObject>();
                 objectToOpen.Toggle();
             }
+            //this toggles the object itself, a lever, button, torch, wtv...
+            //selfToggle.Toggle(); Lever doesnt yet have animations....
         }
+        //this is for things like doors, chests or torches that dont change other things
         else
         {
-            objectToOpen = gameObject.GetComponent<OpenObject>();
             if (isLocked)
             {
                 // !!! yes i know... this will change later, just let me work here ok ? 
@@ -69,27 +84,27 @@ public class Toggler : MonoBehaviour
 
                 if (unlocker == inventorySlot.currentItem) //erro aqui
                 {
-                    objectToOpen.Toggle();
+                    selfToggle.Toggle();
                 }
                 else
                     print("YOU. SHALL NOT. PASS");
-                //Se não ? : A Show message with display and play sound, B just play sound?
+                //A - Show message with display and play locked sound
+                //B - just play locked sound?
             }
             else
-                objectToOpen.Toggle();
+                selfToggle.Toggle();
         }
     }
     private void /*bool*/ CheckInteractionType()
     {
 
     }
-    // NOTES : still have quite a bit to make this work 100% yet, its at like 70% now.
+    // NOTES : still have quite a bit to make this work 100% yet, its at like 90% now.
     //it doesnt have into account:
-    //1 the objects that change other objects states own animations
-    //2 this probably isnt narrowing down the unlocker enough tecnicaly speaking...
-    //and im not sure if its needed or not as of now, but right now any key will work
-    //because they all have the same item data... then again though, maybe thats right
-    //and we need more keys.
+    //the fact that this probably isnt narrowing down the unlocker enough tecnicaly 
+    //speaking... and im not sure if its needed or not as of now, but right now any 
+    //key will work because they all have the same item data... then again though,
+    //maybe thats right and we need more keys.
 
     //!!!! Very important remeber to switch current item in inventory back to private
     
