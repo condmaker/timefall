@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 8474444695729067443}
   m_Layer: 8
   m_Name: Lever
-  m_TagString: Usable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,6 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToggleList: []
+  indirectInteraction: 1
+  canUnlock: 0
 --- !u!1 &1286883529269758571
 GameObject:
   m_ObjectHideFlags: 0

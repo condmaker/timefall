@@ -74,7 +74,7 @@ public class EntityDetection : MonoBehaviour
                         mD.CleanMessage();
                         break;
                     case InteractionType.isUsable:
-                        //objectTouched.toggle? (switches bool )
+                        //objectTouched.toggle? (switches bool)
                         toggler = ObjectTouched.GetComponent<Toggler>();
                         toggler.Toggle();
                         break;

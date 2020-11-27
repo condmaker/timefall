@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 1490619195626074678}
   - component: {fileID: 1490619195626074673}
   - component: {fileID: 2796402519594506491}
+  - component: {fileID: 1209199318427189611}
+  - component: {fileID: 7430364384240424173}
+  - component: {fileID: 5693877764715661044}
   - component: {fileID: 8648914897158823736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorWay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +106,46 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1209199318427189611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490619195626074675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToggleList: []
+  indirectInteraction: 0
+  canUnlock: 0
+--- !u!114 &7430364384240424173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490619195626074675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135af2b85610c8e4f963941739b07969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5693877764715661044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490619195626074675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0724e7b5f05ffc04d91b68189b6042a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 7f33af10347b03b4ab54df968186f266, type: 2}
 --- !u!64 &8648914897158823736
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -126,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1490619196537139096}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +202,7 @@ GameObject:
   - component: {fileID: 1625659506276789194}
   - component: {fileID: 149751703338286340}
   - component: {fileID: 695246142615179193}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
