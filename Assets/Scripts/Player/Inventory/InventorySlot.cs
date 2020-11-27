@@ -9,8 +9,11 @@ public class InventorySlot : MonoBehaviour
     public bool IsEmpty { get; set; }
     [SerializeField]
     private Image itemImage;
-    // EDIT by miguel, this was private is now public... help pls.. 
+    // EDIT by miguel, this was private is now public... 
     //will have to change back later or turn it into a property
+    //EDIT 2 this will go back to private later because what needs to happen is a
+    //.contains on the inventory and check for the same ObjectData
+    //but currently inventory is an array so... later, maybe use for each dunno
     public ItemData currentItem;    
 
     /// <summary>

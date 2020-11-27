@@ -30,14 +30,15 @@ public class Toggler : MonoBehaviour
 
     [SerializeField]
     private bool indirectInteraction, isLocked;
-    /*this bool is defined by us in the inspector when the script is placed
-    in an object. 
+    /*indirectInteraction bool is defined by us in the inspector when the script is placed
+    in an object. Or according to the prefab
     Its defines if the script is in an object that changes its own state
     or changes some other objects state, this should later be switched to
     work with item ID's or some kind of tag on WorldObjects... however that
     hasnt been done yet and i want to make things move... there is also the
     problem of objects that can do both... so this actually works well
     for the time being, check GDD anyway.
+
     isLocked defines if the object needs some other item to be opened pretty much
     */
     // Should this be in 2 separate scripts ? I like it like this actually
@@ -61,12 +62,14 @@ public class Toggler : MonoBehaviour
                 {
                     objectToOpen = gameobject.GetComponent<OpenObject>();
                     objectToOpen.Toggle();
+                    print("door was opened");
                 }
             }
             else
             {
                 objectToOpen = objectToggleList[0].GetComponent<OpenObject>();
                 objectToOpen.Toggle();
+                print("door was opened");
             }
             //this toggles the object itself, a lever, button, torch, wtv...
             //selfToggle.Toggle(); Lever doesnt yet have animations....
