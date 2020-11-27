@@ -9,7 +9,9 @@ public class InventorySlot : MonoBehaviour
     public bool IsEmpty { get; set; }
     [SerializeField]
     private Image itemImage;
-    private ItemData currentItem;    
+    // EDIT by miguel, this was private is now public... help pls.. 
+    //will have to change back later or turn it into a property
+    public ItemData currentItem;    
 
     /// <summary>
     /// Displays the given item in the invetory slot

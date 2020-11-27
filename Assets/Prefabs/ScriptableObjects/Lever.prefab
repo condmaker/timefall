@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1286883528783669161}
   - component: {fileID: 1286883528783669160}
   - component: {fileID: 1286883528783669167}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,9 +108,10 @@ GameObject:
   - component: {fileID: 1286883528794969563}
   - component: {fileID: 1286883528794969562}
   - component: {fileID: -5710287733409138255}
-  m_Layer: 0
+  - component: {fileID: 8474444695729067443}
+  m_Layer: 8
   m_Name: Lever
-  m_TagString: Usable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,8 +191,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.5235807, y: 2.644042, z: 1}
+  m_Center: {x: -0.004213938, y: 0.822021, z: 1.8326431e-17}
 --- !u!114 &-5710287733409138255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +205,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0724e7b5f05ffc04d91b68189b6042a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 0}
+  itemData: {fileID: 11400000, guid: 825f9096b36aeb2408abb2b8ecd44929, type: 2}
+--- !u!114 &8474444695729067443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286883528794969561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToggleList: []
+  indirectInteraction: 1
+  canUnlock: 0
 --- !u!1 &1286883529269758571
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1286883529269758564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,21 +4,21 @@ using UnityEngine;
 
 // This is very strange and breaks encapsulation. We should make it inherit
 // ObjectData or something that signals that the gate is an World Object.
-public class GateScript : MonoBehaviour
+public class OpenObject : MonoBehaviour
 {
-    private Animator gateAnimator;
+    private Animator ObjectAnimator;
     // This is inefficient, we should change it to ID later
     private const string state = "Status";
 
     private void Start()
     {
-        gateAnimator = GetComponent<Animator>();
+        ObjectAnimator = GetComponent<Animator>();
     }
     public void Toggle()
     {
-        if (gateAnimator.GetBool(state) == false)
-            gateAnimator.SetBool(state, true);
+        if (ObjectAnimator.GetBool(state) == false)
+            ObjectAnimator.SetBool(state, true);
         else
-            gateAnimator.SetBool(state, false);
+            ObjectAnimator.SetBool(state, false);
     }
 }
