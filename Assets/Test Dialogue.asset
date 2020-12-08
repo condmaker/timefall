@@ -13,3 +13,15 @@ MonoBehaviour:
   m_Name: Test Dialogue
   m_EditorClassIdentifier: 
   DialogueName: Test Dialogue
+  dialogueNodes:
+  - GUID: 112a49fb-d844-41e3-832b-05a0046cbbde
+    data:
+      guid: 112a49fb-d844-41e3-832b-05a0046cbbde
+      dialogue: "Este texto \xE9 um texto para testar o display."
+      OutPorts:
+      - b7a816c3-a2e4-4c8e-8c41-1b5057d7f820
+  - GUID: b7a816c3-a2e4-4c8e-8c41-1b5057d7f820
+    data:
+      guid: b7a816c3-a2e4-4c8e-8c41-1b5057d7f820
+      dialogue: "TypeWriter effect \xE9 fixe certo?\nWOW linha diferente"
+      OutPorts: []

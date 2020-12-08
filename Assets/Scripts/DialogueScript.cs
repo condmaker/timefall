@@ -10,32 +10,48 @@ public class DialogueScript : ScriptableObject
     public string DialogueName;
     private int dialogueID;
 
-    private List<InputOutputData<string, NodeData>> dialogueNodes =
-        new List<InputOutputData<string, NodeData>>();
+    [SerializeField]
+    private List<IOData> dialogueNodes =
+        new List<IOData>();
 
     public int Count => dialogueNodes.Count; 
 
     public void FillDialogueDic(NodeData nd)
     {
-        InputOutputData<string, NodeData> par = new InputOutputData<string, NodeData>(nd.GUID, nd);
+        IOData par = new IOData(nd.GUID, nd);
         dialogueNodes.Add(par);
     }
 
     public NodeData GetNodeByIndex(int index)
     {
-        return dialogueNodes[index].Value;
+        return dialogueNodes[index].data;
     }
 
     //Gets the node using its id
     //This option is less efficient 
     public NodeData GetNodeByGUID(string id)
     {
-        foreach(InputOutputData<string, NodeData> io in dialogueNodes)
+        foreach(IOData io in dialogueNodes)
         {
-            if (io.Key == id)
-                return io.Value;
+            if (io.GUID == id)
+                return io.data;
         }
         return null;
     }
         
+}
+
+
+[Serializable]
+public class IOData
+{
+
+    public IOData(string g, NodeData d)
+    {
+        GUID = g;
+        data = d;
+    }
+
+    public string GUID;
+    public NodeData data;
 }

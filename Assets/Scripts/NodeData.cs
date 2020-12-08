@@ -4,8 +4,24 @@ using System.Collections.Generic;
 [System.Serializable]
 public class NodeData
 {
-    public string GUID { get; }
-    public string Dialogue { get; }
+    [UnityEngine.SerializeField]
+    private string guid;
+
+    [UnityEngine.SerializeField]
+    private string dialogue;
+
+    public string GUID 
+    { 
+        get { return guid; }
+        set { guid = value; }
+    }
+    
+    public string Dialogue 
+    { 
+        get { return dialogue; } 
+        set { dialogue = value; } 
+    }
+
     public List<string> OutPorts = new List<string>();
 
 
