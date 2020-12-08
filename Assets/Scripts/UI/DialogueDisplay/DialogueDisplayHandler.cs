@@ -12,15 +12,21 @@ public class DialogueDisplayHandler : MonoBehaviour
     // Depois maybe tirar o serializable
     [SerializeField]
     private DialogueScript currentScript;
+    [SerializeField]
+    private float displaySpeed;
 
-    public NodeData welp;
+    private NodeData welp;
 
     private string currentGUID;
     private string currentLine;
 
+    private WaitForSeconds effectSpeed;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        effectSpeed = new WaitForSeconds(displaySpeed);
         welp = currentScript.GetNodeByIndex(0);
         currentLine = currentScript.GetNodeByIndex(0).Dialogue;
         currentGUID = currentScript.GetNodeByIndex(0).GUID;
@@ -55,10 +61,26 @@ public class DialogueDisplayHandler : MonoBehaviour
     private void EndDialogue()
     {
         dialogueDisplayTarget.text = "";
+        StopCoroutine("TypeWriterEffect");
     }
 
     private void DisplayLine()
     {
-        dialogueDisplayTarget.text = currentLine;
+        StopCoroutine("TypeWriterEffect");
+        StartCoroutine("TypeWriterEffect");
     }
+
+    IEnumerator TypeWriterEffect()
+    {
+        dialogueDisplayTarget.text = "";
+        while (currentLine.Length > 0)
+        {
+            yield return effectSpeed;
+            char nextChar = currentLine[0];
+            dialogueDisplayTarget.text += nextChar;
+            currentLine = currentLine.Substring(1);
+        }
+    }
+                
+
 }
