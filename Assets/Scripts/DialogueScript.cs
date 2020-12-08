@@ -10,17 +10,32 @@ public class DialogueScript : ScriptableObject
     public string DialogueName;
     private int dialogueID;
 
-    public List<InputOutputData<string, NodeData>> dialogueNodes =
+    private List<InputOutputData<string, NodeData>> dialogueNodes =
         new List<InputOutputData<string, NodeData>>();
-   
+
+    public int Count => dialogueNodes.Count; 
 
     public void FillDialogueDic(NodeData nd)
     {
-        
         InputOutputData<string, NodeData> par = new InputOutputData<string, NodeData>(nd.GUID, nd);
-        Debug.Log(par.Key);
         dialogueNodes.Add(par);
     }
 
+    public NodeData GetNodeByIndex(int index)
+    {
+        return dialogueNodes[index].Value;
+    }
 
+    //Gets the node using its id
+    //This option is less efficient 
+    public NodeData GetNodeByGUID(string id)
+    {
+        foreach(InputOutputData<string, NodeData> io in dialogueNodes)
+        {
+            if (io.Key == id)
+                return io.Value;
+        }
+        return null;
+    }
+        
 }

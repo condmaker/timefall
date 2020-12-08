@@ -11,12 +11,14 @@ public class TestDialogue : MonoBehaviour
     void Start()
     {
 
-        print(aa.dialogueNodes.Count);
+        print(aa.Count);
         print("Start");
-        for (int i = 0; i < aa.dialogueNodes.Count; i++)
-        {
-            print(aa.dialogueNodes[i].Key);
-        }
+        //print(aa.GetNodeByIndex(0).OutPorts[0]);
+
+
+        //print(aa.GetNodeByIndex(2).Dialogue);
+
+        print(aa.GetNodeByGUID(aa.GetNodeByIndex(0).OutPorts[0]));
         print("End");
     }
 
