@@ -37,11 +37,11 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (pI.IsLookingUp) pI.IsWalking = false;
         }
-        else if (pI.IsLookingLeft && !pI.IsLookingUp)
+        else if (pI.IsLookingLeft && !pI.LookUp)
         {
             RotatePlayer(y: -90f);
         }
-        else if (pI.IsLookingRight && !pI.IsLookingUp)
+        else if (pI.IsLookingRight && !pI.LookUp)
         {
             RotatePlayer(y: 90f);
         }
