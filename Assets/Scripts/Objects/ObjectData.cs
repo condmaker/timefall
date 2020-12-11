@@ -14,6 +14,8 @@ public abstract class ObjectData : ScriptableObject
     private string     description;
     [SerializeField]
     private int        iD;
+    public int ID => iD;
+
 }
 
 
