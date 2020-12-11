@@ -61,15 +61,7 @@ public class PlayerInput : MonoBehaviour
         {
             // Move forward
             if (Input.GetKey(KeyCode.W) && !LookUp)
-            {
                 IsWalking = true;
-
-                // Checks if there is an object in front of the player, 
-                // preventing movement
-                if (eD.IsColliding && eD.ObjectTouched != null && 
-                    eD.ObjectTouched.layer != 9)
-                    Bump = true;
-            }
             // Look Up
             else if (Input.GetKey(KeyCode.S)) LookUp = true;
             // Rotate Left
@@ -81,5 +73,18 @@ public class PlayerInput : MonoBehaviour
             // Pressed interact key
             else if (Input.GetKey(KeyCode.E)) IsInteracting = true;  
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (IsWalking)
+        {
+            // Checks if there is an object in front of the player, 
+            // preventing movement
+            if (eD.IsColliding && eD.ObjectTouched != null &&
+                eD.ObjectTouched.layer != 9)
+                Bump = true;
+        }
+            
     }
 }

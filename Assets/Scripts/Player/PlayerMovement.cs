@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
         TimeCounter = pI.MoveTime;
         pI.IsWalking = false;
+
     }
 
     private void FixedUpdate()
