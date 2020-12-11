@@ -6,10 +6,10 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
                 
 public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler        
-{ 
+{
 
-
-
+    [SerializeField]
+    private InventoryHandler inventory;
     public bool IsEmpty { get; set; }
     [SerializeField]
     private Image itemImage;
@@ -18,7 +18,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     //EDIT 2 this will go back to private later because what needs to happen is a
     //.contains on the inventory and check for the same ObjectData
     //but currently inventory is an array so... later, maybe use for each dunno
-    public ItemData currentItem;
+    public ItemData CurrentItem { get; private set; }
 
     public bool isOver;
 
@@ -34,16 +34,13 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    [SerializeField]
-    private OnSelectSlot onSlotSelect;
-
     /// <summary>
     /// Displays the given item in the invetory slot
     /// </summary>
     /// <param name="item">ScriptableObject that contains the item data</param>
     public void DisplayItem(ItemData item)
     {
-        currentItem = item;
+        CurrentItem = item;
         itemImage.sprite = item.UIobjectSprite;
         IsEmpty = true;
     }
@@ -62,16 +59,18 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     /// </summary>
     public void CleanDisplay()
     {
-        currentItem = null;
+        CurrentItem = null;
         itemImage.sprite = null;
         IsEmpty = false;
     }
     
     public void SelectSlot()
     {
-        onSlotSelect.Invoke(this);
+        inventory.EquipItem(this);
         ActivateSlot();
     }
+
+
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -84,5 +83,4 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 }
 
-[System.Serializable]
-public class OnSelectSlot : UnityEvent<InventorySlot> { }
+
