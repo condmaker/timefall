@@ -6,6 +6,9 @@ public class InventoryHandler : MonoBehaviour
 {
     [SerializeField]
     private InventorySlot[] slots;
+    
+    [SerializeField]
+    private ItemData equipedItem;
 
     /// <summary>
     /// Adds the given item to an empty slot in the invetory
@@ -20,6 +23,21 @@ public class InventoryHandler : MonoBehaviour
                 s.DisplayItem(item);
                 break;
             }
+        }
+    }
+
+    private void Update()
+    {
+
+    }
+
+
+    public void EquipItem(InventorySlot slot)
+    {
+        equipedItem = slot.currentItem;      
+        foreach(InventorySlot iS in slots)
+        {
+            iS.DeativateSlot();
         }
     }
 

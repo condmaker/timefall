@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+                
+public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler        
+{ 
 
-public class InventorySlot : MonoBehaviour
-{
+
 
     public bool IsEmpty { get; set; }
     [SerializeField]
@@ -14,7 +18,24 @@ public class InventorySlot : MonoBehaviour
     //EDIT 2 this will go back to private later because what needs to happen is a
     //.contains on the inventory and check for the same ObjectData
     //but currently inventory is an array so... later, maybe use for each dunno
-    public ItemData currentItem;    
+    public ItemData currentItem;
+
+    public bool isOver;
+
+    private void Update()
+    {
+        if (isOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                SelectSlot();
+
+            }
+        }
+    }
+
+    [SerializeField]
+    private OnSelectSlot onSlotSelect;
 
     /// <summary>
     /// Displays the given item in the invetory slot
@@ -27,6 +48,14 @@ public class InventorySlot : MonoBehaviour
         IsEmpty = true;
     }
 
+    public void ActivateSlot()
+    {
+        GetComponent<Image>().color = Color.black;
+    }
+    public void DeativateSlot()
+    {
+        GetComponent<Image>().color = Color.white;
+    }
 
     /// <summary>
     /// Cleans the invetory slot
@@ -38,4 +67,22 @@ public class InventorySlot : MonoBehaviour
         IsEmpty = false;
     }
     
+    public void SelectSlot()
+    {
+        onSlotSelect.Invoke(this);
+        ActivateSlot();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        isOver = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isOver = false;
+    }
 }
+
+[System.Serializable]
+public class OnSelectSlot : UnityEvent<InventorySlot> { }
