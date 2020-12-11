@@ -60,7 +60,7 @@ public class PlayerInput : MonoBehaviour
         if (CanInput)
         {
             // Move forward
-            if (Input.GetKey("up"))
+            if (Input.GetKey(KeyCode.W) && !LookUp)
             {
                 IsWalking = true;
 
@@ -71,15 +71,15 @@ public class PlayerInput : MonoBehaviour
                     Bump = true;
             }
             // Look Up
-            else if (Input.GetKey("down")) LookUp = true;
+            else if (Input.GetKey(KeyCode.S)) LookUp = true;
             // Rotate Left
-            else if (Input.GetKey("left") && !IsLookingUp && !LookUp) 
+            else if (Input.GetKey(KeyCode.A) && !IsLookingUp && !LookUp) 
                 IsLookingLeft = true;
             // Rotate Right
-            else if (Input.GetKey("right") && !IsLookingUp && !LookUp) 
+            else if (Input.GetKey(KeyCode.D) && !IsLookingUp && !LookUp) 
                 IsLookingRight = true;
             // Pressed interact key
-            else if (Input.GetKey("e")) IsInteracting = true;  
+            else if (Input.GetKey(KeyCode.E)) IsInteracting = true;  
         }
     }
 }
