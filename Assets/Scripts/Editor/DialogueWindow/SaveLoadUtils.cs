@@ -42,7 +42,7 @@ public class SaveLoadUtils
                 {
                     foreach (Edge e in p.connections)
                     {
-                        DialogueNode outNode = e.output.node as DialogueNode;
+                        DialogueNode outNode = e.input.node as DialogueNode;
                         outPort.Add(outNode.GUID);
                     }
                 }

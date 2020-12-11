@@ -14,14 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueName: Test Dialogue
   dialogueNodes:
-  - GUID: 112a49fb-d844-41e3-832b-05a0046cbbde
+  - key: fce77791-73e0-463e-a205-a85947757a9f
     data:
-      guid: 112a49fb-d844-41e3-832b-05a0046cbbde
-      dialogue: "Este texto \xE9 um texto para testar o display."
+      guid: fce77791-73e0-463e-a205-a85947757a9f
+      dialogue: Queres comer um bolo?
       OutPorts:
-      - b7a816c3-a2e4-4c8e-8c41-1b5057d7f820
-  - GUID: b7a816c3-a2e4-4c8e-8c41-1b5057d7f820
+      - cb968e12-5802-4bf8-a4b1-fbb2064342a5
+      - 2386d31b-9847-46c9-8bad-caf158600854
+  - key: cb968e12-5802-4bf8-a4b1-fbb2064342a5
     data:
-      guid: b7a816c3-a2e4-4c8e-8c41-1b5057d7f820
-      dialogue: "TypeWriter effect \xE9 fixe certo?\nWOW linha diferente"
+      guid: cb968e12-5802-4bf8-a4b1-fbb2064342a5
+      dialogue: Yeah toma o bolo.
+      OutPorts: []
+  - key: 2386d31b-9847-46c9-8bad-caf158600854
+    data:
+      guid: 2386d31b-9847-46c9-8bad-caf158600854
+      dialogue: "Ent\xE3o cala-te."
       OutPorts: []

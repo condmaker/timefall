@@ -29,7 +29,6 @@ public class NodeData
     {
         GUID = guID;
         Dialogue = dialogue;
-        //OutPorts = new List<string>() {"i"};
         OutPorts = outPorts;
     }
 }

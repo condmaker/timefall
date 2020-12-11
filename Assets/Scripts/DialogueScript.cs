@@ -33,9 +33,16 @@ public class DialogueScript : ScriptableObject
     {
         foreach(IOData io in dialogueNodes)
         {
-            if (io.GUID == id)
+            if (io.key == id)
                 return io.data;
         }
+        return null;
+    }
+
+    public NodeData GetNextNode(NodeData current ,int choice = 0)
+    {
+        if(current.OutPorts.Count > 0)
+            return GetNodeByGUID(current.OutPorts?[choice]);
         return null;
     }
         
@@ -43,15 +50,16 @@ public class DialogueScript : ScriptableObject
 
 
 [Serializable]
-public class IOData
+public struct IOData
 {
 
-    public IOData(string g, NodeData d)
+    
+    public IOData(string k, NodeData d)
     {
-        GUID = g;
+        key = k;
         data = d;
     }
 
-    public string GUID;
+    public string key;
     public NodeData data;
 }

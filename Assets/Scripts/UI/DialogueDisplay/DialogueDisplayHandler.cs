@@ -7,55 +7,108 @@ using UnityEngine.UI;
 public class DialogueDisplayHandler : MonoBehaviour
 {
     [SerializeField]
-    private Text dialogueDisplayTarget;
-    
+    private Text dialogueDisplayTarget; 
     // Depois maybe tirar o serializable
     [SerializeField]
     private DialogueScript currentScript;
     [SerializeField]
     private float displaySpeed;
 
-    private NodeData welp;
+    [SerializeField]
+    private GameObject buttonLayout;
+    [SerializeField]
+    private GameObject buttonPREFAB;
+
+
+    private NodeData dialogueLine;
 
     private string currentGUID;
-    private string currentLine;
+    private string dialogueText;
 
     private WaitForSeconds effectSpeed;
+
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        effectSpeed = new WaitForSeconds(displaySpeed);
-        welp = currentScript.GetNodeByIndex(0);
-        currentLine = currentScript.GetNodeByIndex(0).Dialogue;
-        currentGUID = currentScript.GetNodeByIndex(0).GUID;
-        DisplayLine();
+        PrepareNewDialogue();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            NextLine();
+            NextLine(0);
     }
 
-    private void NextLine()
+    public void PrepareNewDialogue()
     {
-        NodeData currentData = currentScript.GetNodeByGUID(currentGUID);
+        //Display Specificationss
+        effectSpeed = new WaitForSeconds(displaySpeed);
         
-        if (currentData.OutPorts.Count == 0)
+        //Initialize First Line
+        dialogueLine = currentScript.GetNodeByIndex(0);
+        dialogueText = currentScript.GetNodeByIndex(0).Dialogue;
+        currentGUID = currentScript.GetNodeByIndex(0).GUID;
+
+        //Handle button Layout
+        //There needs to be a function that checks the count of 
+        //The output ports in data an instantiates buttons accordingly
+        InstatiateChoices();
+        DisplayLine();
+    }
+
+    private void InstatiateChoices()
+    {
+
+        foreach(Transform g in buttonLayout.transform)
+        {
+            Destroy(g.gameObject);
+        }
+
+        int choiceNumb = dialogueLine.OutPorts.Count;
+        if (choiceNumb == 0) return;
+        
+        //Dialogue Window needs option string
+        string[] optionS = new string[] { "Yes", "No" };
+
+        //This probably needs a rework :c
+        for(int i = 0; i < choiceNumb; i++)
+        {          
+            GameObject temp = Instantiate(buttonPREFAB, transform.position, Quaternion.identity, buttonLayout.transform);
+
+
+            //Depois mudar isto 
+            temp.GetComponent<Text>().text = optionS[i];
+
+            ChoiceSelector cs = temp.GetComponent<ChoiceSelector>();
+            cs.ChoiceNumb = i;
+            cs.NextLine = NextLine;
+        }
+
+        buttonLayout.SetActive(false);
+        
+    }
+
+
+    public void NextLine(int choice)
+    {
+        dialogueLine = 
+               currentScript.GetNextNode(dialogueLine, choice);
+       
+        if (dialogueLine == null)
         {
             EndDialogue();
             return;
         }
 
-        currentGUID = currentData.OutPorts[0];
-        NodeData nextData = currentScript.GetNodeByGUID(currentGUID);
-        currentLine = nextData.Dialogue;
+        dialogueText = dialogueLine.Dialogue;
 
+        InstatiateChoices();
         DisplayLine();
-
     }
 
     private void EndDialogue()
@@ -73,13 +126,14 @@ public class DialogueDisplayHandler : MonoBehaviour
     IEnumerator TypeWriterEffect()
     {
         dialogueDisplayTarget.text = "";
-        while (currentLine.Length > 0)
+        while (dialogueText.Length > 0)
         {
             yield return effectSpeed;
-            char nextChar = currentLine[0];
+            char nextChar = dialogueText[0];
             dialogueDisplayTarget.text += nextChar;
-            currentLine = currentLine.Substring(1);
+            dialogueText = dialogueText.Substring(1);
         }
+        buttonLayout.SetActive(true);
     }
                 
 
