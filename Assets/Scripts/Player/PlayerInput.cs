@@ -75,6 +75,7 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    // This is here so that the fixed update on player movement doesn't bug out
     private void FixedUpdate()
     {
         if (IsWalking)
