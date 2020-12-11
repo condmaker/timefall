@@ -23,13 +23,23 @@ public class PlayerInput : MonoBehaviour
     public bool IsInteracting  { get; set; }
 
     // Movement state bools (we may need to change this because it breaks 
-    // encapsulation
-    public bool LookUp         { get; set; }
-    public bool IsWalking      { get; set; }
-    public bool Bump           { get; set; }
-    public bool IsLookingUp    { get; set; }
-    public bool IsLookingLeft  { get; set; }
-    public bool IsLookingRight { get; set; }
+    // encapsulation kinda)
+    private bool lookUp;
+    private bool isWalking;
+    private bool bump;
+    private bool isLookingUp;
+    private bool isLookingLeft;
+    private bool isLookingRight;
+
+    public bool LookUp         { get => lookUp; set => lookUp = value; }
+    public bool IsWalking      { get => isWalking; set => isWalking = value; }
+    public bool Bump           { get => bump; set => bump = value; }
+    public bool IsLookingUp    { get => isLookingUp; 
+                                 set => isLookingUp = value; }
+    public bool IsLookingLeft  { get => isLookingLeft;
+                                 set => isLookingLeft = value; }
+    public bool IsLookingRight { get => isLookingRight; 
+                                 set => isLookingRight = value; }
 
     // Bool that specifies if the player can move or not
     public bool CanInput { get; private set; }
@@ -50,26 +60,32 @@ public class PlayerInput : MonoBehaviour
         if (CanInput)
         {
             // Move forward
-            if (Input.GetKey("up"))
-            {
+            if (Input.GetKey(KeyCode.W) && !LookUp)
                 IsWalking = true;
-
-                // Checks if there is an object in front of the player, 
-                // preventing movement
-                if (eD.IsColliding && eD.ObjectTouched != null && 
-                    eD.ObjectTouched.layer != 9)
-                    Bump = true;
-            }
             // Look Up
-            else if (Input.GetKey("down")) LookUp = true;
+            else if (Input.GetKey(KeyCode.S)) LookUp = true;
             // Rotate Left
-            else if (Input.GetKey("left") && !IsLookingUp) 
+            else if (Input.GetKey(KeyCode.A) && !IsLookingUp && !LookUp) 
                 IsLookingLeft = true;
             // Rotate Right
-            else if (Input.GetKey("right") && !IsLookingUp) 
+            else if (Input.GetKey(KeyCode.D) && !IsLookingUp && !LookUp) 
                 IsLookingRight = true;
             // Pressed interact key
-            else if (Input.GetKey("e")) IsInteracting = true;  
+            else if (Input.GetKey(KeyCode.E)) IsInteracting = true;  
         }
+    }
+
+    // This is here so that the fixed update on player movement doesn't bug out
+    private void FixedUpdate()
+    {
+        if (IsWalking)
+        {
+            // Checks if there is an object in front of the player, 
+            // preventing movement
+            if (eD.IsColliding && eD.ObjectTouched != null &&
+                eD.ObjectTouched.layer != 9)
+                Bump = true;
+        }
+            
     }
 }

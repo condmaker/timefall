@@ -22,7 +22,8 @@ public class Toggler : MonoBehaviour
     private OpenObject objectToOpen;
     private OpenObject selfToggle;
 
-    private ObjectData unlocker;
+    [SerializeField]
+    private short unlockerId;
     private InventorySlot inventorySlot;
     private GameObject inventory; 
     //this is unecessary because i could get inventorySlot
@@ -48,19 +49,17 @@ public class Toggler : MonoBehaviour
     private void Awake()
     {
         selfToggle = gameObject.GetComponent<OpenObject>();
-        if (isLocked)
-        unlocker = objectToggleList[0].GetComponent<DataHolder>().GetData;
     }
-    public void Toggle()
+    public void Toggle(ItemData item = null)
     {
         //this is in case the object toggles other things, lever for eg.
         if (indirectInteraction)
         {
             if (objectToggleList.Count > 1)
             {
-                foreach (GameObject gameobject in objectToggleList)
+                foreach (GameObject g in objectToggleList)
                 {
-                    objectToOpen = gameobject.GetComponent<OpenObject>();
+                    objectToOpen = g.GetComponent<OpenObject>();
                     objectToOpen.Toggle();
                     print("door was opened");
                 }
@@ -79,20 +78,20 @@ public class Toggler : MonoBehaviour
         {
             if (isLocked)
             {
-                // !!! yes i know... this will change later, just let me work here ok ? 
-                //Also intead of looking at this one should wonder why is the
-                //inventory on the canvas uh?
-                inventory = GameObject.Find("Slot");
-                inventorySlot = inventory.GetComponent<InventorySlot>();
+                if (item == null)
+                {
+                    print("YOU. SHALL NOT. PASS");
+                    return;
+                }
 
-                if (unlocker == inventorySlot.currentItem) //erro aqui
+                if (unlockerId == item.ID) //erro aqui
                 {
                     selfToggle.Toggle();
                 }
                 else
                     print("YOU. SHALL NOT. PASS");
                 //A - Show message with display and play locked sound
-                //B - just play locked sound?
+                //B - just play locked sound?*/
             }
             else
                 selfToggle.Toggle();

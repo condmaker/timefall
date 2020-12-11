@@ -2,42 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryHandler : MonoBehaviour
+public class InventoryScript : MonoBehaviour
 {
     [SerializeField]
     private InventorySlot[] slots;
-    
-    [SerializeField]
-    public ItemData equipedItem { get; private set; }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     /// <summary>
     /// Adds the given item to an empty slot in the invetory
     /// </summary>
     /// <param name="item">ScriptableObject that contains the item data</param>
-    public void AddItem(ItemData item)
+    public void AddItem(ObjectData item)
     {
         foreach (InventorySlot s in slots)
         {
             if (!s.IsEmpty)
             {
-                s.DisplayItem(item);
-                break;
+                s.DisplayItem(item as ItemData);
             }
-        }
-    }
-
-    private void Update()
-    {
-
-    }
-
-
-    public void EquipItem(InventorySlot slot)
-    {
-        equipedItem = slot.CurrentItem;      
-        foreach(InventorySlot iS in slots)
-        {
-            iS.DeativateSlot();
         }
     }
 
@@ -45,4 +38,5 @@ public class InventoryHandler : MonoBehaviour
     {
 
     }
+
 }
