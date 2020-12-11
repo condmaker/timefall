@@ -30260,7 +30260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1818390738693825184, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.94
+      value: 8.76
       objectReference: {fileID: 0}
     - target: {fileID: 1818390738693825184, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30293,6 +30293,30 @@ PrefabInstance:
     - target: {fileID: 1818390738693825184, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380840829606931245, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
+      propertyPath: m_Size.x
+      value: 0.019609675
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380840829606931245, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.053491257
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380840829606931245, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
+      propertyPath: m_Center.y
+      value: -0.0045039924
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380840829606931245, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
+      propertyPath: m_Size.z
+      value: 0.020070804
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380840829606931245, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0024876122
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380840829606931245, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
+      propertyPath: m_Center.x
+      value: -0.00093948573
       objectReference: {fileID: 0}
     - target: {fileID: 8784680560543369366, guid: 9eebed6fb6fcb5a4c807f4cc170a3bbd, type: 3}
       propertyPath: m_Name
@@ -30806,37 +30830,6 @@ Transform:
   m_Father: {fileID: 1427811107}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1542617669
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &1543366675
 GameObject:
   m_ObjectHideFlags: 0
@@ -31636,6 +31629,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571347780}
   m_Mesh: {fileID: 6698758042504535158, guid: 1dbf5e3eac2b85645b9eb5934457c51c, type: 3}
+--- !u!21 &1582408511
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &1583124537
 GameObject:
   m_ObjectHideFlags: 0
@@ -32557,7 +32581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e77671a9d83004e9fe9bcce9a723a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 1542617669}
+  material: {fileID: 1582408511}
   colorPrecision: 32
   usePalette: 0
   palette: {fileID: 0}
@@ -47053,6 +47077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToggleList: []
+  unlockerId: 0
   indirectInteraction: 0
   isLocked: 0
 --- !u!1 &2025016589
