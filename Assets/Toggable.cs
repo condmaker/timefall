@@ -21,7 +21,8 @@ public class Toggable : MonoBehaviour
         }
         set
         {
-            if (state == maxStates)
+            if (state == 0) state = 1;
+            if (state >= maxStates)
                 state = 1;
             else
                 state = value;
@@ -54,26 +55,38 @@ public class Toggable : MonoBehaviour
             currentStateComb.Add(t.State);
         }
 
-        if(CompareCollections(wantedStateComb,currentStateComb))
+        bool isEqual = CompareCollections(wantedStateComb, currentStateComb);
+
+        if (isEqual)
         {
             ChangeStates();
+        }
+        else
+        {
+            //Default to first state -- 
+            //Talvez por isto como variavel mas por agora n interessa
+            ChangeStates(1);
         }
     }
 
 
     //Existe um cena chamada Enumerable.SequenceEqual 
     //q pode ser melhor para usar aqui
-    public bool CompareCollections(IList want, IList got)
+    //Fun fact se isto forem interfaces eles n comparam bem
+    public bool CompareCollections(List<short> want, List<short> got)
     {
-        for(short i = 0; i < want.Count; i++)
+
+        for (short i = 0; i < want.Count; i++)
         {
             if (want[i] != got[i])
                 return false;
-        }
 
+        }
         return true;
     }
 
+
+    //Change to the next state
     private void ChangeStates()
     {
         State++;
@@ -85,9 +98,41 @@ public class Toggable : MonoBehaviour
         //etc
     }
 
+    //Change to the passed state
+    private void ChangeStates(short wantedState)
+    {
+        if (State == wantedState) return;
+        State = wantedState;
+
+        //Cenas relacionadas com o efeito dos states
+       
+        if (anim == null) return;
+        anim.SetFloat("State", State);
+        anim.SetTrigger("ChangeState");
+        
+        //Actions
+        
+        //etc
+    }
+
+
+
+    //PARA TESTES
+    public void printList(ICollection c)
+    {
+        string l = "";
+        foreach (short s in c)
+        {
+            l += s + "  |  ";
+        }
+        print(l);
+    }
+
 }
 
 
+
+//Isto é para fazer uma cena quirky don't worry
 #if UNITY_EDITOR
 [CustomEditor(typeof(Toggable))]
 public class Toggable_Editor : Editor

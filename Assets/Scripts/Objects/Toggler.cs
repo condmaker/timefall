@@ -18,8 +18,24 @@ public class Toggler : MonoBehaviour
 {
     [SerializeField]
     private short maxStates;
-    public short State { get; set; }
-
+    [SerializeField]
+    private short state;
+    public short State
+    {
+        get
+        {
+            return state;
+        }
+        set
+        {
+            if (state == maxStates)
+                state = 1;
+            else
+                state = value;
+        }
+    }
+    
+    
     // Maybe a list isn't that efficient since it will be static
     [SerializeField]
     private List<Toggable> toggables;
@@ -66,6 +82,7 @@ public class Toggler : MonoBehaviour
             {
                 foreach (Toggable g in toggables)
                 {
+                    State++;
                     g.CheckCombinations();
                 }
             }
