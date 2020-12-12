@@ -15,9 +15,13 @@ is to toggle other objects(lever) or to toggle itself(door).
 */
 public class Toggler : MonoBehaviour
 {
+    [SerializeField]
+    private short maxStates;
+    public short State { get; set; }
+
     // Maybe a list isn't that efficient since it will be static
     [SerializeField]
-    private List<GameObject> objectToggleList;
+    private List<Toggable> toggables;
     //mudar este nome
     private OpenObject objectToOpen;
     private OpenObject selfToggle;
@@ -50,25 +54,26 @@ public class Toggler : MonoBehaviour
     {
         selfToggle = gameObject.GetComponent<OpenObject>();
     }
+
+
     public void Toggle(ItemData item = null)
     {
         //this is in case the object toggles other things, lever for eg.
         if (indirectInteraction)
         {
-            if (objectToggleList.Count > 1)
+            if (toggables.Count > 0)
             {
-                foreach (GameObject g in objectToggleList)
+                foreach (Toggable g in toggables)
                 {
-                    objectToOpen = g.GetComponent<OpenObject>();
-                    objectToOpen.Toggle();
-                    print("door was opened");
+                    print("werlp");
+                    g.CheckCombinations();
                 }
             }
             else
             {
-                objectToOpen = objectToggleList[0].GetComponent<OpenObject>();
-                objectToOpen.Toggle();
-                print("door was opened");
+                //objectToOpen = objectToggleList[0].GetComponent<OpenObject>();
+                //objectToOpen.Toggle();
+                //print("door was opened");
             }
             //this toggles the object itself, a lever, button, torch, wtv...
             //selfToggle.Toggle(); Lever doesnt yet have animations....
