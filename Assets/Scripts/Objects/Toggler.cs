@@ -28,8 +28,8 @@ public class Toggler : MonoBehaviour
         }
         set
         {
-            if (state == maxStates)
-                state = 1;
+            if (state == maxStates - 1)
+                state = 0;
             else
                 state = value;
         }

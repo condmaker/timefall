@@ -21,9 +21,8 @@ public class Toggable : MonoBehaviour
         }
         set
         {
-            if (state == 0) state = 1;
-            if (state >= maxStates)
-                state = 1;
+            if (state >= maxStates-1)
+                state = 0;
             else
                 state = value;
         }
@@ -43,7 +42,6 @@ public class Toggable : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        State = 1;
     }
 
     public void CheckCombinations()
@@ -65,7 +63,7 @@ public class Toggable : MonoBehaviour
         {
             //Default to first state -- 
             //Talvez por isto como variavel mas por agora n interessa
-            ChangeStates(1);
+            ChangeStates(0);
         }
     }
 
