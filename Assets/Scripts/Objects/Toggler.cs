@@ -13,6 +13,7 @@ drag the item you wish to use to unlock said object into the objectToggleList.
 you must also select if the object you are placing the script on main purpose 
 is to toggle other objects(lever) or to toggle itself(door).
 */
+
 public class Toggler : MonoBehaviour
 {
     [SerializeField]
@@ -65,7 +66,6 @@ public class Toggler : MonoBehaviour
             {
                 foreach (Toggable g in toggables)
                 {
-                    print("werlp");
                     g.CheckCombinations();
                 }
             }

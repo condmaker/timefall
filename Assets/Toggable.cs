@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
+//[RequireComponent(typeof(Animator))]
 public class Toggable : MonoBehaviour
 {
 
@@ -26,6 +28,7 @@ public class Toggable : MonoBehaviour
         }
     }
 
+    [HideInInspector]
     public bool multipleTogglers;
 
     //Keep both at zero if object is affected by only one toggler
@@ -74,11 +77,10 @@ public class Toggable : MonoBehaviour
     private void ChangeStates()
     {
         State++;
-
+        if (anim == null) return;
+        //Cenas realcionadas com o efeito do states
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
-        //Cenas realcionadas com o efeito do states
-        //Animations
         //Actions
         //etc
     }
