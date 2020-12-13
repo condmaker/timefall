@@ -18,7 +18,7 @@ public class Toggler : MonoBehaviour
 {
     [SerializeField]
     private short maxStates;
-    [SerializeField]
+
     private short state;
     public short State
     {
@@ -35,10 +35,10 @@ public class Toggler : MonoBehaviour
         }
     }
     
-    
-    // Maybe a list isn't that efficient since it will be static
     [SerializeField]
     private List<Toggable> toggables;
+
+
     //mudar este nome
     private OpenObject objectToOpen;
     private OpenObject selfToggle;
@@ -51,7 +51,7 @@ public class Toggler : MonoBehaviour
     //in just 1 line, ill deal with this later
 
     [SerializeField]
-    private bool indirectInteraction, isLocked;
+    private bool isLocked;
     /*indirectInteraction bool is defined by us in the inspector when the script is placed
     in an object. Or according to the prefab
     Its defines if the script is in an object that changes its own state
@@ -73,52 +73,43 @@ public class Toggler : MonoBehaviour
     }
 
 
+    //muda ITemData para um short
     public void Toggle(ItemData item = null)
     {
         //this is in case the object toggles other things, lever for eg.
-        if (indirectInteraction)
+ 
+        if (toggables.Count > 0)
         {
-            if (toggables.Count > 0)
+            foreach (Toggable g in toggables)
             {
-                foreach (Toggable g in toggables)
-                {
-                    State++;
-                    g.CheckCombinations();
-                }
+                State++;
+                g.CheckCombinations();
             }
-            else
-            {
-                //objectToOpen = objectToggleList[0].GetComponent<OpenObject>();
-                //objectToOpen.Toggle();
-                //print("door was opened");
-            }
-            //this toggles the object itself, a lever, button, torch, wtv...
-            //selfToggle.Toggle(); Lever doesnt yet have animations....
         }
-        //this is for things like doors, chests or torches that dont change other things
-        else
-        {
-            if (isLocked)
-            {
-                if (item == null)
-                {
-                    print("YOU. SHALL NOT. PASS");
-                    return;
-                }
 
-                if (unlockerId == item.ID) //erro aqui
-                {
-                    selfToggle.Toggle();
-                }
-                else
-                    print("YOU. SHALL NOT. PASS");
-                //A - Show message with display and play locked sound
-                //B - just play locked sound?*/
+        //this is for things like doors, chests or torches that dont change other things
+        if (isLocked)
+        {
+            if (item == null)
+            {
+                print("YOU. SHALL NOT. PASS");
+                return;
+            }
+
+            if (unlockerId == item.ID) //erro aqui
+            {
+                selfToggle.Toggle();
             }
             else
-                selfToggle.Toggle();
+                print("YOU. SHALL NOT. PASS");
+            //A - Show message with display and play locked sound
+            //B - just play locked sound?*/
         }
+
+        
     }
+
+
     private void /*bool*/ CheckInteractionType()
     {
 

@@ -31,6 +31,10 @@ public class Toggable : MonoBehaviour
     [HideInInspector]
     public bool multipleTogglers;
 
+
+    [SerializeField]
+    private List<Toggable> toggables;
+
     //Keep both at zero if object is affected by only one toggler
     [SerializeField]
     private List<Toggler> togglers;
@@ -88,11 +92,15 @@ public class Toggable : MonoBehaviour
     private void ChangeStates()
     {
         State++;
+        ActivateOtherObjects();
+
         if (anim == null) return;
         //Cenas realcionadas com o efeito do states
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
         //Actions
+        
+
         //etc
     }
 
@@ -107,12 +115,18 @@ public class Toggable : MonoBehaviour
         if (anim == null) return;
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
-        
-        //Actions
-        
+                   
         //etc
     }
 
+
+    public void ActivateOtherObjects()
+    {
+        foreach(Toggable t in toggables)
+        {
+            t.CheckCombinations();
+        }
+    }
 
 
     //PARA TESTES
@@ -128,26 +142,3 @@ public class Toggable : MonoBehaviour
 
 }
 
-
-
-//Isto é para fazer uma cena quirky don't worry
-#if UNITY_EDITOR
-[CustomEditor(typeof(Toggable))]
-public class Toggable_Editor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector(); // for other non-HideInInspector fields
-
-        Toggable script = (Toggable)target;
-
-        // draw checkbox for the bool
-        script.multipleTogglers = EditorGUILayout.Toggle("Multiple Togglers", script.multipleTogglers);
-        if (script.multipleTogglers) // if bool is true, show other fields
-        {
-            //script.togglers = EditorGUILayout.ObjectField("Togglers", script.togglers, typeof(InputField), true) as InputField;
-            //script.wantedStateComb = EditorGUILayout.ObjectField("Wanted Comp", script.wantedStateComb, typeof(GameObject), true) as GameObject;
-        }
-    }
-}
-#endif
