@@ -23,7 +23,7 @@ public class EntityDetection : MonoBehaviour
     [SerializeField]
     private MessageDisplay mD;
     private ObjectData objectData;
-    private ManualInteractor toggler;
+    private ManualInteractor Interactor;
 
     // Bool that specifies is the player is colliding with an object
     public bool IsColliding { get; private set; }
@@ -75,8 +75,8 @@ public class EntityDetection : MonoBehaviour
                         break;
                     case InteractionType.isUsable:
                         //objectTouched.toggle? (switches bool)
-                        toggler = ObjectTouched.GetComponent<ManualInteractor>();
-                        toggler.Toggle(inventory?.equipedItem?.ID);
+                        Interactor = ObjectTouched.GetComponent<ManualInteractor>();
+                        Interactor.Toggle(inventory?.equipedItem?.ID);
                         break;
                     case InteractionType.isNPC:
                         // talk
