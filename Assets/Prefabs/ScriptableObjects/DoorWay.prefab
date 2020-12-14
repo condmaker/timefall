@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1490619195626074673}
   - component: {fileID: 2796402519594506491}
   - component: {fileID: 1209199318427189611}
-  - component: {fileID: 7430364384240424173}
   - component: {fileID: 5693877764715661044}
   - component: {fileID: 8648914897158823736}
   m_Layer: 8
@@ -118,21 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToggleList: []
-  indirectInteraction: 0
-  canUnlock: 0
---- !u!114 &7430364384240424173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490619195626074675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 135af2b85610c8e4f963941739b07969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  unlockerId: 0
+  needsItem: 1
 --- !u!114 &5693877764715661044
 MonoBehaviour:
   m_ObjectHideFlags: 0

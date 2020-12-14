@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9157220720427457285}
   - component: {fileID: 6777897603677583214}
   - component: {fileID: 1969287959497874284}
+  - component: {fileID: 565832726674984201}
   m_Layer: 8
   m_Name: Lever wall
   m_TagString: Untagged
@@ -123,11 +124,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToggleList:
-  - {fileID: 0}
   unlockerId: 0
-  indirectInteraction: 1
-  isLocked: 0
+  needsItem: 0
+--- !u!114 &565832726674984201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157220720427457286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStates: 2
 --- !u!1 &9157220720441256306
 GameObject:
   m_ObjectHideFlags: 0

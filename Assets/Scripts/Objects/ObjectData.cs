@@ -13,8 +13,8 @@ public abstract class ObjectData : ScriptableObject
     [SerializeField]
     private string     description;
     [SerializeField]
-    private int        iD;
-    public int ID => iD;
+    private short iD;
+    public short ID => iD;
 
 }
 

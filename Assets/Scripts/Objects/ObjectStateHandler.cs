@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+using System;
 
 //[RequireComponent(typeof(Animator))]
-public class Toggable : MonoBehaviour
+public class ObjectStateHandler : MonoBehaviour
 {
+    public IInteractor interactor;
 
     [SerializeField]
     private short maxStates;
@@ -26,51 +27,24 @@ public class Toggable : MonoBehaviour
             else
                 state = value;
         }
-    }
+    }  
 
-    [HideInInspector]
-    public bool multipleTogglers;
-
-
-    [SerializeField]
-    private List<Toggable> toggables;
-
-    //Keep both at zero if object is affected by only one toggler
-    [SerializeField]
-    private List<Toggler> togglers;
-    [SerializeField]
-    private List<short> wantedStateComb;
+    public event Action<ObjectStateHandler,short> OnChangeState;
 
     private Animator anim;
 
     private void Awake()
     {
+        interactor = GetComponent<IInteractor>();
+        if (interactor != null)
+        {
+            interactor.OnGoToNext += ChangeStates;          
+            interactor.OnGoToFirst += ChangeToFirst;
+            interactor.OnGoToLast += ChangeToLast;
+        }
+
         anim = GetComponent<Animator>();
     }
-
-    public void CheckCombinations()
-    {
-        List<short> currentStateComb = new List<short>();
-        //Sim, sim. Isto depois pode ser um for calem-se
-        foreach(Toggler t in togglers)
-        {
-            currentStateComb.Add(t.State);
-        }
-
-        bool isEqual = CompareCollections(wantedStateComb, currentStateComb);
-
-        if (isEqual)
-        {
-            ChangeStates();
-        }
-        else
-        {
-            //Default to first state -- 
-            //Talvez por isto como variavel mas por agora n interessa
-            ChangeStates(0);
-        }
-    }
-
 
     //Existe um cena chamada Enumerable.SequenceEqual 
     //q pode ser melhor para usar aqui
@@ -86,13 +60,14 @@ public class Toggable : MonoBehaviour
         }
         return true;
     }
-
+    //------------------------------
 
     //Change to the next state
     private void ChangeStates()
     {
         State++;
-        ActivateOtherObjects();
+        //ActivateOtherObjects();
+        OnChangeState?.Invoke(this,State);
 
         if (anim == null) return;
         //Cenas realcionadas com o efeito do states
@@ -104,30 +79,31 @@ public class Toggable : MonoBehaviour
         //etc
     }
 
+    private void ChangeToLast()
+    {
+        short mx = (short)(maxStates - 1);
+        ChangeStates(mx);
+    }
+
+    private void ChangeToFirst()
+    {
+        ChangeStates(0);
+    }
+
     //Change to the passed state
     private void ChangeStates(short wantedState)
     {
         if (State == wantedState) return;
         State = wantedState;
-
+        OnChangeState?.Invoke(this, State);
         //Cenas relacionadas com o efeito dos states
-       
+
         if (anim == null) return;
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
                    
         //etc
     }
-
-
-    public void ActivateOtherObjects()
-    {
-        foreach(Toggable t in toggables)
-        {
-            t.CheckCombinations();
-        }
-    }
-
 
     //PARA TESTES
     public void printList(ICollection c)

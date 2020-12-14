@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7822838892414544945}
   - component: {fileID: 2878307165531662253}
   - component: {fileID: 8739709534076468908}
-  - component: {fileID: 6426446513321545737}
   - component: {fileID: 5232434978273007055}
   m_Layer: 8
   m_Name: ChestCommon
@@ -98,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 7822838892414544947}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9a3e30e62ccee024097fbc768a990ee8, type: 2}
+  m_Controller: {fileID: 22100000, guid: 4ef4f372a79458242afbb09587c247a3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -133,18 +132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 12284ff5663a49c43a46c190f45bce10, type: 2}
---- !u!114 &6426446513321545737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7822838892414544947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 135af2b85610c8e4f963941739b07969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5232434978273007055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,10 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToggleList:
-  - {fileID: 0}
-  indirectInteraction: 0
-  isLocked: 1
+  unlockerId: 0
+  needsItem: 0
 --- !u!1 &7860838234965937056
 GameObject:
   m_ObjectHideFlags: 0
