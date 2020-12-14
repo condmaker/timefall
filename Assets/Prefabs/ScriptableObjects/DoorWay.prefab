@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1490619195626074678}
   - component: {fileID: 1490619195626074673}
   - component: {fileID: 2796402519594506491}
+  - component: {fileID: 4232807427322852661}
   - component: {fileID: 1209199318427189611}
   - component: {fileID: 5693877764715661044}
   - component: {fileID: 8648914897158823736}
@@ -96,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 1490619195626074675}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8c35d250d08a66842ada9aa1ae430be2, type: 2}
+  m_Controller: {fileID: 22100000, guid: ecd2a0d920822ea4cae71de2d027e733, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -105,6 +106,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4232807427322852661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490619195626074675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStates: 2
 --- !u!114 &1209199318427189611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +251,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0dba0faa01bbb514eac20b4b94c584a1, type: 2}
-  - {fileID: 2100000, guid: 48569258139fc7841896b50288225913, type: 2}
+  - {fileID: 2100000, guid: 0f298d7cee340cb428bb6052a0d595f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
