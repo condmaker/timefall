@@ -25,10 +25,13 @@ public class NodeData
     public List<string> OutPorts = new List<string>();
 
     public Rect Position { get; set; }
-    
 
-    public NodeData(string guID, string dialogue, Rect pos, List<string> outPorts)
+    public bool IsStart { get;set; }
+
+
+    public NodeData(string guID, string dialogue, Rect pos, bool start, List<string> outPorts)
     {
+        IsStart = start;
         Position = pos;
         GUID = guID;
         Dialogue = dialogue;

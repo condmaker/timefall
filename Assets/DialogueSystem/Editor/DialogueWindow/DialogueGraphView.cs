@@ -71,20 +71,6 @@ public class DialogueGraphView : GraphView
         };
         AppendDefaultItems(node);
     }
-
-    public void InstatiateDialogueNode(NodeData nd)
-    {
-        DialogueNode node = new DialogueNode
-        {
-            GUID = nd.GUID,
-            title = "",
-            DialogText = nd.Dialogue
-        };
-
-        node = AppendDefaultItems(node, nd);
-        node.SetPosition(nd.Position);
-    }
-
     public DialogueNode AppendDefaultItems(DialogueNode node, NodeData nd = null)
     {
         node.title = "Dialogue Node";
@@ -127,12 +113,92 @@ public class DialogueGraphView : GraphView
 
         return node;
     }
-
-
     private void AddPort(DialogueNode node)
     {
         Port generateOutPort = GeneratePort(node, Direction.Output);
         generateOutPort.portName = "Next";
         node.outputContainer.Add(generateOutPort);
     }
+
+
+
+    //LOAD DIALOGUE SCRIPT
+
+    internal void InstatiateDialogueNode(NodeData nd)
+    {
+        DialogueNode node = new DialogueNode
+        {
+            GUID = nd.GUID,
+            title = "",
+            DialogText = nd.Dialogue
+        };
+
+        node = AppendDefaultItems(node, nd);
+        node.SetPosition(nd.Position);
+    }
+
+    internal void InstatiateEdges(NodeData nd)
+    {
+        //ConnectStart
+
+        DialogueNode node = GetNode(nd.GUID);
+
+        for(int i = 0; i < nd.OutPorts.Count-1; i++)
+        {
+            AddPort(node);
+        }
+
+        int it = 0;
+      
+        foreach (Port p in node.outputContainer.Children())
+        {
+            if (nd.OutPorts.Count == 0) continue;
+            
+            string gui = nd.OutPorts[it];
+            DialogueNode conNode = GetNode(gui);
+
+            foreach(Port ort in conNode.inputContainer.Children())
+            {
+                AddElement(ort.ConnectTo(p));
+            }       
+            
+            it++;
+        }
+
+    }
+
+    internal void ConnectToStart(NodeData data)
+    {
+        DialogueNode start = nodes.First() as DialogueNode;
+
+
+        foreach (Port p in start.outputContainer.Children())
+        {                
+            foreach (Port ort in GetNode(data.GUID).inputContainer.Children())
+            {
+                AddElement(ort.ConnectTo(p));
+            }
+        }
+    }
+
+
+    //KILL ME PLZ
+    public DialogueNode GetNode(string id)
+    {
+        DialogueNode z = null;
+
+        nodes.ForEach(x => 
+        {
+            DialogueNode y = (x as DialogueNode);
+            if (y.GUID == id)
+                z = y;       
+        });
+
+        return z;
+
+    }
+
+   
+
+  
 }

@@ -14,26 +14,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueName: Test Dialogue
   dialogueNodes:
-  - key: 3b90098e-9845-403d-9b94-cca4c702992d
-    data:
-      guid: 3b90098e-9845-403d-9b94-cca4c702992d
-      dialogue: 
-      OutPorts:
-      - c0b1b514-72ae-435d-8ea5-ffe2fec881b3
-  - key: c0b1b514-72ae-435d-8ea5-ffe2fec881b3
-    data:
-      guid: c0b1b514-72ae-435d-8ea5-ffe2fec881b3
-      dialogue: 
-      OutPorts:
-      - b3d94075-36ae-495a-967a-97c6c0785a31
-  - key: b3d94075-36ae-495a-967a-97c6c0785a31
-    data:
-      guid: b3d94075-36ae-495a-967a-97c6c0785a31
-      dialogue: 
-      OutPorts: []
   - key: 70211b58-7cc6-477d-8c22-c061f8171438
     data:
       guid: 70211b58-7cc6-477d-8c22-c061f8171438
+      dialogue: "Isto \xE9 um cena"
+      OutPorts:
+      - 133c7c94-05c2-42fb-8956-11a7d3f71dea
+      - a25d539f-eb7b-4db2-8a47-845338e9298c
+      - b91c0784-f121-4d1d-98f5-950e1ecee764
+      - a15d2538-418e-48ef-922c-a9cea3dca67a
+  - key: 133c7c94-05c2-42fb-8956-11a7d3f71dea
+    data:
+      guid: 133c7c94-05c2-42fb-8956-11a7d3f71dea
+      dialogue: "Isto \xE9 outra cena"
+      OutPorts: []
+  - key: a25d539f-eb7b-4db2-8a47-845338e9298c
+    data:
+      guid: a25d539f-eb7b-4db2-8a47-845338e9298c
+      dialogue: Maybe demasiado Convoloted
+      OutPorts:
+      - 4a47c516-0520-42f1-93c9-85d46a3ec44c
+      - 37335c1d-1bfa-47a5-87a8-71f2287af471
+  - key: b91c0784-f121-4d1d-98f5-950e1ecee764
+    data:
+      guid: b91c0784-f121-4d1d-98f5-950e1ecee764
+      dialogue: 
+      OutPorts: []
+  - key: a15d2538-418e-48ef-922c-a9cea3dca67a
+    data:
+      guid: a15d2538-418e-48ef-922c-a9cea3dca67a
       dialogue: 
       OutPorts:
-      - 3b90098e-9845-403d-9b94-cca4c702992d
+      - 071d1bc7-a19a-42d3-aef3-c5bb092a24ae
+  - key: 4a47c516-0520-42f1-93c9-85d46a3ec44c
+    data:
+      guid: 4a47c516-0520-42f1-93c9-85d46a3ec44c
+      dialogue: Maybe demasiado Convoloted
+      OutPorts:
+      - f0536522-c5fe-4826-8df4-00bc7bae5ab1
+  - key: 37335c1d-1bfa-47a5-87a8-71f2287af471
+    data:
+      guid: 37335c1d-1bfa-47a5-87a8-71f2287af471
+      dialogue: Talve
+      OutPorts: []
+  - key: f0536522-c5fe-4826-8df4-00bc7bae5ab1
+    data:
+      guid: f0536522-c5fe-4826-8df4-00bc7bae5ab1
+      dialogue: Mais dialogo
+      OutPorts: []
+  - key: 071d1bc7-a19a-42d3-aef3-c5bb092a24ae
+    data:
+      guid: 071d1bc7-a19a-42d3-aef3-c5bb092a24ae
+      dialogue: YEp
+      OutPorts: []

@@ -6,7 +6,7 @@ using UnityEditor.Experimental.GraphView;
 
 public class SaveLoadUtils 
 {
- 
+    //This all needs a rework
     public static void SaveDialogues(string dialogueName, string file, GraphView view)
     {
         string path = $"{file}/{dialogueName}.asset";
@@ -18,19 +18,25 @@ public class SaveLoadUtils
             DialogueNode nd = n as DialogueNode;
 
             bool isConnected = false;
-
+            bool isStart = false;
             //Check if they have any imput connections
             foreach( Port p in n.inputContainer.Children())
             {
                 if (p.connected)
                 {
                     isConnected = true;
-                }
+
+                    //Check if the connection is the start
+                    foreach (Edge e in p.connections)
+                    {
+                        DialogueNode outNode = e.output.node as DialogueNode;
+                        if (outNode.title == "Start") isStart = true;
+                    }
+                }               
             }
 
             if (!isConnected)
                 continue;
-
 
             List<string> outPort = new List<string>();
             //Create list of Outport IDs
@@ -48,6 +54,7 @@ public class SaveLoadUtils
 
 
             NodeData data = new NodeData(
+                start: isStart,
                 pos: nd.GetPosition(),
                 guID: nd.GUID,
                 dialogue: nd.DialogText,
@@ -69,6 +76,14 @@ public class SaveLoadUtils
         {
             view.InstatiateDialogueNode(io.data);
         }
+
+        
+        foreach (IOData io in script)
+        {
+            if (io.data.IsStart) view.ConnectToStart(io.data);
+            view.InstatiateEdges(io.data);
+        }
+
     }
 
 }
