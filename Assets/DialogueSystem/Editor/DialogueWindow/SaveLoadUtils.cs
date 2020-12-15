@@ -14,9 +14,7 @@ public class SaveLoadUtils
         DialogueScript temp = ScriptableObject.CreateInstance<DialogueScript>();
       
         foreach (Node n in view.nodes.ToList())
-        {
-            
-
+        {           
             DialogueNode nd = n as DialogueNode;
 
             bool isConnected = false;
@@ -49,8 +47,8 @@ public class SaveLoadUtils
             }
 
 
-
             NodeData data = new NodeData(
+                pos: nd.GetPosition(),
                 guID: nd.GUID,
                 dialogue: nd.DialogText,
                 outPorts: outPort
@@ -63,9 +61,14 @@ public class SaveLoadUtils
 
         AssetDatabase.CreateAsset(temp, path);
         AssetDatabase.SaveAssets();
-
     }
 
-    
+    public static void LoadDialogues(DialogueGraphView view, DialogueScript script)
+    {       
+        foreach (IOData io in script)
+        {
+            view.InstatiateDialogueNode(io.data);
+        }
+    }
 
 }

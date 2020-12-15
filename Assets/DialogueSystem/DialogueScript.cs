@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class DialogueScript : ScriptableObject
+public class DialogueScript : ScriptableObject, IEnumerable<IOData>
 {
+
+  
     [SerializeField]
     public string DialogueName;
     private int dialogueID;
@@ -14,8 +17,9 @@ public class DialogueScript : ScriptableObject
     private List<IOData> dialogueNodes =
         new List<IOData>();
 
-    public int Count => dialogueNodes.Count; 
+    public int Count => dialogueNodes.Count;
 
+   
     public void FillDialogueDic(NodeData nd)
     {
         IOData par = new IOData(nd.GUID, nd);
@@ -45,15 +49,27 @@ public class DialogueScript : ScriptableObject
             return GetNodeByGUID(current.OutPorts?[choice]);
         return null;
     }
-        
+
+
+  
+    public IEnumerator<IOData> GetEnumerator()
+    {
+        foreach (IOData io in dialogueNodes)
+        {
+            yield return io;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
 }
 
 
 [Serializable]
 public struct IOData
-{
-
-    
+{  
     public IOData(string k, NodeData d)
     {
         key = k;

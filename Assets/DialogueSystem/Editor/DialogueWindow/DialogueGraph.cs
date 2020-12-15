@@ -14,13 +14,20 @@ public class DialogueGraph : EditorWindow
     {
         DialogueGraph window = GetWindow<DialogueGraph>();
         window.titleContent = new GUIContent(text: "Dialogue Graph");
+
+    }
+
+    public static void OpenDialogueGraphWindow(DialogueScript ds)
+    {
+        DialogueGraph window = GetWindow<DialogueGraph>();
+        window.titleContent = new GUIContent(text: ds.DialogueName);
+        SaveLoadUtils.LoadDialogues(window.graphview, ds);
     }
 
     private void OnEnable()
     {
         CreateGraphView();
         CreateToolbar();
-
     }
 
     private void CreateToolbar()

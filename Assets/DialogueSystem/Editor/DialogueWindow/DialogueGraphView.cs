@@ -9,7 +9,6 @@ using UnityEditor;
 public class DialogueGraphView : GraphView
 {
 
-   
     public DialogueGraphView()
     {
         this.AddManipulator(new ContentDragger());
@@ -58,6 +57,9 @@ public class DialogueGraphView : GraphView
         return node;
     }
 
+
+
+    
     public void CreateDialogueNode()
     {
         
@@ -67,6 +69,24 @@ public class DialogueGraphView : GraphView
             title = "",
             DialogText = ""
         };
+        AppendDefaultItems(node);
+    }
+
+    public void InstatiateDialogueNode(NodeData nd)
+    {
+        DialogueNode node = new DialogueNode
+        {
+            GUID = nd.GUID,
+            title = "",
+            DialogText = nd.Dialogue
+        };
+
+        node = AppendDefaultItems(node, nd);
+        node.SetPosition(nd.Position);
+    }
+
+    public DialogueNode AppendDefaultItems(DialogueNode node, NodeData nd = null)
+    {
         node.title = "Dialogue Node";
 
         Button butt = new Button(clickEvent: () =>
@@ -74,7 +94,7 @@ public class DialogueGraphView : GraphView
             AddPort(node);
         });
         butt.text = "Add Choice";
-        node.titleContainer.Insert(1,butt);
+        node.titleContainer.Insert(1, butt);
 
 
         //Create and Add default Output Port
@@ -92,21 +112,23 @@ public class DialogueGraphView : GraphView
 
         //Testing Only THIS EVENT NEEDS TO BE CHANGED
         //Instead of onChange it needs to be "when the user ENDS the change"
-        text.RegisterCallback<ChangeEvent<string>>((ChangeEvent<string> evt)  =>
+        text.RegisterCallback<ChangeEvent<string>>((ChangeEvent<string> evt) =>
         {
             node.DialogText = evt.newValue;
         });
         text.multiline = true;
-        text.value = "\n\n\n";
+        text.value = $"{nd?.Dialogue}\n\n\n";
         node.mainContainer.Insert(1, text);
 
         node.RefreshExpandedState();
         node.RefreshPorts();
 
         AddElement(node);
+
+        return node;
     }
 
-   
+
     private void AddPort(DialogueNode node)
     {
         Port generateOutPort = GeneratePort(node, Direction.Output);

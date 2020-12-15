@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class NodeData
@@ -24,9 +24,12 @@ public class NodeData
 
     public List<string> OutPorts = new List<string>();
 
+    public Rect Position { get; set; }
+    
 
-    public NodeData(string guID, string dialogue, List<string> outPorts)
+    public NodeData(string guID, string dialogue, Rect pos, List<string> outPorts)
     {
+        Position = pos;
         GUID = guID;
         Dialogue = dialogue;
         OutPorts = outPorts;
