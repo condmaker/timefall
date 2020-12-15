@@ -11,7 +11,7 @@ Shader "psx/litshadow" {
 		_ShadowIntensity("Shadow Intensity", Range(0, 1)) = 0.6
 	}
 		SubShader{
-			Tags { "RenderType" = "Opaque" "LightMode" = "ForwardAdd"}
+			Tags { "RenderType" = "Opaque" "LightMode" = "Vertex"}
 			LOD 200
 
 			Pass {
@@ -21,7 +21,6 @@ Shader "psx/litshadow" {
 
 					#pragma vertex vert
 					#pragma fragment frag
-					#pragma multi_compile_fwdadd_fullshadows
 					#pragma target 3.0 
 					#include "UnityCG.cginc"
 					#include "AutoLight.cginc"
@@ -33,7 +32,7 @@ Shader "psx/litshadow" {
 						half4 colorFog : COLOR1;
 						float2 uv_MainTex : TEXCOORD0;
 						half3 normal : TEXCOORD1;
-						LIGHTING_COORDS(2,3)
+						LIGHTING_COORDS(TEXCOORD0,TEXCOORD1)
 
 					};
 
@@ -59,6 +58,8 @@ Shader "psx/litshadow" {
 						o.color = float4(ShadeVertexLightsFull(v.vertex, v.normal, 4, true), 1.0);
 						o.color *= v.color;
 
+						TRANSFER_VERTEX_TO_FRAGMENT(o);
+
 						float distance = length(UnityObjectToViewPos(v.vertex));
 
 						//Affine Texture Mapping
@@ -83,8 +84,6 @@ Shader "psx/litshadow" {
 							o.pos = 0;
 						}
 
-						TRANSFER_VERTEX_TO_FRAGMENT(o);
-
 						return o;
 					}
 
@@ -94,16 +93,16 @@ Shader "psx/litshadow" {
 					{
 						float atten = LIGHT_ATTENUATION(IN);
 
-						half4 c = tex2D(_MainTex, IN.uv_MainTex) * IN.color * (atten * 2);
-						half4 color = c * (IN.colorFog.a) * atten;
-						color.rgb += (IN.colorFog.rgb * (1 - IN.colorFog.a)) * (atten * 2);
+						half4 c = tex2D(_MainTex, IN.uv_MainTex / IN.normal.r) * IN.color;
+						half4 color = c * (IN.colorFog.a);
+						color.rgb += (IN.colorFog.rgb * (1 - IN.colorFog.a));
 
-						return color * atten;
+						return color;
 					}
 
 				ENDCG
 			}
 	}
 	
-	Fallback "Specular"
+	Fallback "VertexLit"
 }
