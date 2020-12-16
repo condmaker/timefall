@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class BrightnessSlider : MonoBehaviour
 {
-
-    [SerializeField]
     private float gammaCorrection;
     private Slider slider;
 
