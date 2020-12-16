@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
-using UnityEditorInternal;
 using UnityEngine;
 
 // !!! Sync EntityDetection with PlayerInput after timers have been sorted
