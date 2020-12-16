@@ -45,7 +45,6 @@ public class EntityDetection : MonoBehaviour
             // This could be better
             if ((ObjectTouched.layer == 8) || (ObjectTouched.layer == 9))
             {
-                print(ObjectTouched);
                 objectData = ObjectTouched.GetComponent<DataHolder>().GetData;
                 // This only appears for certain objects like levers and stuff,
                 // but not for other world objects like walls, so we need to 
