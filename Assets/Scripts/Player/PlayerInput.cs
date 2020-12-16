@@ -9,6 +9,13 @@ public class PlayerInput : MonoBehaviour
     private PlayerMovement  pM;
     private EntityDetection eD;
 
+    [SerializeField]
+    private AudioClip stepSoundA;
+    [SerializeField]
+    private AudioClip stepSoundB;
+
+    private bool soundSwitch;
+
     // May become readonly later for performance purposes, support variables
     // for move distance and time wasted on each step/rotation
     [SerializeField]
@@ -61,7 +68,15 @@ public class PlayerInput : MonoBehaviour
         {
             // Move forward
             if (Input.GetKey(KeyCode.W) && !LookUp)
+            {
+                if (soundSwitch && !IsWalking)
+                    SoundMng.instance?.PlaySound(stepSoundA, transform.position);
+                else if (!soundSwitch && !IsWalking)
+                    SoundMng.instance?.PlaySound(stepSoundB, transform.position);
+                soundSwitch = !soundSwitch;
+
                 IsWalking = true;
+            }
             // Look Up
             else if (Input.GetKey(KeyCode.S)) LookUp = true;
             // Rotate Left

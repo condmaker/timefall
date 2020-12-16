@@ -34,7 +34,6 @@ public class TogglerInteractor : MonoBehaviour, IInteractor
         if (currentStates.ContainsKey(osh))
         {
             currentStates[osh] = state;
-            
         }
         CheckCompatibility(osh);
     }
