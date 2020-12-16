@@ -20,14 +20,18 @@ public class ManualInteractor : MonoBehaviour, IInteractor
     public event Action<short> OnGoTo;
 
 
-    public void Toggle(short? itemId)
+    public bool Toggle(short? itemId)
     {
         if (unlockerId == itemId || !needsItem)
         {
             OnGoToNext?.Invoke();
+            if (needsItem)
+            {
+                return true;
+            }
         }
-        else
-            print("YOU. SHALL NOT. PASS");              
+        return false;
+
     }
 }
 

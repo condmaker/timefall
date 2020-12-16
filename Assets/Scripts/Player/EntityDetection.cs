@@ -76,7 +76,11 @@ public class EntityDetection : MonoBehaviour
                     case InteractionType.isUsable:
                         //objectTouched.toggle? (switches bool)
                         interactor = ObjectTouched.GetComponent<ManualInteractor>();
-                        interactor.Toggle(inventory?.equipedItem?.ID);
+                        bool itemused  = interactor.Toggle(inventory?.equipedItem?.ID);
+                        if (itemused)
+                        {
+                            inventory.ClearEquiped();
+                        }
                         break;
                     case InteractionType.isNPC:
                         // talk

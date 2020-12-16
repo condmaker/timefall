@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class InventoryHandler : MonoBehaviour
     
     [SerializeField]
     public ItemData equipedItem { get; private set; }
+    private InventorySlot currentSlot;
 
     /// <summary>
     /// Adds the given item to an empty slot in the invetory
@@ -20,6 +22,7 @@ public class InventoryHandler : MonoBehaviour
         {
             if (!s.IsEmpty)
             {
+
                 s.DisplayItem(item);
                 break;
             }
@@ -34,15 +37,20 @@ public class InventoryHandler : MonoBehaviour
 
     public void EquipItem(InventorySlot slot)
     {
-        equipedItem = slot.CurrentItem;      
-        foreach(InventorySlot iS in slots)
+        equipedItem = slot.CurrentItem;
+        currentSlot = slot;
+
+
+        foreach (InventorySlot iS in slots)
         {
+ 
             iS.DeativateSlot();
         }
     }
 
-    public void DropItem()
+    internal void ClearEquiped()
     {
-
+        currentSlot.DeativateSlot();
+        currentSlot.CleanDisplay();
     }
 }
