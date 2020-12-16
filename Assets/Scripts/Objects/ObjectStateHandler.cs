@@ -77,7 +77,8 @@ public class ObjectStateHandler : MonoBehaviour
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
         //Actions
-        SoundMng.instance.PlaySound(sound, transform.position);
+        if(sound != null)
+            SoundMng.instance.PlaySound(sound, transform.position);
 
         //etc
     }

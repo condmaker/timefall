@@ -23,7 +23,7 @@ public class EntityDetection : MonoBehaviour
     [SerializeField]
     private MessageDisplay mD;
     private ObjectData objectData;
-    private ManualInteractor interactor;
+    private IManualInteractor interactor;
 
     // Bool that specifies is the player is colliding with an object
     public bool IsColliding { get; private set; }
@@ -45,6 +45,7 @@ public class EntityDetection : MonoBehaviour
             // This could be better
             if ((ObjectTouched.layer == 8) || (ObjectTouched.layer == 9))
             {
+                print(ObjectTouched);
                 objectData = ObjectTouched.GetComponent<DataHolder>().GetData;
                 // This only appears for certain objects like levers and stuff,
                 // but not for other world objects like walls, so we need to 
@@ -75,7 +76,7 @@ public class EntityDetection : MonoBehaviour
                         break;
                     case InteractionType.isUsable:
                         //objectTouched.toggle? (switches bool)
-                        interactor = ObjectTouched.GetComponent<ManualInteractor>();
+                        interactor = ObjectTouched.GetComponent<IManualInteractor>();
                         bool itemused  = interactor.Toggle(inventory?.equipedItem?.ID);
                         if (itemused)
                         {

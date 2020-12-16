@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 
 
-public class ManualInteractor : MonoBehaviour, IInteractor
+public class ManualInteractor : MonoBehaviour, IManualInteractor
 {
 
     [SerializeField]
@@ -33,6 +33,7 @@ public class ManualInteractor : MonoBehaviour, IInteractor
         return false;
 
     }
+
 }
 
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

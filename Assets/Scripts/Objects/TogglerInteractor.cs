@@ -17,7 +17,7 @@ public class TogglerInteractor : MonoBehaviour, IInteractor
 
     private Dictionary<ObjectStateHandler, short> currentStates;
 
-    private void OnEnable()
+    private void Awake()
     {
         currentStates = new Dictionary<ObjectStateHandler, short>();
 

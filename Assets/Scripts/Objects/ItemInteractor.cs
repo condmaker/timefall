@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemInteractor : MonoBehaviour, IInteractor
+public class ItemInteractor : MonoBehaviour, IManualInteractor
 {
     //Eu acho q tem de ser public. 
     public event Action OnGoToLast;
@@ -13,7 +13,7 @@ public class ItemInteractor : MonoBehaviour, IInteractor
     [SerializeField]
     private List<ItemState> unlockers;
 
-    public void Toggle(short? itemId)
+    public bool Toggle(short? itemId)
     {
 
         foreach(ItemState i in unlockers)
@@ -21,16 +21,17 @@ public class ItemInteractor : MonoBehaviour, IInteractor
             if(itemId == i.id)
             {
                 OnGoTo.Invoke(i.state);
+                return true;
             }
         }
+        return false;
     }
-
 }
 
 
 [Serializable]
 public class ItemState
 {
-    public int id;
+    public short id;
     public short state;
 }
