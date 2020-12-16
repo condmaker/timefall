@@ -39,8 +39,8 @@ public class ObjectStateHandler : MonoBehaviour
         if (interactor != null)
         {
             interactor.OnGoToNext += ChangeStates;          
-            interactor.OnGoToFirst += ChangeToFirst;
             interactor.OnGoToLast += ChangeToLast;
+            interactor.OnGoTo += ChangeToState;
         }
 
         anim = GetComponent<Animator>();
@@ -82,16 +82,11 @@ public class ObjectStateHandler : MonoBehaviour
     private void ChangeToLast()
     {
         short mx = (short)(maxStates - 1);
-        ChangeStates(mx);
-    }
-
-    private void ChangeToFirst()
-    {
-        ChangeStates(0);
+        ChangeToState(mx);
     }
 
     //Change to the passed state
-    private void ChangeStates(short wantedState)
+    private void ChangeToState(short wantedState)
     {
         if (State == wantedState) return;
         State = wantedState;

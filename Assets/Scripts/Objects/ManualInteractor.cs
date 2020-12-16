@@ -13,11 +13,12 @@ public class ManualInteractor : MonoBehaviour, IInteractor
     
     [SerializeField]
     private bool needsItem;
-    
+
     //Eu acho q tem de ser public. 
-    public event Action OnGoToFirst;
     public event Action OnGoToLast;
     public event Action OnGoToNext;
+    public event Action<short> OnGoTo;
+
 
     public void Toggle(short? itemId)
     {
