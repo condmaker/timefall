@@ -2,7 +2,7 @@
 
 public interface IInteractor
 {
-    event Action OnGoToFirst;
     event Action OnGoToLast;
     event Action OnGoToNext;
+    event Action<short> OnGoTo;
 }

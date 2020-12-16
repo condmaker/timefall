@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class TogglerInteractor : MonoBehaviour, IInteractor
 {
-    public event Action OnGoToFirst;
     public event Action OnGoToLast;
     public event Action OnGoToNext;
+    public event Action<short> OnGoTo;
+
 
     private bool wasTriggered;
 
@@ -71,7 +72,7 @@ public class TogglerInteractor : MonoBehaviour, IInteractor
         {
             if (wasTriggered)
             {
-                OnGoToFirst?.Invoke();
+                OnGoTo?.Invoke(0);
                 wasTriggered = false;
             }
         }
