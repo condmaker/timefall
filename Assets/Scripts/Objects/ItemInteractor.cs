@@ -13,17 +13,40 @@ public class ItemInteractor : MonoBehaviour, IManualInteractor
     [SerializeField]
     private List<ItemState> unlockers;
 
-    public bool Toggle(short? itemId)
-    {
+    [SerializeField]
+    bool NeedAll;
+    [SerializeField]
+    int itemsAdded;
 
+
+
+    public bool Toggle(short? itemId)
+    {        
         foreach(ItemState i in unlockers)
         {
             if(itemId == i.id)
             {
-                OnGoTo.Invoke(i.state);
+                itemsAdded++;
+                if (!NeedAll)
+                {
+                    OnGoTo.Invoke(i.state);
+                }
+                else
+                {
+                    if (itemsAdded == unlockers.Count)
+                    {
+                        OnGoTo.Invoke(1);
+                    }
+                }
                 return true;
             }
         }
+
+        if (NeedAll)
+        {
+           
+        }
+
         return false;
     }
 }
