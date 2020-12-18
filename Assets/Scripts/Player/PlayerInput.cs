@@ -67,7 +67,7 @@ public class PlayerInput : MonoBehaviour
         if (CanInput)
         {
             // Move forward
-            if (Input.GetKey(KeyCode.W) && !LookUp)
+            if (Input.GetKey(KeyCode.W) && !LookUp && !isLookingUp)
             {
                 if (soundSwitch && !IsWalking)
                     SoundMng.instance?.PlaySound(stepSoundA, transform.position);
