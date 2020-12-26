@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: FernandoMeireles
+  m_EditorClassIdentifier: 
+  DialogueName: FernandoMeireles
+  dialogueNodes:
+  - key: 9037a059-3ca6-4a6c-b53a-dbaf5bbfe7d6
+    data:
+      guid: 9037a059-3ca6-4a6c-b53a-dbaf5bbfe7d6
+      dialogue: Yo eu sou o Fernando Meireles
+      OutPorts:
+      - 963404ac-3c1b-494c-9189-483fc3b2ce0f
+      - af4c9901-3174-4cc5-aa79-16dba8e597f9
+  - key: af4c9901-3174-4cc5-aa79-16dba8e597f9
+    data:
+      guid: af4c9901-3174-4cc5-aa79-16dba8e597f9
+      dialogue: "...n\xE3o? Eu acho q sei qual \xE9 o meu nome"
+      OutPorts:
+      - 8943efad-0ded-4c17-88e9-05df5ecfcbc4
+      - a0803a13-b4e8-454e-8cf6-dbbe3f92d59e
+  - key: 8943efad-0ded-4c17-88e9-05df5ecfcbc4
+    data:
+      guid: 8943efad-0ded-4c17-88e9-05df5ecfcbc4
+      dialogue: "Pois e ele \xE9 Fernando Meireles"
+      OutPorts:
+      - 83bf65b7-ab30-4add-9dca-c445768dbe5c
+  - key: a0803a13-b4e8-454e-8cf6-dbbe3f92d59e
+    data:
+      guid: a0803a13-b4e8-454e-8cf6-dbbe3f92d59e
+      dialogue: "Ent\xE3o qual \xE9 o meu nome?"
+      OutPorts:
+      - 7181b47a-c5ac-4cf5-ad23-6604aa0ca5d7
+      - 81592805-8c69-4444-8481-bc1c24981a55
+  - key: 81592805-8c69-4444-8481-bc1c24981a55
+    data:
+      guid: 81592805-8c69-4444-8481-bc1c24981a55
+      dialogue: "Yo eu sou o N\xE3o... estas feliz?"
+      OutPorts: []
+  - key: 7181b47a-c5ac-4cf5-ad23-6604aa0ca5d7
+    data:
+      guid: 7181b47a-c5ac-4cf5-ad23-6604aa0ca5d7
+      dialogue: Yo eu sou o Sim.... estas feliz?
+      OutPorts: []
+  - key: 83bf65b7-ab30-4add-9dca-c445768dbe5c
+    data:
+      guid: 83bf65b7-ab30-4add-9dca-c445768dbe5c
+      dialogue: Ainda bem que concordamos
+      OutPorts: []
+  - key: 79ef1845-4313-46d9-b384-53cabae07dfe
+    data:
+      guid: 79ef1845-4313-46d9-b384-53cabae07dfe
+      dialogue: Tu es estranho
+      OutPorts: []
+  - key: 963404ac-3c1b-494c-9189-483fc3b2ce0f
+    data:
+      guid: 963404ac-3c1b-494c-9189-483fc3b2ce0f
+      dialogue: "... eu sei que sim... \xE9 o meu nome"
+      OutPorts:
+      - 79ef1845-4313-46d9-b384-53cabae07dfe

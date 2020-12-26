@@ -22,6 +22,8 @@ public class EntityDetection : MonoBehaviour
 
     [SerializeField]
     private MessageDisplay mD;
+    [SerializeField]
+    private DialogueDisplayHandler dDH;
     private ObjectData objectData;
     private IManualInteractor interactor;
 
@@ -45,7 +47,6 @@ public class EntityDetection : MonoBehaviour
             // This could be better
             if ((ObjectTouched.layer == 8) || (ObjectTouched.layer == 9))
             {
-                print(ObjectTouched);
                 objectData = ObjectTouched.GetComponent<DataHolder>().GetData;
                 // This only appears for certain objects like levers and stuff,
                 // but not for other world objects like walls, so we need to 
@@ -84,7 +85,9 @@ public class EntityDetection : MonoBehaviour
                         }
                         break;
                     case InteractionType.isNPC:
-                        // talk
+                        DialogueContainer dC = 
+                            ObjectTouched.GetComponent<DialogueContainer>();
+                        dDH.StartDialolgue(dC.Dialogue);
                         break;
                     default:
                         print("Porque é que essa coisa é trigger ?");
