@@ -41,7 +41,10 @@ public class DialogueGraph : EditorWindow
         
         Button saveButton = new Button(clickEvent: () =>
         {
-            SaveLoadUtils.SaveDialogues("Test Dialogue", "Assets",graphview);
+
+            //Open popUp window
+
+            SaveLoadUtils.SaveDialogues("Test Dialogue", "Dialogues", graphview);
         });
 
         nodeCreateButton.text = "Create Node";

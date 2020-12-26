@@ -35,7 +35,6 @@ public class DialogueGraphView : GraphView
         return node.InstantiatePort(Orientation.Horizontal, portDirection, capacity, typeof(string));
     }
 
-
     private DialogueNode GenerateFirstNode()
     {
         DialogueNode node = new DialogueNode
@@ -181,8 +180,6 @@ public class DialogueGraphView : GraphView
         }
     }
 
-
-    //KILL ME PLZ
     public DialogueNode GetNode(string id)
     {
         DialogueNode z = null;

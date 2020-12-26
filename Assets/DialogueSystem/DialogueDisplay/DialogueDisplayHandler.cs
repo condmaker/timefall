@@ -34,8 +34,15 @@ public class DialogueDisplayHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    public void StartDialolgue(DialogueScript script)
+    {
+        currentScript = script;
         PrepareNewDialogue();
     }
+
 
     // Update is called once per frame
     void Update()

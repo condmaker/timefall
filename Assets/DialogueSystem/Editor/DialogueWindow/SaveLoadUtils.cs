@@ -52,7 +52,6 @@ public class SaveLoadUtils
                 }
             }
 
-
             NodeData data = new NodeData(
                 start: isStart,
                 pos: nd.GetPosition(),
