@@ -6,19 +6,31 @@ using UnityEditor.Experimental.GraphView;
 
 public class SaveLoadUtils 
 {
-    //This all needs a rework
-    public static void SaveDialogues(string dialogueName, string file, GraphView view)
+    //This all needs a rework  
+    public static void SaveDialogues(GraphView view, string dialogueName)
     {
-        string path = $"{file}/{dialogueName}.asset";
-        //string path = $"Assets/temp.asset";
+        if (dialogueName == null)
+            dialogueName = "InitialName";
+
+        //https://answers.unity.com/questions/437391/prompting-dialogue-box-for-input-in-editor.html
+        string path = 
+            EditorUtility.SaveFilePanelInProject("Save Your Dialogue",
+            dialogueName + ".asset", "asset", 
+            "Please select file name to save dialogue to:",
+            "Assets/DialogueSystem/Dialogues");
+
+        if (string.IsNullOrEmpty(path)) return;
+
         DialogueScript temp = ScriptableObject.CreateInstance<DialogueScript>();
       
+        
         foreach (Node n in view.nodes.ToList())
         {           
             DialogueNode nd = n as DialogueNode;
 
             bool isConnected = false;
             bool isStart = false;
+
             //Check if they have any imput connections
             foreach( Port p in n.inputContainer.Children())
             {
@@ -61,8 +73,13 @@ public class SaveLoadUtils
                 );
 
             temp.FillDialogueDic(data);
-        }    
-        temp.DialogueName = dialogueName;
+        }
+
+
+
+        string[] dir = path.Split('/');
+
+        temp.DialogueName = dir[dir.Length - 1].Replace(".asset","");
 
 
         AssetDatabase.CreateAsset(temp, path);
@@ -70,7 +87,9 @@ public class SaveLoadUtils
     }
 
     public static void LoadDialogues(DialogueGraphView view, DialogueScript script)
-    {       
+    {
+        view.DialogueName = script.DialogueName;
+
         foreach (IOData io in script)
         {
             view.InstatiateDialogueNode(io.data);

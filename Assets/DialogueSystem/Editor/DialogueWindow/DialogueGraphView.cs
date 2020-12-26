@@ -9,6 +9,8 @@ using UnityEditor;
 public class DialogueGraphView : GraphView
 {
 
+    public string DialogueName { get; set; }
+
     public DialogueGraphView()
     {
         this.AddManipulator(new ContentDragger());

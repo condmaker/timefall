@@ -9,6 +9,7 @@ public class DialogueGraph : EditorWindow
 {
     private DialogueGraphView graphview;
 
+
     [MenuItem("Graph/Dialogue Graph")]
     public static void OpenDialogueGraphWindow()
     {
@@ -44,7 +45,7 @@ public class DialogueGraph : EditorWindow
 
             //Open popUp window
 
-            SaveLoadUtils.SaveDialogues("Test Dialogue", "Dialogues", graphview);
+            SaveLoadUtils.SaveDialogues(graphview, graphview.DialogueName);
         });
 
         nodeCreateButton.text = "Create Node";
