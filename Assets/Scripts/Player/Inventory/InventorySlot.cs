@@ -39,11 +39,11 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     public void ActivateSlot()
     {
-        GetComponent<Image>().color = Color.black;
+        //GetComponent<Image>().color = Color.black;
     }
     public void DeativateSlot()
     {
-        GetComponent<Image>().color = colorNone;
+        //GetComponent<Image>().color = colorNone;
     }
 
     /// <summary>
@@ -60,7 +60,6 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         inventory.EquipItem(this);
-        ActivateSlot();
     }
 }
 
