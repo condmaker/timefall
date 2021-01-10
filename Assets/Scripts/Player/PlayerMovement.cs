@@ -2,6 +2,7 @@
 // Fix the bug where looking up on other rotations makes the player look 
 // sideways or down
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -72,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         if (TimeCounter <= 0)
         {
             playerBody.velocity = Vector3.zero;
+            //Debug.Log(adjustPos);
             if (bump) transform.position = adjustPos;
         }
     }
