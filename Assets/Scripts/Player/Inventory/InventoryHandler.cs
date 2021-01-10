@@ -12,6 +12,8 @@ public class InventoryHandler : MonoBehaviour
     public ItemData equipedItem { get; private set; }
     private InventorySlot currentSlot;
 
+    
+
     /// <summary>
     /// Adds the given item to an empty slot in the invetory
     /// </summary>
