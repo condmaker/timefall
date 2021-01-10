@@ -15,6 +15,16 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     private Image itemImage;
     public ItemData CurrentItem { get; private set; }
 
+    private Color colorNone;
+    private Color colorFull;
+
+    void Start()
+    {
+        colorNone = itemImage.color;
+        colorFull = itemImage.color;
+        colorFull.a = 100;
+    }
+
     /// <summary>
     /// Displays the given item in the invetory slot
     /// </summary>
@@ -23,6 +33,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     {
         CurrentItem = item;
         itemImage.sprite = item.UIobjectSprite;
+        itemImage.color = colorFull;
         IsEmpty = true;
     }
 
@@ -32,7 +43,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     }
     public void DeativateSlot()
     {
-        GetComponent<Image>().color = Color.white;
+        GetComponent<Image>().color = colorNone;
     }
 
     /// <summary>
@@ -42,6 +53,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     {
         CurrentItem = null;
         itemImage.sprite = null;
+        itemImage.color = colorNone;
         IsEmpty = false;
     }
 
