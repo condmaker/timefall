@@ -32,6 +32,9 @@ public class ObjectStateHandler : MonoBehaviour
     [SerializeField]
     private AudioClip sound;
 
+    [SerializeField]
+    private SoundMng soundManager;
+
     public event Action<ObjectStateHandler,short> OnChangeState;
 
     private Animator anim;
@@ -78,7 +81,7 @@ public class ObjectStateHandler : MonoBehaviour
         anim.SetTrigger("ChangeState");
         //Actions
         if(sound != null)
-            SoundMng.instance.PlaySound(sound, transform.position);
+            soundManager.PlaySound(sound, transform.position);
 
         //etc
     }

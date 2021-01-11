@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SoundMng : MonoBehaviour
+[CreateAssetMenu(menuName = "SoundMng")]
+public class SoundMng : ScriptableObject
 {
-    static public SoundMng instance;
     [SerializeField]
     private AudioMixerGroup master;
 
@@ -14,16 +14,6 @@ public class SoundMng : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-
-        DontDestroyOnLoad(gameObject);
-
         audioSources = new List<AudioSource>();
     }
 
@@ -71,7 +61,6 @@ public class SoundMng : MonoBehaviour
         GameObject gObject = new GameObject();
         gObject.name = "SoundEffect";
         gObject.transform.position = pos;
-        gObject.transform.parent = transform;
         AudioSource audioSource = gObject.AddComponent<AudioSource>();
 
         audioSources.Add(audioSource);

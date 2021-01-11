@@ -13,6 +13,8 @@ public class PlayerInput : MonoBehaviour
     private AudioClip stepSoundA;
     [SerializeField]
     private AudioClip stepSoundB;
+    [SerializeField]
+    private SoundMng soundManager;
 
     private bool soundSwitch;
 
@@ -70,9 +72,9 @@ public class PlayerInput : MonoBehaviour
             if (Input.GetKey(KeyCode.W) && !LookUp && !isLookingUp)
             {
                 if (soundSwitch && !IsWalking)
-                    SoundMng.instance?.PlaySound(stepSoundA, transform.position);
+                    soundManager.PlaySound(stepSoundA, transform.position);
                 else if (!soundSwitch && !IsWalking)
-                    SoundMng.instance?.PlaySound(stepSoundB, transform.position);
+                    soundManager.PlaySound(stepSoundB, transform.position);
                 soundSwitch = !soundSwitch;
 
                 IsWalking = true;
