@@ -7,9 +7,11 @@ public class InventoryHandler : MonoBehaviour
 {
     [SerializeField]
     private InventorySlot[] slots;
-    
-    [SerializeField]
-    public ItemData equipedItem { get; private set; }
+
+
+    public ItemData equipedItem => currentSlot.CurrentItem;
+
+ 
     private InventorySlot currentSlot;
     [SerializeField]
     private GameObject selector;    
@@ -39,7 +41,7 @@ public class InventoryHandler : MonoBehaviour
     public void EquipItem(InventorySlot slot)
     {
         selector.SetActive(true);
-        equipedItem = slot.CurrentItem;
+        
         currentSlot = slot;
         selector.transform.position = currentSlot.transform.position;
 
