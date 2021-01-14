@@ -17,11 +17,11 @@ public class ItemInteractor : MonoBehaviour, IManualInteractor
     [SerializeField]
     bool NeedAll;
 
-    private ICollection<ItemState> itemsAdded;
+    private ICollection<ItemData> itemsAdded;
 
     public void Awake()
     {
-        itemsAdded = new List<ItemState>();
+        itemsAdded = new List<ItemData>();
     }
 
     public bool Toggle(ItemData itemId)
@@ -30,50 +30,42 @@ public class ItemInteractor : MonoBehaviour, IManualInteractor
 
         addData?.Invoke(itemId);
 
-        foreach(ItemState i in unlockers)
+        itemsAdded.Clear();
+        //Check if there was an update
+        foreach(Transform t in transform)
         {
-            if(itemId.ID == i.id)
-            {
-                
-                itemsAdded.Add(i);
+            itemsAdded.Add(
+                t.gameObject.GetComponent<DataHolder>().GetData as ItemData);
+        }
 
-                if (!NeedAll)
-                {
-                    OnGoTo.Invoke(i.state);
-                }
-                else
-                {
-                    print(1);
-                    if (IsCombCorrect(unlockers, itemsAdded))
-                    {
-                        print(2);
-                        OnGoTo.Invoke(1);
-                    }
-                }
-                return true;
-            }
+        if (IsCombCorrect(unlockers, itemsAdded))
+        {
+            OnGoTo.Invoke(1);
+        }
+        else
+        {
+            //Wrong Weight
+            OnGoTo.Invoke(0);
         }
         
-        return false;
+        return true;
     }
 
 
-    public bool IsCombCorrect(IList<ItemState> comb, ICollection<ItemState> toCheck )
+    public bool IsCombCorrect(IList<ItemState> comb, ICollection<ItemData> toCheck )
     {
         bool result = true;
         int it = 0;
 
         if (comb.Count != toCheck.Count)
         {
-            print(comb.Count + " " + toCheck.Count);
             return false;
         }
 
-        foreach(ItemState iS in toCheck)
+        foreach(ItemData iS in toCheck)
         {
             if(!comb[it].Equals(iS))
-            {
-                
+            {          
                 result = false;
                 break;
             }
@@ -87,13 +79,13 @@ public class ItemInteractor : MonoBehaviour, IManualInteractor
 
 
 [Serializable]
-public struct ItemState: IEquatable<ItemState>
+public struct ItemState: IEquatable<ItemData>
 {
     public short id;
     public short state;
 
-    public bool Equals(ItemState other)
+    public bool Equals(ItemData other)
     {
-        return id == other.id;
+        return id == other.ID;
     }
 }

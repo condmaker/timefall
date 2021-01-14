@@ -22,7 +22,8 @@ public class ManualInteractor : MonoBehaviour, IManualInteractor
 
     public bool Toggle(ItemData itemId)
     {
-        if (unlockerId == itemId.ID || !needsItem)
+
+        if (unlockerId == itemId?.ID || !needsItem)
         {
             OnGoToNext?.Invoke();
             if (needsItem)

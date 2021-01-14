@@ -23,6 +23,7 @@ public class ScaleAddItem : MonoBehaviour
     {
         dH.enabled = false;
         GameObject item = Instantiate(itemPrefab, transform.position, Quaternion.identity, transform);
+        item.GetComponent<MeshFilter>().mesh = iData.Mesh;
         DataHolder itemDH =  item.GetComponent<DataHolder>();
         itemDH.GetData = iData;
         
