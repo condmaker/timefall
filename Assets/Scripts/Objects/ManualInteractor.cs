@@ -20,9 +20,9 @@ public class ManualInteractor : MonoBehaviour, IManualInteractor
     public event Action<short> OnGoTo;
 
 
-    public bool Toggle(short? itemId)
+    public bool Toggle(ItemData itemId)
     {
-        if (unlockerId == itemId || !needsItem)
+        if (unlockerId == itemId.ID || !needsItem)
         {
             OnGoToNext?.Invoke();
             if (needsItem)
@@ -31,37 +31,6 @@ public class ManualInteractor : MonoBehaviour, IManualInteractor
             }
         }
         return false;
-
     }
-
 }
 
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-/*
-[CustomEditor(typeof(ManualInteractor))]
- public class ManualInteractorEditor : Editor
-{
-
-    private SerializedProperty needsItem;
-    private SerializedProperty unlockerId;
-
-    protected virtual void OnEnable()
-    {
-        needsItem = serializedObject.FindProperty("needsItem");
-        unlockerId = serializedObject.FindProperty("unlockerId");
-    }
-
-    public override void OnInspectorGUI()
-    {
-
-        DrawDefaultInspector();
-
-        needsItem. = GUILayout.Toggle(needsItem.boolValue, "Needs Item");
-        if (needsItem.boolValue == true)
-        {
-            unlockerId.intValue = (short)EditorGUILayout.IntField("Item ID", unlockerId.intValue);
-        }
-    }
-    
-}
-*/
