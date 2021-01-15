@@ -18437,6 +18437,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381482897}
   m_Mesh: {fileID: 6698758042504535158, guid: 1dbf5e3eac2b85645b9eb5934457c51c, type: 3}
+--- !u!21 &381823088
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &381942388
 GameObject:
   m_ObjectHideFlags: 0
@@ -94878,6 +94909,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5660589260681292895, guid: 0d938516c5423ef4299d973d4884d3d3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6207362450255627444, guid: 0d938516c5423ef4299d973d4884d3d3, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -95012,6 +95047,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d938516c5423ef4299d973d4884d3d3, type: 3}
+--- !u!114 &6310271034435949189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5660589262643409192, guid: 0d938516c5423ef4299d973d4884d3d3, type: 3}
+  m_PrefabInstance: {fileID: 6310271034435949188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61335eb853a1e54ab3a46aed02ad453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &6375836591782089229
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95652,6 +95698,10 @@ PrefabInstance:
       propertyPath: mD
       value: 
       objectReference: {fileID: 500597754}
+    - target: {fileID: 7691713904668082375, guid: 5c61ec4986495d44399ed826f40acf83, type: 3}
+      propertyPath: dialogueHandler
+      value: 
+      objectReference: {fileID: 6310271034435949189}
     - target: {fileID: 7691713904668082491, guid: 5c61ec4986495d44399ed826f40acf83, type: 3}
       propertyPath: soundManager
       value: 
