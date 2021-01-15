@@ -104,6 +104,8 @@ GameObject:
   - component: {fileID: 4886100438256702424}
   - component: {fileID: 7217613496706082578}
   - component: {fileID: 9163384108969395910}
+  - component: {fileID: 4225282947767520471}
+  - component: {fileID: 7660620941634010088}
   m_Layer: 0
   m_Name: Pillar Fire 1
   m_TagString: Untagged
@@ -195,3 +197,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4225282947767520471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163384108969395911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStates: 2
+  state: 0
+  sound: {fileID: 0}
+  soundManager: {fileID: 0}
+--- !u!114 &7660620941634010088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163384108969395911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299f3d557e90cc841baf2b3fe34b8a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wantedStates:
+  - osh: {fileID: 0}
+    state: 1
+    any: 0
