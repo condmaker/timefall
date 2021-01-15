@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1271906964353379146}
   - component: {fileID: 697287914424419490}
   - component: {fileID: 1088055493542132934}
-  - component: {fileID: 4611641208290588252}
+  - component: {fileID: 1224334856644021331}
   m_Layer: 10
   m_Name: Breakable Wall
   m_TagString: Breakable
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 7f33af10347b03b4ab54df968186f266, type: 2}
---- !u!95 &4611641208290588252
+--- !u!95 &1224334856644021331
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: e1e4caae93bdedb42831d8e4c5bd295d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

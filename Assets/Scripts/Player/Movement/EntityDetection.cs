@@ -36,7 +36,17 @@ public class EntityDetection : MonoBehaviour
             transform.position, transform.forward, out currentWorldObject,
             pI.MoveDistance);
 
-        if (!pI.CanInput) return;
+
+        if (!pI.CanInput)
+        {
+            if (pI.Bump)
+            {
+                GameObject temp = currentWorldObject.transform.gameObject;
+                temp.GetComponent<BreakingWall>()?.Break();
+            }
+
+            return;
+        }
 
         if (IsColliding)
         {
