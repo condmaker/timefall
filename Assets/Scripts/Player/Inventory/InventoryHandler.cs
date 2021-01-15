@@ -9,7 +9,7 @@ public class InventoryHandler : MonoBehaviour
     private InventorySlot[] slots;
 
 
-    public ItemData equipedItem => currentSlot.CurrentItem;
+    public ItemData equipedItem => currentSlot?.CurrentItem;
 
  
     private InventorySlot currentSlot;

@@ -35,7 +35,7 @@ public class ItemInteractor : MonoBehaviour, IManualInteractor
         foreach(Transform t in transform)
         {
             itemsAdded.Add(
-                t.gameObject.GetComponent<DataHolder>().GetData as ItemData);
+                t.gameObject.GetComponent<DataHolder>().GetData() as ItemData);
         }
 
         if (IsCombCorrect(unlockers, itemsAdded))

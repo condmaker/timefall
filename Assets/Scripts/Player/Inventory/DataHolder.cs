@@ -1,16 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataHolder : MonoBehaviour
+public abstract class DataHolder : MonoBehaviour
 {
     [SerializeField]
-    private ObjectData itemData;
-    
-    public ObjectData GetData { get => itemData; set { itemData = value; } }
+    protected ObjectData itemData;
 
-    public void Start()
+    public abstract ObjectData GetData(ItemData equipedItem = null);
+
+
+    public virtual void SetData(ObjectData equipedItem)
     {
-        //Just here so teh script can be disabled
+        itemData = equipedItem;
     }
+
+    internal abstract void DestroyObject();
+
+
+
 }
