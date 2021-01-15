@@ -24,7 +24,7 @@ public class ItemInteractor : MonoBehaviour, IManualInteractor
         itemsAdded = new List<ItemData>();
     }
 
-    public bool Toggle(ItemData itemId)
+    public bool Toggle(ItemData itemId, Vector3 position)
     {
         if (itemId == null) return false;
 

@@ -22,9 +22,9 @@ public class ObjectStateHandler : MonoBehaviour
         }
         set
         {
-            if (state >= maxStates - 1)
+            if (value >= maxStates)
                 state = 0;
-            else if (state == 0)
+            else if (value < 0)
                 state = (short)(maxStates - 1);
             else
                 state = value;
@@ -97,7 +97,7 @@ public class ObjectStateHandler : MonoBehaviour
     //Change to the passed state
     private void ChangeToState(short wantedState)
     {
-        if (State == wantedState) return;
+        
         State = wantedState;
         OnChangeState?.Invoke(this, State);
         //Cenas relacionadas com o efeito dos states

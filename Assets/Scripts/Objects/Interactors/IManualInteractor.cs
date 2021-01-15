@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IManualInteractor : IInteractor
 {
-    bool Toggle(ItemData itemId);
+    bool Toggle(ItemData itemId, Vector3 position);
 }

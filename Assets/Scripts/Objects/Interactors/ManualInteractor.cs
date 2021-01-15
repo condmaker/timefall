@@ -20,7 +20,7 @@ public class ManualInteractor : MonoBehaviour, IManualInteractor
     public event Action<short> OnGoTo;
 
 
-    public bool Toggle(ItemData itemId)
+    public bool Toggle(ItemData itemId, Vector3 position)
     {
 
         if (unlockerId == itemId?.ID || !needsItem)
