@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class DialogueDisplayHandler : MonoBehaviour
 {
+
+    public Action endDialogue;
+
     [SerializeField]
     private Text dialogueDisplayTarget; 
     // Depois maybe tirar o serializable
@@ -120,6 +123,7 @@ public class DialogueDisplayHandler : MonoBehaviour
 
     private void EndDialogue()
     {
+        endDialogue?.Invoke();
         dialogueDisplayTarget.text = "";
         StopCoroutine("TypeWriterEffect");
     }
