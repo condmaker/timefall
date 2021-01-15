@@ -2276,10 +2276,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1075660048}
     m_Modifications:
-    - target: {fileID: 4225282947767520471, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
-      propertyPath: soundManager
-      value: 
-      objectReference: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
     - target: {fileID: 7660620941634010088, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
       propertyPath: wantedStates.Array.data[0].osh
       value: 
@@ -2347,7 +2343,7 @@ PrefabInstance:
     - target: {fileID: 9163384108969395910, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f1a987a0be376194dac8d278ebcaed50, type: 2}
+      objectReference: {fileID: 22100000, guid: 911c7092556b1f3498cd61f37a8f74b4, type: 2}
     - target: {fileID: 9163384108969395911, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
       propertyPath: m_Name
       value: Pillar Fire 4
@@ -17091,6 +17087,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285059282}
   m_Mesh: {fileID: -3434091037404057589, guid: 1dbf5e3eac2b85645b9eb5934457c51c, type: 3}
+--- !u!21 &286106042
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &286974101
 GameObject:
   m_ObjectHideFlags: 0
@@ -65875,7 +65902,7 @@ PrefabInstance:
     - target: {fileID: 9163384108969395910, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f1a987a0be376194dac8d278ebcaed50, type: 2}
+      objectReference: {fileID: 22100000, guid: 911c7092556b1f3498cd61f37a8f74b4, type: 2}
     - target: {fileID: 9163384108969395911, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
       propertyPath: m_Name
       value: Pillar Fire 2
@@ -95025,7 +95052,7 @@ PrefabInstance:
     - target: {fileID: 9163384108969395910, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f1a987a0be376194dac8d278ebcaed50, type: 2}
+      objectReference: {fileID: 22100000, guid: 911c7092556b1f3498cd61f37a8f74b4, type: 2}
     - target: {fileID: 9163384108969395911, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
       propertyPath: m_Name
       value: Pillar Fire 1
@@ -106206,7 +106233,7 @@ PrefabInstance:
     - target: {fileID: 9163384108969395910, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f1a987a0be376194dac8d278ebcaed50, type: 2}
+      objectReference: {fileID: 22100000, guid: 911c7092556b1f3498cd61f37a8f74b4, type: 2}
     - target: {fileID: 9163384108969395911, guid: 49c28c0277f946b40897a52425f0d480, type: 3}
       propertyPath: m_Name
       value: Pillar Fire 3
@@ -108310,37 +108337,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5355374782286455484, guid: a618a07a0f75e1c4c9c02e4e5d97b96c, type: 3}
   m_PrefabInstance: {fileID: 1812618370}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1814404842
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &1815402949
 GameObject:
   m_ObjectHideFlags: 0
