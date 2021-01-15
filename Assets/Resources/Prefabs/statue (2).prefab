@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 6122850997526374584}
   - component: {fileID: 6122850997526374585}
   - component: {fileID: 6122850997526374586}
-  - component: {fileID: 6122850997526374587}
+  - component: {fileID: 2450123301568487999}
   m_Layer: 8
   m_Name: Cube3
   m_TagString: Untagged
@@ -210,6 +210,7 @@ MonoBehaviour:
   maxStates: 2
   state: 0
   sound: {fileID: 0}
+  soundManager: {fileID: 0}
 --- !u!114 &6122850997526374585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +241,7 @@ MonoBehaviour:
   - osh: {fileID: 6122850997526374584}
     state: 0
     any: 0
---- !u!114 &6122850997526374587
+--- !u!114 &2450123301568487999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,10 +250,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6122850997526374589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0724e7b5f05ffc04d91b68189b6042a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 825f9096b36aeb2408abb2b8ecd44929, type: 2}
+  itemData: {fileID: 11400000, guid: 8450ca9af693cc346a44948a0068124c, type: 2}
 --- !u!1 &6122850998053202320
 GameObject:
   m_ObjectHideFlags: 0

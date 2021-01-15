@@ -33,22 +33,13 @@ public class PlayerInput : MonoBehaviour
 
     // Movement state bools (we may need to change this because it breaks 
     // encapsulation kinda)
-    private bool lookUp;
-    private bool isWalking;
-    private bool bump;
-    private bool isLookingUp;
-    private bool isLookingLeft;
-    private bool isLookingRight;
 
-    public bool LookUp         { get => lookUp; set => lookUp = value; }
-    public bool IsWalking      { get => isWalking; set => isWalking = value; }
-    public bool Bump           { get => bump; set => bump = value; }
-    public bool IsLookingUp    { get => isLookingUp; 
-                                 set => isLookingUp = value; }
-    public bool IsLookingLeft  { get => isLookingLeft;
-                                 set => isLookingLeft = value; }
-    public bool IsLookingRight { get => isLookingRight; 
-                                 set => isLookingRight = value; }
+    public bool LookUp         { get; set; }
+    public bool IsWalking      { get; set; }
+    public bool Bump           { get; set; }
+    public bool IsLookingUp    { get; set; }
+    public bool IsLookingLeft  { get; set; }
+    public bool IsLookingRight { get; set; }
 
     // Bool that specifies if the player can move or not
     public bool CanInput { get; private set; }
@@ -69,7 +60,7 @@ public class PlayerInput : MonoBehaviour
         if (CanInput)
         {
             // Move forward
-            if (Input.GetKey(KeyCode.W) && !LookUp && !isLookingUp)
+            if (Input.GetKey(KeyCode.W) && !LookUp && !IsLookingUp)
             {
                 if (soundSwitch && !IsWalking)
                     soundManager.PlaySound(stepSoundA, transform.position);

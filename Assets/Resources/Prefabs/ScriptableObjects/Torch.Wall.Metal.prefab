@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 590530776361040562}
   - component: {fileID: 3411760570861179786}
   - component: {fileID: 3411760570861179797}
-  - component: {fileID: -916291066085673243}
+  - component: {fileID: 7310518821933322614}
   - component: {fileID: 5527512592920878281}
   - component: {fileID: 8040238695631215832}
   m_Layer: 8
@@ -195,6 +195,7 @@ MonoBehaviour:
   maxStates: 2
   state: 0
   sound: {fileID: 8300000, guid: 59c930389a01ebb49b1601270da40d9d, type: 3}
+  soundManager: {fileID: 0}
 --- !u!114 &3411760570861179797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unlockerId: 2
   needsItem: 1
---- !u!114 &-916291066085673243
+--- !u!114 &7310518821933322614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,7 +219,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3411760570861179796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0724e7b5f05ffc04d91b68189b6042a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: e6a3dbd3e1ad1904fa2d74f20901b726, type: 2}

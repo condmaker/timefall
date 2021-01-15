@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9157220720427457291}
   - component: {fileID: 9157220720427457284}
   - component: {fileID: 9157220720427457285}
-  - component: {fileID: 6777897603677583214}
   - component: {fileID: 1969287959497874284}
+  - component: {fileID: 805447494484789387}
   - component: {fileID: 565832726674984201}
   m_Layer: 8
   m_Name: Lever wall
@@ -99,19 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5235807, y: 2.644042, z: 1.5225163}
   m_Center: {x: -0.004213929, y: -0.29999995, z: 0.83095074}
---- !u!114 &6777897603677583214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9157220720427457286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0724e7b5f05ffc04d91b68189b6042a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 825f9096b36aeb2408abb2b8ecd44929, type: 2}
 --- !u!114 &1969287959497874284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +113,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unlockerId: 0
   needsItem: 0
+--- !u!114 &805447494484789387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157220720427457286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: ca86239e4ab27f442967b6bca0abacab, type: 2}
 --- !u!114 &565832726674984201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   maxStates: 2
   state: 0
   sound: {fileID: 8300000, guid: b69f9c6c6b1713b4a95299114e95d61d, type: 3}
+  soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
 --- !u!1 &9157220720441256306
 GameObject:
   m_ObjectHideFlags: 0

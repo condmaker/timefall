@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
@@ -10,11 +11,14 @@ using UnityEngine;
 
 public class EntityDetection : MonoBehaviour
 {
-    [SerializeField]
     private PlayerInput pI;
+    private PlayerMovement pM;
 
     [SerializeField]
     private InventoryHandler inventory;
+
+    [SerializeField]
+    private DialogueDisplayHandler dialogueHandler;
 
     // Variable that stores the GameObject collided with
     public GameObject ObjectTouched { get; private set; }
@@ -22,12 +26,18 @@ public class EntityDetection : MonoBehaviour
     [SerializeField]
     private MessageDisplay mD;
     private ObjectData objectData;
+    private DataHolder objectHolder;
     private IManualInteractor interactor;
 
     // Bool that specifies is the player is colliding with an object
     public bool IsColliding { get; private set; }
     private RaycastHit currentWorldObject;
 
+    public void Awake()
+    {
+        pI = GetComponent<PlayerInput>();
+        pM = GetComponent<PlayerMovement>();
+    }
 
     private void Update()
     {
@@ -35,7 +45,17 @@ public class EntityDetection : MonoBehaviour
             transform.position, transform.forward, out currentWorldObject,
             pI.MoveDistance);
 
-        if (!pI.CanInput) return;
+
+        if (!pI.CanInput)
+        {
+            if (pI.Bump)
+            {
+                GameObject temp = currentWorldObject.transform.gameObject;
+                temp.GetComponent<BreakingWall>()?.Break();
+            }
+
+            return;
+        }
 
         if (IsColliding)
         {
@@ -44,7 +64,9 @@ public class EntityDetection : MonoBehaviour
             // This could be better
             if ((ObjectTouched.layer == 8) || (ObjectTouched.layer == 9))
             {
-                objectData = ObjectTouched.GetComponent<DataHolder>().GetData;
+                objectHolder = ObjectTouched.GetComponent<DataHolder>();
+                objectData = objectHolder.GetData(inventory.equipedItem);
+                
                 // This only appears for certain objects like levers and stuff,
                 // but not for other world objects like walls, so we need to 
                 // code that in
@@ -69,20 +91,25 @@ public class EntityDetection : MonoBehaviour
                 {
                     case InteractionType.isGrabable:
                         inventory.AddItem(objectData as ItemData);
-                        Destroy(ObjectTouched);
+                        objectHolder.DestroyObject();
+                        //Destroy(ObjectTouched);
                         mD.CleanMessage();
                         break;
                     case InteractionType.isUsable:
                         //objectTouched.toggle? (switches bool)
                         interactor = ObjectTouched.GetComponent<IManualInteractor>();
-                        bool itemused  = interactor.Toggle(inventory?.equipedItem?.ID);
+                        bool itemused  = interactor.Toggle(inventory?.equipedItem);
                         if (itemused)
                         {
                             inventory.ClearEquiped();
                         }
                         break;
                     case InteractionType.isNPC:
-                        // talk
+                        dialogueHandler.StartDialolgue((objectData as NpcData).Dialogue);
+                        mD.CleanMessage();
+                        this.enabled = false;
+                        pM.enabled = false;
+                        dialogueHandler.endDialogue += EndDialogue;
                         break;
                     default:
                         print("Porque é que essa coisa é trigger ?");
@@ -95,4 +122,10 @@ public class EntityDetection : MonoBehaviour
 
     }
 
+    private void EndDialogue()
+    {
+        this.enabled = true;
+        pM.enabled = true;
+        dialogueHandler.endDialogue -= EndDialogue;
+    }
 }

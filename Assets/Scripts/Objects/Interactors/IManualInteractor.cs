@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IManualInteractor : IInteractor
 {
-    bool Toggle(short? itemId);
+    bool Toggle(ItemData itemId);
 }

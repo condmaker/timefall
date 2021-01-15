@@ -6,5 +6,6 @@ public enum InteractionType
 {
     isGrabable,
     isUsable,
+    isBreakable,
     isNPC 
 }

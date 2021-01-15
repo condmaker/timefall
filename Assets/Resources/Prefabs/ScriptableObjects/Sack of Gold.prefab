@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6130098060552788897}
   - component: {fileID: 3283150480546649588}
   - component: {fileID: 8910200944961919314}
-  - component: {fileID: 6669954290126170039}
   - component: {fileID: 6347160413215039821}
   - component: {fileID: 8916677567609111646}
+  - component: {fileID: 2356531493930730214}
   m_Layer: 9
   m_Name: Sack of Gold
   m_TagString: Untagged
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6669954290126170039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4218102739812253642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0724e7b5f05ffc04d91b68189b6042a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 04173b4aa92d04c498fd438ee871113d, type: 2}
 --- !u!95 &6347160413215039821
 Animator:
   serializedVersion: 3
@@ -130,3 +117,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011194574, y: 0.009688982, z: 0.023022454}
   m_Center: {x: 0.0000036668778, y: -0.00036362803, z: -0.0036541887}
+--- !u!114 &2356531493930730214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218102739812253642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 04173b4aa92d04c498fd438ee871113d, type: 2}
