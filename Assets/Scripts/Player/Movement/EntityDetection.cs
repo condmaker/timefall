@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
@@ -10,11 +11,14 @@ using UnityEngine;
 
 public class EntityDetection : MonoBehaviour
 {
-    [SerializeField]
     private PlayerInput pI;
+    private PlayerMovement pM;
 
     [SerializeField]
     private InventoryHandler inventory;
+
+    [SerializeField]
+    private DialogueDisplayHandler dialogueHandler;
 
     // Variable that stores the GameObject collided with
     public GameObject ObjectTouched { get; private set; }
@@ -29,6 +33,11 @@ public class EntityDetection : MonoBehaviour
     public bool IsColliding { get; private set; }
     private RaycastHit currentWorldObject;
 
+    public void Awake()
+    {
+        pI = GetComponent<PlayerInput>();
+        pM = GetComponent<PlayerMovement>();
+    }
 
     private void Update()
     {
@@ -96,7 +105,11 @@ public class EntityDetection : MonoBehaviour
                         }
                         break;
                     case InteractionType.isNPC:
-                        // talk
+                        dialogueHandler.StartDialolgue((objectData as NpcData).Dialogue);
+                        mD.CleanMessage();
+                        this.enabled = false;
+                        pM.enabled = false;
+                        dialogueHandler.endDialogue += EndDialogue;
                         break;
                     default:
                         print("Porque é que essa coisa é trigger ?");
@@ -109,4 +122,10 @@ public class EntityDetection : MonoBehaviour
 
     }
 
+    private void EndDialogue()
+    {
+        this.enabled = true;
+        pM.enabled = true;
+        dialogueHandler.endDialogue -= EndDialogue;
+    }
 }

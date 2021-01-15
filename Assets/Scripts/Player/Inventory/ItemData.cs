@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data Asset", menuName = "Object Data/item Data")]
+[CreateAssetMenu(fileName = "Data Asset", menuName = "Object Data/Item Data")]
 public class ItemData : ObjectData
 {
     [SerializeField]
