@@ -16,7 +16,7 @@ public class ManualInteractor : MonoBehaviour, IManualInteractor
 
     //Eu acho q tem de ser public. 
     public event Action OnGoToLast;
-    public event Action OnGoToNext;
+    public event Action<IterationType> OnGoToNext;
     public event Action<short> OnGoTo;
 
 
@@ -25,7 +25,7 @@ public class ManualInteractor : MonoBehaviour, IManualInteractor
 
         if (unlockerId == itemId?.ID || !needsItem)
         {
-            OnGoToNext?.Invoke();
+            OnGoToNext?.Invoke(IterationType.Next);
             if (needsItem)
             {
                 return true;

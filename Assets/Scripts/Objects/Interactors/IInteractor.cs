@@ -3,6 +3,7 @@
 public interface IInteractor
 {
     event Action OnGoToLast;
-    event Action OnGoToNext;
+    event Action<IterationType> OnGoToNext;
     event Action<short> OnGoTo;
 }
+

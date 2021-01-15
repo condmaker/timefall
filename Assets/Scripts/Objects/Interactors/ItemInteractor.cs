@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemInteractor : MonoBehaviour, IManualInteractor
 {
     public event Action OnGoToLast;
-    public event Action OnGoToNext;
+    public event Action<IterationType> OnGoToNext;
     public event Action<short> OnGoTo;
 
     public event Action<ItemData> addData;
