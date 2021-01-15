@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7160446435844843632}
   - component: {fileID: 7160446435844843633}
   - component: {fileID: 7160446435844843635}
+  - component: {fileID: 7024941370610645672}
   - component: {fileID: 3385297429796104898}
   - component: {fileID: 239861676992671430}
-  - component: {fileID: 3157375802374592533}
+  - component: {fileID: 8304717241219043170}
   m_Layer: 8
   m_Name: Plate Left.004
   m_TagString: Untagged
@@ -98,6 +99,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03189242, y: 0.03189243, z: 0.045696933}
   m_Center: {x: -0.0000014579296, y: 0.00070900563, z: -0.024585618}
+--- !u!114 &7024941370610645672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160446435844843639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f28f22f5f345f147be8cf23aa454911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 9001695354934945605, guid: 3e46611bb3a65a8419ee2374ed5ff91a, type: 3}
 --- !u!114 &3385297429796104898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +128,6 @@ MonoBehaviour:
   - id: 7
     state: 0
   NeedAll: 0
-  itemsAdded: 0
 --- !u!114 &239861676992671430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +143,8 @@ MonoBehaviour:
   maxStates: 2
   state: 0
   sound: {fileID: 8300000, guid: b69f9c6c6b1713b4a95299114e95d61d, type: 3}
---- !u!114 &3157375802374592533
+  soundManager: {fileID: 0}
+--- !u!114 &8304717241219043170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7160446435844843639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0724e7b5f05ffc04d91b68189b6042a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 68eb8ed72c35b764ebe9c8140556cd3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 825f9096b36aeb2408abb2b8ecd44929, type: 2}
@@ -170,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7160446436070715304}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -9.769963e-16, y: 4.085, z: 3.008}
+  m_LocalPosition: {x: 0, y: 4.085, z: 3.008}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 7160446436219260486}
@@ -408,6 +422,7 @@ MonoBehaviour:
   maxStates: 2
   state: 0
   sound: {fileID: 0}
+  soundManager: {fileID: 0}
 --- !u!1 &7160446436699450123
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,11 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataHolder : MonoBehaviour
+public abstract class DataHolder : MonoBehaviour
 {
     [SerializeField]
-    private ObjectData itemData;
-    
-    public ObjectData GetData => itemData;
+    protected ObjectData itemData;
+
+    public abstract ObjectData GetData(ItemData equipedItem = null);
+
+
+    public virtual void SetData(ObjectData equipedItem)
+    {
+        itemData = equipedItem;
+    }
+
+    internal abstract void DestroyObject();
+
+
+
 }

@@ -30,7 +30,7 @@ public class MessageDisplay : MonoBehaviour
         switch (_objectData.InteractionType)
         {
             case InteractionType.isGrabable:
-            textToDisplay.text = ("pick-up " + _objectData.name);
+            textToDisplay.text = ("Pick-up " + _objectData.name);
                 iconDisplay.sprite = grabIcon;
                 iconDisplay.color = colorFull;
                 break;

@@ -8,4 +8,8 @@ public class ItemData : ObjectData
     [SerializeField]
     private Sprite uiObjectSprite;
     public Sprite UIobjectSprite { get => uiObjectSprite; }
+
+    [SerializeField]
+    private Mesh mesh;
+    public Mesh Mesh { get => mesh; }
 }

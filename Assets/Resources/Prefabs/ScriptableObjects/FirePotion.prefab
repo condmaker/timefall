@@ -104,8 +104,8 @@ GameObject:
   - component: {fileID: 2055131933785902904}
   - component: {fileID: 3398830311850979147}
   - component: {fileID: 9158927881559927213}
-  - component: {fileID: 1320307294524337487}
   - component: {fileID: 6964805235535800467}
+  - component: {fileID: 1472244028259521726}
   m_Layer: 9
   m_Name: FirePotion
   m_TagString: Untagged
@@ -196,19 +196,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1320307294524337487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9158927881559927212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0724e7b5f05ffc04d91b68189b6042a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 1c985a4af3dad81419ddcb25fdfdbfa1, type: 2}
 --- !u!65 &6964805235535800467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -222,3 +209,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.042142328, y: 0.005135429, z: 0.055410653}
   m_Center: {x: 0.00008945227, y: 1.803267e-18, z: 0.0017624234}
+--- !u!114 &1472244028259521726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158927881559927212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 1c985a4af3dad81419ddcb25fdfdbfa1, type: 2}
