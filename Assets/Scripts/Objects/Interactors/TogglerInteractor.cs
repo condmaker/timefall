@@ -6,7 +6,7 @@ using UnityEngine;
 public class TogglerInteractor : MonoBehaviour, IInteractor
 {
     public event Action OnGoToLast;
-    public event Action OnGoToNext;
+    public event Action<IterationType> OnGoToNext;
     public event Action<short> OnGoTo;
 
 
@@ -50,7 +50,7 @@ public class TogglerInteractor : MonoBehaviour, IInteractor
             {
                 if (o.any)
                 {
-                    OnGoToNext.Invoke();
+                    OnGoToNext.Invoke(IterationType.Next);
                     return;
                 }
             }

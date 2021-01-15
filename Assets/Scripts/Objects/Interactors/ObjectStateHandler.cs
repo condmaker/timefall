@@ -22,8 +22,10 @@ public class ObjectStateHandler : MonoBehaviour
         }
         set
         {
-            if (state >= maxStates-1)
+            if (state >= maxStates - 1)
                 state = 0;
+            else if (state == 0)
+                state = (short)(maxStates - 1);
             else
                 state = value;
         }
@@ -69,9 +71,9 @@ public class ObjectStateHandler : MonoBehaviour
     //------------------------------
 
     //Change to the next state
-    private void ChangeStates()
+    private void ChangeStates(IterationType iteration)
     {
-        State++;
+        State += (short)iteration;
         //ActivateOtherObjects();
         OnChangeState?.Invoke(this,State);
 
