@@ -20,6 +20,8 @@ public class InstatiateItem : MonoBehaviour
 
     public void Instatiate(ObjectStateHandler oSH, short state)
     {
-        Instantiate(item, transform.position + positionOffset, item.transform.rotation);
+        GameObject _item;
+        item = Instantiate(item, transform.position + positionOffset, item.transform.rotation);
+        item.transform.SetParent(gameObject.transform.GetChild(1));
     }
 }
