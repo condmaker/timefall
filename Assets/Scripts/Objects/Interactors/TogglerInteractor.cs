@@ -31,7 +31,6 @@ public class TogglerInteractor : MonoBehaviour, IInteractor
 
     private void UpdateState(ObjectStateHandler osh, short state)
     {
-
         if (currentStates.ContainsKey(osh))
         {
             currentStates[osh] = state;
