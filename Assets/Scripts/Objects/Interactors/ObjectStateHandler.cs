@@ -7,7 +7,7 @@ using System;
 //[RequireComponent(typeof(Animator))]
 public class ObjectStateHandler : MonoBehaviour
 {
-    public Interactor interactor;
+    private IEnumerable<Interactor> interactor;
 
     [SerializeField]
     private short maxStates;
@@ -43,12 +43,15 @@ public class ObjectStateHandler : MonoBehaviour
 
     private void Awake()
     {
-        interactor = GetComponent<Interactor>();
-        if (interactor != null)
+        interactor = GetComponents<Interactor>();
+        foreach (Interactor i in interactor)
         {
-            interactor.OnGoToNext += ChangeStates;          
-            interactor.OnGoToLast += ChangeToLast;
-            interactor.OnGoTo += ChangeToState;
+            if (i != null)
+            {
+                i.OnGoToNext += ChangeStates;
+                i.OnGoToLast += ChangeToLast;
+                i.OnGoTo += ChangeToState;
+            }
         }
 
         anim = GetComponent<Animator>();

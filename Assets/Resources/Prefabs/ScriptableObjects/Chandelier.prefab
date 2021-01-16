@@ -890,7 +890,9 @@ GameObject:
   - component: {fileID: 4846266419920349995}
   - component: {fileID: 4846266419920349988}
   - component: {fileID: 4846266419920349989}
-  m_Layer: 0
+  - component: {fileID: 153633169931451409}
+  - component: {fileID: 7239923026035751651}
+  m_Layer: 8
   m_Name: Chandelier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,6 +953,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299f3d557e90cc841baf2b3fe34b8a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iteration:
+    iteration: 0
+    specificState: 0
+    usespecific: 0
   wantedStates:
   - osh: {fileID: 0}
     state: 1
@@ -976,6 +982,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iteration:
+    iteration: 0
+    specificState: 0
+    usespecific: 0
   unlockerId: 2
   needsItem: 1
 --- !u!114 &4846266419920349989
@@ -990,10 +1000,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactor: {fileID: 0}
   maxStates: 3
   state: 0
   sound: {fileID: 0}
   soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
+--- !u!65 &153633169931451409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846266419920349990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.843933, y: 3.7110705, z: 4.7386017}
+  m_Center: {x: 0.00863266, y: 1.3555353, z: 0.0042800903}
+--- !u!114 &7239923026035751651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846266419920349990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: a7ef507e1b522d84cad4a1a1d9fbef91, type: 2}
 --- !u!1 &5612915946041670195
 GameObject:
   m_ObjectHideFlags: 0
