@@ -12,7 +12,6 @@ public class DirectToggler : Interactor
 
     private void Awake()
     {
-        wantedStates = new List<StateO>();
         foreach (StateO o in wantedStates)
         {
             o.Osh.OnChangeState += UpdateState;
@@ -30,7 +29,7 @@ public class DirectToggler : Interactor
         {
             if (o.Osh.State >= 1)
             {
-                ProcessResult();
+                ProcessResult(o.State);
             }
         }
     }

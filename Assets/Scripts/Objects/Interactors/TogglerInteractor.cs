@@ -52,7 +52,6 @@ public class TogglerInteractor : Interactor
 
             if (o.State != currentStates[o.Osh])
             {
-               
                 compatible = false;
             }
         }

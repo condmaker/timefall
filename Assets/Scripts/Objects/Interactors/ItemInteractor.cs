@@ -7,12 +7,9 @@ public class ItemInteractor : ManualInteractor
 {
 
     public event Action<ItemData> addData;
-    //public override event Action OnGoToLast;
-    //public override event Action<IterationType> OnGoToNext;
-    //public override event Action<short> OnGoTo;
 
     [SerializeField]
-    private List<ItemState> unlockers;
+    private List<short> unlockers;
 
     [SerializeField]
     bool NeedAll;
@@ -52,7 +49,7 @@ public class ItemInteractor : ManualInteractor
     }
 
 
-    public bool IsCombCorrect(IList<ItemState> comb, ICollection<ItemData> toCheck )
+    public bool IsCombCorrect(List<short> comb, ICollection<ItemData> toCheck )
     {
         bool result = true;
         int it = 0;
@@ -64,12 +61,13 @@ public class ItemInteractor : ManualInteractor
 
         foreach(ItemData iS in toCheck)
         {
-            if(!comb[it].Equals(iS))
-            {          
+            if(!(comb[it] == iS.ID))
+            {
+                Debug.Log(comb[it] +" " + iS.ID);
                 result = false;
                 break;
             }
-
+            it++;
         }
 
         return result;
@@ -78,15 +76,3 @@ public class ItemInteractor : ManualInteractor
 
 }
 
-
-[Serializable]
-public struct ItemState: IEquatable<ItemData>
-{
-    public short id;
-    public short state;
-
-    public bool Equals(ItemData other)
-    {
-        return id == other.ID;
-    }
-}

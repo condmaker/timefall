@@ -20107,37 +20107,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423119984}
   m_Mesh: {fileID: 7060280008036029220, guid: 99e1c1eb68b01894587af52dfac2818a, type: 3}
---- !u!21 &429002545
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &435080856
 GameObject:
   m_ObjectHideFlags: 0
@@ -25935,6 +25904,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1564814559}
     m_Modifications:
+    - target: {fileID: 2118515947, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: wantedStates.Array.data[0].state
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118515947, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: iteration.specificState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118515947, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: iteration.usespecific
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118515947, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: wantedStates.Array.data[0].any
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3110904973169360162, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
       propertyPath: soundManager
       value: 
@@ -25952,12 +25937,20 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3385297429796104898, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
-      propertyPath: unlockers.Array.data[0].state
-      value: 0
+      propertyPath: iteration.usespecific
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3385297429796104898, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
-      propertyPath: unlockers.Array.data[1].state
-      value: 0
+      propertyPath: iteration.specificState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3385297429796104898, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: unlockers.Array.data[1]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3385297429796104898, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: unlockers.Array.data[0]
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3409198446542094143, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
       propertyPath: unlockers.Array.data[0].state
@@ -26359,6 +26352,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1564814559}
     m_Modifications:
+    - target: {fileID: 1845145564, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
+      propertyPath: iteration.iteration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091196221, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
+      propertyPath: iteration.iteration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010348337385060220, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
       propertyPath: wantedStates.Array.data[0].osh
       value: 
@@ -26367,6 +26368,10 @@ PrefabInstance:
       propertyPath: wantedStates.Array.data[1].osh
       value: 
       objectReference: {fileID: 1292067351}
+    - target: {fileID: 3010348337385060220, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
+      propertyPath: iteration.iteration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010348337409086139, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
       propertyPath: wantedStates.Array.data[0].osh
       value: 
@@ -26383,10 +26388,18 @@ PrefabInstance:
       propertyPath: wantedStates.Array.data[3].osh
       value: 
       objectReference: {fileID: 325698163}
+    - target: {fileID: 3010348337409086139, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
+      propertyPath: iteration.iteration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010348338240725160, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
       propertyPath: wantedStates.Array.data[0].osh
       value: 
       objectReference: {fileID: 1251594000}
+    - target: {fileID: 3010348338240725160, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
+      propertyPath: iteration.iteration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010348338769124950, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
       propertyPath: m_Name
       value: firepath
@@ -26443,6 +26456,10 @@ PrefabInstance:
       propertyPath: wantedStates.Array.data[1].osh
       value: 
       objectReference: {fileID: 325698163}
+    - target: {fileID: 3010348338843057871, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
+      propertyPath: iteration.iteration
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
 --- !u!4 &596978425 stripped
@@ -44847,12 +44864,32 @@ PrefabInstance:
       propertyPath: wantedStates.Array.data[0].state
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2118515947, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: iteration.usespecific
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118515947, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: iteration.specificState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118515947, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: wantedStates.Array.data[0].any
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3110904973169360162, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
     - target: {fileID: 3385297429796104898, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
       propertyPath: unlockers.Array.data[0].state
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3385297429796104898, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: unlockers.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3385297429796104898, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
+      propertyPath: NeedAll
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3409198446542094143, guid: db0a70e783afb5b44a1301872140e6e8, type: 3}
@@ -58960,6 +58997,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389087347}
   m_Mesh: {fileID: 7060280008036029220, guid: 99e1c1eb68b01894587af52dfac2818a, type: 3}
+--- !u!21 &1390877184
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &1397207484
 GameObject:
   m_ObjectHideFlags: 0
@@ -68595,6 +68663,10 @@ PrefabInstance:
       propertyPath: wantedStates.Array.data[2].osh
       value: 
       objectReference: {fileID: 1206552798}
+    - target: {fileID: 48885617, guid: 37d73b9ed62894642887cfa0324ba77d, type: 3}
+      propertyPath: iteration.iteration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 212537773406335564, guid: 37d73b9ed62894642887cfa0324ba77d, type: 3}
       propertyPath: m_Name
       value: TrollCuffed
@@ -96417,6 +96489,10 @@ PrefabInstance:
     - target: {fileID: 652740559349270432, guid: 0d938516c5423ef4299d973d4884d3d3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696511963666918998, guid: 0d938516c5423ef4299d973d4884d3d3, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2075044943739281404, guid: 0d938516c5423ef4299d973d4884d3d3, type: 3}
       propertyPath: m_Name
