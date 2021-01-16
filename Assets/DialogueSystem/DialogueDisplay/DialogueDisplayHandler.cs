@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueDisplayHandler : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class DialogueDisplayHandler : MonoBehaviour
     public Action endDialogue;
 
     [SerializeField]
-    private Text dialogueDisplayTarget; 
+    private TextMeshProUGUI dialogueDisplayTarget;
     // Depois maybe tirar o serializable
     [SerializeField]
     private DialogueScript currentScript;
@@ -35,9 +36,8 @@ public class DialogueDisplayHandler : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     public void StartDialolgue(DialogueScript script)
@@ -92,7 +92,7 @@ public class DialogueDisplayHandler : MonoBehaviour
 
 
             //Depois mudar isto 
-            temp.GetComponent<Text>().text = optionS[i];
+            temp.GetComponent<TextMeshProUGUI>().text = optionS[i];
 
             ChoiceSelector cs = temp.GetComponent<ChoiceSelector>();
             cs.ChoiceNumb = i;
@@ -137,6 +137,7 @@ public class DialogueDisplayHandler : MonoBehaviour
     IEnumerator TypeWriterEffect()
     {
         dialogueDisplayTarget.text = "";
+
         while (dialogueText.Length > 0)
         {
             yield return effectSpeed;
