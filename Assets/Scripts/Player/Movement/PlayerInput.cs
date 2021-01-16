@@ -34,12 +34,14 @@ public class PlayerInput : MonoBehaviour
     // Movement state bools (we may need to change this because it breaks 
     // encapsulation kinda)
 
-    public bool LookUp         { get; set; }
-    public bool IsWalking      { get; set; }
-    public bool Bump           { get; set; }
-    public bool IsLookingUp    { get; set; }
-    public bool IsLookingLeft  { get; set; }
-    public bool IsLookingRight { get; set; }
+    public bool LookUp          { get; set; }
+    public bool IsWalking       { get; set; }
+    public bool IsStrafingRight { get; set; }
+    public bool IsStrafingLeft  { get; set; }
+    public bool Bump            { get; set; }
+    public bool IsLookingUp     { get; set; }
+    public bool IsLookingLeft   { get; set; }
+    public bool IsLookingRight  { get; set; }
 
     // Bool that specifies if the player can move or not
     public bool CanInput { get; private set; }
@@ -60,7 +62,8 @@ public class PlayerInput : MonoBehaviour
         if (CanInput)
         {
             // Move forward
-            if (Input.GetKey(KeyCode.W) && !LookUp && !IsLookingUp)
+            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.E) ||
+                Input.GetKey(KeyCode.Q)) && !LookUp && !IsLookingUp)
             {
                 if (soundSwitch && !IsWalking)
                     soundManager.PlaySound(stepSoundA, transform.position);
@@ -69,6 +72,11 @@ public class PlayerInput : MonoBehaviour
                 soundSwitch = !soundSwitch;
 
                 IsWalking = true;
+
+                if (Input.GetKey(KeyCode.E))
+                    IsStrafingRight = true;
+                else if (Input.GetKey(KeyCode.Q))
+                    IsStrafingLeft = true;
             }
             // Look Up
             else if (Input.GetKey(KeyCode.S)) LookUp = true;
@@ -79,7 +87,7 @@ public class PlayerInput : MonoBehaviour
             else if (Input.GetKey(KeyCode.D) && !IsLookingUp && !LookUp) 
                 IsLookingRight = true;
             // Pressed interact key
-            else if (Input.GetKey(KeyCode.E)) IsInteracting = true;  
+            else if (Input.GetKeyDown(KeyCode.F)) IsInteracting = true;  
         }
     }
 

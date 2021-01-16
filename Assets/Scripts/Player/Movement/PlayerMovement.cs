@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
         if (TimeCounter <= 0)
         {
             pI.IsWalking = false;
+            pI.IsStrafingRight = false;
+            pI.IsStrafingLeft = false;
             pI.IsLookingLeft = false;
             pI.IsLookingRight = false;
             pI.Bump = false;
@@ -61,8 +63,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer(bool bump = false)
     {
-        playerBody.velocity = transform.forward * (
+        Vector3 uV = new Vector3(0.0f, -1.0f, 0.0f);
+
+        if (pI.IsStrafingRight)
+        {
+            playerBody.velocity = Quaternion.AngleAxis(90, transform.forward)
+                * uV * (pI.MoveDistance / pI.MoveTime);
+        }
+        else if (pI.IsStrafingLeft)
+        {
+            playerBody.velocity = Quaternion.AngleAxis(-90, transform.forward)
+                * uV * (pI.MoveDistance / pI.MoveTime);
+        }
+        else
+        {
+            playerBody.velocity = transform.forward * (
                 pI.MoveDistance / pI.MoveTime);
+        }
 
         if (bump)
         {
