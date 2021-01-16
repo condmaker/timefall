@@ -27,7 +27,7 @@ public class EntityDetection : MonoBehaviour
     private MessageDisplay mD;
     private ObjectData objectData;
     private DataHolder objectHolder;
-    private IManualInteractor interactor;
+    private ManualInteractor interactor;
 
     // Bool that specifies is the player is colliding with an object
     public bool IsColliding { get; private set; }
@@ -41,9 +41,30 @@ public class EntityDetection : MonoBehaviour
 
     private void Update()
     {
-        IsColliding = Physics.Raycast(
-            transform.position, transform.forward, out currentWorldObject,
-            pI.MoveDistance);
+        if (pI.IsStrafingRight)
+        {
+            Vector3 uV = new Vector3(0.0f, -1.0f, 0.0f);
+
+            IsColliding = Physics.Raycast(
+                transform.position, Quaternion.AngleAxis(
+                90, transform.forward) * uV, out currentWorldObject,
+                pI.MoveDistance);
+        }
+        else if (pI.IsStrafingLeft)
+        {
+            Vector3 uV = new Vector3(0.0f, -1.0f, 0.0f);
+
+            IsColliding = Physics.Raycast(
+                transform.position, Quaternion.AngleAxis(
+                -90, transform.forward) * uV, out currentWorldObject,
+                pI.MoveDistance);
+        }
+        else
+        {
+            IsColliding = Physics.Raycast(
+                transform.position, transform.forward, out currentWorldObject,
+                pI.MoveDistance);
+        }
 
 
         if (!pI.CanInput)
@@ -81,9 +102,10 @@ public class EntityDetection : MonoBehaviour
             mD.CleanMessage();
         }
 
-        if (ObjectTouched != null)
+        if ((ObjectTouched != null) 
+            && !pI.IsStrafingLeft && !pI.IsStrafingRight)
         {
-            if (!pI.IsWalking && Input.GetKeyDown("e") && IsColliding)
+            if (!pI.IsWalking && pI.IsInteracting && IsColliding)
             {
                 if (objectData == null) return;
 
@@ -97,7 +119,7 @@ public class EntityDetection : MonoBehaviour
                         break;
                     case InteractionType.isUsable:
                         //objectTouched.toggle? (switches bool)
-                        interactor = ObjectTouched.GetComponent<IManualInteractor>();
+                        interactor = ObjectTouched.GetComponent<ManualInteractor>();
                         bool itemused  = 
                             interactor.Toggle(inventory?.equipedItem, transform.position);
                         if (itemused)
@@ -117,6 +139,8 @@ public class EntityDetection : MonoBehaviour
                         break;
                 }
             }
+
+            pI.IsInteracting = false;
         }
 
 

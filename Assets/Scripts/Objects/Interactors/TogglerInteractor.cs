@@ -3,13 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TogglerInteractor : MonoBehaviour, IInteractor
+public class TogglerInteractor : Interactor
 {
-    public event Action OnGoToLast;
-    public event Action<IterationType> OnGoToNext;
-    public event Action<short> OnGoTo;
-
-
     private bool wasTriggered;
 
     [SerializeField]
@@ -24,14 +19,13 @@ public class TogglerInteractor : MonoBehaviour, IInteractor
         //currentStates = new
         foreach (StateO o in wantedStates)
         {
-            o.osh.OnChangeState += UpdateState;
-            currentStates.Add(o.osh, 0);         
+            o.Osh.OnChangeState += UpdateState;
+            currentStates.Add(o.Osh, 0);         
         }
     }
 
     private void UpdateState(ObjectStateHandler osh, short state)
     {
-
         if (currentStates.ContainsKey(osh))
         {
             currentStates[osh] = state;
@@ -46,17 +40,17 @@ public class TogglerInteractor : MonoBehaviour, IInteractor
         {
 
             //Scuffed
-            if (osh == o.osh)
+            if (osh == o.Osh)
             {
-                if (o.any)
+                if (o.Any)
                 {
-                    OnGoToNext.Invoke(IterationType.Next);
+                    ProcessResult();
                     return;
                 }
             }
 
 
-            if (o.state != currentStates[o.osh])
+            if (o.State != currentStates[o.Osh])
             {
                
                 compatible = false;
@@ -65,14 +59,14 @@ public class TogglerInteractor : MonoBehaviour, IInteractor
 
         if (compatible) 
         {
-            OnGoToLast?.Invoke();
+            ProcessResult();
             wasTriggered = true;
         }
         else
         {
             if (wasTriggered)
             {
-                OnGoTo?.Invoke(0);
+                ProcessResult(0);
                 wasTriggered = false;
             }
         }
@@ -80,16 +74,7 @@ public class TogglerInteractor : MonoBehaviour, IInteractor
 }
 
 
-[Serializable]
-public class StateO
-{
 
-    //Precisam de ser private e ter propriedades 
-    public ObjectStateHandler osh;
-    public short state;
-    public bool any;
-
-}
 
 
 

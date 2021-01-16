@@ -3,24 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DirectToggler : MonoBehaviour, IInteractor
+public class DirectToggler : Interactor
 {
 
 
     [SerializeField]
     private List<StateO> wantedStates;
 
-
-    public event Action OnGoToLast;
-    public event Action<IterationType> OnGoToNext;
-    public event Action<short> OnGoTo;
-
     private void Awake()
     {
-        
+        wantedStates = new List<StateO>();
         foreach (StateO o in wantedStates)
         {
-            o.osh.OnChangeState += UpdateState;
+            o.Osh.OnChangeState += UpdateState;
         }
     }
 
@@ -33,9 +28,9 @@ public class DirectToggler : MonoBehaviour, IInteractor
     {
         foreach (StateO o in wantedStates)
         {
-            if (o.osh.State >= 1)
+            if (o.Osh.State >= 1)
             {
-                OnGoTo?.Invoke(o.state);
+                ProcessResult();
             }
         }
     }

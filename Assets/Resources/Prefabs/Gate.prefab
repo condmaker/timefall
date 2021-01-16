@@ -131,9 +131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactor: {fileID: 0}
   maxStates: 2
   state: 0
   sound: {fileID: 8300000, guid: 81a4c0569d8ef114cb6c27f316f27a26, type: 3}
+  soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
 --- !u!114 &857874369203994309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,11 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299f3d557e90cc841baf2b3fe34b8a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iteration:
+    iteration: 1
+    specificState: 0
+    usespecific: 0
   wantedStates:
   - osh: {fileID: 0}
     state: 0
     any: 1
-  sound: {fileID: 8300000, guid: 81a4c0569d8ef114cb6c27f316f27a26, type: 3}
 --- !u!1 &6475668731531324426
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemInteractor : MonoBehaviour, IManualInteractor
+public class ItemInteractor : ManualInteractor
 {
-    public event Action OnGoToLast;
-    public event Action<IterationType> OnGoToNext;
-    public event Action<short> OnGoTo;
 
     public event Action<ItemData> addData;
+    //public override event Action OnGoToLast;
+    //public override event Action<IterationType> OnGoToNext;
+    //public override event Action<short> OnGoTo;
 
     [SerializeField]
     private List<ItemState> unlockers;
@@ -24,7 +24,7 @@ public class ItemInteractor : MonoBehaviour, IManualInteractor
         itemsAdded = new List<ItemData>();
     }
 
-    public bool Toggle(ItemData itemId, Vector3 position)
+    public override bool Toggle(ItemData itemId, Vector3 position)
     {
         if (itemId == null) return false;
 
@@ -40,12 +40,12 @@ public class ItemInteractor : MonoBehaviour, IManualInteractor
 
         if (IsCombCorrect(unlockers, itemsAdded))
         {
-            OnGoTo.Invoke(1);
+            ProcessResult();
         }
         else
         {
             //Wrong Weight
-            OnGoTo.Invoke(0);
+            ProcessResult(0);
         }
         
         return true;
@@ -74,6 +74,7 @@ public class ItemInteractor : MonoBehaviour, IManualInteractor
 
         return result;
     }
+
 
 }
 

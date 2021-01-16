@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3183539140704655613}
   - component: {fileID: 3183539140704655612}
   - component: {fileID: 3183539140704655611}
-  - component: {fileID: 3183539140704655609}
   - component: {fileID: 3183539140704655608}
   - component: {fileID: 6682130453767550923}
+  - component: {fileID: 5207692340789495277}
   - component: {fileID: 3183539140704655591}
   m_Layer: 8
   m_Name: Lever
@@ -100,20 +100,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5235807, y: 2.644042, z: 1}
   m_Center: {x: -0.004213938, y: 0.822021, z: 1.8326431e-17}
---- !u!114 &3183539140704655609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3183539140704655590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unlockerId: 0
-  needsItem: 0
 --- !u!114 &3183539140704655608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactor: {fileID: 0}
   maxStates: 2
   state: 0
   sound: {fileID: 8300000, guid: b69f9c6c6b1713b4a95299114e95d61d, type: 3}
@@ -143,6 +130,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 825f9096b36aeb2408abb2b8ecd44929, type: 2}
+--- !u!114 &5207692340789495277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183539140704655590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iteration:
+    iteration: 1
+    specificState: 0
+    usespecific: 0
+  unlockerId: 0
+  needsItem: 0
 --- !u!95 &3183539140704655591
 Animator:
   serializedVersion: 3
@@ -281,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactor: {fileID: 0}
   maxStates: 2
   state: 0
   sound: {fileID: 8300000, guid: b69f9c6c6b1713b4a95299114e95d61d, type: 3}
@@ -297,5 +303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iteration:
+    iteration: 0
+    specificState: 0
+    usespecific: 0
   unlockerId: 0
   needsItem: 0

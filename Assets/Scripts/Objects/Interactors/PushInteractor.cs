@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PushInteractor : MonoBehaviour, IManualInteractor
+public class PushInteractor : ManualInteractor
 {
-    public event Action OnGoToLast;
-    public event Action<IterationType> OnGoToNext;
-    public event Action<short> OnGoTo;
+    //public override event Action OnGoToLast;
+    //public override event Action<IterationType> OnGoToNext;
+    //public override event Action<short> OnGoTo;
 
-    public bool Toggle(ItemData itemId, Vector3 position)
+    public override bool Toggle(ItemData itemId, Vector3 position)
     {
         int offset = 2;
         if (position.x > transform.position.x + offset)
@@ -23,10 +23,11 @@ public class PushInteractor : MonoBehaviour, IManualInteractor
 
         this.DetectObstacles();
 
-        OnGoTo?.Invoke(1);
-        
+        ProcessResult();
+
         return false;
     }
+
 
     private void DetectObstacles()
     {

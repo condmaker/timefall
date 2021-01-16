@@ -5,5 +5,6 @@ using UnityEngine;
 public enum IterationType
 {
     Next = 1, 
-    Previous = -1 
+    Previous = -1, 
+    Last
 }

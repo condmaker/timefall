@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 
 
-public class ManualInteractor : MonoBehaviour, IManualInteractor
+public class HandInteractor : ManualInteractor
 {
 
     [SerializeField]
@@ -14,18 +14,12 @@ public class ManualInteractor : MonoBehaviour, IManualInteractor
     [SerializeField]
     private bool needsItem;
 
-    //Eu acho q tem de ser public. 
-    public event Action OnGoToLast;
-    public event Action<IterationType> OnGoToNext;
-    public event Action<short> OnGoTo;
-
-
-    public bool Toggle(ItemData itemId, Vector3 position)
+    public override bool Toggle(ItemData itemId, Vector3 position)
     {
 
         if (unlockerId == itemId?.ID || !needsItem)
         {
-            OnGoToNext?.Invoke(IterationType.Next);
+            ProcessResult();
             if (needsItem)
             {
                 return true;
@@ -33,5 +27,6 @@ public class ManualInteractor : MonoBehaviour, IManualInteractor
         }
         return false;
     }
+
 }
 

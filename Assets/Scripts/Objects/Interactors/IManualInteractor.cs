@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IManualInteractor : IInteractor
+public abstract class ManualInteractor : Interactor
 {
-    bool Toggle(ItemData itemId, Vector3 position);
+    public abstract bool Toggle(ItemData itemId, Vector3 position);
 }

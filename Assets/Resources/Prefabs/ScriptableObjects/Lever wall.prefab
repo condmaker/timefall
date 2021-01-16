@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1969287959497874284}
   - component: {fileID: 805447494484789387}
   - component: {fileID: 565832726674984201}
+  - component: {fileID: 6854351904502924185}
   m_Layer: 8
   m_Name: Lever wall
   m_TagString: Untagged
@@ -142,6 +143,25 @@ MonoBehaviour:
   state: 0
   sound: {fileID: 8300000, guid: b69f9c6c6b1713b4a95299114e95d61d, type: 3}
   soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
+--- !u!95 &6854351904502924185
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157220720427457286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 726328f06aa36224f801caa3e65562ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9157220720441256306
 GameObject:
   m_ObjectHideFlags: 0

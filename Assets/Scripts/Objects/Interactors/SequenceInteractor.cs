@@ -3,12 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SequenceInteractor : MonoBehaviour, IInteractor
+public class SequenceInteractor : Interactor
 {
-    public event Action OnGoToLast;
-    public event Action<IterationType> OnGoToNext;
-    public event Action<short> OnGoTo;
-
     private bool wasTriggered;
 
     [SerializeField]
@@ -49,7 +45,7 @@ public class SequenceInteractor : MonoBehaviour, IInteractor
 
         if(test)
         {
-            OnGoToLast?.Invoke();
+            ProcessResult();
         }
         else
         {
