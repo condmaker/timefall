@@ -93,6 +93,10 @@ public class EntityDetection : MonoBehaviour
                 // code that in
                 mD.DisplayMessage(objectData);
             }
+            else if (ObjectTouched.layer == 13)
+            {
+                ObjectTouched.GetComponent<NextStratum>().Next();
+            }
         }
         else
         {

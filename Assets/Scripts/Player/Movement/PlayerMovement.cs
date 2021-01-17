@@ -1,8 +1,4 @@
-﻿// TO-DO 
-// Fix the bug where looking up on other rotations makes the player look 
-// sideways or down
-
-// This iscript must be executed after PlayerInput, due to the bump movement.
+﻿// This script must be executed after PlayerInput, due to the bump movement.
 
 using System;
 using System.Collections;
