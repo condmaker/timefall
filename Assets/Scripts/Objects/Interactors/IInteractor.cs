@@ -8,7 +8,7 @@ public abstract class Interactor: MonoBehaviour
     public event Action<short> OnGoTo;
 
     [SerializeField]
-    private Iteration iteration;
+    protected Iteration iteration;
     public Iteration Iteration => iteration;
 
     protected void ProcessResult(short? state = null, IterationType? iter = null)

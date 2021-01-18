@@ -12,6 +12,7 @@ public class ObjectStateHandler : MonoBehaviour
 
     [SerializeField]
     private short maxStates;
+    public short MaxStates => maxStates;
 
     [SerializeField]
     private short state;

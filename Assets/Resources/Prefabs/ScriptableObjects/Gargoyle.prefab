@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5405194202223999812}
   - component: {fileID: 6145210160077146081}
   - component: {fileID: 7756536855813606596}
+  - component: {fileID: 2703656324767126702}
+  - component: {fileID: 846898032575449391}
   m_Layer: 8
   m_Name: Gargoyle
   m_TagString: Untagged
@@ -145,3 +147,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 03f78576078798b49b77abca19a3dc90, type: 2}
+--- !u!114 &2703656324767126702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547506429303962296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2abdb2f9977e314409106f5df623b9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 90
+  frames: 15
+--- !u!114 &846898032575449391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547506429303962296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7f4030ea19acf4baa9172f492fe86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iteration:
+    iteration: 0
+    specificState: 0
+    usespecific: 0
+  trigger: {fileID: 0}
+  setter: {fileID: 0}
+  iterationList:
+  - iteration: 0
+    specificState: 0
+    usespecific: 0
+  - iteration: 0
+    specificState: 0
+    usespecific: 0
+  - iteration: 0
+    specificState: 0
+    usespecific: 0
