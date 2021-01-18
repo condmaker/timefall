@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 3747483396190449371}
   - component: {fileID: 4738357330175625228}
   - component: {fileID: 857874369203994309}
-  m_Layer: 0
+  - component: {fileID: 9186238646095249023}
+  m_Layer: 8
   m_Name: Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactor: {fileID: 0}
   maxStates: 2
   state: 0
   sound: {fileID: 8300000, guid: 81a4c0569d8ef114cb6c27f316f27a26, type: 3}
@@ -156,6 +156,19 @@ MonoBehaviour:
   - osh: {fileID: 0}
     state: 0
     any: 1
+--- !u!114 &9186238646095249023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4503066507099496552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: e49813d66f3a1fb41876838bbd5adf7c, type: 2}
 --- !u!1 &6475668731531324426
 GameObject:
   m_ObjectHideFlags: 0
