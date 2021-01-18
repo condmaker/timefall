@@ -26352,6 +26352,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1564814559}
     m_Modifications:
+    - target: {fileID: 830072417, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
+      propertyPath: iteration.iteration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1845145564, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
       propertyPath: iteration.iteration
       value: 1
@@ -26457,6 +26461,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 325698163}
     - target: {fileID: 3010348338843057871, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
+      propertyPath: iteration.iteration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145921137483196093, guid: 5eb3f2d2e95bc534fa766ce97499ddb0, type: 3}
       propertyPath: iteration.iteration
       value: 1
       objectReference: {fileID: 0}
@@ -48678,6 +48686,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059017886}
   m_Mesh: {fileID: 7060280008036029220, guid: 99e1c1eb68b01894587af52dfac2818a, type: 3}
+--- !u!21 &1061320414
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &1065809301
 GameObject:
   m_ObjectHideFlags: 0
@@ -51301,8 +51340,10 @@ GameObject:
   - component: {fileID: 1132783507}
   - component: {fileID: 1132783506}
   - component: {fileID: 1132783505}
-  - component: {fileID: 1132783508}
   - component: {fileID: 1132783509}
+  - component: {fileID: 1132783510}
+  - component: {fileID: 1132783511}
+  - component: {fileID: 1132783508}
   m_Layer: 8
   m_Name: Box
   m_TagString: Untagged
@@ -51395,15 +51436,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1132783503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
+  m_Script: {fileID: 11500000, guid: ac892c302bc252141a0a891439a6e6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   iteration:
     iteration: 0
-    specificState: 0
-    usespecific: 0
-  unlockerId: 0
-  needsItem: 0
+    specificState: 1
+    usespecific: 1
 --- !u!114 &1132783509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51416,11 +51455,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactor: {fileID: 0}
   maxStates: 0
   state: 0
   sound: {fileID: 0}
   soundManager: {fileID: 0}
+--- !u!114 &1132783510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132783503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 825f9096b36aeb2408abb2b8ecd44929, type: 2}
+--- !u!95 &1132783511
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132783503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1134263619
 GameObject:
   m_ObjectHideFlags: 0
@@ -52829,7 +52899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactor: {fileID: 0}
   maxStates: 2
   state: 0
   sound: {fileID: 0}
@@ -58997,37 +59066,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389087347}
   m_Mesh: {fileID: 7060280008036029220, guid: 99e1c1eb68b01894587af52dfac2818a, type: 3}
---- !u!21 &1390877184
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &1397207484
 GameObject:
   m_ObjectHideFlags: 0

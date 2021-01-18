@@ -7,7 +7,7 @@ using System;
 //[RequireComponent(typeof(Animator))]
 public class ObjectStateHandler : MonoBehaviour
 {
-    public Interactor interactor;
+    private Interactor interactor;
 
     [SerializeField]
     private short maxStates;
