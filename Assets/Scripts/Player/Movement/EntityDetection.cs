@@ -124,16 +124,21 @@ public class EntityDetection : MonoBehaviour
                         break;
                     case InteractionType.isUsable:
                         //objectTouched.toggle? (switches bool)
-                        interactor = ObjectTouched.GetComponent<ManualInteractor>();
+                        interactor = 
+                            ObjectTouched.GetComponent<ManualInteractor>();
+
                         bool itemused  = 
-                            interactor.Toggle(inventory?.equipedItem, transform.position);
+                            interactor.Toggle(
+                                inventory?.equipedItem, transform.position);
+
                         if (itemused)
                         {
                             inventory.ClearEquiped();
                         }
                         break;
                     case InteractionType.isNPC:
-                        dialogueHandler.StartDialolgue((objectData as NpcData).Dialogue);
+                        dialogueHandler.StartDialolgue(
+                            (objectData as NpcData).Dialogue);
                         mD.CleanMessage();
                         this.enabled = false;
                         pM.enabled = false;
