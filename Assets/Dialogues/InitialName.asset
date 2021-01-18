@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: InitialName
+  m_EditorClassIdentifier: 
+  DialogueName: InitialName
+  dialogueNodes:
+  - key: 84c91de1-8cd4-4160-acc5-ef4eb914ed78
+    data:
+      guid: 84c91de1-8cd4-4160-acc5-ef4eb914ed78
+      dialogue: Yeah o texto da para passar
+      position:
+        serializedVersion: 2
+        x: 716
+        y: 80.8
+        width: 217.59998
+        height: 162.4
+      isStart: 0
+      OutPorts: []
+  - key: 51e1d202-2f25-4bdb-b5d0-269d1a35754f
+    data:
+      guid: 51e1d202-2f25-4bdb-b5d0-269d1a35754f
+      dialogue: 
+      position:
+        serializedVersion: 2
+        x: 728
+        y: 301.6
+        width: 217.59998
+        height: 162.4
+      isStart: 0
+      OutPorts: []
+  - key: d483ea3f-29d5-4df3-bb2a-6dadf4d0d889
+    data:
+      guid: d483ea3f-29d5-4df3-bb2a-6dadf4d0d889
+      dialogue: "Isto \xE9 um teste para ver se da para passar o texto"
+      position:
+        serializedVersion: 2
+        x: 246.4
+        y: 189.59999
+        width: 302.4
+        height: 207.20001
+      isStart: 1
+      OutPorts:
+      - name: welp
+        id: 84c91de1-8cd4-4160-acc5-ef4eb914ed78
+      - name: wait
+        id: 51e1d202-2f25-4bdb-b5d0-269d1a35754f

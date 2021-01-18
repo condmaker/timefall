@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 5355374782286455474}
   - component: {fileID: 5355374782286455485}
   - component: {fileID: 4506688365711642767}
-  m_Layer: 0
+  - component: {fileID: 6518798196016757734}
+  - component: {fileID: 7305546745444446341}
+  m_Layer: 8
   m_Name: Torch Flicker 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +105,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6518798196016757734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355374782286455487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: b608f0a907a5c8e41856d70c2f11d286, type: 2}
+--- !u!65 &7305546745444446341
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355374782286455487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.024950916, y: 0.0078122495, z: 0.046636365}
+  m_Center: {x: -0.0001534903, y: -0.0039061378, z: -0.010157811}
 --- !u!1 &5355374783011462305
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +211,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3895
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0

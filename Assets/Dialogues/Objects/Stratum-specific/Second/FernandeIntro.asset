@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: FernandeIntro
+  m_EditorClassIdentifier: 
+  DialogueName: FernandeIntro
+  dialogueNodes:
+  - key: 940e045a-3935-4436-9ef9-405647b44958
+    data:
+      guid: 940e045a-3935-4436-9ef9-405647b44958
+      dialogue: Hello. Are you new to the dungeon?
+      position:
+        serializedVersion: 2
+        x: 196.8
+        y: 100
+        width: 224.8
+        height: 252.8
+      isStart: 1
+      OutPorts:
+      - name: Yes
+        id: 61c9ecc6-b246-4b8d-88d6-bf40f8cd7d1a
+      - name: No
+        id: ed220e6b-3c14-43e6-8354-f46dca578383
+      - name: Maybe
+        id: 14e9d8bf-415f-468c-9e66-b8d7e24c83d1
+  - key: 14e9d8bf-415f-468c-9e66-b8d7e24c83d1
+    data:
+      guid: 14e9d8bf-415f-468c-9e66-b8d7e24c83d1
+      dialogue: PERA ISTO TEM CUSTOM CHOICES???
+      position:
+        serializedVersion: 2
+        x: 518.4
+        y: 452
+        width: 245.59998
+        height: 162.40002
+      isStart: 0
+      OutPorts:
+      - name: HAHA OF COURSE
+        id: 0058ceca-b95d-41c1-b224-c55497f4f463
+  - key: 61c9ecc6-b246-4b8d-88d6-bf40f8cd7d1a
+    data:
+      guid: 61c9ecc6-b246-4b8d-88d6-bf40f8cd7d1a
+      dialogue: You are going to have a GrEaT time
+      position:
+        serializedVersion: 2
+        x: 528
+        y: 62.399998
+        width: 223.20001
+        height: 162.40001
+      isStart: 0
+      OutPorts: []
+  - key: ed220e6b-3c14-43e6-8354-f46dca578383
+    data:
+      guid: ed220e6b-3c14-43e6-8354-f46dca578383
+      dialogue: Great.... well fuck you
+      position:
+        serializedVersion: 2
+        x: 534.4
+        y: 230.4
+        width: 217.59998
+        height: 162.40001
+      isStart: 0
+      OutPorts: []
+  - key: 0058ceca-b95d-41c1-b224-c55497f4f463
+    data:
+      guid: 0058ceca-b95d-41c1-b224-c55497f4f463
+      dialogue: Cool
+      position:
+        serializedVersion: 2
+        x: 801.6
+        y: 482.40002
+        width: 217.60004
+        height: 162.39996
+      isStart: 0
+      OutPorts: []

@@ -1,81 +1,70 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Callbacks;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class DialogueScript : ScriptableObject, IEnumerable<IOData>
+namespace DialogueSystem
 {
-
-  
-    [SerializeField]
-    public string DialogueName;
-    private int dialogueID;
-
-    [SerializeField]
-    private List<IOData> dialogueNodes =
-        new List<IOData>();
-
-    public int Count => dialogueNodes.Count;
-
-   
-    public void FillDialogueDic(NodeData nd)
+    public class DialogueScript : ScriptableObject, IEnumerable<IOData>
     {
-        IOData par = new IOData(nd.GUID, nd);
-        dialogueNodes.Add(par);
-    }
 
-    public NodeData GetNodeByIndex(int index)
-    {
-        return dialogueNodes[index].data;
-    }
 
-    //Gets the node using its id
-    //This option is less efficient 
-    public NodeData GetNodeByGUID(string id)
-    {
-        foreach(IOData io in dialogueNodes)
+        [SerializeField]
+        public string DialogueName;
+        private int dialogueID;
+
+        [SerializeField]
+        private List<IOData> dialogueNodes =
+            new List<IOData>();
+
+        public int Count => dialogueNodes.Count;
+
+
+        public void FillDialogueDic(NodeData nd)
         {
-            if (io.key == id)
-                return io.data;
+            IOData par = new IOData(nd.GUID, nd);
+            dialogueNodes.Add(par);
         }
-        return null;
-    }
 
-    public NodeData GetNextNode(NodeData current ,int choice = 0)
-    {
-        if(current.OutPorts.Count > 0)
-            return GetNodeByGUID(current.OutPorts?[choice]);
-        return null;
-    }
-
-
-  
-    public IEnumerator<IOData> GetEnumerator()
-    {
-        foreach (IOData io in dialogueNodes)
+        public NodeData GetNodeByIndex(int index)
         {
-            yield return io;
+            return dialogueNodes[index].data;
         }
-    }
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
+        //Gets the node using its id
+        //This option is less efficient 
+        public NodeData GetNodeByGUID(string id)
+        {
+            foreach (IOData io in dialogueNodes)
+            {
+                if (io.key == id)
+                    return io.data;
+            }
+            return null;
+        }
+
+        public NodeData GetNextNode(NodeData current, int choice = 0)
+        {
+            if (current.OutPorts.Count > 0)
+                return GetNodeByGUID(current.OutPorts?[choice].ID);
+            return null;
+        }
+
+
+
+        public IEnumerator<IOData> GetEnumerator()
+        {
+            foreach (IOData io in dialogueNodes)
+            {
+                yield return io;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
 
 
-[Serializable]
-public struct IOData
-{  
-    public IOData(string k, NodeData d)
-    {
-        key = k;
-        data = d;
-    }
-
-    public string key;
-    public NodeData data;
-}

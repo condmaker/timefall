@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using DialogueSystem;
+using System;
 using TMPro;
 
 public class DialogueDisplayHandler : MonoBehaviour
 {
-
-    public Action endDialogue;
+    [SerializeField]
+    private bool OnLoad;
 
     [SerializeField]
-    private TextMeshProUGUI dialogueDisplayTarget;
+    private TextMeshProUGUI dialogueDisplayTarget; 
     // Depois maybe tirar o serializable
     [SerializeField]
     private DialogueScript currentScript;
@@ -31,18 +31,22 @@ public class DialogueDisplayHandler : MonoBehaviour
 
     private WaitForSeconds effectSpeed;
 
-
+    private bool ended;
     private bool inDialogue;
-
+    public Action endDialogue;
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
+        if (OnLoad)
+        {
+            StartDialolgue(currentScript);
+        }
     }
 
     public void StartDialolgue(DialogueScript script)
     {
-        inDialogue = true;
+        
         currentScript = script;
         PrepareNewDialogue();
     }
@@ -51,12 +55,36 @@ public class DialogueDisplayHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            if (!inDialogue) return;
-            NextLine(0);
+            PassDialogue();
         }
     }
+
+    public void PassDialogue()
+    {
+        
+
+        if (inDialogue)
+        {
+            if (ended)
+            {
+                if (buttonLayout.transform.childCount > 0)
+                    return;
+                NextLine(0);
+            }
+            else
+            {
+                dialogueDisplayTarget.text += dialogueText;
+                dialogueText = "";
+                buttonLayout.SetActive(true);
+                ended = true;
+                StopCoroutine("TypeWriterEffect");
+            }
+
+        }
+    }
+
 
     public void PrepareNewDialogue()
     {
@@ -69,8 +97,6 @@ public class DialogueDisplayHandler : MonoBehaviour
         currentGUID = currentScript.GetNodeByIndex(0).GUID;
 
         //Handle button Layout
-        //There needs to be a function that checks the count of 
-        //The output ports in data an instantiates buttons accordingly
         InstatiateChoices();
         DisplayLine();
     }
@@ -86,9 +112,6 @@ public class DialogueDisplayHandler : MonoBehaviour
         int choiceNumb = dialogueLine.OutPorts.Count;
         if (choiceNumb == 0) return;
         
-        //Dialogue Window needs option string
-        string[] optionS = new string[] { "Yes", "No" };
-
         //This probably needs a rework :c
         for(int i = 0; i < choiceNumb; i++)
         {          
@@ -96,7 +119,7 @@ public class DialogueDisplayHandler : MonoBehaviour
 
 
             //Depois mudar isto 
-            temp.GetComponent<TextMeshProUGUI>().text = optionS[i];
+            temp.GetComponent<TextMeshProUGUI>().text = dialogueLine.OutPorts[i].Name;
 
             ChoiceSelector cs = temp.GetComponent<ChoiceSelector>();
             cs.ChoiceNumb = i;
@@ -127,8 +150,8 @@ public class DialogueDisplayHandler : MonoBehaviour
 
     private void EndDialogue()
     {
-        inDialogue = false;
         endDialogue?.Invoke();
+        inDialogue = false;
         dialogueDisplayTarget.text = "";
         StopCoroutine("TypeWriterEffect");
     }
@@ -141,8 +164,9 @@ public class DialogueDisplayHandler : MonoBehaviour
 
     IEnumerator TypeWriterEffect()
     {
+        inDialogue = true;
+        ended = false;
         dialogueDisplayTarget.text = "";
-
         while (dialogueText.Length > 0)
         {
             yield return effectSpeed;
@@ -150,6 +174,7 @@ public class DialogueDisplayHandler : MonoBehaviour
             dialogueDisplayTarget.text += nextChar;
             dialogueText = dialogueText.Substring(1);
         }
+        ended = true;
         buttonLayout.SetActive(true);
     }
                 

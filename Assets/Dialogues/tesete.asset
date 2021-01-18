@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: tesete
+  m_EditorClassIdentifier: 
+  DialogueName: tesete
+  dialogueNodes:
+  - key: 2010f3f1-6b77-4a3e-bc58-645768f67db8
+    data:
+      guid: 2010f3f1-6b77-4a3e-bc58-645768f67db8
+      dialogue: "Isto \xE9 um grande test yo pera ta\n\n\n"
+      position:
+        serializedVersion: 2
+        x: 231.2
+        y: 165.59999
+        width: 217.59999
+        height: 252.80002
+      isStart: 1
+      OutPorts:
+      - name: Teste
+        id: 6d9cc292-ee9b-41e8-8c7b-8dc78c011e00
+      - name: Outro Teste
+        id: c08f9e32-9c19-40b8-a474-3e6204f8645e
+      - name: Uma frase maior
+        id: 3ae0e01f-3472-4461-b7eb-13b78b5630ec
+  - key: 3ae0e01f-3472-4461-b7eb-13b78b5630ec
+    data:
+      guid: 3ae0e01f-3472-4461-b7eb-13b78b5630ec
+      dialogue: deddddd
+      position:
+        serializedVersion: 2
+        x: 515.2
+        y: 399.2
+        width: 217.59998
+        height: 161.59998
+      isStart: 0
+      OutPorts: []
+  - key: c08f9e32-9c19-40b8-a474-3e6204f8645e
+    data:
+      guid: c08f9e32-9c19-40b8-a474-3e6204f8645e
+      dialogue: eeeeeeee
+      position:
+        serializedVersion: 2
+        x: 518.4
+        y: 230.4
+        width: 217.59998
+        height: 162.40001
+      isStart: 0
+      OutPorts: []
+  - key: 6d9cc292-ee9b-41e8-8c7b-8dc78c011e00
+    data:
+      guid: 6d9cc292-ee9b-41e8-8c7b-8dc78c011e00
+      dialogue: cvvvvv
+      position:
+        serializedVersion: 2
+        x: 520
+        y: 61.600002
+        width: 217.59998
+        height: 162.4
+      isStart: 0
+      OutPorts: []

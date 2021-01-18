@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
+using DialogueSystem;
 
 // !!! Sync EntityDetection with PlayerInput after timers have been sorted
 
@@ -92,6 +93,10 @@ public class EntityDetection : MonoBehaviour
                 // but not for other world objects like walls, so we need to 
                 // code that in
                 mD.DisplayMessage(objectData);
+            }
+            else if (ObjectTouched.layer == 13)
+            {
+                ObjectTouched.GetComponent<NextStratum>().Next();
             }
         }
         else

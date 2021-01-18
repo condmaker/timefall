@@ -6,6 +6,12 @@ using UnityEngine;
 // getting multiple instances of scripts.
 public class PlayerInput : MonoBehaviour
 {
+
+    [SerializeField]
+    private const float moveDistance = 6;
+    [SerializeField]
+    private const float moveTime = 0.3f;
+
     private PlayerMovement  pM;
     private EntityDetection eD;
 
@@ -17,13 +23,6 @@ public class PlayerInput : MonoBehaviour
     private SoundMng soundManager;
 
     private bool soundSwitch;
-
-    // May become readonly later for performance purposes, support variables
-    // for move distance and time wasted on each step/rotation
-    [SerializeField]
-    private float moveDistance;
-    [SerializeField]
-    private float moveTime;
 
     public float MoveDistance { get => moveDistance; }
     public float MoveTime { get => moveTime; }
