@@ -27,7 +27,7 @@ public class MessageDisplay : MonoBehaviour
 
     public void DisplayMessage(ObjectData _objectData)
     {
-        switch (_objectData.InteractionType)
+        switch (_objectData?.InteractionType)
         {
             case InteractionType.isGrabable:
             textToDisplay.text = ("Pick-up " + _objectData.name);

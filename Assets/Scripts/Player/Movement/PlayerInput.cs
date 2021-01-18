@@ -130,9 +130,6 @@ public class PlayerInput : MonoBehaviour
             else if (Input.GetKey(KeyCode.Q))
                 IsStrafingLeft = true;
         }
-        // Look Up
-        else if (Input.GetKeyUp(KeyCode.S)) LookUp = false;
-        // Rotate Left
         else if (Input.GetKeyUp(KeyCode.A) && !IsLookingUp && !LookUp)
             IsLookingLeft = false;
         // Rotate Right

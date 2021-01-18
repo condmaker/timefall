@@ -42,6 +42,7 @@ public class EntityDetection : MonoBehaviour
 
     private void Update()
     {
+     
         if (pI.IsStrafingRight)
         {
             Vector3 uV = new Vector3(0.0f, -1.0f, 0.0f);
@@ -50,6 +51,7 @@ public class EntityDetection : MonoBehaviour
                 transform.position, Quaternion.AngleAxis(
                 90, transform.forward) * uV, out currentWorldObject,
                 pI.MoveDistance);
+;
         }
         else if (pI.IsStrafingLeft)
         {
@@ -87,7 +89,7 @@ public class EntityDetection : MonoBehaviour
             if ((ObjectTouched.layer == 8) || (ObjectTouched.layer == 9))
             {
                 objectHolder = ObjectTouched.GetComponent<DataHolder>();
-                objectData = objectHolder.GetData(inventory.equipedItem);
+                objectData = objectHolder?.GetData(inventory.equipedItem);
                 
                 // This only appears for certain objects like levers and stuff,
                 // but not for other world objects like walls, so we need to 
