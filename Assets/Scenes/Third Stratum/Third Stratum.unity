@@ -3329,17 +3329,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a931629cf89e24a4e8876e47f5367f85, type: 3}
---- !u!114 &355277282 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5660589262643409192, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
-  m_PrefabInstance: {fileID: 1894794838}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a61335eb853a1e54ab3a46aed02ad453, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &363786622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 48a381730fd2fdf4fbdd87d92baa2c89, type: 3}
@@ -3531,6 +3520,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 809a2d2f55a219447bb9fc5f47eb7bce, type: 3}
+--- !u!114 &404802612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2703861708769743868, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
+  m_PrefabInstance: {fileID: 1894794838}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61335eb853a1e54ab3a46aed02ad453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &416432598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4599,6 +4599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 523338547}
   - component: {fileID: 523338548}
+  - component: {fileID: 523338549}
   m_Layer: 0
   m_Name: Stratum
   m_TagString: Untagged
@@ -4641,6 +4642,21 @@ MonoBehaviour:
   soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
   music: {fileID: 8300000, guid: 51d9032d2a41b4245aab2da7d0ab15d3, type: 3}
   loop: 1
+--- !u!114 &523338549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523338546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410ca454f610c204e9083b8ff0764ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fCheck: 1
+  medievalSprite: {fileID: 2800000, guid: ba8d4ee8cf3117749bd29956d3713f2c, type: 3}
+  futuristicSprite: {fileID: 2800000, guid: a99dc3cc664cc4c47b21dc83851f1b13, type: 3}
 --- !u!1001 &526319711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6716,17 +6732,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 809a2d2f55a219447bb9fc5f47eb7bce, type: 3}
   m_PrefabInstance: {fileID: 705034338}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &706127599 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2946659077633928898, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
-  m_PrefabInstance: {fileID: 1894794838}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85488a617fcaca54289666dede2f965f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &707597661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 809a2d2f55a219447bb9fc5f47eb7bce, type: 3}
@@ -6766,37 +6771,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 34d435effa2059640824d41f4c5f04a4, type: 3}
   m_PrefabInstance: {fileID: 329213410}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &732335082
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!4 &745863998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f39ddc38c7cd81c4f8d3b4a760c5a0c9, type: 3}
@@ -7562,11 +7536,11 @@ PrefabInstance:
     - target: {fileID: 7691713904668082375, guid: 5c61ec4986495d44399ed826f40acf83, type: 3}
       propertyPath: mD
       value: 
-      objectReference: {fileID: 706127599}
+      objectReference: {fileID: 2027858519}
     - target: {fileID: 7691713904668082375, guid: 5c61ec4986495d44399ed826f40acf83, type: 3}
       propertyPath: dialogueHandler
       value: 
-      objectReference: {fileID: 355277282}
+      objectReference: {fileID: 404802612}
     - target: {fileID: 7691713904668082492, guid: 5c61ec4986495d44399ed826f40acf83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.279999
@@ -11561,6 +11535,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 809a2d2f55a219447bb9fc5f47eb7bce, type: 3}
   m_PrefabInstance: {fileID: 1395953240}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1400553300
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1001 &1406711335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16784,6 +16789,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a931629cf89e24a4e8876e47f5367f85, type: 3}
   m_PrefabInstance: {fileID: 1786916411}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2027858519 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8316671085497791522, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
+  m_PrefabInstance: {fileID: 1894794838}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85488a617fcaca54289666dede2f965f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2034235845
 GameObject:
   m_ObjectHideFlags: 0

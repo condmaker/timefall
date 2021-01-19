@@ -16,7 +16,6 @@ public class MessageDisplay : MonoBehaviour
 
     void Start()
     {
-        textToDisplay = GetComponent<TextMeshProUGUI>();
         iconDisplay = GetComponentInChildren<Image>();
         iconDisplay.sprite = null;
         //unity made me do this...
@@ -50,7 +49,6 @@ public class MessageDisplay : MonoBehaviour
     }
     public void CleanMessage()
     {
-        textToDisplay.text = " ";
         iconDisplay.sprite = null;
         iconDisplay.color = colorNone;
     }
