@@ -24,6 +24,7 @@ public class SequenceInteractor : Interactor
 
     private void UpdateState(ObjectStateHandler osh, short state)
     {
+        if (state == 0) return;
         sequence.Add(osh);
         CheckCompatibility(osh);
     }
@@ -35,15 +36,17 @@ public class SequenceInteractor : Interactor
         if (wantedStates.Count != sequence.Count)
             test = false;
 
-        for (int i = 0; i < wantedStates.Count; i++)
-        {
-            if(wantedStates[i] != sequence?[i])
-            {
-                test = false;
-            }
-        }
-
         if(test)
+            for (int i = 0; i < wantedStates.Count; i++)
+            {
+                if(wantedStates[i] != sequence?[i])
+                {
+                    test = false;
+                }
+            }
+        
+
+        if (test)
         {
             ProcessResult();
         }
@@ -59,8 +62,9 @@ public class SequenceInteractor : Interactor
 
     public void ResetList()
     {
-        foreach (ObjectStateHandler o in sequence)
+        for(int i = 0; i < sequence.Count; i++)
         {
+            ObjectStateHandler o = sequence[i];
             o.ChangeToState(0);
         }
         sequence.Clear();
