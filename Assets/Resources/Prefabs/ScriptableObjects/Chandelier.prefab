@@ -954,9 +954,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iteration:
-    iteration: 0
-    specificState: 0
-    usespecific: 0
+    iteration: 1
+    specificState: 1
+    specific: 0
   wantedStates:
   - osh: {fileID: 0}
     state: 1
@@ -985,7 +985,7 @@ MonoBehaviour:
   iteration:
     iteration: 0
     specificState: 0
-    usespecific: 0
+    specific: 0
   unlockerId: 2
   needsItem: 1
 --- !u!114 &4846266419920349989
@@ -1002,7 +1002,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxStates: 3
   state: 0
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 910a1ae90421eea4ab1bfab755886fb6, type: 3}
+  volume: 1
   soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
 --- !u!65 &153633169931451409
 BoxCollider:

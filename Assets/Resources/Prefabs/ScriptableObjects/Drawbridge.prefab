@@ -51,8 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxStates: 2
   state: 0
-  sound: {fileID: 0}
-  soundManager: {fileID: 0}
+  sound: {fileID: 8300000, guid: a4e5199ed946c0a4784a0c660dd266a6, type: 3}
+  volume: 5
+  soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
 --- !u!114 &2283758844366485854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +79,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299f3d557e90cc841baf2b3fe34b8a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iteration:
+    iteration: 0
+    specificState: 0
+    specific: 0
   wantedStates:
   - osh: {fileID: 0}
     state: 0
