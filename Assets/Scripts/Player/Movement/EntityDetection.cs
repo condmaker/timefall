@@ -92,9 +92,6 @@ public class EntityDetection : MonoBehaviour
                 objectHolder = ObjectTouched.GetComponent<DataHolder>();
                 objectData = objectHolder?.GetData(inventory.equipedItem);
                 
-                // This only appears for certain objects like levers and stuff,
-                // but not for other world objects like walls, so we need to 
-                // code that in
                 mD.DisplayMessage(objectData);
             }
             else if (ObjectTouched.layer == 13)
@@ -122,8 +119,8 @@ public class EntityDetection : MonoBehaviour
                     case InteractionType.isGrabable:
                         inventory.AddItem(objectData as ItemData);
                         objectHolder.DestroyObject();
-                        //Destroy(ObjectTouched);
                         mD.CleanMessage();
+                        objectData = null;
                         break;
                     case InteractionType.isUsable:
                         //objectTouched.toggle? (switches bool)
@@ -155,9 +152,6 @@ public class EntityDetection : MonoBehaviour
 
             pI.IsInteracting = false;
         }
-
-
-
     }
 
     private void EndDialogue()

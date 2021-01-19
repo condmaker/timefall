@@ -63,7 +63,6 @@ public class ItemInteractor : ManualInteractor
         {
             if(!(comb[it] == iS.ID))
             {
-                Debug.Log(comb[it] +" " + iS.ID);
                 result = false;
                 break;
             }
