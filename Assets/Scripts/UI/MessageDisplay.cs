@@ -30,22 +30,19 @@ public class MessageDisplay : MonoBehaviour
         switch (_objectData?.InteractionType)
         {
             case InteractionType.isGrabable:
-            textToDisplay.text = ("Pick-up " + _objectData.name);
                 iconDisplay.sprite = grabIcon;
                 iconDisplay.color = colorFull;
                 break;
             case InteractionType.isUsable:
-            textToDisplay.text = ("Use " + _objectData.name);
+
                 iconDisplay.sprite = interactIcon;
                 iconDisplay.color = colorFull;
                 break;
             case InteractionType.isNPC:
-            textToDisplay.text = ("Talk to " + _objectData.name);
                 iconDisplay.sprite = talkIcon;
                 iconDisplay.color = colorFull;
                 break;
             default:
-            textToDisplay.text = " ";
                 iconDisplay.sprite = null;
                 iconDisplay.color = colorNone;
                 break;
