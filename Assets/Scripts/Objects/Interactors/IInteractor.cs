@@ -26,7 +26,7 @@ public abstract class Interactor: MonoBehaviour
             return;
         }
 
-        if (iteration.Usespecific)
+        if (iteration.Specific)
         {
             OnGoTo?.Invoke(iteration.SpecificState);           
         }
