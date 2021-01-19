@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: Bookshelf
+  m_EditorClassIdentifier: 
+  DialogueName: Bookshelf
+  dialogueNodes:
+  - key: e33611f2-fce7-41a9-b7c2-05f5d85538de
+    data:
+      guid: e33611f2-fce7-41a9-b7c2-05f5d85538de
+      dialogue: 'The books on this shelf look so old that a mild touch would
+
+        probably
+        make it all fall apart. But a single, newer page stands out.
+
+
+
+
+
+
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 155.2
+        y: 15.200001
+        width: 401.59998
+        height: 308
+      isStart: 1
+      OutPorts:
+      - name: Read
+        id: 6b7705a2-a9c3-4f58-a3e5-35be9e975a71
+      - name: Ignore
+        id: 2ef1f997-2d53-4f16-ac40-70895ef5a734
+  - key: 029f956e-a120-40d2-93c0-3d28104d8b27
+    data:
+      guid: 029f956e-a120-40d2-93c0-3d28104d8b27
+      dialogue: "\"We have resources, but they're starting to die out. \nGod, one
+        of our comrades has even gone insane.\"\n\n\n\n\n\n"
+      position:
+        serializedVersion: 2
+        x: 166.4
+        y: 280.80002
+        width: 313.6
+        height: 307.99997
+      isStart: 0
+      OutPorts:
+      - name: Go on
+        id: f1c6db97-8bab-4b6a-b933-5a51e2d10356
+      - name: Stop
+        id: 5c2345c3-0ece-425c-bd52-a7de0a8c50ca
+  - key: 2ef1f997-2d53-4f16-ac40-70895ef5a734
+    data:
+      guid: 2ef1f997-2d53-4f16-ac40-70895ef5a734
+      dialogue: You leave the page alone.
+      position:
+        serializedVersion: 2
+        x: 323.2
+        y: -131.2
+        width: 217.59998
+        height: 162.4
+      isStart: 0
+      OutPorts: []
+  - key: f1c6db97-8bab-4b6a-b933-5a51e2d10356
+    data:
+      guid: f1c6db97-8bab-4b6a-b933-5a51e2d10356
+      dialogue: '"If only we could pass that gate... I noticed that the torch at
+        the beginning
+
+        had a strange reflection to it. That could be the
+        key to get us out of here."
+
+
+
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 552.8
+        y: 288
+        width: 440
+        height: 308
+      isStart: 0
+      OutPorts:
+      - name: Go on
+        id: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
+      - name: Stop
+        id: ad5ec2a6-3b03-43d7-919c-c388b68e1645
+  - key: 6b7705a2-a9c3-4f58-a3e5-35be9e975a71
+    data:
+      guid: 6b7705a2-a9c3-4f58-a3e5-35be9e975a71
+      dialogue: "The page reads: \"Johann's Diary, day 130. We have been inside this
+        \ndamned Catacomb for way too long.\"\n\n\n\n\n\n"
+      position:
+        serializedVersion: 2
+        x: 560.8
+        y: 15.200001
+        width: 415.2
+        height: 308
+      isStart: 0
+      OutPorts:
+      - name: Go on
+        id: 1425bfa7-964e-46a2-9bf0-ac3baabd8a51
+      - name: Stop
+        id: facf56b6-ab17-4ed2-9666-bf66d3164768
+  - key: facf56b6-ab17-4ed2-9666-bf66d3164768
+    data:
+      guid: facf56b6-ab17-4ed2-9666-bf66d3164768
+      dialogue: 'You stop reading the page.
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 613.6
+        y: -176
+        width: 217.60004
+        height: 205.6
+      isStart: 0
+      OutPorts: []
+  - key: 41012d17-c192-4eb5-905d-d7557cd9c611
+    data:
+      guid: 41012d17-c192-4eb5-905d-d7557cd9c611
+      dialogue: 'You stop reading the page.
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 845.6
+        y: -182.40001
+        width: 217.59998
+        height: 205.6
+      isStart: 0
+      OutPorts: []
+  - key: 1425bfa7-964e-46a2-9bf0-ac3baabd8a51
+    data:
+      guid: 1425bfa7-964e-46a2-9bf0-ac3baabd8a51
+      dialogue: "\"That damned Gargoyle Room closed us off right when the 100th\nCrusader
+        passed through it, and now we're stuck.\" \n\n\n\n\n\n\n\n\n"
+      position:
+        serializedVersion: 2
+        x: 1001.6
+        y: -4.799999
+        width: 392
+        height: 351.2
+      isStart: 0
+      OutPorts:
+      - name: Go on
+        id: 029f956e-a120-40d2-93c0-3d28104d8b27
+      - name: Stop
+        id: 41012d17-c192-4eb5-905d-d7557cd9c611
+  - key: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
+    data:
+      guid: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
+      dialogue: "\"Also, some walls looked really weak, though not weak enough to
+        be rammed \nthrough. In any case... if you are reading this, we may all be
+        gone. \nI shudder to think of our fates. Please, find the truth.\" --The
+        page ends here.\n\n\n\n\n\n"
+      position:
+        serializedVersion: 2
+        x: 1004
+        y: 279.2
+        width: 468.80005
+        height: 277.59998
+      isStart: 0
+      OutPorts: []
+  - key: 5c2345c3-0ece-425c-bd52-a7de0a8c50ca
+    data:
+      guid: 5c2345c3-0ece-425c-bd52-a7de0a8c50ca
+      dialogue: 'You stop reading the page.
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 1093.6
+        y: -192
+        width: 217.59998
+        height: 205.6
+      isStart: 0
+      OutPorts: []
+  - key: ad5ec2a6-3b03-43d7-919c-c388b68e1645
+    data:
+      guid: ad5ec2a6-3b03-43d7-919c-c388b68e1645
+      dialogue: 'You stop reading the page.
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 1316.8
+        y: -178.40001
+        width: 217.59998
+        height: 205.6
+      isStart: 0
+      OutPorts: []
