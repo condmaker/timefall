@@ -21,17 +21,17 @@ public class IteratorEditor : PropertyDrawer
         Rect typeRect = new Rect(
             position.x,
             position.y + 5,
-            position.width * 0.6f, position.height);
+            position.width * 0.6f, position.height - 7);
 
         Rect labelRect = new Rect(
             position.x + position.width - 130,
             position.y + 5,
-            position.width * 0.5f, position.height);
+            position.width * 0.5f, position.height - 7);
 
         Rect useRect = new Rect(
             position.x + position.width - 20, 
             position.y + 5,
-            position.width * 0.2f, position.height);
+            position.width * 0.2f, position.height - 7);
 
 
         SerializedProperty typeProp = 
@@ -56,6 +56,6 @@ public class IteratorEditor : PropertyDrawer
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        return base.GetPropertyHeight(property, label);
+        return 27;
     }
 }
