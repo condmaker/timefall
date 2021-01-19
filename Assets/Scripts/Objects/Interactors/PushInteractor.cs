@@ -5,15 +5,22 @@ using UnityEngine;
 
 public class PushInteractor : ManualInteractor
 {
-    //public override event Action OnGoToLast;
-    //public override event Action<IterationType> OnGoToNext;
-    //public override event Action<short> OnGoTo;
-
+    
     public override bool Toggle(ItemData itemId, Vector3 position)
+    {
+        return Push(position);
+    }
+
+    private void Update()
+    {
+        Debug.DrawRay(transform.position, -transform.right * 5, Color.red);
+    }
+
+    public bool Push(Vector3 position)
     {
         int offset = 2;
         if (position.x > transform.position.x + offset)
-            transform.eulerAngles = new Vector3(0,0,0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         else if (position.x < transform.position.x - offset)
             transform.eulerAngles = new Vector3(0, 180, 0);
         else if (position.z > transform.position.z + offset)
@@ -21,18 +28,40 @@ public class PushInteractor : ManualInteractor
         else if (position.z < transform.position.z - offset)
             transform.eulerAngles = new Vector3(0, 90, 0);
 
-        this.DetectObstacles();
-
-        ProcessResult();
+        if (DetectObstacles())
+        {
+            ProcessResult();
+        }
 
         return false;
     }
 
-
-    private void DetectObstacles()
+    private bool DetectObstacles()
     {
+        RaycastHit currentWorldObject;
         //Raycast
+         bool hit = Physics.Raycast(
+                transform.position, -transform.right, 
+                out currentWorldObject, 6);
+
+
+        GameObject nearObject = hit ? currentWorldObject.collider.gameObject: null;
+        
         //Se for Caixa Togller
-        //SE for o final da area n mexe ou animação de n mexer
+        if (nearObject?.name.Contains("Box") ?? false)
+        {
+            nearObject.GetComponent<PushInteractor>().Push(this.transform.position);
+            return true;
+        }
+        else if (!hit)
+        {          
+            return true;
+        }
+        else
+        {
+            //SE for o final da area n mexe ou animação de n mexer
+            return false;
+        }
+
     }
 }

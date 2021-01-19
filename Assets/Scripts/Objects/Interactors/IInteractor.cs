@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+[RequireComponent(typeof(ObjectStateHandler))]
 public abstract class Interactor: MonoBehaviour
 {
     public event Action OnGoToLast;
