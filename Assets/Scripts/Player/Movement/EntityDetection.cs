@@ -74,8 +74,9 @@ public class EntityDetection : MonoBehaviour
         {
             if (pI.Bump)
             {
-                GameObject temp = currentWorldObject.transform.gameObject;
-                temp.GetComponent<BreakingWall>()?.Break();
+
+                GameObject temp = currentWorldObject.transform?.gameObject;
+                temp?.GetComponent<BreakingWall>()?.Break();
             }
 
             return;
