@@ -100,7 +100,7 @@ public class ObjectStateHandler : MonoBehaviour
     }
 
     //Change to the passed state
-    private void ChangeToState(short wantedState)
+    public void ChangeToState(short wantedState)
     {
         
         State = wantedState;

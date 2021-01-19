@@ -5038,6 +5038,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iteration:
+    iteration: 1
+    specificState: 0
+    usespecific: 0
   unlockerId: 0
   needsItem: 0
 --- !u!65 &841265337513403789
@@ -5078,10 +5082,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299f3d557e90cc841baf2b3fe34b8a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iteration:
+    iteration: 0
+    specificState: 0
+    usespecific: 0
   wantedStates:
   - osh: {fileID: 0}
     state: 0
-    any: 0
+    any: 1
 --- !u!95 &3614051161342477163
 Animator:
   serializedVersion: 3

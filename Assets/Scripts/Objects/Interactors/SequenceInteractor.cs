@@ -59,6 +59,10 @@ public class SequenceInteractor : Interactor
 
     public void ResetList()
     {
+        foreach (ObjectStateHandler o in sequence)
+        {
+            o.ChangeToState(0);
+        }
         sequence.Clear();
     }
 }

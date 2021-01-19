@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7085715020273574526
 Transform:
   m_ObjectHideFlags: 0
@@ -38,7 +38,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2447896614258659020}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -208,6 +208,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ca7c51a86052241a8f104a1d7da4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iteration:
+    iteration: 0
+    specificState: 0
+    usespecific: 0
   unlockerId: 2
   needsItem: 1
 --- !u!114 &7310518821933322614
