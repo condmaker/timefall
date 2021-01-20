@@ -4,7 +4,6 @@ using UnityEditor;
 using UnityEngine;
 using System;
 
-//[RequireComponent(typeof(Animator))]
 public class ObjectStateHandler : MonoBehaviour
 {
 
