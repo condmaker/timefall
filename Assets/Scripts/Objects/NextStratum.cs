@@ -8,14 +8,12 @@ public class NextStratum : MonoBehaviour
 {
     [SerializeField]
     private string sceneName;
-    [SerializeField]
-    private NextScene nextScene;
 
     public void Next()
     {
         try
         {
-            nextScene.SceneString = sceneName;
+            StratumManager.instance.SceneString = sceneName;
             // Change to index later
             SceneManager.LoadScene("Loading");
         }

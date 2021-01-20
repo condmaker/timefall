@@ -106,9 +106,6 @@ public class ObjectStateHandler : MonoBehaviour
     //Change to the passed state
     public void ChangeToState(short wantedState)
     {
-        if (sound != null)
-            soundManager.PlaySound(sound, transform.position, volume);
-
         State = wantedState;
         OnChangeState?.Invoke(this, State);
         //Cenas relacionadas com o efeito dos states
@@ -116,6 +113,9 @@ public class ObjectStateHandler : MonoBehaviour
         if (anim == null) return;
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
+
+        if (sound != null)
+            soundManager.PlaySound(sound, transform.position, volume);
 
         //etc
     }

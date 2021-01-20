@@ -124,9 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a57c4c81d9e3348889f3c479c5e24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockers:
-  - id: 7
-    state: 0
+  iteration:
+    iteration: 0
+    specificState: 0
+    specific: 0
+  unlockers: 0000
   NeedAll: 0
 --- !u!114 &239861676992671430
 MonoBehaviour:
@@ -143,6 +145,7 @@ MonoBehaviour:
   maxStates: 2
   state: 0
   sound: {fileID: 8300000, guid: b69f9c6c6b1713b4a95299114e95d61d, type: 3}
+  volume: 1
   soundManager: {fileID: 0}
 --- !u!114 &8304717241219043170
 MonoBehaviour:
@@ -403,6 +406,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299f3d557e90cc841baf2b3fe34b8a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iteration:
+    iteration: 1
+    specificState: 0
+    specific: 0
   wantedStates:
   - osh: {fileID: 239861676992671430}
     state: 0
@@ -422,6 +429,7 @@ MonoBehaviour:
   maxStates: 2
   state: 0
   sound: {fileID: 0}
+  volume: 1
   soundManager: {fileID: 0}
 --- !u!1 &7160446436699450123
 GameObject:

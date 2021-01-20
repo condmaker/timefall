@@ -21,6 +21,12 @@ public class StratumPrefs : MonoBehaviour
         if (fCheck >= 1)
             PlayerPrefs.SetInt("F_Check", 1);
 
+
+        // if (PlayerPrefs.GetInt("F_Check", 1) ...
+    }
+
+    private void Update()
+    {
         if (fCheck == 1)
         {
             CursorLoad(futuristicSprite);
@@ -29,8 +35,6 @@ public class StratumPrefs : MonoBehaviour
         {
             CursorLoad(medievalSprite);
         }
-
-        // if (PlayerPrefs.GetInt("F_Check", 1) ...
     }
 
     private void CursorLoad(Texture2D tex) => 

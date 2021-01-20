@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScene : MonoBehaviour
 {
-    [SerializeField]
-    private NextScene sceneToLoad;
-
     private AsyncOperation loadingInfo;
     private Slider slider;
 
-    private void Awake()
+    private void Start()
     {
-        SceneManager.LoadSceneAsync(sceneToLoad.SceneString);
+        slider = GetComponent<Slider>();
+
+        loadingInfo = 
+            SceneManager.LoadSceneAsync(StratumManager.instance.SceneString);
     }
 
     private void Update() =>
