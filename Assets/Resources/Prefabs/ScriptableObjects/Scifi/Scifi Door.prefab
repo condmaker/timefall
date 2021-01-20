@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5632529853225663145}
   - component: {fileID: 5632529853225663147}
   - component: {fileID: 5632529853225663146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door Right.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 4739558352227838251}
   - component: {fileID: 7051955200037513560}
   - component: {fileID: 5138780654424473078}
+  - component: {fileID: 8859501718522841510}
   - component: {fileID: 5037921852399607026}
-  m_Layer: 0
-  m_Name: Door Medium
+  m_Layer: 8
+  m_Name: Scifi Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,11 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStates: 0
+  maxStates: 2
   state: 0
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: c448e0126b604c4429d5ddcab0a515a8, type: 3}
   volume: 1
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
 --- !u!114 &7051955200037513560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 0}
+  itemData: {fileID: 11400000, guid: 2f239e319e544a5419a98a9e813f1d06, type: 2}
 --- !u!114 &5138780654424473078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +218,26 @@ MonoBehaviour:
     specificState: 0
     specific: 0
   unlockerId: 0
-  needsItem: 1
+  needsItem: 0
+--- !u!95 &8859501718522841510
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5632529853239684807}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 39ba2e7bc4c3afc4a8fe193bc417b175, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!64 &5037921852399607026
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -243,7 +263,7 @@ GameObject:
   - component: {fileID: 5632529854180065021}
   - component: {fileID: 5632529854180065023}
   - component: {fileID: 5632529854180065022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door Left.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
