@@ -13,7 +13,9 @@ public class NextStratum : MonoBehaviour
     {
         try
         {
-            SceneManager.LoadScene(sceneName);
+            StratumManager.instance.SceneString = sceneName;
+            // Change to index later
+            SceneManager.LoadScene("Loading");
         }
         catch (Exception)
         {

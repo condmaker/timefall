@@ -35,6 +35,10 @@ public class ObjectStateHandler : MonoBehaviour
     [SerializeField]
     private AudioClip sound;
 
+    // Utilizado aqui para ser 1 se não ouver input
+    [SerializeField]
+    private int volume = 1;
+
     [SerializeField]
     private SoundMng soundManager;
 
@@ -101,7 +105,6 @@ public class ObjectStateHandler : MonoBehaviour
     //Change to the passed state
     public void ChangeToState(short wantedState)
     {
-        
         State = wantedState;
         OnChangeState?.Invoke(this, State);
         //Cenas relacionadas com o efeito dos states
@@ -109,7 +112,10 @@ public class ObjectStateHandler : MonoBehaviour
         if (anim == null) return;
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
-                   
+
+        if (sound != null)
+            soundManager.PlaySound(sound, transform.position, volume);
+
         //etc
     }
 
