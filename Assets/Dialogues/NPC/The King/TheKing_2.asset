@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: TheKing_2
+  m_EditorClassIdentifier: 
+  DialogueName: TheKing_2
+  dialogueNodes:
+  - key: 87315f4c-1f33-4a34-bcec-74ec746120e9
+    data:
+      guid: 87315f4c-1f33-4a34-bcec-74ec746120e9
+      dialogue: '"So you have turned on the lights. Why would you do that,
+
+        I
+        wonder?"
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: -24
+        y: 196.8
+        width: 352.8
+        height: 219.19998
+      isStart: 1
+      OutPorts:
+      - name: 
+        id: 85b1895c-36df-4985-9881-bb10d3d45aef
+  - key: e5bc4a4b-081c-43ef-8b42-2f6305519f43
+    data:
+      guid: e5bc4a4b-081c-43ef-8b42-2f6305519f43
+      dialogue: '"So that the demon''s spirit doesn''t get out of the gallows.
+
+        It
+        may butcher the both of us... Like it did with my comrades...
+
+        Hahahaha...
+        Oh god, the blood... They..."
+
+
+
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 336
+        y: 450.40002
+        width: 372
+        height: 276.8
+      isStart: 0
+      OutPorts:
+      - name: 
+        id: 83b51d73-f45a-4503-be2c-003a28c0b63a
+  - key: 85b1895c-36df-4985-9881-bb10d3d45aef
+    data:
+      guid: 85b1895c-36df-4985-9881-bb10d3d45aef
+      dialogue: '"We do not need light here.
+
+        Do not turn on any remaining
+        lights."
+
+
+
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 611.2
+        y: 184
+        width: 228.79999
+        height: 263.2
+      isStart: 0
+      OutPorts:
+      - name: Why?
+        id: e5bc4a4b-081c-43ef-8b42-2f6305519f43
+  - key: 83b51d73-f45a-4503-be2c-003a28c0b63a
+    data:
+      guid: 83b51d73-f45a-4503-be2c-003a28c0b63a
+      dialogue: '"...At any rate. Do not light them anymore.
+
+        This is an
+        order from the King. Do you hear? I am the King.
+
+        I am."
+
+
+
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 760
+        y: 409.6
+        width: 351.19995
+        height: 277.6
+      isStart: 0
+      OutPorts: []

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: TheKing_3
+  m_EditorClassIdentifier: 
+  DialogueName: TheKing_3
+  dialogueNodes:
+  - key: 20e95f1e-bcf0-4bf2-8f52-14cace14c867
+    data:
+      guid: 20e95f1e-bcf0-4bf2-8f52-14cace14c867
+      dialogue: '"So you have lit them all. We are going to be devoured.
+
+        Mauled
+        to pieces, at the ethereal belly of a demon."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 476
+        y: 203.2
+        width: 334.40002
+        height: 176.79999
+      isStart: 0
+      OutPorts:
+      - name: There is no demon.
+        id: e943fe04-e40b-413c-b524-3b809f0f50df
+  - key: e943fe04-e40b-413c-b524-3b809f0f50df
+    data:
+      guid: e943fe04-e40b-413c-b524-3b809f0f50df
+      dialogue: '"No. There is a demon. Always present. Always watching.
+
+        The
+        black blob, the man-eating fiend, the... the..."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 852
+        y: 203.2
+        width: 351.19995
+        height: 176.79999
+      isStart: 0
+      OutPorts:
+      - name: 
+        id: 380809eb-e636-4b59-b852-51783fa3349f
+  - key: 380809eb-e636-4b59-b852-51783fa3349f
+    data:
+      guid: 380809eb-e636-4b59-b852-51783fa3349f
+      dialogue: 'The King goes silent.
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 1244
+        y: 207.2
+        width: 217.59998
+        height: 162.4
+      isStart: 0
+      OutPorts: []
