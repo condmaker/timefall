@@ -26,12 +26,12 @@ public class IteratorEditor : PropertyDrawer
         Rect labelRect = new Rect(
             position.x + position.width - 130,
             position.y + 5,
-            position.width * 0.5f, position.height - 7);
+            position.width * 0.5f, position.height - 9);
 
         Rect useRect = new Rect(
             position.x + position.width - 20, 
             position.y + 5,
-            position.width * 0.2f, position.height - 7);
+            position.width * 0.2f, position.height - 9);
 
 
         SerializedProperty typeProp = 
