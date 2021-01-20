@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: PC1
+  m_EditorClassIdentifier: 
+  DialogueName: PC1
+  dialogueNodes:
+  - key: 9f0fdf25-1d0c-471b-a891-980a591b542b
+    data:
+      guid: 9f0fdf25-1d0c-471b-a891-980a591b542b
+      dialogue: "POWER ON... ALLOCATING SPACE... LOADING MEMORY...\nWELCOME TO THE
+        TIMEFALL.\n...BIOMETRIC DATA NOT RECOGNIZED. CREATING NEW PROFILE. \n\n\n"
+      position:
+        serializedVersion: 2
+        x: 185.6
+        y: 201.59999
+        width: 399.19998
+        height: 190.4
+      isStart: 1
+      OutPorts:
+      - name: 
+        id: 903f9b42-2ee4-42f3-a1ec-46a68ff4d667
+  - key: 903f9b42-2ee4-42f3-a1ec-46a68ff4d667
+    data:
+      guid: 903f9b42-2ee4-42f3-a1ec-46a68ff4d667
+      dialogue: 'THE TIME ENGINE HAS A DEFECT. LARGE HADRON COLLIDER COMPROMISED.
+
+        ATOMIC
+        ENGINE WORKING. MATTER COMPOSITION WORKING.
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 605.6
+        y: 200.8
+        width: 475.20007
+        height: 161.6
+      isStart: 0
+      OutPorts:
+      - name: 
+        id: 1690518a-49f3-4c5b-9ea3-d188c3f3648d
+  - key: 1690518a-49f3-4c5b-9ea3-d188c3f3648d
+    data:
+      guid: 1690518a-49f3-4c5b-9ea3-d188c3f3648d
+      dialogue: 'CREDENTIALS NEEDED. PLEASE INSERT ALL COLORED KEYCARDS.
+
+        GLOBAL
+        SHIP MESSAGE:
+
+        "Mission compromised. The ship is scheduled to return
+        at 12:00."'
+      position:
+        serializedVersion: 2
+        x: 1103.2
+        y: 192
+        width: 411.20007
+        height: 147.2
+      isStart: 0
+      OutPorts: []

@@ -1,0 +1,331 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: TheKing_1
+  m_EditorClassIdentifier: 
+  DialogueName: TheKing_1
+  dialogueNodes:
+  - key: 2b703017-44c7-40a2-86e1-dfba730e5de4
+    data:
+      guid: 2b703017-44c7-40a2-86e1-dfba730e5de4
+      dialogue: '"Hm...? Ah... A visitor! Welcome to my castle, stranger.
+
+        It
+        has been a long time since I''ve gotten any guests."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: -595.2
+        y: 205.59999
+        width: 328.80002
+        height: 220
+      isStart: 1
+      OutPorts:
+      - name: Who are you?
+        id: 61ab53dd-dc06-4040-bf4b-af8d74ac9189
+  - key: 21787446-2b1d-46f2-92fe-301e4aaf3bdf
+    data:
+      guid: 21787446-2b1d-46f2-92fe-301e4aaf3bdf
+      dialogue: '"Yes... The ones who followed me. They came with me here in order
+        to...
+
+        ...Hm. I do not remember. At any case, they were devoured
+        by him."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: -197.6
+        y: 640.8
+        width: 434.40002
+        height: 220
+      isStart: 0
+      OutPorts:
+      - name: ...
+        id: c7753aca-2dd2-4ecf-acb5-a5a999f1b465
+  - key: c7753aca-2dd2-4ecf-acb5-a5a999f1b465
+    data:
+      guid: c7753aca-2dd2-4ecf-acb5-a5a999f1b465
+      dialogue: '"With the might of the gods empowering me, I butchered the demon,
+
+        and
+        left its bones to rot on the gallows behind me, as a reminder."'
+      position:
+        serializedVersion: 2
+        x: 256
+        y: 844.8
+        width: 408.8
+        height: 221.59998
+      isStart: 0
+      OutPorts:
+      - name: Gallows?
+        id: dd472c78-4f4f-4289-aa59-95fd4f25c4e2
+      - name: Goodbye.
+        id: 451d391b-a24a-48e9-b327-1f6069915330
+  - key: 451d391b-a24a-48e9-b327-1f6069915330
+    data:
+      guid: 451d391b-a24a-48e9-b327-1f6069915330
+      dialogue: '"So long, traveler. Make sure to come again... Hahaha."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 256.8
+        y: 1047.2
+        width: 336.8
+        height: 205.59998
+      isStart: 0
+      OutPorts: []
+  - key: 6d2b9aef-6eec-43b1-bd1c-414b1a960586
+    data:
+      guid: 6d2b9aef-6eec-43b1-bd1c-414b1a960586
+      dialogue: '"With the might of the gods empowering me, I butchered the demon,
+
+        and
+        left its bones to rot on the gallows behind me, as a reminder."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 257.6
+        y: 371.2
+        width: 408.80002
+        height: 264.8
+      isStart: 0
+      OutPorts:
+      - name: Gallows?
+        id: 0f4687d3-a383-4ff4-bdfa-f7ccfaa7e388
+      - name: Goodbye.
+        id: 2b4c0da2-1322-43bc-98de-3b97ab335ca3
+  - key: 2b4c0da2-1322-43bc-98de-3b97ab335ca3
+    data:
+      guid: 2b4c0da2-1322-43bc-98de-3b97ab335ca3
+      dialogue: '"So long, traveler. Make sure to come again... Hahaha."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 283.2
+        y: 647.2
+        width: 336.8
+        height: 205.59998
+      isStart: 0
+      OutPorts: []
+  - key: 61ab53dd-dc06-4040-bf4b-af8d74ac9189
+    data:
+      guid: 61ab53dd-dc06-4040-bf4b-af8d74ac9189
+      dialogue: '"I am the King. The lord of this castle. Though my crown has been
+        lost
+
+        thanks to a foul demon who once resided here, I am still the
+        ruler."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 613.6
+        y: 73.600006
+        width: 420.80005
+        height: 310.4
+      isStart: 0
+      OutPorts:
+      - name: Demon?
+        id: 701f2248-3a32-4d53-9dec-5aa03fe921cd
+      - name: How do I procced?
+        id: 76c9f8ff-9f15-44db-b7ba-f95e30bfdf68
+      - name: Why is it so dark?
+        id: 1976e55e-76c2-4540-904f-c45d2a6054ec
+  - key: 76c9f8ff-9f15-44db-b7ba-f95e30bfdf68
+    data:
+      guid: 76c9f8ff-9f15-44db-b7ba-f95e30bfdf68
+      dialogue: '"I do not understand the question. Proceed where?
+
+        You are
+        at my presence already. What more do you need?"
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 654.4
+        y: 623.2
+        width: 356.8
+        height: 220
+      isStart: 0
+      OutPorts:
+      - name: Directions. This isn't a castle.
+        id: db3afb7f-fb7c-452e-8bef-0283c7be0a2c
+  - key: 0f4687d3-a383-4ff4-bdfa-f7ccfaa7e388
+    data:
+      guid: 0f4687d3-a383-4ff4-bdfa-f7ccfaa7e388
+      dialogue: '"Yes, the ones right behind this throne. They will lead you to the
+        castle''s
+
+        dungeon. Though they have been locked for quite some time."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 675.2
+        y: 385.6
+        width: 434.39996
+        height: 220.00003
+      isStart: 0
+      OutPorts:
+      - name: How do I open it?
+        id: f3fed646-7eeb-4612-91f6-8cbe0bc0537d
+  - key: dd472c78-4f4f-4289-aa59-95fd4f25c4e2
+    data:
+      guid: dd472c78-4f4f-4289-aa59-95fd4f25c4e2
+      dialogue: '"Yes, the ones right behind this throne. They will lead you to the
+        castle''s
+
+        dungeon. Though they have been locked for quite some time."
+
+'
+      position:
+        serializedVersion: 2
+        x: 704.8
+        y: 831.2
+        width: 434.39996
+        height: 191.19995
+      isStart: 0
+      OutPorts:
+      - name: How do I open it?
+        id: 506fb0fd-6309-46ff-ba1f-d74129882e0f
+  - key: db3afb7f-fb7c-452e-8bef-0283c7be0a2c
+    data:
+      guid: db3afb7f-fb7c-452e-8bef-0283c7be0a2c
+      dialogue: '"You dare speak that to the face of a monarch? If you desire food,
+
+        then
+        go to the drawbridge to the left. There is an abundace of it.
+
+        I
+        can give you no more ''directions'' than that, I''m afraid."
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 1040.8
+        y: 612
+        width: 396
+        height: 234.40002
+      isStart: 0
+      OutPorts: []
+  - key: 1976e55e-76c2-4540-904f-c45d2a6054ec
+    data:
+      guid: 1976e55e-76c2-4540-904f-c45d2a6054ec
+      dialogue: "\"I do not know. At any case, I do not need the light. \nAnd neither
+        does you. Farewell, stranger.\"\n\n\n\n\n\n"
+      position:
+        serializedVersion: 2
+        x: 1047.2
+        y: -257.6
+        width: 314.40002
+        height: 263.2
+      isStart: 0
+      OutPorts: []
+  - key: 701f2248-3a32-4d53-9dec-5aa03fe921cd
+    data:
+      guid: 701f2248-3a32-4d53-9dec-5aa03fe921cd
+      dialogue: '"Indeed. A man-eating demon, responsible for devouring my loyal
+        subjects. All of them...
+
+        gobbled up whole. No bones to speak of.
+        Only I remained to slain the monstrosity."
+
+
+
+
+
+
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 1066.4
+        y: 83.2
+        width: 524.7999
+        height: 308
+      isStart: 0
+      OutPorts:
+      - name: ...
+        id: 6d2b9aef-6eec-43b1-bd1c-414b1a960586
+      - name: Subjects?
+        id: 21787446-2b1d-46f2-92fe-301e4aaf3bdf
+  - key: f3fed646-7eeb-4612-91f6-8cbe0bc0537d
+    data:
+      guid: f3fed646-7eeb-4612-91f6-8cbe0bc0537d
+      dialogue: '"Traveler, are you so daft to think I would share secrets of my
+        castle
+
+        with you? If you desire food, then go to the drawbridge to
+        the left.
+
+        There is an abundace of it-- but I will not share anything
+        else. "
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 1120
+        y: 374.40002
+        width: 411.19995
+        height: 234.39996
+      isStart: 0
+      OutPorts: []
+  - key: 506fb0fd-6309-46ff-ba1f-d74129882e0f
+    data:
+      guid: 506fb0fd-6309-46ff-ba1f-d74129882e0f
+      dialogue: '"Traveler, are you so daft to think I would share secrets of my
+        castle
+
+        with you? If you desire food, then go to the drawbridge to
+        the left.
+
+        There is an abundace of it-- but I will not share anything
+        else. "
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 1151.2
+        y: 823.2
+        width: 411.20007
+        height: 234.40002
+      isStart: 0
+      OutPorts: []
