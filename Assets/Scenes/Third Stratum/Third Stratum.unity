@@ -8192,6 +8192,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227365906}
   m_Mesh: {fileID: -3220645731831034337, guid: a931629cf89e24a4e8876e47f5367f85, type: 3}
+--- !u!21 &228708090
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &229884186
 GameObject:
   m_ObjectHideFlags: 0
@@ -22226,37 +22257,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626683524}
   m_Mesh: {fileID: -7267088869195010357, guid: 809a2d2f55a219447bb9fc5f47eb7bce, type: 3}
---- !u!21 &627601114
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &628885855
 GameObject:
   m_ObjectHideFlags: 0
@@ -62289,6 +62289,30 @@ PrefabInstance:
       propertyPath: m_UseSpriteMesh
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1835614918433385672, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.007291666
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835614918433385672, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.932261
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835614918433385672, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 68.12317
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835614918433385672, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.33496094
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835614918433385672, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835614918433385672, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 149.90002
+      objectReference: {fileID: 0}
     - target: {fileID: 2075044943739281404, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -62299,15 +62323,15 @@ PrefabInstance:
       objectReference: {fileID: 1397023782}
     - target: {fileID: 2768016509892523812, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2768016509892523812, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2768016509892523812, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3010026700578990299, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_AnchorMin.y
@@ -62343,15 +62367,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4046677823376325583, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4046677823376325583, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4046677823376325583, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4567583620590097823, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_LocalScale.x
@@ -62427,6 +62451,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7116033786515616327, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7207638474523072832, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7329334621534626330, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
