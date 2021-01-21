@@ -22226,6 +22226,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626683524}
   m_Mesh: {fileID: -7267088869195010357, guid: 809a2d2f55a219447bb9fc5f47eb7bce, type: 3}
+--- !u!21 &627601114
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &628885855
 GameObject:
   m_ObjectHideFlags: 0
@@ -29215,7 +29246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7691713904156126275, guid: 5c61ec4986495d44399ed826f40acf83, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7691713904668082375, guid: 5c61ec4986495d44399ed826f40acf83, type: 3}
       propertyPath: inventory
@@ -34307,37 +34338,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991863410}
   m_Mesh: {fileID: -2398327590793778951, guid: f39ddc38c7cd81c4f8d3b4a760c5a0c9, type: 3}
---- !u!21 &994878290
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!64 &998254433
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47836,6 +47836,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395119263}
   m_Mesh: {fileID: -7267088869195010357, guid: 809a2d2f55a219447bb9fc5f47eb7bce, type: 3}
+--- !u!108 &1397023782 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 7691713904156126273, guid: 5c61ec4986495d44399ed826f40acf83, type: 3}
+  m_PrefabInstance: {fileID: 847515560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1397782175
 GameObject:
   m_ObjectHideFlags: 0
@@ -62291,7 +62296,7 @@ PrefabInstance:
     - target: {fileID: 2316436247177476238, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: PlayerLight
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1397023782}
     - target: {fileID: 2768016509892523812, guid: 29e2aa8ff1f179b4d9eaa1891331f8f1, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0

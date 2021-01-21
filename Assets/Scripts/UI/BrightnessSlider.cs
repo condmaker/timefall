@@ -25,13 +25,13 @@ public class BrightnessSlider : MonoBehaviour
 
     private void Update()
     {
-        gammaCorrection = slider.value;
-        //PlayerLight.intensity = 
-        //    (minIntensity + slider.value * (maxIntensity - minIntensity));
-        //PlayerLight.range =
-        //    (minRange + slider.value * (maxRange - minRange));
-        //RenderSettings.ambientLight = 
-        //    new Color(gammaCorrection, gammaCorrection, gammaCorrection, 1.0f);
+        //gammaCorrection = slider.value;
+        PlayerLight.intensity = 
+            (minIntensity + slider.value * (maxIntensity - minIntensity));
+        PlayerLight.range =
+            (minRange + slider.value * (maxRange - minRange));
+        RenderSettings.ambientLight = 
+            new Color(gammaCorrection, gammaCorrection, gammaCorrection, 1.0f);
     }
 
     
