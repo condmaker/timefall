@@ -8,9 +8,10 @@ public class SoundMng : ScriptableObject
 {
     [SerializeField]
     private AudioMixerGroup master;
+    public AudioMixerGroup Master => master;
 
     List<AudioSource> audioSources;
-    AudioSource currentMusic;
+    public AudioSource CurrentMusic { get; private set; }
 
     void Awake()
     {
@@ -20,8 +21,8 @@ public class SoundMng : ScriptableObject
     public void PlayMusic(
         AudioClip music, bool loop = true, float volume = 1.0f)
     {
-        if (currentMusic != null && currentMusic.isPlaying)
-            currentMusic.Stop();
+        if (CurrentMusic != null && CurrentMusic.isPlaying)
+            CurrentMusic.Stop();
 
         AudioSource audioSource = NewSoundObject(Vector3.zero);
         audioSource.clip = music;
@@ -33,7 +34,7 @@ public class SoundMng : ScriptableObject
         else
             audioSource.loop = false;
 
-        currentMusic = audioSource;
+        CurrentMusic = audioSource;
 
     }
 
@@ -43,7 +44,7 @@ public class SoundMng : ScriptableObject
         audioSource.clip = sound;
         audioSource.volume = volume;
         audioSource.spatialBlend = 1f;
-        audioSource.outputAudioMixerGroup = master;
+        audioSource.outputAudioMixerGroup = Master;
         audioSource.Play();
     }
 
