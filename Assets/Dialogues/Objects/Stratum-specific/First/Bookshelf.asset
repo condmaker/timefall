@@ -36,7 +36,7 @@ MonoBehaviour:
         x: 155.2
         y: 15.200001
         width: 401.59998
-        height: 308
+        height: 351.2
       isStart: 1
       OutPorts:
       - name: Read
@@ -50,10 +50,10 @@ MonoBehaviour:
         of our comrades has even gone insane.\"\n\n\n\n\n\n"
       position:
         serializedVersion: 2
-        x: 166.4
-        y: 280.80002
+        x: 164
+        y: 361.6
         width: 313.6
-        height: 307.99997
+        height: 308.00003
       isStart: 0
       OutPorts:
       - name: Go on
@@ -66,39 +66,12 @@ MonoBehaviour:
       dialogue: You leave the page alone.
       position:
         serializedVersion: 2
-        x: 323.2
-        y: -131.2
-        width: 217.59998
+        x: 362.4
+        y: -163.2
+        width: 217.6
         height: 162.4
       isStart: 0
       OutPorts: []
-  - key: f1c6db97-8bab-4b6a-b933-5a51e2d10356
-    data:
-      guid: f1c6db97-8bab-4b6a-b933-5a51e2d10356
-      dialogue: '"If only we could pass that gate... I noticed that the torch at
-        the beginning
-
-        had a strange reflection to it. That could be the
-        key to get us out of here."
-
-
-
-
-
-
-'
-      position:
-        serializedVersion: 2
-        x: 552.8
-        y: 288
-        width: 440
-        height: 308
-      isStart: 0
-      OutPorts:
-      - name: Go on
-        id: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
-      - name: Stop
-        id: ad5ec2a6-3b03-43d7-919c-c388b68e1645
   - key: 6b7705a2-a9c3-4f58-a3e5-35be9e975a71
     data:
       guid: 6b7705a2-a9c3-4f58-a3e5-35be9e975a71
@@ -116,6 +89,33 @@ MonoBehaviour:
         id: 1425bfa7-964e-46a2-9bf0-ac3baabd8a51
       - name: Stop
         id: facf56b6-ab17-4ed2-9666-bf66d3164768
+  - key: f1c6db97-8bab-4b6a-b933-5a51e2d10356
+    data:
+      guid: f1c6db97-8bab-4b6a-b933-5a51e2d10356
+      dialogue: '"If only we could pass that gate... I noticed that the torch at
+        the beginning
+
+        had a strange reflection to it. That could be the
+        key to get us out of here."
+
+
+
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 564.8
+        y: 342.40002
+        width: 440
+        height: 308
+      isStart: 0
+      OutPorts:
+      - name: Go on
+        id: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
+      - name: Stop
+        id: ad5ec2a6-3b03-43d7-919c-c388b68e1645
   - key: facf56b6-ab17-4ed2-9666-bf66d3164768
     data:
       guid: facf56b6-ab17-4ed2-9666-bf66d3164768
@@ -170,16 +170,17 @@ MonoBehaviour:
       guid: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
       dialogue: "\"Also, some walls looked really weak, though not weak enough to
         be rammed \nthrough. In any case... if you are reading this, we may all be
-        gone. \nI shudder to think of our fates. Please, find the truth.\" --The
-        page ends here.\n\n\n\n\n\n"
+        gone. \nI shudder to think of our fates.\"\n\n\n\n\n\n\n\n\n"
       position:
         serializedVersion: 2
-        x: 1004
-        y: 279.2
+        x: 1031.2
+        y: 354.40002
         width: 468.80005
-        height: 277.59998
+        height: 276.8
       isStart: 0
-      OutPorts: []
+      OutPorts:
+      - name: 
+        id: 8d70ee91-37fd-4193-a40e-aaf1ee44a103
   - key: 5c2345c3-0ece-425c-bd52-a7de0a8c50ca
     data:
       guid: 5c2345c3-0ece-425c-bd52-a7de0a8c50ca
@@ -210,5 +211,27 @@ MonoBehaviour:
         y: -178.40001
         width: 217.59998
         height: 205.6
+      isStart: 0
+      OutPorts: []
+  - key: 8d70ee91-37fd-4193-a40e-aaf1ee44a103
+    data:
+      guid: 8d70ee91-37fd-4193-a40e-aaf1ee44a103
+      dialogue: '"On the coming room, look up, at the Chandelier. One day, it suddently
+
+        appeared
+        there. That is the last thing that I could discover for now...
+
+        Please,
+        whoever you are... I beg you... Find the truth." --The page ends here.
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 1536
+        y: 349.6
+        width: 459.19995
+        height: 191.19998
       isStart: 0
       OutPorts: []
