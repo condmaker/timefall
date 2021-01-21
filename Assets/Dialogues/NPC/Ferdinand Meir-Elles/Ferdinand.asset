@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
   m_Name: Ferdinand
   m_EditorClassIdentifier: 
-  DialogueName: FernandeIntro
+  DialogueName: Ferdinand
   dialogueNodes:
   - key: e7fdee1e-3b2d-4ab1-9983-1bff156425fd
     data:
       guid: e7fdee1e-3b2d-4ab1-9983-1bff156425fd
-      dialogue: '... Are you... a person?
+      dialogue: '"... Are you... a person?"
+
+
+
 
 
 
@@ -27,7 +30,7 @@ MonoBehaviour:
         x: 288
         y: 170.4
         width: 217.6
-        height: 162.40001
+        height: 205.59999
       isStart: 1
       OutPorts:
       - name: ...What are you?
@@ -35,10 +38,13 @@ MonoBehaviour:
   - key: ad813a81-24de-42f6-b8ff-2ba266350488
     data:
       guid: ad813a81-24de-42f6-b8ff-2ba266350488
-      dialogue: 'Further down the dungeon. A damned place. White as heaven,
+      dialogue: '"Further down the dungeon. A damned place. White as heaven,
 
         but
-        the place was hell. It turned us into this.
+        the place was hell. It turned us into this."
+
+
+
 
 
 
@@ -47,40 +53,22 @@ MonoBehaviour:
         serializedVersion: 2
         x: 588
         y: 661.60004
-        width: 376.8
-        height: 176
+        width: 381.59998
+        height: 220
       isStart: 0
       OutPorts:
       - name: ...From which team are you from?
         id: 5cfbde48-58fe-4fa0-a077-a20f4274691c
-  - key: 470ff5fb-8650-4fa6-9dcb-8f84f6e66ace
-    data:
-      guid: 470ff5fb-8650-4fa6-9dcb-8f84f6e66ace
-      dialogue: 'I do not know what I am. I was also a templar, but I... We were
-
-        turned
-        into this. When we went into that damned place.
-
-
-
-'
-      position:
-        serializedVersion: 2
-        x: 588
-        y: 428
-        width: 372.8
-        height: 176.79999
-      isStart: 0
-      OutPorts:
-      - name: What place?
-        id: ad813a81-24de-42f6-b8ff-2ba266350488
   - key: 6ff2536c-ef21-480e-a42a-9d7780bd5489
     data:
       guid: 6ff2536c-ef21-480e-a42a-9d7780bd5489
-      dialogue: 'Oh, it has been too long... Since I''ve met someone...
+      dialogue: '"Oh, it has been too long... Since I''ve met someone...
 
         Are
-        you a Templar too?
+        you a Templar too?"
+
+
+
 
 
 
@@ -89,31 +77,58 @@ MonoBehaviour:
         serializedVersion: 2
         x: 592
         y: 144
-        width: 316
-        height: 221.59999
+        width: 320.8
+        height: 264.8
       isStart: 0
       OutPorts:
       - name: Yes.
         id: fb4e14a8-98d3-4225-bcbe-146fd615e9e4
       - name: Answer my question, fiend.
         id: 470ff5fb-8650-4fa6-9dcb-8f84f6e66ace
-  - key: fb4e14a8-98d3-4225-bcbe-146fd615e9e4
+  - key: 470ff5fb-8650-4fa6-9dcb-8f84f6e66ace
     data:
-      guid: fb4e14a8-98d3-4225-bcbe-146fd615e9e4
-      dialogue: 'My... My name is Ferdinand Meir-Elles. I hail from France.
+      guid: 470ff5fb-8650-4fa6-9dcb-8f84f6e66ace
+      dialogue: '"I do not know what I am. I was also a templar, but I... We were
 
-        I
-        was sent here by the church in order to investigate this... place.
+        turned
+        into this. When we went into that damned place."
+
+
+
 
 
 
 '
       position:
         serializedVersion: 2
-        x: 947.2
-        y: 182.4
-        width: 390.39996
-        height: 176.8
+        x: 595.2
+        y: 424
+        width: 377.59998
+        height: 219.20001
+      isStart: 0
+      OutPorts:
+      - name: What place?
+        id: ad813a81-24de-42f6-b8ff-2ba266350488
+  - key: fb4e14a8-98d3-4225-bcbe-146fd615e9e4
+    data:
+      guid: fb4e14a8-98d3-4225-bcbe-146fd615e9e4
+      dialogue: '"My... My name is Ferdinand Meir-Elles. I hail from France.
+
+        I
+        was sent here by the church in order to investigate this... place."
+
+
+
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 940
+        y: 188.8
+        width: 395.19995
+        height: 220
       isStart: 0
       OutPorts:
       - name: 
@@ -121,20 +136,23 @@ MonoBehaviour:
   - key: 5cfbde48-58fe-4fa0-a077-a20f4274691c
     data:
       guid: 5cfbde48-58fe-4fa0-a077-a20f4274691c
-      dialogue: '...I was not aware that there were multiple teams.
+      dialogue: '"...I was not aware that there were multiple teams.
 
         But
-        it makes sense, I suppose. We were the first, then. The ten of us.
+        it makes sense, I suppose. We were the first, then. The ten of us."
+
+
+
 
 
 
 '
       position:
         serializedVersion: 2
-        x: 987.2
-        y: 660.8
-        width: 411.2
-        height: 176.80005
+        x: 980.8
+        y: 678.4
+        width: 416.00006
+        height: 219.20001
       isStart: 0
       OutPorts:
       - name: 
@@ -142,7 +160,10 @@ MonoBehaviour:
   - key: f7af174b-789e-4f26-b2d6-db442674b0c9
     data:
       guid: f7af174b-789e-4f26-b2d6-db442674b0c9
-      dialogue: 'If I might ask... What year is it...?
+      dialogue: '"If I might ask... What year is it...?"
+
+
+
 
 
 
@@ -152,7 +173,7 @@ MonoBehaviour:
         x: 1048.8
         y: 444.80002
         width: 217.59998
-        height: 162.4
+        height: 205.6
       isStart: 0
       OutPorts:
       - name: 1289.
@@ -160,23 +181,26 @@ MonoBehaviour:
   - key: bb785379-ec4d-4855-af55-8aa1a4ec778c
     data:
       guid: bb785379-ec4d-4855-af55-8aa1a4ec778c
-      dialogue: 'Ah... Then even the passage of time is lost in me now.
+      dialogue: '"Ah... Then even the passage of time is lost in me now.
 
         Me
         and my fellow knights came here in 1280... Though
 
         it feels just
-        like yesterday...
+        like yesterday..."
+
+
+
 
 
 
 '
       position:
         serializedVersion: 2
-        x: 1328.8
-        y: 418.40002
+        x: 1340.8
+        y: 408
         width: 335.19995
-        height: 191.20001
+        height: 233.60004
       isStart: 0
       OutPorts:
       - name: 
@@ -184,44 +208,50 @@ MonoBehaviour:
   - key: 1a6a5c13-d6dc-4f75-bfc7-7b406412bc12
     data:
       guid: 1a6a5c13-d6dc-4f75-bfc7-7b406412bc12
-      dialogue: '... If I were you, I would go back. This place is the beginning
+      dialogue: '"... If I were you, I would go back. This place is the beginning
 
         of
         the apocalypse. Bring more people... Because I can''t go
 
         back to
-        the world anymore.
+        the world anymore."
+
+
+
 
 
 
 '
       position:
         serializedVersion: 2
-        x: 1412
-        y: 668
-        width: 362.40002
-        height: 190.40002
+        x: 1436.8
+        y: 671.2
+        width: 367.19995
+        height: 234.40002
       isStart: 0
       OutPorts: []
   - key: 010132c6-6b80-4962-bff3-ba021e9d3c42
     data:
       guid: 010132c6-6b80-4962-bff3-ba021e9d3c42
-      dialogue: '... If I were you, I would go back. This place is the beginning
+      dialogue: '"... If I were you, I would go back. This place is the beginning
 
         of
         the apocalypse. Bring more people... Because I can''t go
 
         back to
-        the world anymore.
+        the world anymore."
+
+
+
 
 
 
 '
       position:
         serializedVersion: 2
-        x: 1705.6
-        y: 421.6
-        width: 362.40002
-        height: 191.19998
+        x: 1724
+        y: 412.80002
+        width: 367.19995
+        height: 234.4
       isStart: 0
       OutPorts: []
