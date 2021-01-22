@@ -46,6 +46,8 @@ public class ObjectStateHandler : MonoBehaviour
 
     private Animator anim;
 
+    private bool isPlaying;
+
     private void Awake()
     {
         interactor = GetComponents<Interactor>();
@@ -53,9 +55,9 @@ public class ObjectStateHandler : MonoBehaviour
         {
             if (i != null)
             {
-                i.OnGoToNext += ChangeStates;
+                i.OnGoToNext += ChangeToNext;
                 i.OnGoToLast += ChangeToLast;
-                i.OnGoTo += ChangeToState;
+                i.OnGoTo += ChangeToSpecific;
             }
         }
 
@@ -72,7 +74,6 @@ public class ObjectStateHandler : MonoBehaviour
     //Fun fact se isto forem interfaces eles n comparam bem
     public bool CompareCollections(List<short> want, List<short> got)
     {
-
         for (short i = 0; i < want.Count; i++)
         {
             if (want[i] != got[i])
@@ -83,36 +84,38 @@ public class ObjectStateHandler : MonoBehaviour
     }
     //------------------------------
 
-    //Change to the next state
-    private void ChangeStates(IterationType iteration)
-    {
-        State += (short)iteration;
-        //ActivateOtherObjects();
-        OnChangeState?.Invoke(this,State);
 
-        PlayAnimation();
-        
-        //etc
+    //Change to the next state following the iteration
+    private void ChangeToNext(IterationType iteration)
+    {
+        short newState = (short)(State + (short)iteration);
+        ChangeToState(newState);
     }
 
+
+    //Change to last state
     private void ChangeToLast()
     {
-        short mx = (short)(maxStates - 1);
-        ChangeToState(mx);
+        short newState = (short)(maxStates - 1);
+        ChangeToState(newState);
     }
 
+
+    //Change to the passed state
+    private void ChangeToSpecific(short wantedState)
+    {
+        ChangeToState(wantedState);               
+    }
 
 
     //Change to the passed state
     public void ChangeToState(short wantedState)
     {
-        State = wantedState;
-        OnChangeState?.Invoke(this, State);
-        //Cenas relacionadas com o efeito dos states
+        if (isPlaying) return;
 
+        State = wantedState;      
         PlayAnimation();
-
-        //etc
+        OnChangeState?.Invoke(this, State);
     }
 
 
@@ -122,10 +125,19 @@ public class ObjectStateHandler : MonoBehaviour
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
 
-        //Actions
+        isPlaying = true;
+        StartCoroutine("WaitAnimationOverAndDoThings");
+
+        //Sound
         if (sound != null)
             soundManager.PlaySound(sound, transform.position);
     }
-   
+
+    private IEnumerator WaitAnimationOverAndDoThings()
+    {
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0)[0].clip.length);        
+        isPlaying = false;
+    }
+
 }
 
