@@ -62,6 +62,11 @@ public class ObjectStateHandler : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    public void Start()
+    {
+        PlayAnimation();
+    }
+
     //Existe um cena chamada Enumerable.SequenceEqual 
     //q pode ser melhor para usar aqui
     //Fun fact se isto forem interfaces eles n comparam bem
@@ -85,14 +90,8 @@ public class ObjectStateHandler : MonoBehaviour
         //ActivateOtherObjects();
         OnChangeState?.Invoke(this,State);
 
-        if (anim == null) return;
-        //Cenas realcionadas com o efeito do states
-        anim.SetFloat("State", State);
-        anim.SetTrigger("ChangeState");
-        //Actions
-        if(sound != null)
-            soundManager.PlaySound(sound, transform.position);
-
+        PlayAnimation();
+        
         //etc
     }
 
@@ -102,6 +101,8 @@ public class ObjectStateHandler : MonoBehaviour
         ChangeToState(mx);
     }
 
+
+
     //Change to the passed state
     public void ChangeToState(short wantedState)
     {
@@ -109,26 +110,22 @@ public class ObjectStateHandler : MonoBehaviour
         OnChangeState?.Invoke(this, State);
         //Cenas relacionadas com o efeito dos states
 
-        if (anim == null) return;
-        anim.SetFloat("State", State);
-        anim.SetTrigger("ChangeState");
-
-        if (sound != null)
-            soundManager.PlaySound(sound, transform.position);
+        PlayAnimation();
 
         //etc
     }
 
-    //PARA TESTES
-    public void printList(ICollection c)
-    {
-        string l = "";
-        foreach (short s in c)
-        {
-            l += s + "  |  ";
-        }
-        print(l);
-    }
 
+    public void PlayAnimation()
+    {
+        if (anim == null) return;
+        anim.SetFloat("State", State);
+        anim.SetTrigger("ChangeState");
+
+        //Actions
+        if (sound != null)
+            soundManager.PlaySound(sound, transform.position);
+    }
+   
 }
 
