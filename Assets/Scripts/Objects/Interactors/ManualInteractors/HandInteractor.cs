@@ -20,7 +20,7 @@ public class HandInteractor : ManualInteractor
         if (unlockerId == itemId?.ID || !needsItem)
         {
             ProcessResult();
-            if(!needsItem && itemId != null)
+            if(!needsItem)
                 return InteractionResult.Activate;
             return InteractionResult.UseItem;
         }
