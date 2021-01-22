@@ -16,6 +16,9 @@ public class PlayerInput : MonoBehaviour
     private EntityDetection eD;
 
     [SerializeField]
+    private KeyBindings playerBinds;
+
+    [SerializeField]
     private AudioClip stepSoundA;
     [SerializeField]
     private AudioClip stepSoundB;
@@ -84,8 +87,9 @@ public class PlayerInput : MonoBehaviour
     private void CheckInputDown()
     {
         // Move forward
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.E) ||
-            Input.GetKey(KeyCode.Q)) && !LookUp && !IsLookingUp)
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(playerBinds.StrafeRight) ||
+            Input.GetKey(playerBinds.StrafeLeft))
+            && !LookUp && !IsLookingUp)
         {
             if (soundSwitch && !IsWalking)
                 soundManager.PlaySound(stepSoundA, transform.position);
@@ -95,18 +99,18 @@ public class PlayerInput : MonoBehaviour
 
             IsWalking = true;
 
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(playerBinds.StrafeRight))
                 IsStrafingRight = true;
-            else if (Input.GetKey(KeyCode.Q))
+            else if (Input.GetKey(playerBinds.StrafeLeft))
                 IsStrafingLeft = true;
         }
         // Look Up
         else if (Input.GetKey(KeyCode.S)) LookUp = true;
         // Rotate Left
-        else if (Input.GetKey(KeyCode.A) && !IsLookingUp && !LookUp)
+        else if (Input.GetKey(playerBinds.MoveLeft) && !IsLookingUp && !LookUp)
             IsLookingLeft = true;
         // Rotate Right
-        else if (Input.GetKey(KeyCode.D) && !IsLookingUp && !LookUp)
+        else if (Input.GetKey(playerBinds.MoveRight) && !IsLookingUp && !LookUp)
             IsLookingRight = true;
         // Pressed interact key
         else if (Input.GetKeyDown(KeyCode.F)) IsInteracting = true;
@@ -114,8 +118,8 @@ public class PlayerInput : MonoBehaviour
 
     private void CheckInputUp()
     {
-        if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.E) ||
-                Input.GetKeyUp(KeyCode.Q)) && !LookUp && !IsLookingUp)
+        if ((Input.GetKeyUp(KeyCode.W) || Input.GetKey(playerBinds.StrafeRight) ||
+                Input.GetKeyUp(playerBinds.StrafeLeft)) && !LookUp && !IsLookingUp)
         {
             if (soundSwitch && !IsWalking)
                 soundManager.PlaySound(stepSoundA, transform.position);
@@ -125,9 +129,9 @@ public class PlayerInput : MonoBehaviour
 
             IsWalking = true;
 
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(playerBinds.StrafeRight))
                 IsStrafingRight = true;
-            else if (Input.GetKey(KeyCode.Q))
+            else if (Input.GetKey(playerBinds.StrafeLeft))
                 IsStrafingLeft = true;
         }
         else if (Input.GetKeyUp(KeyCode.A) && !IsLookingUp && !LookUp)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-[CreateAssetMenu(menuName = "SoundMng")]
+[CreateAssetMenu(menuName = "ScriptableObjects/SoundMng")]
 public class SoundMng : ScriptableObject
 {
     [SerializeField]
@@ -19,8 +19,12 @@ public class SoundMng : ScriptableObject
     }
 
     public void PlayMusic(
-        AudioClip music, bool loop = true, float volume = 1.0f)
+        AudioClip music, bool loop = true)
     {
+
+        float volume = 
+            (float)((float)PlayerPrefs.GetInt("Music Volume Real") / 100);
+
         if (CurrentMusic != null && CurrentMusic.isPlaying)
             CurrentMusic.Stop();
 
@@ -38,8 +42,19 @@ public class SoundMng : ScriptableObject
 
     }
 
-    public void PlaySound(AudioClip sound, Vector3 pos, float volume = 1.0f)
+    public void PlaySound(AudioClip sound, Vector3 pos)
     {
+        
+
+        //Map decreasing volume. Max decrease is -20 for a smother volume change
+        float volume = ((float)(
+            ((float)PlayerPrefs.GetInt("SFX Volume Real")) * 20) / 100)
+        - 20;
+
+        //If value is 0 completely mute audio mixer
+        if (PlayerPrefs.GetInt("SFX Volume Real") == 0)
+            volume = -80;
+
         AudioSource audioSource = NewSoundObject(pos);
         audioSource.clip = sound;
         audioSource.volume = volume;
