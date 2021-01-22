@@ -42,7 +42,7 @@ public class SoundMng : ScriptableObject
 
     }
 
-    public void PlaySound(AudioClip sound, Vector3 pos)
+    public void PlaySound(AudioClip sound, Vector3 pos, bool spBlend = false)
     {
         
 
@@ -60,7 +60,10 @@ public class SoundMng : ScriptableObject
         AudioSource audioSource = NewSoundObject(pos);
         audioSource.clip = sound;
         audioSource.volume = 1;
-        audioSource.spatialBlend = 1f;
+        if (!spBlend)
+            audioSource.spatialBlend = 1f;
+        else
+            audioSource.spatialBlend = 0f;
         audioSource.outputAudioMixerGroup = Master;
         audioSource.Play();
     }

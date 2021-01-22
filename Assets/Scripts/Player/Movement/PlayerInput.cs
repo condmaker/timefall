@@ -92,9 +92,9 @@ public class PlayerInput : MonoBehaviour
             && !LookUp && !IsLookingUp)
         {
             if (soundSwitch && !IsWalking)
-                soundManager.PlaySound(stepSoundA, transform.position);
+                soundManager.PlaySound(stepSoundA, transform.position, true);
             else if (!soundSwitch && !IsWalking)
-                soundManager.PlaySound(stepSoundB, transform.position);
+                soundManager.PlaySound(stepSoundB, transform.position, true);
             soundSwitch = !soundSwitch;
 
             IsWalking = true;
