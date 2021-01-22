@@ -55,6 +55,8 @@ public class SoundMng : ScriptableObject
         if (PlayerPrefs.GetInt("SFX Volume Real") == 0)
             volume = -80;
 
+        Debug.Log(volume);
+
         AudioSource audioSource = NewSoundObject(pos);
         audioSource.clip = sound;
         audioSource.volume = volume;
