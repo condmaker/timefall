@@ -30,6 +30,9 @@ public class EntityDetection : MonoBehaviour
     private DataHolder objectHolder;
     private ManualInteractor interactor;
 
+    [SerializeField]
+    private DialogueScript wrongInteaction;
+
     // Bool that specifies is the player is colliding with an object
     public bool IsColliding { get; private set; }
     private RaycastHit currentWorldObject;
@@ -127,22 +130,22 @@ public class EntityDetection : MonoBehaviour
                         interactor = 
                             ObjectTouched.GetComponent<ManualInteractor>();
 
-                        bool itemused  = 
+                        InteractionResult itemused  = 
                             interactor.Toggle(
                                 inventory?.equipedItem, transform.position);
 
-                        if (itemused)
+                        switch (itemused)
                         {
-                            inventory.ClearEquiped();
+                            case InteractionResult.WrongIntMessage:
+                                StartDialogue(wrongInteaction);
+                                break;
+                            case InteractionResult.UseItem:
+                                inventory.ClearEquiped();
+                                break;
                         }
                         break;
                     case InteractionType.isNPC:
-                        dialogueHandler.StartDialolgue(
-                            (objectData as NpcData).Dialogue);
-                        mD.CleanMessage();
-                        this.enabled = false;
-                        pM.enabled = false;
-                        dialogueHandler.endDialogue += EndDialogue;
+                        StartDialogue((objectData as NpcData).Dialogue);
                         break;
                     default:
                         print("Porque é que essa coisa é trigger ?");
@@ -152,6 +155,16 @@ public class EntityDetection : MonoBehaviour
 
             pI.IsInteracting = false;
         }
+    }
+
+
+    private void StartDialogue(DialogueScript dS)
+    {
+        dialogueHandler.StartDialolgue(dS);
+        mD.CleanMessage();
+        this.enabled = false;
+        pM.enabled = false;
+        dialogueHandler.endDialogue += EndDialogue;
     }
 
     private void EndDialogue()

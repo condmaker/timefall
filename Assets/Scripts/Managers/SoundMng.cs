@@ -23,7 +23,7 @@ public class SoundMng : ScriptableObject
     {
 
         float volume = 
-            (float)((float)PlayerPrefs.GetInt("Music Volume Real") / 100);
+            (float)((float)PlayerPrefs.GetInt("Music Volume Real", 100) / 100);
 
         if (CurrentMusic != null && CurrentMusic.isPlaying)
             CurrentMusic.Stop();
@@ -48,7 +48,7 @@ public class SoundMng : ScriptableObject
 
         //Map decreasing volume. Max decrease is -20 for a smother volume change
         float volume = ((float)(
-            ((float)PlayerPrefs.GetInt("SFX Volume Real")) * 20) / 100)
+            ((float)PlayerPrefs.GetInt("SFX Volume Real", 100)) * 20) / 100)
         - 20;
 
         //If value is 0 completely mute audio mixer
