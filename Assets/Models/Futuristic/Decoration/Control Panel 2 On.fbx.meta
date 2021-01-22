@@ -3,7 +3,22 @@ guid: 8515faeb86ff38c4597c747ae159f521
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive
+    second: {fileID: 2100000, guid: 2a840ef90c9f8e848b069005d9449ad4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive no Shadow
+    second: {fileID: 2100000, guid: 2a840ef90c9f8e848b069005d9449ad4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Solid
+    second: {fileID: 2100000, guid: 77aeeb0a98a09234d97f8cee8369994e, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
