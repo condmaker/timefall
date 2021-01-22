@@ -8,16 +8,15 @@ public class InventoryHandler : MonoBehaviour
     [SerializeField]
     private InventorySlot[] slots;
 
-
     public ItemData equipedItem => currentSlot?.CurrentItem;
 
- 
     private InventorySlot currentSlot;
+
     [SerializeField]
     private GameObject selector;    
 
     /// <summary>
-    /// Adds the given item to an empty slot in the invetory
+    /// Adds the given item to an empty slot in the inventory
     /// </summary>
     /// <param name="item">ScriptableObject that contains the item data</param>
     public void AddItem(ItemData item)
@@ -34,28 +33,20 @@ public class InventoryHandler : MonoBehaviour
 
     private void Start()
     {
-        selector.SetActive(false);
+        selector.SetActive(true);
+        currentSlot = slots[0];
     }
 
 
     public void EquipItem(InventorySlot slot)
-    {
-        selector.SetActive(true);
-        
+    {   
         currentSlot = slot;
         selector.transform.position = currentSlot.transform.position;
 
-
-        //foreach (InventorySlot iS in slots)
-        //{
- 
-        //    iS.DeativateSlot();
-        //}
     }
 
     internal void ClearEquiped()
     {
-        //currentSlot.DeativateSlot();
         currentSlot.CleanDisplay();
     }
 }
