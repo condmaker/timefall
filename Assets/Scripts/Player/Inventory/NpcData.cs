@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DialogueSystem;
 
-[CreateAssetMenu(fileName = "Data Asset", menuName = "Object Data/NPC Data")]
+[CreateAssetMenu(fileName = "Data Asset", menuName = "ScriptableObjects/Object Data/NPC Data")]
 
 public class NpcData : ObjectData
 {
