@@ -1799,6 +1799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 835671766790026271}
   - component: {fileID: 6537112683219279323}
+  - component: {fileID: 1616609540922054756}
   m_Layer: 5
   m_Name: Vol Master Slider
   m_TagString: Untagged
@@ -1878,6 +1879,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1616609540922054756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716636595437950683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20340859eb41aa94880b9c5e1e28c611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderName: Music Volume
+  text: {fileID: 5090293960126596777}
 --- !u!1 &2075044943739281404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,6 +4186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840274196418021932}
   - component: {fileID: 928580292774982044}
+  - component: {fileID: 8565865908399740083}
   m_Layer: 5
   m_Name: Vol Master Slider
   m_TagString: Untagged
@@ -4250,6 +4266,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8565865908399740083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5457294647685821352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20340859eb41aa94880b9c5e1e28c611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderName: Master Volume
+  text: {fileID: 2521390697570841709}
 --- !u!1 &5599737038800453788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4899,6 +4929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8723741671266105416}
   - component: {fileID: 4527618084081583416}
+  - component: {fileID: 8028966701626200017}
   m_Layer: 5
   m_Name: Vol SFX Slider
   m_TagString: Untagged
@@ -4978,6 +5009,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8028966701626200017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310001693010739290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20340859eb41aa94880b9c5e1e28c611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderName: SFX Volume
+  text: {fileID: 7730096604763154662}
 --- !u!1 &6328710839388390035
 GameObject:
   m_ObjectHideFlags: 0
