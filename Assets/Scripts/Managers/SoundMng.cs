@@ -61,7 +61,7 @@ public class SoundMng : ScriptableObject
         audioSource.clip = sound;
         audioSource.volume = 1;
         if (!spBlend)
-            audioSource.spatialBlend = 1f;
+            audioSource.spatialBlend = 0.8f;
         else
             audioSource.spatialBlend = 0f;
         audioSource.outputAudioMixerGroup = Master;
