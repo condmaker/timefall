@@ -30,29 +30,24 @@ public class PlayerMovement : MonoBehaviour
             {
                 MovePlayer(true);
             }
-            else if (!pI.IsLookingUp)
+            else if (!pI.IsLookingUp || !pI.IsLookingDown)
             {
                 MovePlayer();
             }
-            else if (pI.IsLookingUp) pI.IsWalking = false;
+            else if (pI.IsLookingUp || pI.IsLookingDown) pI.IsWalking = false;
         }
-        else if (pI.IsLookingLeft && !pI.LookUp)
+        else if (pI.IsLookingLeft && (!pI.LookUp || !pI.LookDown))
         {
             RotatePlayer(y: -90f);
         }
-        else if (pI.IsLookingRight && !pI.LookUp)
+        else if (pI.IsLookingRight && (!pI.LookUp || !pI.LookDown))
         {
             RotatePlayer(y: 90f);
         }
 
         if (TimeCounter <= 0)
         {
-            pI.IsWalking = false;
-            pI.IsStrafingRight = false;
-            pI.IsStrafingLeft = false;
-            pI.IsLookingLeft = false;
-            pI.IsLookingRight = false;
-            pI.Bump = false;
+            pI.ResetInputs();
             TimeCounter = pI.MoveTime;
         }
     }
@@ -70,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.velocity = Quaternion.AngleAxis(-90, transform.forward)
                 * uV * (pI.MoveDistance / pI.MoveTime);
+        }
+        else if (pI.IsWalkingBack)
+        {
+            playerBody.velocity = -transform.forward * (
+                pI.MoveDistance / pI.MoveTime);
         }
         else
         {

@@ -25,17 +25,27 @@ public class PlayerCamera : MonoBehaviour
             else
                 RotateCam(30, lUp: false);
         }
+        if (pI.LookDown)
+        {
+            if (!pI.IsLookingDown)
+                RotateCam(30, lUp: true, rD: true);
+            else
+                RotateCam(-30, lUp: false, rD: true);
+        }
 
         if (TimeCounter <= 0)
         {
             pI.LookUp = false;
+            pI.LookDown = false;
+
             TimeCounter = pI.MoveTime;
         }
     }
 
     // Rotates the player upwards
     private void RotateCam(
-        float x = 0, float y = 0, float z = 0, bool lUp = false)
+        float x = 0, float y = 0, float z = 0, bool lUp = false, 
+        bool rD = false)
     {
         transform.rotation *= Quaternion.Euler(
             (new Vector3(x, y, z) * Mathf.Deg2Rad) / pI.MoveTime);
@@ -44,7 +54,9 @@ public class PlayerCamera : MonoBehaviour
 
         if (TimeCounter <= 0)
         {
-            pI.IsLookingUp = lUp;
+            if (!rD) pI.IsLookingUp = lUp;
+            else pI.IsLookingDown = lUp;
+
             playerBody.angularVelocity = Vector3.zero;
         }
 

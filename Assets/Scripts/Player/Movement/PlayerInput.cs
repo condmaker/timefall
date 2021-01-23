@@ -37,13 +37,16 @@ public class PlayerInput : MonoBehaviour
     // encapsulation kinda)
 
     public bool LookUp          { get; set; }
+    public bool LookDown        { get; set; }
     public bool IsWalking       { get; set; }
     public bool IsStrafingRight { get; set; }
     public bool IsStrafingLeft  { get; set; }
     public bool Bump            { get; set; }
     public bool IsLookingUp     { get; set; }
+    public bool IsLookingDown   { get; set; }
     public bool IsLookingLeft   { get; set; }
     public bool IsLookingRight  { get; set; }
+    public bool IsWalkingBack   { get; set; }
 
     // Bool that specifies if the player can move or not
     public bool CanInput { get; private set; }
@@ -87,9 +90,10 @@ public class PlayerInput : MonoBehaviour
     private void CheckInputDown()
     {
         // Move forward
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(playerBinds.StrafeRight) ||
-            Input.GetKey(playerBinds.StrafeLeft))
-            && !LookUp && !IsLookingUp)
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(playerBinds.StrafeRight)
+            || Input.GetKey(playerBinds.StrafeLeft)) 
+            || Input.GetKey(KeyCode.S) && !LookUp && !IsLookingUp 
+            && !LookDown && !IsLookingDown)
         {
             if (soundSwitch && !IsWalking)
                 soundManager.PlaySound(stepSoundA, transform.position, true);
@@ -103,14 +107,20 @@ public class PlayerInput : MonoBehaviour
                 IsStrafingRight = true;
             else if (Input.GetKey(playerBinds.StrafeLeft))
                 IsStrafingLeft = true;
+            else if (Input.GetKey(KeyCode.S))
+                IsWalkingBack = true;
+            
         }
         // Look Up
-        else if (Input.GetKey(KeyCode.S)) LookUp = true;
+        else if (Input.GetKey(KeyCode.Z)) LookUp = true;
+        else if (Input.GetKey(KeyCode.X)) LookDown = true;
         // Rotate Left
-        else if (Input.GetKey(playerBinds.MoveLeft) && !IsLookingUp && !LookUp)
+        else if (Input.GetKey(playerBinds.MoveLeft) && !IsLookingUp && !LookUp
+            && !IsLookingDown && !LookDown)
             IsLookingLeft = true;
         // Rotate Right
-        else if (Input.GetKey(playerBinds.MoveRight) && !IsLookingUp && !LookUp)
+        else if (Input.GetKey(playerBinds.MoveRight) && !IsLookingUp && !LookUp
+            && !IsLookingDown && !LookDown)
             IsLookingRight = true;
         // Pressed interact key
         else if (Input.GetKeyDown(KeyCode.F)) IsInteracting = true;
@@ -118,8 +128,10 @@ public class PlayerInput : MonoBehaviour
 
     private void CheckInputUp()
     {
-        if ((Input.GetKeyUp(KeyCode.W) || Input.GetKey(playerBinds.StrafeRight) ||
-                Input.GetKeyUp(playerBinds.StrafeLeft)) && !LookUp && !IsLookingUp)
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(playerBinds.StrafeRight)
+            || Input.GetKey(playerBinds.StrafeLeft))
+            || Input.GetKey(KeyCode.S) && !LookUp && !IsLookingUp
+            && !LookDown && !IsLookingDown)
         {
             if (soundSwitch && !IsWalking)
                 soundManager.PlaySound(stepSoundA, transform.position);
@@ -133,13 +145,28 @@ public class PlayerInput : MonoBehaviour
                 IsStrafingRight = true;
             else if (Input.GetKey(playerBinds.StrafeLeft))
                 IsStrafingLeft = true;
+            else if (Input.GetKey(KeyCode.S))
+                IsWalkingBack = true;
         }
-        else if (Input.GetKeyUp(KeyCode.A) && !IsLookingUp && !LookUp)
+        else if (Input.GetKeyUp(KeyCode.A) && !IsLookingUp && !LookUp 
+            && !IsLookingDown && !LookDown)
             IsLookingLeft = false;
         // Rotate Right
-        else if (Input.GetKeyUp(KeyCode.D) && !IsLookingUp && !LookUp)
+        else if (Input.GetKeyUp(KeyCode.D) && !IsLookingUp && !LookUp
+            && !IsLookingDown && !LookDown)
             IsLookingRight = false;
         // Pressed interact key
         else if (Input.GetKeyUp(KeyCode.F)) IsInteracting = false;
+    }
+
+    public void ResetInputs()
+    {
+        IsWalking = false;
+        IsWalkingBack = false;
+        IsStrafingRight = false;
+        IsStrafingLeft = false;
+        IsLookingLeft = false;
+        IsLookingRight = false;
+        Bump = false;
     }
 }
