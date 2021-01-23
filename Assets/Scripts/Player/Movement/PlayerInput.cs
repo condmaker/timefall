@@ -12,7 +12,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     private const float moveTime = 0.3f;
 
-    private PlayerMovement  pM;
+    private PlayerMovement pM;
     private EntityDetection eD;
 
     [SerializeField]
@@ -26,27 +26,31 @@ public class PlayerInput : MonoBehaviour
     private SoundMng soundManager;
 
     private bool soundSwitch;
+    private bool locke;
+
+    [SerializeField]
+    private OptionEvent option;
 
     public float MoveDistance { get => moveDistance; }
     public float MoveTime { get => moveTime; }
 
     // Bool that specifies if the player is pressing the interact key
-    public bool IsInteracting  { get; set; }
+    public bool IsInteracting { get; set; }
 
     // Movement state bools (we may need to change this because it breaks 
     // encapsulation kinda)
 
-    public bool LookUp          { get; set; }
-    public bool LookDown        { get; set; }
-    public bool IsWalking       { get; set; }
+    public bool LookUp { get; set; }
+    public bool LookDown { get; set; }
+    public bool IsWalking { get; set; }
     public bool IsStrafingRight { get; set; }
-    public bool IsStrafingLeft  { get; set; }
-    public bool Bump            { get; set; }
-    public bool IsLookingUp     { get; set; }
-    public bool IsLookingDown   { get; set; }
-    public bool IsLookingLeft   { get; set; }
-    public bool IsLookingRight  { get; set; }
-    public bool IsWalkingBack   { get; set; }
+    public bool IsStrafingLeft { get; set; }
+    public bool Bump { get; set; }
+    public bool IsLookingUp { get; set; }
+    public bool IsLookingDown { get; set; }
+    public bool IsLookingLeft { get; set; }
+    public bool IsLookingRight { get; set; }
+    public bool IsWalkingBack { get; set; }
 
     // Bool that specifies if the player can move or not
     public bool CanInput { get; private set; }
@@ -55,10 +59,16 @@ public class PlayerInput : MonoBehaviour
     {
         pM = GetComponent<PlayerMovement>();
         eD = GetComponent<EntityDetection>();
+
+        locke = false;
+        option.OptionDisabled += UnlockInput;
+        option.OptionEnabled += LockInput;
     }
 
     private void Update()
     {
+        if (locke) return;
+
         if (pM.TimeCounter == MoveTime)
             CanInput = true;
         else
@@ -84,15 +94,15 @@ public class PlayerInput : MonoBehaviour
                 eD.ObjectTouched.layer != 9)
                 Bump = true;
         }
-            
+
     }
 
     private void CheckInputDown()
     {
         // Move forward
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(playerBinds.StrafeRight)
-            || Input.GetKey(playerBinds.StrafeLeft)) 
-            || Input.GetKey(KeyCode.S) && !LookUp && !IsLookingUp 
+            || Input.GetKey(playerBinds.StrafeLeft))
+            || Input.GetKey(KeyCode.S) && !LookUp && !IsLookingUp
             && !LookDown && !IsLookingDown)
         {
             if (soundSwitch && !IsWalking)
@@ -109,7 +119,7 @@ public class PlayerInput : MonoBehaviour
                 IsStrafingLeft = true;
             else if (Input.GetKey(KeyCode.S))
                 IsWalkingBack = true;
-            
+
         }
         // Look Up
         else if (Input.GetKey(KeyCode.Z)) LookUp = true;
@@ -148,7 +158,7 @@ public class PlayerInput : MonoBehaviour
             else if (Input.GetKey(KeyCode.S))
                 IsWalkingBack = true;
         }
-        else if (Input.GetKeyUp(KeyCode.A) && !IsLookingUp && !LookUp 
+        else if (Input.GetKeyUp(KeyCode.A) && !IsLookingUp && !LookUp
             && !IsLookingDown && !LookDown)
             IsLookingLeft = false;
         // Rotate Right
@@ -169,4 +179,7 @@ public class PlayerInput : MonoBehaviour
         IsLookingRight = false;
         Bump = false;
     }
+
+    private void LockInput() => locke = true;
+    private void UnlockInput() => locke = false;
 }
