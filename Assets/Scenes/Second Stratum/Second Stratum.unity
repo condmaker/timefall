@@ -23177,37 +23177,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502362553}
   m_Mesh: {fileID: 7060280008036029220, guid: 99e1c1eb68b01894587af52dfac2818a, type: 3}
---- !u!21 &502546348
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &503394543
 GameObject:
   m_ObjectHideFlags: 0
@@ -74294,6 +74263,10 @@ PrefabInstance:
       propertyPath: wantedStates.Array.data[1].state
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 48885617, guid: 37d73b9ed62894642887cfa0324ba77d, type: 3}
+      propertyPath: wantedStates.Array.data[2].state
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 212537773406335564, guid: 37d73b9ed62894642887cfa0324ba77d, type: 3}
       propertyPath: m_Name
       value: TrollCuffed
@@ -74356,7 +74329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1023016590645362274, guid: 37d73b9ed62894642887cfa0324ba77d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.1467909
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023016590645362274, guid: 37d73b9ed62894642887cfa0324ba77d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6924724441081099471, guid: 37d73b9ed62894642887cfa0324ba77d, type: 3}
       propertyPath: m_Size.z
@@ -87696,6 +87673,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939234160}
   m_Mesh: {fileID: 7060280008036029220, guid: 99e1c1eb68b01894587af52dfac2818a, type: 3}
+--- !u!21 &1939694274
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &1941642085
 GameObject:
   m_ObjectHideFlags: 0

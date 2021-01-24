@@ -29,7 +29,14 @@ public class DirectToggler : Interactor
         {
             if (o.Osh.State >= 1)
             {
-                ProcessResult(o.State);
+                try
+                {
+                    ProcessResult(o.State);
+                }
+                catch (Exception)
+                {
+                    print("c");
+                }
             }
         }
     }
