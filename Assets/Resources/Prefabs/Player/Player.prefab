@@ -363,6 +363,7 @@ MonoBehaviour:
   stepSoundA: {fileID: 8300000, guid: dda8ba5a5afdc1343a149270b6b7e414, type: 3}
   stepSoundB: {fileID: 8300000, guid: dda8ba5a5afdc1343a149270b6b7e414, type: 3}
   soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
+  option: {fileID: 0}
 --- !u!114 &7691713904668082489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +461,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 150
   field of view: 80
   orthographic: 0
   orthographic size: 5

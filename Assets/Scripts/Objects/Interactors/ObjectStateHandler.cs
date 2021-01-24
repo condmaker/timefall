@@ -121,16 +121,17 @@ public class ObjectStateHandler : MonoBehaviour
 
     public void PlayAnimation()
     {
+        //Sound
+        if (sound != null)
+            soundManager.PlaySound(sound, transform.position);
+
         if (anim == null) return;
+
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
 
         isPlaying = true;
         StartCoroutine("WaitAnimationOverAndDoThings");
-
-        //Sound
-        if (sound != null)
-            soundManager.PlaySound(sound, transform.position);
     }
 
     private IEnumerator WaitAnimationOverAndDoThings()
