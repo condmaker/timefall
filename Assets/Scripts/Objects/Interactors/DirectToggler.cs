@@ -25,18 +25,15 @@ public class DirectToggler : Interactor
 
     private void CheckCompatibility(ObjectStateHandler osh)
     {
+        short it = 0;
+
         foreach (StateO o in wantedStates)
         {
             if (o.Osh.State >= 1)
             {
-                try
-                {
-                    ProcessResult(o.State);
-                }
-                catch (Exception)
-                {
-                    print("c");
-                }
+                Debug.Log(it + ":  " + o.State);
+                ProcessResult(o.State);
+                it++;
             }
         }
     }
