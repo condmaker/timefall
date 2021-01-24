@@ -58,6 +58,7 @@ public class PlayerInput : MonoBehaviour
         eD = GetComponent<EntityDetection>();
 
         locke = false;
+        print(option);
         option.OptionDisabled += UnlockInput;
         option.OptionEnabled += LockInput;
     }
