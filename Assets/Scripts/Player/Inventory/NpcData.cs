@@ -9,5 +9,9 @@ public class NpcData : ObjectData
 {
     [SerializeField]
     private DialogueScript dialogue;
-    public DialogueScript Dialogue { get => dialogue; }
+    public DialogueScript Dialogue 
+    { 
+        get { return dialogue; }
+        set { dialogue = value; } }
+
 }
