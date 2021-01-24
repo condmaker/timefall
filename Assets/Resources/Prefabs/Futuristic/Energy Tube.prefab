@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 9009610963077025966}
   - component: {fileID: 5379350721221418763}
   - component: {fileID: 7873345150988331969}
-  m_Layer: 0
+  - component: {fileID: -2548206571156867809}
+  - component: {fileID: -762778335159568676}
+  m_Layer: 8
   m_Name: Energy Tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,3 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-2548206571156867809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521727225691343380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 42b54a6146c8e7e409040c31bda85be4, type: 2}
+--- !u!65 &-762778335159568676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521727225691343380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005553761, y: 0.0055537634, z: 0.023463704}
+  m_Center: {x: 3.2051167e-12, y: -0.0000000013813769, z: 0.011587832}

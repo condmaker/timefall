@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 8593532231887895595}
   - component: {fileID: 4678544698594505614}
   - component: {fileID: 7424589518202980164}
-  m_Layer: 0
+  - component: {fileID: 7648185266248939229}
+  - component: {fileID: -6746740264486976578}
+  m_Layer: 8
   m_Name: Stand Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,3 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7648185266248939229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8937829572926006929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 505904eefbf02584aa71d6dbaa45c8ca, type: 2}
+--- !u!65 &-6746740264486976578
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8937829572926006929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06356104, y: 0.013491012, z: 0.12284353}
+  m_Center: {x: 0.0000000037252907, y: 0.0000000030267966, z: 0.061421763}

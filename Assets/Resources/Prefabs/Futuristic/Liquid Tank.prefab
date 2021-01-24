@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2491528424686761720}
   - component: {fileID: 393881001718104626}
   - component: {fileID: 2195404621344760804}
-  m_Layer: 0
+  - component: {fileID: -8784775723855115258}
+  m_Layer: 8
   m_Name: Liquid Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,3 +98,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02231287, y: 0.022312861, z: 0.04043338}
   m_Center: {x: 0.00000011559426, y: -0.00000012846738, z: 0.020216689}
+--- !u!114 &-8784775723855115258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2195404621344760807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 1829224da55c05d4b9a8ca52d9b1b677, type: 2}
