@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 MovePlayer(true);
             }
-            else if (!pI.IsLookingUp || !pI.IsLookingDown)
+            else if (!pI.IsLookingUp && !pI.IsLookingDown)
             {
                 MovePlayer();
             }

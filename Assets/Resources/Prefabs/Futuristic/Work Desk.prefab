@@ -176,8 +176,9 @@ GameObject:
   - component: {fileID: 1859281407873703445}
   - component: {fileID: 4479262895399250655}
   - component: {fileID: 2677800848757852939}
-  m_Layer: 0
-  m_Name: Desk Floating
+  - component: {fileID: 121532707284597741}
+  m_Layer: 8
+  m_Name: Work Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,6 +265,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.054540914, y: 0.04, z: 0.018809985}
   m_Center: {x: 0.00000008195639, y: 0.0004830763, z: 0.009404991}
+--- !u!114 &121532707284597741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2677800848757852938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830017c2e723f54e93fa29bd654eac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: e3c2943072541a44c94a5c57292d79eb, type: 2}
 --- !u!1 &3019694880495811720
 GameObject:
   m_ObjectHideFlags: 0

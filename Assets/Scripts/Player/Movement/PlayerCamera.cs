@@ -42,7 +42,7 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 
-    // Rotates the player upwards
+    // Rotates the player
     private void RotateCam(
         float x = 0, float y = 0, float z = 0, bool lUp = false, 
         bool rD = false)
