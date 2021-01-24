@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3458987784704811779, guid: 91f94c928ef847d409c8261315b7e3f4, type: 3}
+  - {fileID: 2100000, guid: b5d2beb612f1c574e818e7aee84ddf1e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   maxStates: 2
   state: 0
   sound: {fileID: 0}
+  volume: 1
   soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
 --- !u!114 &4951085327298718246
 MonoBehaviour:
@@ -149,7 +150,7 @@ MonoBehaviour:
   iteration:
     iteration: 0
     specificState: 1
-    usespecific: 1
+    specific: 0
 --- !u!65 &4951085327298718241
 BoxCollider:
   m_ObjectHideFlags: 0
