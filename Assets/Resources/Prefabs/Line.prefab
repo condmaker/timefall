@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1316700167429642536}
   - component: {fileID: 9134771433594588365}
   - component: {fileID: 5029426129026698977}
+  - component: {fileID: 7172338013491960184}
   m_Layer: 0
   m_Name: Line
   m_TagString: Untagged
@@ -140,6 +141,19 @@ MonoBehaviour:
     specificState: 0
     specific: 0
   wantedStates: []
+--- !u!65 &7172338013491960184
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020771178219566145}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.013066326, y: 0.060000014, z: 0.1}
+  m_Center: {x: 0.000000059604645, y: -1.8770447e-15, z: 0.006003877}
 --- !u!1 &3545616628185979681
 GameObject:
   m_ObjectHideFlags: 0
