@@ -131,11 +131,11 @@ public class PlayerInput : MonoBehaviour
                 LookDown = true;
         }
         // Rotate Left
-        else if (Input.GetKey(playerBinds.MoveLeft) && !IsLookingUp && !LookUp
+        else if (Input.GetKey(playerBinds.RotateLeft) && !IsLookingUp && !LookUp
             && !IsLookingDown && !LookDown)
             IsLookingLeft = true;
         // Rotate Right
-        else if (Input.GetKey(playerBinds.MoveRight) && !IsLookingUp && !LookUp
+        else if (Input.GetKey(playerBinds.RotateRight) && !IsLookingUp && !LookUp
             && !IsLookingDown && !LookDown)
             IsLookingRight = true;
         // Pressed interact key
