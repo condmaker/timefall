@@ -26,7 +26,12 @@ public class ChangeDialogue : MonoBehaviour
 
     public void Change(ObjectStateHandler oSH, short state)
     {
-        if(osh.State == state)
-            npc.Dialogue = script;
+
+        if (state == this.state) 
+        {
+            npc.Dialogue = script;          
+        }
+
+
     }
 }
