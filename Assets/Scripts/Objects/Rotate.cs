@@ -6,7 +6,7 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
     [SerializeField]
-    private short angle;
+    private float angle;
     [SerializeField]
     private float frames;
     private short previous;
