@@ -2178,7 +2178,7 @@ GameObject:
   - component: {fileID: 3408052413922926981}
   - component: {fileID: 6085893750786998795}
   - component: {fileID: 5042657357022239445}
-  - component: {fileID: 2954424485018520854}
+  - component: {fileID: 2753913120497365434}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -2287,9 +2287,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2954424485018520854}
-        m_TargetAssemblyTypeName: SwitchMenu, Assembly-CSharp
-        m_MethodName: SwitchMenus
+      - m_Target: {fileID: 2753913120497365434}
+        m_TargetAssemblyTypeName: MenuStateChanger, Assembly-CSharp
+        m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2299,7 +2299,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2954424485018520854
+--- !u!114 &2753913120497365434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2308,11 +2308,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2416134082866237262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1278e2ab6b267ea438c5f8e5b4613d61, type: 3}
+  m_Script: {fileID: 11500000, guid: 14289a0c4abfb6d4696bde94c3f926da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuToClose: {fileID: 5742376814471051834}
-  menuToOpen: {fileID: 0}
+  menu: {fileID: 5742376814471051834}
 --- !u!1 &2431674540634211296
 GameObject:
   m_ObjectHideFlags: 0
