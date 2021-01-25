@@ -8,7 +8,8 @@ public class PushInteractor : ManualInteractor
     
     public override InteractionResult Toggle(ItemData itemId, Vector3 position)
     {
-        return Push(position);
+        bool aux;
+        return Push(position, out aux);
     }
 
     private void Update()
@@ -16,7 +17,7 @@ public class PushInteractor : ManualInteractor
         Debug.DrawRay(transform.position, -transform.right * 5, Color.red);
     }
 
-    public InteractionResult Push(Vector3 position)
+    public InteractionResult Push(Vector3 position, out bool result)
     {
         int offset = 2;
         if (position.x > transform.position.x + offset)
@@ -28,7 +29,8 @@ public class PushInteractor : ManualInteractor
         else if (position.z < transform.position.z - offset)
             transform.eulerAngles = new Vector3(0, 90, 0);
 
-        if (DetectObstacles())
+        result = DetectObstacles();
+        if (result)
         {
             ProcessResult();
         }
@@ -36,7 +38,7 @@ public class PushInteractor : ManualInteractor
         return InteractionResult.Activate;
     }
 
-    private bool DetectObstacles()
+    public bool DetectObstacles()
     {
         RaycastHit currentWorldObject;
         //Raycast
@@ -50,8 +52,12 @@ public class PushInteractor : ManualInteractor
         //Se for Caixa Togller
         if (nearObject?.name.Contains("Box") ?? false)
         {
-            nearObject.GetComponent<PushInteractor>().Push(this.transform.position);
-            return true;
+            PushInteractor pushInteractor 
+                = nearObject.GetComponent<PushInteractor>();
+
+            bool result = false;
+            pushInteractor.Push(this.transform.position, out result);
+            return result;       
         }
         else if (!hit)
         {          
