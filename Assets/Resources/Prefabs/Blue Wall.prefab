@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 5207892301783823436}
   - component: {fileID: 5207892301783823439}
   - component: {fileID: 5207892301783823438}
+  - component: {fileID: 8680558644390374018}
+  - component: {fileID: 2795592427842976732}
+  - component: {fileID: 5932775013136348346}
   m_Layer: 0
-  m_Name: Green
+  m_Name: Blue Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,3 +100,60 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3220645731831034337, guid: a931629cf89e24a4e8876e47f5367f85, type: 3}
+--- !u!114 &8680558644390374018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207892301783823432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6cf31e518d7aa42a5e28647f7478ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStates: 2
+  state: 0
+  sound: {fileID: 0}
+  volume: 1
+  soundManager: {fileID: 11400000, guid: f4784b2fb1308a647966e9a253e0838d, type: 2}
+--- !u!114 &2795592427842976732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207892301783823432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299f3d557e90cc841baf2b3fe34b8a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iteration:
+    iteration: 1
+    specificState: 0
+    specific: 0
+  wantedStates:
+  - osh: {fileID: 0}
+    state: 3
+    any: 0
+  persistance: 0
+--- !u!95 &5932775013136348346
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207892301783823432}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: dea190a196d21374fb89ec7e32970b6a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
