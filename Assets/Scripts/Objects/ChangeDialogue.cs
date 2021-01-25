@@ -8,6 +8,9 @@ public class ChangeDialogue : MonoBehaviour
     private ObjectStateHandler osh;
 
     [SerializeField]
+    private int state;
+
+    [SerializeField]
     private NpcData npc;
 
     [SerializeField]
@@ -23,6 +26,7 @@ public class ChangeDialogue : MonoBehaviour
 
     public void Change(ObjectStateHandler oSH, short state)
     {
-        npc.Dialogue = script;
+        if(osh.State == state)
+            npc.Dialogue = script;
     }
 }
