@@ -31,6 +31,12 @@ public class InventoryHandler : MonoBehaviour
         }
     }
 
+
+   
+    /// <summary>
+    /// Method responsible for setting up the 
+    /// starting parameters of the class
+    /// </summary>
     private void Start()
     {
         selector.SetActive(true);
@@ -38,6 +44,11 @@ public class InventoryHandler : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Method responsible for selecting what 
+    /// slot is currently equipped
+    /// </summary>
+    /// <param name="slot">The slot to be equiped</param>
     public void EquipItem(InventorySlot slot)
     {   
         currentSlot = slot;
@@ -45,6 +56,10 @@ public class InventoryHandler : MonoBehaviour
 
     }
 
+
+    /// <summary>
+    /// Method responsible for clearing the selected slot
+    /// </summary>
     internal void ClearEquiped()
     {
         currentSlot.CleanDisplay();

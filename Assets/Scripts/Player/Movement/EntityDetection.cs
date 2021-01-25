@@ -47,35 +47,26 @@ public class EntityDetection : MonoBehaviour
     {
         Vector3 uV = new Vector3(0.0f, -1.0f, 0.0f);
 
+        Ray ray = new Ray(transform.position, transform.forward);
+
         if (pI.IsStrafingRight)
         {
-
-            IsColliding = Physics.Raycast(
-                transform.position, Quaternion.AngleAxis(
-                90, transform.forward) * uV, out currentWorldObject,
-                pI.MoveDistance);
-;
+            ray = new Ray(transform.position, Quaternion.AngleAxis(
+                90, transform.forward) * uV);
         }
         else if (pI.IsStrafingLeft)
         {
-
-            IsColliding = Physics.Raycast(
-                transform.position, Quaternion.AngleAxis(
-                -90, transform.forward) * uV, out currentWorldObject,
-                pI.MoveDistance);
+            ray = new Ray(transform.position, Quaternion.AngleAxis(
+                -90, transform.forward) * uV);
         }
         else if (pI.IsWalkingBack)
         {
-            IsColliding = Physics.Raycast(
-                transform.position, -transform.forward, out currentWorldObject,
-                pI.MoveDistance);
+            ray = new Ray(transform.position, -transform.forward);
         }
-        else
-        {
-            IsColliding = Physics.Raycast(
-                transform.position, transform.forward, out currentWorldObject,
-                pI.MoveDistance);
-        }
+
+        IsColliding = Physics.Raycast(ray, out currentWorldObject,
+                pI.MoveDistance, ~0, QueryTriggerInteraction.Ignore);
+
 
 
         if (!pI.CanInput)

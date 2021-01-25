@@ -11,7 +11,7 @@ public class ItemStatePar
 {
 
     /// <summary>
-    /// Item id
+    /// Property that defines an item ID
     /// </summary>
     [SerializeField]
     private short id;
@@ -19,7 +19,7 @@ public class ItemStatePar
 
 
     /// <summary>
-    /// Wanted State
+    // Property that defines a state
     /// </summary>
     [SerializeField]
     private short state;
