@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 1194593728}
   - component: {fileID: 1194593727}
   - component: {fileID: 1194593730}
+  - component: {fileID: 1194593731}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -470,7 +471,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194593726}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f58c0f26c43dd1a46ade9f2245fd0abd, type: 2}
   m_CullingMode: 0
@@ -481,6 +482,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1194593731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194593726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96c056c77861574c83b84e2cfc9c6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: First Stratum
 --- !u!1001 &1659790510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35178,6 +35192,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4781944769816153833, guid: 237184fae9393a346a564736d425bf3c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1194593730}
+    - target: {fileID: 4781944769816153833, guid: 237184fae9393a346a564736d425bf3c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781944769816153833, guid: 237184fae9393a346a564736d425bf3c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781944769816153833, guid: 237184fae9393a346a564736d425bf3c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781944769816153833, guid: 237184fae9393a346a564736d425bf3c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5490255533806576579, guid: 237184fae9393a346a564736d425bf3c, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -35301,7 +35335,7 @@ PrefabInstance:
     - target: {fileID: 8586382719649497682, guid: 237184fae9393a346a564736d425bf3c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2833544514529472510}
+      objectReference: {fileID: 0}
     - target: {fileID: 8586382719649497682, guid: 237184fae9393a346a564736d425bf3c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MenuStateChanger, Assembly-CSharp
@@ -35407,26 +35441,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1967846984493540318, guid: 237184fae9393a346a564736d425bf3c, type: 3}
+    - {fileID: 0}
+    - {fileID: 3319422226896179520, guid: 237184fae9393a346a564736d425bf3c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 237184fae9393a346a564736d425bf3c, type: 3}
---- !u!1 &2833544514529472509 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4932822612874303535, guid: 237184fae9393a346a564736d425bf3c, type: 3}
-  m_PrefabInstance: {fileID: 2833544514529472508}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2833544514529472510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2833544514529472509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14289a0c4abfb6d4696bde94c3f926da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: {fileID: 0}
 --- !u!4 &2834223804570493785
 Transform:
   m_ObjectHideFlags: 0
