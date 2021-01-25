@@ -24,9 +24,9 @@ public class IteratorEditor : PropertyDrawer
             position.width * 0.6f, position.height - 7);
 
         Rect labelRect = new Rect(
-            position.x + position.width - 130,
+            position.x + position.width * 0.6f + 5,
             position.y + 5,
-            position.width * 0.5f, position.height - 9);
+            position.width * 0.3f, position.height - 9);
 
         Rect useRect = new Rect(
             position.x + position.width - 20, 

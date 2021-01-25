@@ -31,7 +31,6 @@ public class DirectToggler : Interactor
         {
             if (o.Osh.State >= 1)
             {
-                Debug.Log(it + ":  " + o.State);
                 ProcessResult(o.State);
                 it++;
             }
