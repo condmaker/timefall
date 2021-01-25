@@ -1,20 +1,45 @@
 ﻿
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "KeyBinding", menuName = "ScriptableObjects/KeyBindings")]
+/// <summary>
+/// Class responsible for controlling game's keybindings.
+/// </summary>
+[CreateAssetMenu(fileName = "KeyBinding", menuName = 
+    "ScriptableObjects/KeyBindings")]
 public class KeyBindings: ScriptableObject
 {
+    /// <summary>
+    /// Property that defines the Key used to strafe left.
+    /// </summary>
     public KeyCode StrafeLeft { get; private set; }
+
+    /// <summary>
+    /// Property that defines the Key used to strafe right.
+    /// </summary>
     public KeyCode StrafeRight { get; private set; }
 
-    public KeyCode MoveLeft { get; private set; }
-    public KeyCode MoveRight { get; private set; }
+    /// <summary>
+    /// Property that defines the Key used to rotate left.
+    /// </summary>
+    public KeyCode RotateLeft { get; private set; }
 
+    /// <summary>
+    /// Property that defines the Key used to rotate right.
+    /// </summary>
+    public KeyCode RotateRight { get; private set; }
+
+    /// <summary>
+    /// Method that runs at game start to load the stored keybindings.
+    /// </summary>
     private void Awake()
     {
         UpdateStrafe();
     }
 
+    /// <summary>
+    /// Updates the rotation and strafe keybindings depending on player 
+    /// preference.
+    /// </summary>
     public void UpdateStrafe()
     {
         //Strafe Controls
@@ -24,14 +49,14 @@ public class KeyBindings: ScriptableObject
             case 0:
                 StrafeLeft = KeyCode.A;
                 StrafeRight = KeyCode.D;
-                MoveLeft = KeyCode.Q;
-                MoveRight = KeyCode.E;
+                RotateLeft = KeyCode.Q;
+                RotateRight = KeyCode.E;
                 break;
             case 1:
                 StrafeLeft = KeyCode.Q;
                 StrafeRight = KeyCode.E;
-                MoveLeft = KeyCode.A;
-                MoveRight = KeyCode.D;
+                RotateLeft = KeyCode.A;
+                RotateRight = KeyCode.D;
                 break;
         }
     }
