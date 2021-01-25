@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: Red_book
+  m_EditorClassIdentifier: 
+  DialogueName: Red_book
+  dialogueNodes:
+  - key: 13eb7a05-e4d8-485d-9d10-5e8c0ff65f38
+    data:
+      guid: 13eb7a05-e4d8-485d-9d10-5e8c0ff65f38
+      dialogue: "A book about mechanics, open in the statues section \n\n\n\n\n\n"
+      position:
+        serializedVersion: 2
+        x: 423
+        y: 195
+        width: 318
+        height: 254
+      isStart: 1
+      OutPorts:
+      - name: Read
+        id: 6462621f-514f-4ef5-ad0f-dc3835f6bac9
+      - name: Ignore
+        id: 60f3b985-d4c2-4576-bc5e-b8245c8ce1c6
+  - key: 60f3b985-d4c2-4576-bc5e-b8245c8ce1c6
+    data:
+      guid: 60f3b985-d4c2-4576-bc5e-b8245c8ce1c6
+      dialogue: 'you leave the book be
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 819
+        y: 403
+        width: 214
+        height: 164
+      isStart: 0
+      OutPorts: []
+  - key: 6462621f-514f-4ef5-ad0f-dc3835f6bac9
+    data:
+      guid: 6462621f-514f-4ef5-ad0f-dc3835f6bac9
+      dialogue: "seems to be a wierd mechanism behind the sword that makes \nthem
+        move i only noticed when i looked close and up at them \n\n\n"
+      position:
+        serializedVersion: 2
+        x: 875
+        y: 189
+        width: 366
+        height: 179
+      isStart: 0
+      OutPorts: []
