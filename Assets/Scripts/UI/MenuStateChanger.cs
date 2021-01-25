@@ -9,6 +9,11 @@ public class MenuStateChanger : MonoBehaviour
 
     public void ChangeMenuState()
     {
-        menu.SetActive(!menu.activeSelf);
+        menu.SetActive(true);
+    }
+
+    public void CloseMenu()
+    {
+        menu.SetActive(false);
     }
 }
