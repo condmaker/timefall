@@ -47,9 +47,12 @@ public class ObjectStateHandler : MonoBehaviour
     private Animator anim;
 
     private bool isPlaying;
+    private bool firstStateChange;
 
     private void Awake()
     {
+        firstStateChange = false;
+
         interactor = GetComponents<Interactor>();
         foreach (Interactor i in interactor)
         {
@@ -112,6 +115,7 @@ public class ObjectStateHandler : MonoBehaviour
     public void ChangeToState(short wantedState)
     {
         //if (isPlaying) return;
+        firstStateChange = true;
 
         State = wantedState;      
         PlayAnimation();
@@ -122,7 +126,7 @@ public class ObjectStateHandler : MonoBehaviour
     public void PlayAnimation()
     {
         //Sound
-        if (sound != null)
+        if ((sound != null) && firstStateChange)
             soundManager.PlaySound(sound, transform.position);
 
         if (anim == null) return;

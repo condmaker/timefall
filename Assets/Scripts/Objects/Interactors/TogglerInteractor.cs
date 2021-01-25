@@ -9,6 +9,8 @@ public class TogglerInteractor : Interactor
 
     [SerializeField]
     private List<StateO> wantedStates;
+    [SerializeField]
+    private bool persistance;
 
     private Dictionary<ObjectStateHandler, short> currentStates;
 
@@ -65,7 +67,9 @@ public class TogglerInteractor : Interactor
         {
             if (wasTriggered)
             {
-                ProcessResult(0);
+                if (!persistance)
+                    ProcessResult(0);
+
                 wasTriggered = false;
             }
         }
