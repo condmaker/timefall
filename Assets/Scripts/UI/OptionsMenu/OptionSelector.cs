@@ -70,7 +70,7 @@ public class OptionSelector : MonoBehaviour
 
         PlayerPrefs.SetInt(optionName, index);
 
-        onSelect.Invoke();
+        onSelect?.Invoke();
 
         return check;
     }

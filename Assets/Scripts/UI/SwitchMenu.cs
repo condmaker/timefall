@@ -12,7 +12,9 @@ public class SwitchMenu : MonoBehaviour
 
     public void SwitchMenus()
     {
-        menuToClose.SetActive(false);
+        if(menuToClose != null)
+            menuToClose.SetActive(false);
+
         menuToOpen.SetActive(true);
     }
 }

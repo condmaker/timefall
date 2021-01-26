@@ -20,6 +20,8 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerPrefs.GetInt("teleport") == 0) return;
+
         if (Input.GetKeyDown(KeyCode.LeftBracket))
         {
             PreviousPoint();

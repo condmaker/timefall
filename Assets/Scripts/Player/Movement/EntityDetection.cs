@@ -68,7 +68,6 @@ public class EntityDetection : MonoBehaviour
                 pI.MoveDistance, ~0, QueryTriggerInteraction.Ignore);
 
 
-
         if (!pI.CanInput)
         {
             if (pI.Bump)
@@ -93,66 +92,66 @@ public class EntityDetection : MonoBehaviour
 
                 mD.DisplayMessage(objectData);
             }
-
-            else
-            {
-                IsColliding = false;
-                objectData = null;
-                ObjectTouched = null;
-                mD.CleanMessage();
-            }
-
-            if ((ObjectTouched != null)
-                && !pI.IsStrafingLeft && !pI.IsStrafingRight)
-            {
-                if (!pI.IsWalking && pI.IsInteracting && IsColliding)
-                {
-                    if (objectData == null) return;
-
-                    switch (objectData.InteractionType)
-                    {
-                        case InteractionType.isGrabable:
-                            inventory.AddItem(objectData as ItemData);
-                            objectHolder.DestroyObject();
-                            mD.CleanMessage();
-                            objectData = null;
-                            break;
-                        case InteractionType.isUsable:                           
-                            interactor =
-                                ObjectTouched.GetComponent<ManualInteractor>();
-
-                            InteractionResult itemused =
-                                interactor.Toggle(
-                                    inventory?.equipedItem, transform.position);
-
-                            switch (itemused)
-                            {
-                                case InteractionResult.WrongIntMessage:
-                                    StartDialogue(wrongInteaction);
-                                    break;
-                                case InteractionResult.UseItem:
-                                    inventory.ClearEquiped();
-                                    break;
-                            }
-                            break;
-                        case InteractionType.isExit:
-                            interactor =
-                                ObjectTouched.GetComponent<ManualInteractor>();
-                                interactor.Toggle(
-                                    inventory?.equipedItem, transform.position);
-                            break;
-                        case InteractionType.isNPC:
-                            StartDialogue((objectData as NpcData).Dialogue);
-                            break;
-                        default:
-                            print("Porque é que essa coisa é trigger ?");
-                            break;
-                    }
-                }
-
-                pI.IsInteracting = false;
-            }
         }
+        else
+        {
+            IsColliding = false;
+            objectData = null;
+            ObjectTouched = null;
+            mD.CleanMessage();
+        }
+
+        if ((ObjectTouched != null)
+            && !pI.IsStrafingLeft && !pI.IsStrafingRight)
+        {
+            if (!pI.IsWalking && pI.IsInteracting && IsColliding)
+            {
+                if (objectData == null) return;
+
+                switch (objectData.InteractionType)
+                {
+                    case InteractionType.isGrabable:
+                        inventory.AddItem(objectData as ItemData);
+                        objectHolder.DestroyObject();
+                        mD.CleanMessage();
+                        objectData = null;
+                        break;
+                    case InteractionType.isUsable:                           
+                        interactor =
+                            ObjectTouched.GetComponent<ManualInteractor>();
+
+                        InteractionResult itemused =
+                            interactor.Toggle(
+                                inventory?.equipedItem, transform.position);
+
+                        switch (itemused)
+                        {
+                            case InteractionResult.WrongIntMessage:
+                                StartDialogue(wrongInteaction);
+                                break;
+                            case InteractionResult.UseItem:
+                                inventory.ClearEquiped();
+                                break;
+                        }
+                        break;
+                    case InteractionType.isExit:
+                        interactor =
+                            ObjectTouched.GetComponent<ManualInteractor>();
+                            interactor.Toggle(
+                                inventory?.equipedItem, transform.position);
+                        break;
+                    case InteractionType.isNPC:
+                        StartDialogue((objectData as NpcData).Dialogue);
+                        break;
+                    default:
+                        print("Porque é que essa coisa é trigger ?");
+                        break;
+                }
+            }
+
+            pI.IsInteracting = false;
+        }
+        
     }
 
     private void StartDialogue(DialogueScript dS)
