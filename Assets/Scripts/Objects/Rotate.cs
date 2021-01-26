@@ -43,7 +43,7 @@ public class Rotate : MonoBehaviour
         previous = state;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (clockWise)
             RotateClockWise();
