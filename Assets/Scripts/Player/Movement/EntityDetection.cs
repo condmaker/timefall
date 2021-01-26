@@ -93,6 +93,7 @@ public class EntityDetection : MonoBehaviour
                 mD.DisplayMessage(objectData);
             }
         }
+
         else
         {
             IsColliding = false;
