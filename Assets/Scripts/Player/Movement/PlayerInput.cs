@@ -99,9 +99,11 @@ public class PlayerInput : MonoBehaviour
         // Move forward
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(playerBinds.StrafeRight)
             || Input.GetKey(playerBinds.StrafeLeft))
-            || Input.GetKey(KeyCode.S) && !LookUp && !IsLookingUp
-            && !LookDown && !IsLookingDown)
+            || Input.GetKey(KeyCode.S))
         {
+            if (LookUp || IsLookingUp || LookDown || IsLookingDown)
+                return;
+
             if (!IsWalking && !IsLookingUp && !IsLookingDown)
                 soundManager.PlaySound(stepSound, transform.position, true);
 
