@@ -10,11 +10,6 @@ using UnityEngine;
 /// </summary>
 public class MixedDataHolder : DataHolder {
     /// <summary>
-    /// Start for enable property
-    /// </summary>
-    private void Start()
-    { }
-    /// <summary>
     /// List of secondary DataHolders
     /// </summary>
     [SerializeField]

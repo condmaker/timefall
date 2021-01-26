@@ -21795,7 +21795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5355374782286455484, guid: 8f7e2d982c3e20a439ce8ef61c08b8b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -150.15999
+      value: -150.40999
       objectReference: {fileID: 0}
     - target: {fileID: 5355374782286455484, guid: 8f7e2d982c3e20a439ce8ef61c08b8b5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25374,37 +25374,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503394543}
   m_Mesh: {fileID: 7060280008036029220, guid: 99e1c1eb68b01894587af52dfac2818a, type: 3}
---- !u!21 &503958572
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/cPrecision
-  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Colors: 32
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &504827317
 GameObject:
   m_ObjectHideFlags: 0
@@ -54713,7 +54682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5355374782286455484, guid: a618a07a0f75e1c4c9c02e4e5d97b96c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -150.12
+      value: -150.37
       objectReference: {fileID: 0}
     - target: {fileID: 5355374782286455484, guid: a618a07a0f75e1c4c9c02e4e5d97b96c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -78768,6 +78737,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch Flicker 2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7305546745444446341, guid: a618a07a0f75e1c4c9c02e4e5d97b96c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.024950914
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305546745444446341, guid: a618a07a0f75e1c4c9c02e4e5d97b96c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.02910896
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305546745444446341, guid: a618a07a0f75e1c4c9c02e4e5d97b96c, type: 3}
+      propertyPath: m_Center.y
+      value: -0.0039061147
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305546745444446341, guid: a618a07a0f75e1c4c9c02e4e5d97b96c, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0013941013
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a618a07a0f75e1c4c9c02e4e5d97b96c, type: 3}
 --- !u!4 &1684985269 stripped
@@ -94715,6 +94700,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941642085}
   m_Mesh: {fileID: 8108563764783910780, guid: 5bb61055cfcaf734e807176d0207ba8e, type: 3}
+--- !u!21 &1945267999
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/cPrecision
+  m_Shader: {fileID: 4800000, guid: a2f9d4f98d6a3424fabca5882dc1a55e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Palette:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Colors: 32
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &1945538938
 GameObject:
   m_ObjectHideFlags: 0
