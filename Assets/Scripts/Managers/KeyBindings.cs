@@ -2,7 +2,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Class responsible for controlling game's keybindings.
+/// Class responsible for controlling the game's keybindings.
 /// </summary>
 [CreateAssetMenu(fileName = "KeyBinding", menuName = 
     "ScriptableObjects/KeyBindings")]
