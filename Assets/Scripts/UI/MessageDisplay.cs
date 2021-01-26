@@ -8,7 +8,7 @@ public class MessageDisplay : MonoBehaviour
 {
     private TextMeshProUGUI textToDisplay;
     [SerializeField]
-    private Sprite grabIcon, interactIcon, talkIcon;
+    private Sprite grabIcon, interactIcon, talkIcon, exitIcon;
     private Image iconDisplay;
 
     private Color colorNone;
@@ -24,6 +24,10 @@ public class MessageDisplay : MonoBehaviour
         colorNone.a = 0;
     }
 
+    /// <summary>
+    /// Method responsible for display the interaction icon on the screen
+    /// </summary>
+    /// <param name="_objectData"></param>
     public void DisplayMessage(ObjectData _objectData)
     {
         switch (_objectData?.InteractionType)
@@ -41,12 +45,20 @@ public class MessageDisplay : MonoBehaviour
                 iconDisplay.sprite = talkIcon;
                 iconDisplay.color = colorFull;
                 break;
+            case InteractionType.isExit:
+                iconDisplay.sprite = exitIcon;
+                iconDisplay.color = colorFull;
+                break;
             default:
                 iconDisplay.sprite = null;
                 iconDisplay.color = colorNone;
                 break;
         }
     }
+
+    /// <summary>
+    /// Method responsible for cleaning the displayed icon
+    /// </summary>
     public void CleanMessage()
     {
         iconDisplay.sprite = null;
