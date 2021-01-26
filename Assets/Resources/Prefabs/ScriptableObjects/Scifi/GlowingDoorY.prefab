@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 7279068400481136824}
   - component: {fileID: 1073510916382852431}
   m_Layer: 8
-  m_Name: GlowingDoor
+  m_Name: GlowingDoorY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,6 +333,7 @@ MonoBehaviour:
     specificState: 0
     specific: 0
   wantedStates: []
+  persistance: 0
 --- !u!1001 &9185369113400939268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,6 +341,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7981782686129996434}
     m_Modifications:
+    - target: {fileID: 767764912113168392, guid: d11b5cf24958c8140aab1536cba10f13, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ab76d5f5bf563940850ef5f98e559ab, type: 2}
     - target: {fileID: 1272084850918822365, guid: d11b5cf24958c8140aab1536cba10f13, type: 3}
       propertyPath: m_Name
       value: Glowing Arrow Yellow (A)
@@ -387,6 +392,18 @@ PrefabInstance:
     - target: {fileID: 1940078105412258663, guid: d11b5cf24958c8140aab1536cba10f13, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625375048430545760, guid: d11b5cf24958c8140aab1536cba10f13, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625375048430545760, guid: d11b5cf24958c8140aab1536cba10f13, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625375048430545760, guid: d11b5cf24958c8140aab1536cba10f13, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9957261
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d11b5cf24958c8140aab1536cba10f13, type: 3}
