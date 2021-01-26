@@ -14,6 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueName: TheKing_3
   dialogueNodes:
+  - key: 57fa7190-bb2b-4192-b484-031a05f999b4
+    data:
+      guid: 57fa7190-bb2b-4192-b484-031a05f999b4
+      dialogue: '"So you''ve lit them all. We''re going to die, at the
+
+        malevolent
+        jaws of the Demon."'
+      position:
+        serializedVersion: 2
+        x: 327.2
+        y: 191.2
+        width: 293.59998
+        height: 133.6
+      isStart: 1
+      outPorts:
+      - name: There is no Demon.
+        id: e943fe04-e40b-413c-b524-3b809f0f50df
   - key: e943fe04-e40b-413c-b524-3b809f0f50df
     data:
       guid: e943fe04-e40b-413c-b524-3b809f0f50df
@@ -33,9 +50,9 @@ MonoBehaviour:
         x: 852
         y: 203.2
         width: 351.19995
-        height: 220
+        height: 263.2
       isStart: 0
-      OutPorts:
+      outPorts:
       - name: 
         id: 380809eb-e636-4b59-b852-51783fa3349f
   - key: 380809eb-e636-4b59-b852-51783fa3349f
@@ -53,4 +70,4 @@ MonoBehaviour:
         width: 217.59998
         height: 205.6
       isStart: 0
-      OutPorts: []
+      outPorts: []

@@ -4,15 +4,23 @@ using UnityEngine;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using System;
-using UnityEditor;
 
 namespace DialogueSystem.Editor
 {
+    /// <summary>
+    /// Class responsible for managing the graphview component of
+    /// the Node based Dialogue System
+    /// </summary>
     public class DialogueGraphView : GraphView
     {
-
+        /// <summary>
+        /// Property that define the name of the dislayed Dialogue
+        /// </summary>
         public string DialogueName { get; set; }
 
+        /// <summary>
+        /// Constructor of this class
+        /// </summary>
         public DialogueGraphView()
         {
             this.AddManipulator(new ContentDragger());
@@ -22,7 +30,15 @@ namespace DialogueSystem.Editor
             AddElement(GenerateFirstNode());
         }
 
-        public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
+        /// <summary>
+        /// Method responsible for getting all ports 
+        /// compatible with given port.
+        /// </summary>
+        /// <param name="startPort">Start port to validate against</param>
+        /// <param name="nodeAdapter">NodeAdapter Component</param>
+        /// <returns>List of compatible ports</returns>
+        public override List<Port> GetCompatiblePorts(Port startPort,
+            NodeAdapter nodeAdapter)
         {
             List<Port> compatiblePorts = new List<Port>();
             ports.ForEach(funcCall: (port) =>
@@ -34,12 +50,28 @@ namespace DialogueSystem.Editor
             return compatiblePorts;
         }
 
+
+        /// <summary>
+        /// Method responsible for creating a new Port component
+        /// </summary>
+        /// <param name="node">Node of the new Port</param>
+        /// <param name="portDirection">IO direction of the new Port</param>
+        /// <param name="capacity">Amount of connections that the 
+        /// new Port can have</param>
+        /// <returns>New Port</returns>
         private Port GeneratePort(DialogueNode node, Direction portDirection,
             Port.Capacity capacity = Port.Capacity.Single)
         {
-            return node.InstantiatePort(Orientation.Horizontal, portDirection, capacity, typeof(string));
+            return node.InstantiatePort(Orientation.Horizontal, 
+                portDirection, capacity, typeof(string));
         }
 
+
+        /// <summary>
+        /// Method responsible for creating the "Start" node of the 
+        /// Dialogue System
+        /// </summary>
+        /// <returns>The first Node</returns>
         private DialogueNode GenerateFirstNode()
         {
             DialogueNode node = new DialogueNode
@@ -61,6 +93,9 @@ namespace DialogueSystem.Editor
             return node;
         }
 
+        /// <summary>
+        /// Method responsible for creating a new empty Node
+        /// </summary>
         public void CreateDialogueNode()
         {
 
@@ -73,6 +108,13 @@ namespace DialogueSystem.Editor
             AppendDefaultItems(node);
         }
 
+        /// <summary>
+        /// Methog that appends components to a Node
+        /// </summary>
+        /// <param name="node">Node to append the components on</param>
+        /// <param name="nd">NodeData with the information of what 
+        /// components to append</param>
+        /// <returns>The new Node with appended components</returns>
         public DialogueNode AppendDefaultItems(DialogueNode node, NodeData nd = null)
         {
             node.title = "Dialogue Node";
@@ -115,6 +157,12 @@ namespace DialogueSystem.Editor
             return node;
         }
        
+        /// <summary>
+        /// Method responsible for addind a new Port to a Node
+        /// </summary>
+        /// <param name="node">Node to add the new Port on</param>
+        /// <param name="choice">Name of the port corresponding 
+        /// to the choice it represents</param>
         public void AddPort(DialogueNode node, string choice = "")
         {
             ChoiceComponent Cc = new ChoiceComponent(node, choice);
@@ -125,28 +173,38 @@ namespace DialogueSystem.Editor
 
         //LOAD DIALOGUE SCRIPT
 
-        internal void InstatiateDialogueNode(NodeData nd)
+        /// <summary>
+        /// Method responsible for creating a new Dialogue Node
+        /// based on an already existing one
+        /// </summary>
+        /// <param name="data">Data to base the new Node out of</param>
+        public void InstatiateDialogueNode(NodeData data)
         {
             DialogueNode node = new DialogueNode
             {
-                GUID = nd.GUID,
+                GUID = data.GUID,
                 title = "",
-                DialogText = nd.Dialogue
+                DialogText = data.Dialogue
             };
 
-            node = AppendDefaultItems(node, nd);
-            node.SetPosition(nd.Position);
+            node = AppendDefaultItems(node, data);
+            node.SetPosition(data.Position);
         }
 
-        internal void InstatiateEdges(NodeData nd)
+
+        /// <summary>
+        /// Method responsible for adding the ports connections to the window
+        /// </summary>
+        /// <param name="data">Data to base the connections out of</param>
+        public void InstatiateEdges(NodeData data)
         {
             //ConnectStart
 
-            DialogueNode node = GetNode(nd.GUID);
+            DialogueNode node = GetNode(data.GUID);
 
-            for (int i = 0; i < nd.OutPorts.Count - 1; i++)
+            for (int i = 0; i < data.OutPorts.Count - 1; i++)
             {
-                AddPort(node, nd.OutPorts[i+1].Name);
+                AddPort(node, data.OutPorts[i+1].Name);
             }
 
             int it = 0;
@@ -161,9 +219,9 @@ namespace DialogueSystem.Editor
 
                 Port p = welp as Port;
 
-                if (nd.OutPorts.Count == 0) continue;
+                if (data.OutPorts.Count == 0) continue;
 
-                string gui = nd.OutPorts[it].ID;
+                string gui = data.OutPorts[it].ID;
                 DialogueNode conNode = GetNode(gui);
 
                 foreach (Port ort in conNode.inputContainer.Children())
@@ -176,7 +234,12 @@ namespace DialogueSystem.Editor
 
         }
 
-        internal void ConnectToStart(NodeData data)
+        /// <summary>
+        /// Method responsible for connecting the first Node 
+        /// to the "Start" Node
+        /// </summary>
+        /// <param name="data">Data to base the connection out of</param>
+        public void ConnectToStart(NodeData data)
         {
             DialogueNode start = nodes.First() as DialogueNode;
 
@@ -190,6 +253,11 @@ namespace DialogueSystem.Editor
             }
         }
 
+        /// <summary>
+        /// Method responsible for getting a Node based on its ID
+        /// </summary>
+        /// <param name="id">ID of the wanted Node</param>
+        /// <returns>The Node with the passed ID</returns>
         public DialogueNode GetNode(string id)
         {
             DialogueNode z = null;
@@ -206,49 +274,5 @@ namespace DialogueSystem.Editor
         }
     }
 
-
-    public struct ChoiceComponent
-    {
-        public string Choice { get; }
-        private Port port;
-        private TextField inputField;
-
-        public ChoiceComponent(DialogueNode node, string choice = "")
-        {
-            Choice = "";
-
-            Port generateOutPort = node.InstantiatePort
-                ( Orientation.Horizontal, Direction.Output, 
-                Port.Capacity.Single, typeof(string));
-
-            generateOutPort.portName = choice;
-            
-
-            //Create and Add a textField to input the dialogue
-            TextField textNode = new TextField();
-
-            //Testing Only THIS EVENT NEEDS TO BE CHANGED
-            //Instead of onChange it needs to be "when the user ENDS the change"
-            textNode.RegisterCallback<ChangeEvent<string>>((ChangeEvent<string> evt) =>
-            {
-                generateOutPort.portName = evt.newValue;
-            });
-            textNode.value = choice;
-            textNode.multiline = true;
-            node.outputContainer.Add(textNode);
-
-            port = generateOutPort;
-            inputField = textNode;
-
-
-        }
-
-        public void AddComponent(DialogueNode node)
-        {
-            node.outputContainer.Add(port);
-            node.outputContainer.Add(inputField);
-        }
-
-    }
 
 }

@@ -8,11 +8,20 @@ using System.Linq;
 
 namespace DialogueSystem.Editor
 {
+    /// <summary>
+    /// Class responsible for Saving and Loading a DialogueScript
+    /// </summary>
     public class SaveLoadUtils
-    {
-        //This all needs a rework  
+    {       
+        /// <summary>
+        /// Method responsible for saving the Dialogue
+        /// </summary>
+        /// <param name="view">GraphView component that contains the
+        /// Dialogue Nodes</param>
+        /// <param name="dialogueName">Name of the passed Dialogue</param>
         public void SaveDialogues(GraphView view, string dialogueName)
         {
+            
             if (dialogueName == null)
                 dialogueName = "InitialName";
 
@@ -25,7 +34,8 @@ namespace DialogueSystem.Editor
 
             if (string.IsNullOrEmpty(path)) return;
 
-            DialogueScript temp = ScriptableObject.CreateInstance<DialogueScript>();
+            DialogueScript temp = 
+                ScriptableObject.CreateInstance<DialogueScript>();
 
             List<Node> nodes =
                 view.nodes.ToList().OrderBy(node => 
@@ -49,7 +59,9 @@ namespace DialogueSystem.Editor
                         //Check if the connection is the start
                         foreach (Edge e in p.connections)
                         {
-                            DialogueNode outNode = e.output.node as DialogueNode;
+                            DialogueNode outNode =
+                                e.output.node as DialogueNode;
+
                             if (outNode.title == "Start") isStart = true;
                         }
                     }
@@ -59,8 +71,10 @@ namespace DialogueSystem.Editor
                     continue;
 
                 List<OutportData> outPort = new List<OutportData>();
+                
                 //Create list of Outport IDs
-                foreach (UnityEngine.UIElements.VisualElement welp in n.outputContainer.Children())
+                foreach (UnityEngine.UIElements.VisualElement welp 
+                    in n.outputContainer.Children())
                 {
                     if(!(welp is Port))
                     {
@@ -73,8 +87,10 @@ namespace DialogueSystem.Editor
                     {
                         foreach (Edge e in p.connections)
                         {
-                            DialogueNode outNode = e.input.node as DialogueNode;
-                            outPort.Add(new OutportData(p.portName, outNode.GUID));
+                            DialogueNode outNode
+                                = e.input.node as DialogueNode;
+                            outPort.Add(
+                                new OutportData(p.portName, outNode.GUID));
                         }
                     }
                 }
@@ -99,7 +115,16 @@ namespace DialogueSystem.Editor
             AssetDatabase.SaveAssets();
         }
 
-        public void LoadDialogues(DialogueGraphView view, DialogueScript script)
+
+        /// <summary>
+        /// Method responsible for loading the Dialogue into the 
+        /// Dialogue Window
+        /// </summary>
+        /// <param name="view">GraphView component to display the
+        /// Dialogue Nodes into</param>
+        /// <param name="script">Dialogue script to Load</param>
+        public void LoadDialogues(DialogueGraphView view,
+            DialogueScript script)
         {
             view.DialogueName = script.DialogueName;
 

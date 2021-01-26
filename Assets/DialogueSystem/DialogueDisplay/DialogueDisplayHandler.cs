@@ -2,95 +2,133 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DialogueSystem;
-using System;
 using TMPro;
+using System;
 
+//Class responsible for the handling of the Dialogue Display
 public class DialogueDisplayHandler : MonoBehaviour
 {
-    [SerializeField]
-    private bool OnLoad;
 
+    /// <summary>
+    /// Text component responsible for displaying the Dialogue text
+    /// </summary>
     [SerializeField]
-    private TextMeshProUGUI dialogueDisplayTarget; 
-    // Depois maybe tirar o serializable
-    [SerializeField]
+    private TextMeshProUGUI dialogueDisplayTarget;
+
+
+    /// <summary>
+    /// Current Dialogue script beeing displayed 
+    /// </summary>
     private DialogueScript currentScript;
+
+
+    /// <summary>
+    /// Time between each char of the Dialogue
+    /// </summary>
     [SerializeField]
     private float displaySpeed;
 
+
+    /// <summary>
+    /// GameObject that defines the container of the ChoiceButtons
+    /// </summary>
     [SerializeField]
     private GameObject buttonLayout;
+    
+
+    /// <summary>
+    /// Prefab of the ChoiceButton
+    /// </summary>
     [SerializeField]
     private GameObject buttonPREFAB;
 
 
+    /// <summary>
+    /// Variable that defines the data of one line of dialogue
+    /// </summary>
     private NodeData dialogueLine;
 
+
+    /// <summary>
+    /// ID component of the current line of dialogue
+    /// </summary>
     private string currentGUID;
+
+
+    /// <summary>
+    /// Text component of the current line of dialogue
+    /// </summary>
     private string dialogueText;
 
+
+    /// <summary>
+    /// Auxiliar vairable that represents the time between each char 
+    /// in one line of dialogue
+    /// </summary>
     private WaitForSeconds effectSpeed;
 
+
+    /// <summary>
+    /// Variable that defines if tha Dialogue has ended
+    /// </summary>
     private bool ended;
+
+
+    /// <summary>
+    /// Variable that defines if the current line of dialogue is 
+    /// currenly beeing displayed
+    /// </summary>
     private bool inDialogue;
+
+    /// <summary>
+    /// Event triggered when the Dialogue ends
+    /// </summary>
     public Action endDialogue;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (OnLoad)
-        {
-            StartDialolgue(currentScript);
-        }
-    }
-
+    /// <summary>
+    /// Method responsible for switching to the passed DialogueScript
+    /// </summary>
+    /// <param name="script">Dialogue Script to inicialize</param>
     public void StartDialolgue(DialogueScript script)
     {
-        
         currentScript = script;
         PrepareNewDialogue();
     }
 
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            PassDialogue();
-        }
-    }
-
-    public void PassDialogue()
-    {
-        
-
-        if (inDialogue)
-        {
-            if (ended)
+            if (inDialogue)
             {
-                if (buttonLayout.transform.childCount > 0)
-                    return;
-                NextLine(0);
-            }
-            else
-            {
-                dialogueDisplayTarget.text += dialogueText;
-                dialogueText = "";
-                buttonLayout.SetActive(true);
-                ended = true;
-                StopCoroutine("TypeWriterEffect");
-            }
+                if (ended)
+                    NextLine(0);
+                else
+                {
+                    dialogueDisplayTarget.text += dialogueText;
+                    dialogueText = "";
+                    buttonLayout.SetActive(true);
+                    ended = true;
+                    StopCoroutine("TypeWriterEffect");
+                }
 
+            }
         }
     }
 
 
+    /// <summary>
+    /// Method responsible for seting up the Dialogue
+    /// </summary>
     public void PrepareNewDialogue()
     {
         //Display Specificationss
         effectSpeed = new WaitForSeconds(displaySpeed);
-        
+
         //Initialize First Line
         dialogueLine = currentScript.GetNodeByIndex(0);
         dialogueText = currentScript.GetNodeByIndex(0).Dialogue;
@@ -101,24 +139,27 @@ public class DialogueDisplayHandler : MonoBehaviour
         DisplayLine();
     }
 
+
+    /// <summary>
+    /// Method responsible for selecting and instantiating the respective 
+    /// Choice Buttons of the current Dialogue 
+    /// </summary>
     private void InstatiateChoices()
     {
 
-        foreach(Transform g in buttonLayout.transform)
+        foreach (Transform g in buttonLayout.transform)
         {
             Destroy(g.gameObject);
         }
 
         int choiceNumb = dialogueLine.OutPorts.Count;
         if (choiceNumb == 0) return;
-        
-        //This probably needs a rework :c
-        for(int i = 0; i < choiceNumb; i++)
-        {          
-            GameObject temp = Instantiate(buttonPREFAB, transform.position, Quaternion.identity, buttonLayout.transform);
 
+        for (int i = 0; i < choiceNumb; i++)
+        {
+            GameObject temp = Instantiate(buttonPREFAB, transform.position,
+                Quaternion.identity, buttonLayout.transform);
 
-            //Depois mudar isto 
             temp.GetComponent<TextMeshProUGUI>().text = dialogueLine.OutPorts[i].Name;
 
             ChoiceSelector cs = temp.GetComponent<ChoiceSelector>();
@@ -127,15 +168,20 @@ public class DialogueDisplayHandler : MonoBehaviour
         }
 
         buttonLayout.SetActive(false);
-        
+
     }
 
 
+    /// <summary>
+    /// Method responsible for deciding initializing next line of the current 
+    /// DialogueScript
+    /// </summary>
+    /// <param name="choice">The selected choice of the current line</param>
     public void NextLine(int choice)
     {
-        dialogueLine = 
+        dialogueLine =
                currentScript.GetNextNode(dialogueLine, choice);
-       
+
         if (dialogueLine == null)
         {
             EndDialogue();
@@ -148,20 +194,33 @@ public class DialogueDisplayHandler : MonoBehaviour
         DisplayLine();
     }
 
+
+    /// <summary>
+    /// Method responsible for ending the current DialogueScript
+    /// </summary>
     private void EndDialogue()
     {
-        endDialogue?.Invoke();
         inDialogue = false;
         dialogueDisplayTarget.text = "";
+        endDialogue?.Invoke();
         StopCoroutine("TypeWriterEffect");
     }
 
+
+    /// <summary>
+    /// Method that starts the next line in the Dialogue
+    /// </summary>
     private void DisplayLine()
     {
         StopCoroutine("TypeWriterEffect");
         StartCoroutine("TypeWriterEffect");
     }
 
+
+    /// <summary>
+    /// IEnumerator that creates a TypeWriteEffect
+    /// </summary>
+    /// <returns></returns>
     IEnumerator TypeWriterEffect()
     {
         inDialogue = true;
@@ -177,6 +236,6 @@ public class DialogueDisplayHandler : MonoBehaviour
         ended = true;
         buttonLayout.SetActive(true);
     }
-                
+
 
 }
