@@ -1,10 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿/// <summary>
+/// Enum that defines the type of iteration that can be applied to
+/// a StateHandler
+/// </summary>
 public enum IterationType
 {
-    Next = 1, 
-    Previous = -1, 
+    /// <summary>
+    /// Iterate to the next state
+    /// </summary>
+    Next = 1,
+
+    /// <summary>
+    /// Iterate to the previous state
+    /// </summary>
+    Previous = -1,
+
+    /// <summary>
+    /// Iterate to the last state
+    /// </summary>
     Last
 }

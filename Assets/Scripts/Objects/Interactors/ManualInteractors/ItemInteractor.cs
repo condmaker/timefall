@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-///Type of ManualInteractor that expects a combination of items to be 
-///activated.
-///This Interactor stores the added items as children
+/// Type of ManualInteractor that expects a combination of items to be 
+/// activated.
+/// This Interactor stores the added items as children
 /// </summary>
 public class ItemInteractor : ManualInteractor
 {

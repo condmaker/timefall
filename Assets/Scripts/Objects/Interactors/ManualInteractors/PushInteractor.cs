@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-///Type of ManualInteractor that takes into account the current position
-///of the player and rotates the object accordingly
+/// Type of ManualInteractor that takes into account the current position
+/// of the player and rotates the object accordingly
 /// </summary
 public class PushInteractor : ManualInteractor
 {

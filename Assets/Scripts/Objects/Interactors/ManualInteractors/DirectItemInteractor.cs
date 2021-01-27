@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
 /// <summary>
-///Type of ManualInteractor where the equipped item is used 
-///to directly jump to its assigned state  
+/// Type of ManualInteractor where the equipped item is used 
+/// to directly jump to its assigned state  
 /// </summary
 public class DirectItemInteractor : ManualInteractor
 {

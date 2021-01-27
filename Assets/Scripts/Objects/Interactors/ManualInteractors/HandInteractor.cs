@@ -2,8 +2,8 @@
 
 
 /// <summary>
-///Type of ManualInteractor where the equipped item is used when 
-///calculating the interaction result
+/// Type of ManualInteractor where the equipped item is used when 
+/// calculating the interaction result
 /// </summary>
 public class HandInteractor : ManualInteractor
 {
