@@ -14,6 +14,9 @@ public class LeaveCutSceneScene : MonoBehaviour
     /// </summary>
     private VideoPlayer videoPlayer;
 
+    [SerializeField]
+    private string sceneName;
+
     /// <summary>
     /// Method called when the scene starts
     /// </summary>
@@ -30,6 +33,6 @@ public class LeaveCutSceneScene : MonoBehaviour
     /// <param name="source">source of the VideoPlayer component</param>
     private void LoadNextScene(VideoPlayer source)
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene(sceneName);
     }
 }
