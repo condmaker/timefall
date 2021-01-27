@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-// We need to change all of this to namespaces and use it directly instead of
-// getting multiple instances of scripts.
+/// <summary>
+/// Class responsible for getting the player input
+/// </summary>
 public class PlayerInput : MonoBehaviour
 {
 
@@ -21,7 +20,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     private AudioClip stepSound;
     [SerializeField]
-    private AudioClip bumpSound;
+    private AudioClip bumpSound = null;
     [SerializeField]
     private SoundMng soundManager;
 

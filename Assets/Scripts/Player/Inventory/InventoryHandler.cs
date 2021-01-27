@@ -1,17 +1,29 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Class responsible for handling the Inventory system
+/// </summary>
 public class InventoryHandler : MonoBehaviour
 {
+    /// <summary>
+    /// List of all InventorySlot that make up the Inventory
+    /// </summary>
     [SerializeField]
     private InventorySlot[] slots;
 
+    /// <summary>
+    /// Data of the item currently equipped by the player
+    /// </summary>
     public ItemData equipedItem => currentSlot?.CurrentItem;
 
+    /// <summary>
+    /// Slot currenty equipped by the player
+    /// </summary>
     private InventorySlot currentSlot;
 
+    /// <summary>
+    /// Selector component of the inventory
+    /// </summary>
     [SerializeField]
     private GameObject selector;    
 
@@ -55,7 +67,6 @@ public class InventoryHandler : MonoBehaviour
         selector.transform.position = currentSlot.transform.position;
 
     }
-
 
     /// <summary>
     /// Method responsible for clearing the selected slot

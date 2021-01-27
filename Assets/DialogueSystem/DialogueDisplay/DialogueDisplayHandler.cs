@@ -26,7 +26,7 @@ public class DialogueDisplayHandler : MonoBehaviour
     /// Time between each char of the Dialogue
     /// </summary>
     [SerializeField]
-    private float displaySpeed;
+    private float displaySpeed = 0;
 
 
     /// <summary>

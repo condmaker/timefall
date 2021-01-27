@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemData : ObjectData
 {
     [SerializeField]
-    private Sprite uiObjectSprite;
+    private Sprite uiObjectSprite = null;
     public Sprite UIobjectSprite { get => uiObjectSprite; }
 
     [SerializeField]
