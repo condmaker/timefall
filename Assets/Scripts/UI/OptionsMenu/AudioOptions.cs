@@ -58,7 +58,6 @@ public class AudioOptions : MonoBehaviour
         UpdateVolume();
     }
 
-
     public void UpdateVolume()
     {
         soundManager.CurrentMusic.volume 

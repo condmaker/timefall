@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
+/// <summary>
+/// Method responsible for handling the brightness slider
+/// </summary>
 public class BrightnessSlider : MonoBehaviour
 {
     private float gammaCorrection;
     private Slider slider;
+
     [SerializeField]
     private Light PlayerLight;
     private float minIntensity;
