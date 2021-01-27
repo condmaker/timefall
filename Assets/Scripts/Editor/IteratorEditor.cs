@@ -7,7 +7,8 @@ using UnityEngine;
 [CustomPropertyDrawer(typeof(Iteration))]
 public class IteratorEditor : PropertyDrawer
 {
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    public override void OnGUI(Rect position, SerializedProperty property, 
+        GUIContent label)
     {
         EditorGUI.BeginProperty(position, label, property);
 

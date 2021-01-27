@@ -5,36 +5,72 @@ using System.Diagnostics.Tracing;
 using UnityEngine;
 using DialogueSystem;
 
-// !!! Sync EntityDetection with PlayerInput after timers have been sorted
-
-// Everything related to the player interacting in any way with the environment
-// is treated here (like Raycasts for example)
-
+/// <summary>
+/// Class that is responsible for detecting entities and doing actions
+/// depending on what that entity is.
+/// </summary>
 public class EntityDetection : MonoBehaviour
 {
+    /// <summary>
+    /// Instance of the Player Input script in order to check what keys the
+    /// player has pressed.
+    /// </summary>
     private PlayerInput pI;
+    /// <summary>
+    /// Instance of the Player Movement script.
+    /// </summary>
     private PlayerMovement pM;
 
+    /// <summary>
+    /// Instance of the Player's inventory.
+    /// </summary>
     [SerializeField]
     private InventoryHandler inventory;
 
+    /// <summary>
+    /// Instance of the Dialogue Handler.
+    /// </summary>
     [SerializeField]
     private DialogueDisplayHandler dialogueHandler;
 
-    // Variable that stores the GameObject collided with
+    /// <summary>
+    /// Variable that stores the GameObject that the player collided with.
+    /// </summary>
     public GameObject ObjectTouched { get; private set; }
 
+    /// <summary>
+    /// The Message Display instance in order to show symbols depending on
+    /// the object type.
+    /// </summary>
     [SerializeField]
     private MessageDisplay mD;
+    /// <summary>
+    /// Object data of the object the player collided with.
+    /// </summary>
     private ObjectData objectData;
+    /// <summary>
+    /// Data Holder of the object the player collided with.
+    /// </summary>
     private DataHolder objectHolder;
+    /// <summary>
+    /// Interactor of the object the player collided with.
+    /// </summary>
     private ManualInteractor interactor;
 
+    /// <summary>
+    /// A DialogueScript that plays if the player tries to change an object's
+    /// state with an wrong item.
+    /// </summary>
     [SerializeField]
     private DialogueScript wrongInteaction;
 
-    // Bool that specifies is the player is colliding with an object
+    /// <summary>
+    /// Bool that specifies is the player is colliding with an object.
+    /// </summary>
     public bool IsColliding { get; private set; }
+    /// <summary>
+    /// The Raycast information of the object that the player collided with.
+    /// </summary>
     private RaycastHit currentWorldObject;
 
     public void Awake()
@@ -156,6 +192,10 @@ public class EntityDetection : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Begins showing a dialogue captured on specific World Objects.
+    /// </summary>
+    /// <param name="dS">The Dialogue Script of said object.</param>
     private void StartDialogue(DialogueScript dS)
     {
         dialogueHandler.StartDialolgue(dS);
@@ -165,6 +205,9 @@ public class EntityDetection : MonoBehaviour
         dialogueHandler.endDialogue += EndDialogue;
     }
 
+    /// <summary>
+    /// Ends a dialogue screen.
+    /// </summary>
     private void EndDialogue()
     {
         this.enabled = true;

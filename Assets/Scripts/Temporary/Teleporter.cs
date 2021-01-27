@@ -2,23 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Teleports the player around the scene.
+/// </summary>
 public class Teleporter : MonoBehaviour
 {
+    /// <summary>
+    /// Object that will be teleported.
+    /// </summary>
     [SerializeField]
     private GameObject ObjectToTeleport;
-    [SerializeField]
     //private LinkedList<GameObject> TeleportPoints;
+
+    /// <summary>
+    /// Teleport points that can be cycled through.
+    /// </summary>
+    [SerializeField]
     private GameObject[] TeleportPoints;
 
+    /// <summary>
+    /// The index of the current Teleport Point.
+    /// </summary>
     private int currentTpPoint;
 
-    void Start()
-    {
-        currentTpPoint = -1;
-    }
+    private void Start() => currentTpPoint = -1;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (PlayerPrefs.GetInt("teleport") == 0) return;
 
@@ -36,9 +45,13 @@ public class Teleporter : MonoBehaviour
                 TeleportPoints[currentTpPoint].transform.position;
         }
 
-        //ObjectToTeleport.transform.position = TeleportPoints[currentTpPoint].transform.position;
+        //ObjectToTeleport.transform.position 
+        // = TeleportPoints[currentTpPoint].transform.position;
     }
 
+    /// <summary>
+    /// Cycles the array to the next Teleport Point
+    /// </summary>
     private void NextPoint()
     {
         currentTpPoint++;
@@ -46,6 +59,9 @@ public class Teleporter : MonoBehaviour
             currentTpPoint = 0;
     }
 
+    /// <summary>
+    /// Cycles the array to the previous Teleport Point
+    /// </summary>
     private void PreviousPoint()
     {
         currentTpPoint--;

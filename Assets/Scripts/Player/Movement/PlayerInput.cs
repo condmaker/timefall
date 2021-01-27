@@ -1,44 +1,86 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Class responsible for getting the player input
+/// Class responsible for obtaining and storing everything related to the
+/// Player's input.
 /// </summary>
 public class PlayerInput : MonoBehaviour
 {
 
+    /// <summary>
+    /// The movement distance that the player's going to walk (tile-by-tile).
+    /// </summary>
     [SerializeField]
     private const float moveDistance = 6;
+    /// <summary>
+    /// The time that the player takes to walk.
+    /// </summary>
     [SerializeField]
     private const float moveTime = 0.3f;
 
+    /// <summary>
+    /// Instance of PlayerMovement.
+    /// </summary>
     private PlayerMovement pM;
+    /// <summary>
+    /// Intance of EntityDetection.
+    /// </summary>
     private EntityDetection eD;
 
+    /// <summary>
+    /// Player Binds that may store some input keys.
+    /// </summary>
     [SerializeField]
     private KeyBindings playerBinds;
 
+    /// <summary>
+    /// Walking SFX.
+    /// </summary>
     [SerializeField]
     private AudioClip stepSound;
+    /// <summary>
+    /// Bump SFX.
+    /// </summary>
     [SerializeField]
-    private AudioClip bumpSound = null;
+    private AudioClip bumpSound;
+    /// <summary>
+    /// Instance of the SoundManager Scriptable Object.
+    /// </summary>
     [SerializeField]
     private SoundMng soundManager;
 
+    /// <summary>
+    /// Bool that can lock the player from inputting
+    /// </summary>
     private bool locke;
+    /// <summary>
+    /// Bool that defines if that was the first frame that the player bumped
+    /// into something
+    /// </summary>
     private bool bumpLock;
 
+    /// <summary>
+    /// Instance of the current OptionEvent script to launch an event and lock
+    /// the player of inputting when he has the options menu open.
+    /// </summary>
     [SerializeField]
     private OptionEvent option;
 
+    /// <summary>
+    /// Property that returns the distance the player moves.
+    /// </summary>
     public float MoveDistance { get => moveDistance; }
+    /// <summary>
+    /// Property that returns the time the player has to move.
+    /// </summary>
     public float MoveTime { get => moveTime; }
 
-    // Bool that specifies if the player is pressing the interact key
+    /// <summary>
+    /// Bool that specifies if the player is pressing the interact key
+    /// </summary>
     public bool IsInteracting { get; set; }
 
-    // Movement state bools (we may need to change this because it breaks 
-    // encapsulation kinda)
-
+    // Movement state bools.
     public bool LookUp { get; set; }
     public bool LookDown { get; set; }
     public bool IsWalking { get; set; }
@@ -51,7 +93,9 @@ public class PlayerInput : MonoBehaviour
     public bool IsLookingRight { get; set; }
     public bool IsWalkingBack { get; set; }
 
-    // Bool that specifies if the player can move or not
+    /// <summary>
+    /// Bool that specifies if the player can input or not.
+    /// </summary>
     public bool CanInput { get; private set; }
 
     private void Start()
@@ -85,17 +129,23 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    // This is here so that the fixed update on player movement doesn't bug out
     private void FixedUpdate()
     {
+        // Observes if the player's Entity Detection has collided with a World
+        // Object that the player cannot pass through. Is on fixed update in
+        // order for calculations to be correct
+
         if (IsWalking && !IsLookingUp && !IsLookingDown)
         {
             // Checks if there is an object in front of the player, 
             // preventing movement
+
             if (eD.IsColliding && eD.ObjectTouched != null &&
                 eD.ObjectTouched.layer != 9)
             {
                 Bump = true;
+
+                // It it was the first bump frame, plays the SFX
 
                 if (bumpLock)
                 {
@@ -109,6 +159,9 @@ public class PlayerInput : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Checks the Forward, Backwards, Strafing, and Up/Down inputs.
+    /// </summary>
     private void CheckInputDown()
     {
         // Move forward
@@ -148,17 +201,20 @@ public class PlayerInput : MonoBehaviour
                 LookDown = true;
         }
         // Rotate Left
-        else if (Input.GetKey(playerBinds.RotateLeft) && !IsLookingUp && !LookUp
-            && !IsLookingDown && !LookDown)
+        else if (Input.GetKey(playerBinds.RotateLeft) && !IsLookingUp 
+            && !LookUp && !IsLookingDown && !LookDown)
             IsLookingLeft = true;
         // Rotate Right
-        else if (Input.GetKey(playerBinds.RotateRight) && !IsLookingUp && !LookUp
-            && !IsLookingDown && !LookDown)
+        else if (Input.GetKey(playerBinds.RotateRight) && !IsLookingUp 
+            && !LookUp && !IsLookingDown && !LookDown)
             IsLookingRight = true;
         // Pressed interact key
         else if (Input.GetKeyDown(KeyCode.F)) IsInteracting = true;
     }
-
+    
+    /// <summary>
+    /// Checks the Camera Rotation and Interaction Inputs.
+    /// </summary>
     private void CheckInputUp()
     {
         if (Input.GetKeyUp(KeyCode.A) && !IsLookingUp && !LookUp
@@ -172,6 +228,9 @@ public class PlayerInput : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.F)) IsInteracting = false;
     }
 
+    /// <summary>
+    /// Resets all player input bools.
+    /// </summary>
     public void ResetInputs()
     {
         IsWalking = false;
@@ -183,6 +242,12 @@ public class PlayerInput : MonoBehaviour
         Bump = false;
     }
 
+    /// <summary>
+    /// Locks the player's inputs.
+    /// </summary>
     private void LockInput() => locke = true;
+    /// <summary>
+    /// Unlocks the player's inputs.
+    /// </summary>
     private void UnlockInput() => locke = false;
 }

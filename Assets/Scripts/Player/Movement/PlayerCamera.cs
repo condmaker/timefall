@@ -2,11 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that manages the player's camera movement.
+/// </summary>
 public class PlayerCamera : MonoBehaviour
 {
+    /// <summary>
+    /// A timer that determines when the camera should stop rotating.
+    /// </summary>
     public float TimeCounter { get; private set; }
 
+    /// <summary>
+    /// Instance of the Player Input script in order to check what keys the
+    /// player has pressed.
+    /// </summary>
     private PlayerInput pI;
+    /// <summary>
+    /// Instance of the player's rigidbody (needed to stop and change angular
+    /// velocity)
+    /// </summary>
     private Rigidbody playerBody;
 
     private void Start()
@@ -42,7 +56,16 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 
-    // Rotates the player
+    /// <summary>
+    /// Rotates the player.
+    /// </summary>
+    /// <param name="x">Rotation in euler at the X axis.</param>
+    /// <param name="y">Rotation in euler at the Y axis.</param>
+    /// <param name="z">Rotation in euler at the Z axis.</param>
+    /// <param name="lUp">Bool that defines if the player is looking in
+    /// the direction of the rotation or forward.</param>
+    /// <param name="rD">Bool that defines if the player is looking up
+    /// or down.</param>
     private void RotateCam(
         float x = 0, float y = 0, float z = 0, bool lUp = false, 
         bool rD = false)
