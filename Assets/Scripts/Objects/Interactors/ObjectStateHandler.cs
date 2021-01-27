@@ -34,11 +34,6 @@ public class ObjectStateHandler : MonoBehaviour
 
     [SerializeField]
     private AudioClip sound;
-
-    // Utilizado aqui para ser 1 se não ouver input
-    [SerializeField]
-    private int volume = 1;
-
     [SerializeField]
     private SoundMng soundManager;
 
