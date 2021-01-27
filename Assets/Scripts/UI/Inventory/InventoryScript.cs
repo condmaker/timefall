@@ -1,23 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Class reponsible for managing the Inventory System
+/// </summary>
 public class InventoryScript : MonoBehaviour
 {
+    /// <summary>
+    /// List of slots of the inventory
+    /// </summary>
     [SerializeField]
     private InventorySlot[] slots;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     /// <summary>
     /// Adds the given item to an empty slot in the invetory
@@ -32,11 +24,6 @@ public class InventoryScript : MonoBehaviour
                 s.DisplayItem(item as ItemData);
             }
         }
-    }
-
-    public void DropItem()
-    {
-
     }
 
 }

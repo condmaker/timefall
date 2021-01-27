@@ -1,19 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class responsible for displaying the interaction icon
+/// </summary>
 public class MessageDisplay : MonoBehaviour
 {
-    private TextMeshProUGUI textToDisplay;
+    /// <summary>
+    /// Sprites of the diferent types of icon interactions
+    /// </summary>
     [SerializeField]
     private Sprite grabIcon, interactIcon, talkIcon, exitIcon;
+
+    /// <summary>
+    /// Image of the icon to display
+    /// </summary>
     private Image iconDisplay;
 
+    /// <summary>
+    /// Color when there's no item to display
+    /// </summary>
     private Color colorNone;
+
+    /// <summary>
+    /// Color when there's an item to display
+    /// </summary>
     private Color colorFull;
 
+
+    /// <summary>
+    /// Mehtod called before the first frame of the Update
+    /// </summary>
     void Start()
     {
         iconDisplay = GetComponentInChildren<Image>();
