@@ -1,11 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Type of Interactor tha is Activated when an Object enters the Raycast 
+/// </summary>
 public class RaycastInteractor : Interactor
 {
+    /// <summary>
+    /// Auxiliary var to make sure the Interactor doesn't have repeat
+    /// interactions
+    /// </summary>
     private bool locker;
-    // Update is called once per frame
+    
+    /// <summary>
+    /// Method called every frame
+    /// </summary>
     void Update()
     {
         RaycastHit currentWorldObject;

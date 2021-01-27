@@ -10,7 +10,7 @@ public abstract class ObjectData : ScriptableObject
     /// Type of interaction the player can have with the object
     /// </summary>
     [SerializeField]
-    private InteractionType interactionType;
+    private InteractionType interactionType = InteractionType.isGrabable;
 
     /// <summary>
     /// Property that defines the type of interaction the player cans have with
@@ -22,7 +22,7 @@ public abstract class ObjectData : ScriptableObject
     /// Unique id of the object
     /// </summary> 
     [SerializeField]
-    private short iD;
+    private short iD = 0;
 
     /// <summary>
     /// Property that defines the unique id of the object

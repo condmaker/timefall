@@ -1,18 +1,28 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Type of Interactor that expects a specific sequence of ObjectStateHandler
+/// to be Activated 
+/// </summary>
 public class SequenceInteractor : Interactor
 {
-    private bool wasTriggered;
-
+    /// <summary>
+    /// Sequence of ObjectStateHandlers
+    /// </summary>
     [SerializeField]
-    private List<ObjectStateHandler> wantedStates;
+    private List<ObjectStateHandler> wantedStates = null;
 
+    /// <summary>
+    /// List of ObjectStateHandlers added by the player
+    /// </summary>
     [SerializeField]
     private List<ObjectStateHandler> sequence;
 
+    /// <summary>
+    /// Method called when this script is enabled
+    /// </summary>
     private void OnEnable()
     {
         foreach (ObjectStateHandler o in wantedStates)
@@ -22,6 +32,11 @@ public class SequenceInteractor : Interactor
         sequence = new List<ObjectStateHandler>();    
     }
 
+    /// <summary>
+    /// Methos responsible for updating the state of the Interactor
+    /// </summary>
+    /// <param name="osh">ObjectStateHandler that changed its state</param>
+    /// <param name="state">New state of the ObjectStateHandler</param>
     private void UpdateState(ObjectStateHandler osh, short state)
     {
         if (state == 0) return;
@@ -29,6 +44,11 @@ public class SequenceInteractor : Interactor
         CheckCompatibility(osh);
     }
 
+    /// <summary>
+    /// Method responsible for checking if the sequence added by the players
+    /// is equal with the expected one
+    /// </summary>
+    /// <param name="osh">The ObjectStateHandler just added to the list</param>
     private void CheckCompatibility(ObjectStateHandler osh)
     {
         bool test = true;
@@ -60,6 +80,9 @@ public class SequenceInteractor : Interactor
 
     }
 
+    /// <summary>
+    /// Method responsible for clearing the sequence list
+    /// </summary>
     public void ResetList()
     {
         for(int i = 0; i < sequence.Count; i++)

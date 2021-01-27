@@ -14,14 +14,14 @@ public class TogglerInteractor : Interactor
     private bool wasTriggered;
 
     [SerializeField]
-    private List<StateO> wantedStates;
+    private List<StateO> wantedStates = null;
    
     /// <summary>
     /// Variable that defines if the state returns to 0
     /// if the conditions are not met or if it persists
     /// </summary>
     [SerializeField]
-    private bool persistance;
+    private bool persistance = false;
 
     /// <summary>
     /// Dictionary of Object state handlers and their wanted states
