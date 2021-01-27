@@ -3,25 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Class responsible for storing a 
-/// par of one item id and one state
+/// Class responsible for storing a  par of one item id and one state
 /// </summary>
 [System.Serializable]
 public class ItemStatePar 
 {
 
+   
+    [SerializeField]
+    private short id;
+
     /// <summary>
     /// Property that defines an item ID
     /// </summary>
-    [SerializeField]
-    private short id;
     public short ID => id;
 
+
+    [SerializeField]
+    private short state;
 
     /// <summary>
     // Property that defines a state
     /// </summary>
-    [SerializeField]
-    private short state;
     public short State => state;
 }
