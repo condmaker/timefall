@@ -22,7 +22,7 @@ public class InstatiateItem : MonoBehaviour
     /// Object to be instatiated
     /// </summary>
     [SerializeField]
-    private GameObject item;
+    private GameObject item = null;
 
     /// <summary>
     /// Method called when the scene starts

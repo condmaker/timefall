@@ -16,7 +16,7 @@ public class ControlOptions : MonoBehaviour
     /// The key bindings for the player
     /// </summary>
     [SerializeField]
-    private KeyBindings playerBinds;
+    private KeyBindings playerBinds = null;
 
     /// <summary>
     /// Method called when the scene starts

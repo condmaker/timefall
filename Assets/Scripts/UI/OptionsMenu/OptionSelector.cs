@@ -43,7 +43,7 @@ public class OptionSelector : MonoBehaviour
     /// Text component to display the current option on
     /// </summary>
     [SerializeField]
-    private TextMeshProUGUI optionText;
+    private TextMeshProUGUI optionText = null;
 
 
     /// <summary>

@@ -8,7 +8,7 @@ public class MusicLoader : MonoBehaviour
     private SoundMng soundManager;
 
     [SerializeField]
-    private AudioClip music;
+    private AudioClip music = null;
 
     [SerializeField]
     private bool loop;
