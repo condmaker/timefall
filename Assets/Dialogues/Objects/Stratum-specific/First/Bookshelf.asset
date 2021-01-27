@@ -23,10 +23,10 @@ MonoBehaviour:
         make it all fall apart. But a single, newer page stands out.'
       position:
         serializedVersion: 2
-        x: 59.2
-        y: 51.2
-        width: 401.59998
-        height: 221.6
+        x: 53.6
+        y: 80
+        width: 401.6
+        height: 221.59999
       isStart: 1
       outPorts:
       - name: Read
@@ -36,14 +36,14 @@ MonoBehaviour:
   - key: 029f956e-a120-40d2-93c0-3d28104d8b27
     data:
       guid: 029f956e-a120-40d2-93c0-3d28104d8b27
-      dialogue: "\"We have resources, but they're starting to die out. \nGod, one
-        of our comrades has even gone insane."
+      dialogue: "\"We have resources, but they're becoming scarce. \nGod, one of
+        our comrades has even gone insane.\n\n\n"
       position:
         serializedVersion: 2
-        x: 166.4
-        y: 280.80002
-        width: 313.6
-        height: 221.6
+        x: 269.6
+        y: 340
+        width: 312.80002
+        height: 221.60004
       isStart: 0
       outPorts:
       - name: Go on
@@ -69,36 +69,16 @@ MonoBehaviour:
         \ndamned Catacomb for way too long.\"\n"
       position:
         serializedVersion: 2
-        x: 511.2
-        y: 53.600002
-        width: 415.2
-        height: 192.80002
+        x: 522.4
+        y: 54.399998
+        width: 415.19995
+        height: 236.00002
       isStart: 0
       outPorts:
       - name: Go on
         id: 1425bfa7-964e-46a2-9bf0-ac3baabd8a51
       - name: Stop
         id: facf56b6-ab17-4ed2-9666-bf66d3164768
-  - key: f1c6db97-8bab-4b6a-b933-5a51e2d10356
-    data:
-      guid: f1c6db97-8bab-4b6a-b933-5a51e2d10356
-      dialogue: '"If only we could pass that gate... I noticed that the torch at
-        the beginning
-
-        had a strange reflection to it. That could be the
-        key to get us out of here."'
-      position:
-        serializedVersion: 2
-        x: 523.2
-        y: 337.6
-        width: 440
-        height: 221.6
-      isStart: 0
-      outPorts:
-      - name: Go on
-        id: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
-      - name: Stop
-        id: ad5ec2a6-3b03-43d7-919c-c388b68e1645
   - key: facf56b6-ab17-4ed2-9666-bf66d3164768
     data:
       guid: facf56b6-ab17-4ed2-9666-bf66d3164768
@@ -112,9 +92,29 @@ MonoBehaviour:
         x: 586.4
         y: -208
         width: 217.59998
-        height: 204.8
+        height: 205.59999
       isStart: 0
       outPorts: []
+  - key: f1c6db97-8bab-4b6a-b933-5a51e2d10356
+    data:
+      guid: f1c6db97-8bab-4b6a-b933-5a51e2d10356
+      dialogue: '"If only we could pass that gate... I noticed that the torch at
+        the beginning
+
+        had a strange reflection to it. That could be the
+        key to get us out of here."'
+      position:
+        serializedVersion: 2
+        x: 596
+        y: 400.80002
+        width: 440
+        height: 221.6
+      isStart: 0
+      outPorts:
+      - name: Go on
+        id: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
+      - name: Stop
+        id: ad5ec2a6-3b03-43d7-919c-c388b68e1645
   - key: 41012d17-c192-4eb5-905d-d7557cd9c611
     data:
       guid: 41012d17-c192-4eb5-905d-d7557cd9c611
@@ -131,41 +131,39 @@ MonoBehaviour:
         height: 205.6
       isStart: 0
       outPorts: []
+  - key: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
+    data:
+      guid: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
+      dialogue: "\"Also, some walls looked really weak, though not weak enough to
+        be rammed \nthrough. In any case... if you are reading this, we may all be
+        gone. \nI shudder to think of our fates.\"\n"
+      position:
+        serializedVersion: 2
+        x: 1022.4
+        y: 314.40002
+        width: 468.79993
+        height: 161.59998
+      isStart: 0
+      outPorts:
+      - name: 
+        id: e6e443ab-b72f-4100-bf77-b32299cb4e5a
   - key: 1425bfa7-964e-46a2-9bf0-ac3baabd8a51
     data:
       guid: 1425bfa7-964e-46a2-9bf0-ac3baabd8a51
-      dialogue: '"That damned Gargoyle Room closed us off right when the 100th
-
-        Crusader
-        passed through it, and now we''re stuck." '
+      dialogue: "\"That cursed Gargoyle Room closed us off right when the 100th\nCrusader
+        passed through it, and now we're stuck.\" \n\n\n"
       position:
         serializedVersion: 2
-        x: 996
-        y: 67.2
-        width: 392
-        height: 178.4
+        x: 1051.2
+        y: 77.600006
+        width: 384.80005
+        height: 221.6
       isStart: 0
       outPorts:
       - name: Go on
         id: 029f956e-a120-40d2-93c0-3d28104d8b27
       - name: Stop
         id: 41012d17-c192-4eb5-905d-d7557cd9c611
-  - key: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
-    data:
-      guid: d141266a-e5a7-4c78-bbc9-0d1d801e9f59
-      dialogue: "\"Also, some walls looked really weak, though not weak enough to
-        be rammed \nthrough. In any case... if you are reading this, we may all be
-        gone. \nI shudder to think of our fates. Please, find the truth.\"\n\n\n\n\n\n\n\n\n"
-      position:
-        serializedVersion: 2
-        x: 1003.2
-        y: 344.80002
-        width: 468.8
-        height: 277.6
-      isStart: 0
-      outPorts:
-      - name: 
-        id: e6e443ab-b72f-4100-bf77-b32299cb4e5a
   - key: 5c2345c3-0ece-425c-bd52-a7de0a8c50ca
     data:
       guid: 5c2345c3-0ece-425c-bd52-a7de0a8c50ca
@@ -201,18 +199,20 @@ MonoBehaviour:
   - key: e6e443ab-b72f-4100-bf77-b32299cb4e5a
     data:
       guid: e6e443ab-b72f-4100-bf77-b32299cb4e5a
-      dialogue: '"On the coming room, look up, at the Chandelier. One day, it sunddently
+      dialogue: '"On the coming room, look up, at the Chandelier. One day, it suddenly
 
         appeared
         there. That is the last thing that I could discover for now...
 
         Please,
-        whoever you are... I bg you... Find the truth" --The page ends here.'
+        whoever you are... I beg you... Find the truth" --The page ends here.
+
+'
       position:
         serializedVersion: 2
-        x: 1572.8
-        y: 376
-        width: 448.79993
-        height: 147.20001
+        x: 1525.6
+        y: 329.6
+        width: 456
+        height: 162.4
       isStart: 0
       outPorts: []
