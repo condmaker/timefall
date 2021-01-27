@@ -9,7 +9,7 @@ public class InventoryScript : MonoBehaviour
     /// List of slots of the inventory
     /// </summary>
     [SerializeField]
-    private InventorySlot[] slots;
+    private InventorySlot[] slots = null;
 
     /// <summary>
     /// Adds the given item to an empty slot in the invetory

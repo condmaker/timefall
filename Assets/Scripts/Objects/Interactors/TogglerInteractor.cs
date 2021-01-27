@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class TogglerInteractor : Interactor
@@ -9,11 +7,20 @@ public class TogglerInteractor : Interactor
 
     [SerializeField]
     private List<StateO> wantedStates;
+   
+    /// <summary>
+    /// Variable that defines if the state returns to 0
+    /// if the conditions are not met or if it persists
+    /// </summary>
     [SerializeField]
     private bool persistance;
 
+
     private Dictionary<ObjectStateHandler, short> currentStates;
 
+    /// <summary>
+    /// Method is called when the scene starts
+    /// </summary>
     private void Awake()
     {
         currentStates = new Dictionary<ObjectStateHandler, short>();
@@ -26,6 +33,12 @@ public class TogglerInteractor : Interactor
         }
     }
 
+    /// <summary>
+    /// Method responsible for handling what happens when one of the 
+    /// StateHandlers associated with this Interactor changes states
+    /// </summary>
+    /// <param name="osh">ObjectStateHandler that changed its state</param>
+    /// <param name="state">New state of the ObjectStateHandler</param>
     private void UpdateState(ObjectStateHandler osh, short state)
     {
         if (currentStates.ContainsKey(osh))
@@ -35,12 +48,17 @@ public class TogglerInteractor : Interactor
         CheckCompatibility(osh);
     }
 
+
+    /// <summary>
+    /// Check if the all ObjectStateHandlers in wantedStates have the correct state 
+    /// </summary>
+    /// <param name="osh">ObjectStateHandler that changed its state</param>
     private void CheckCompatibility(ObjectStateHandler osh)
     {
         bool compatible = true;
+
         foreach (StateO o in wantedStates)
         {
-
             //Scuffed
             if (osh == o.Osh)
             {
