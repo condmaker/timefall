@@ -9,6 +9,6 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class LoadingScene : MonoBehaviour
 {
-    private void Awake() =>
+    private void Start() =>
         SceneManager.LoadSceneAsync(StratumManager.instance.SceneString);
 }
