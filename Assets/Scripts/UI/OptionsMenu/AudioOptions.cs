@@ -29,8 +29,7 @@ public class AudioOptions : MonoBehaviour
         UpdateVolume();
 
     }
-
-    
+  
     public void UpdateMaster(float value, string sliderName)
     {
         UpdateVolume();
