@@ -75,6 +75,7 @@ public class EntityDetection : MonoBehaviour
 
                 GameObject temp = currentWorldObject.transform?.gameObject;
                 temp?.GetComponent<BreakingWall>()?.Break();
+
             }
 
             return;

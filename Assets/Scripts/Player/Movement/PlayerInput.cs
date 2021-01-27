@@ -21,9 +21,12 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     private AudioClip stepSound;
     [SerializeField]
+    private AudioClip bumpSound;
+    [SerializeField]
     private SoundMng soundManager;
 
     private bool locke;
+    private bool bumpLock;
 
     [SerializeField]
     private OptionEvent option;
@@ -66,6 +69,9 @@ public class PlayerInput : MonoBehaviour
     {
         if (locke) return;
 
+        if (!Bump)
+            bumpLock = true;
+
         if (pM.TimeCounter == MoveTime)
             CanInput = true;
         else
@@ -89,7 +95,17 @@ public class PlayerInput : MonoBehaviour
             // preventing movement
             if (eD.IsColliding && eD.ObjectTouched != null &&
                 eD.ObjectTouched.layer != 9)
+            {
                 Bump = true;
+
+                if (bumpLock)
+                {
+                    soundManager.PlaySound(
+                        bumpSound, transform.position, true);
+
+                    bumpLock = false;
+                }
+            }
         }
 
     }
