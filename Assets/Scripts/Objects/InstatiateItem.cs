@@ -1,16 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+
+/// <summary>
+/// Class responsible for instatiating an item when the GameObject this script 
+/// is attached changes states
+/// </summary>
 public class InstatiateItem : MonoBehaviour
 {
+    /// <summary>
+    /// The State Handler of the GameObject this script is attached
+    /// </summary>
     private ObjectStateHandler osh;
 
+    /// <summary>
+    /// Position offset from the center of the object
+    /// </summary>
     [SerializeField]
     private Vector3 positionOffset;
+
+    /// <summary>
+    /// Object to be instatiated
+    /// </summary>
     [SerializeField]
     private GameObject item;
 
+    /// <summary>
+    /// Method called when the scene starts
+    /// </summary>
     public void Awake()
     {
         osh = GetComponent<ObjectStateHandler>();
@@ -18,6 +34,11 @@ public class InstatiateItem : MonoBehaviour
             osh.OnChangeState += Instatiate;
     }
 
+    /// <summary>
+    /// Method responsible for instatiating the object
+    /// </summary>
+    /// <param name="oSH"></param>
+    /// <param name="state"></param>
     public void Instatiate(ObjectStateHandler oSH, short state)
     {
         GameObject _item;

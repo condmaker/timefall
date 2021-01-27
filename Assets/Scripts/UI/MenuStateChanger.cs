@@ -7,7 +7,7 @@ public class MenuStateChanger : MonoBehaviour
     [SerializeField]
     private GameObject menu;
 
-    public void ChangeMenuState()
+    public void OpenMenu()
     {
         menu.SetActive(true);
     }
@@ -15,5 +15,13 @@ public class MenuStateChanger : MonoBehaviour
     public void CloseMenu()
     {
         menu.SetActive(false);
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            menu.SetActive(!menu.activeSelf);
+        }
     }
 }

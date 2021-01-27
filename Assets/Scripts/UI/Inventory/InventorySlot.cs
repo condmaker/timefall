@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
               
-
 /// <summary>
 /// Class responsible for controlling a Slot of the Inventory
 /// </summary>

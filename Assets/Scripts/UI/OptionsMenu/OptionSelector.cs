@@ -1,25 +1,56 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Class that represents the component Option Selector
+/// This component as various options that can be choosen by pressing 
+/// the Right and Left buttons
+/// </summary>
 public class OptionSelector : MonoBehaviour
 {
+    /// <summary>
+    /// Name of the option.
+    /// This will be used to store the information in a PlayerPref
+    /// </summary>
     [SerializeField]
     private string optionName;
+
+
+    /// <summary>
+    /// Index of the current choosen option
+    /// </summary>
     private int index;
 
+
+    /// <summary>
+    /// List of all the available choices
+    /// </summary>
     [SerializeField]
     private string[] options;
 
+
+    /// <summary>
+    /// Left and Right button to itarate the option
+    /// </summary>
     [SerializeField]
     private Button Left, Right;
+
+
+    /// <summary>
+    /// Text component to display the current option on
+    /// </summary>
     [SerializeField]
     private TextMeshProUGUI optionText;
 
+
+    /// <summary>
+    /// Event that is triggered when a option is choosen
+    /// </summary>
     public Action onSelect;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,18 +61,31 @@ public class OptionSelector : MonoBehaviour
         Right.onClick.AddListener(GoRight);
     }
 
+
+    /// <summary>
+    /// Method responsible for iterating the opitons to the right
+    /// </summary>
     public void GoRight()
     {
         index++;
         UpdateButtons();
     }
 
+
+    /// <summary>
+    /// Method responsible for iterating the opitons to the left
+    /// </summary>
     public void GoLeft()
     {
         index--;       
         UpdateButtons();
     }
 
+
+    /// <summary>
+    /// Method responsible for updating the state of the component
+    /// </summary>
+    /// <returns></returns>
     public bool UpdateButtons()
     {
         bool check = true;
@@ -75,9 +119,4 @@ public class OptionSelector : MonoBehaviour
         return check;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
