@@ -41,7 +41,6 @@ public class ObjectStateHandler : MonoBehaviour
 
     private Animator anim;
 
-    private bool isPlaying;
     private bool firstStateChange;
 
     private void Awake()
@@ -128,16 +127,6 @@ public class ObjectStateHandler : MonoBehaviour
 
         anim.SetFloat("State", State);
         anim.SetTrigger("ChangeState");
-
-        //isPlaying = true;
-        //StartCoroutine("WaitAnimationOverAndDoThings");
-    }
-
-    private IEnumerator WaitAnimationOverAndDoThings()
-    {
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0)[0].clip.length);        
-        isPlaying = false;
-       
     }
 
 }

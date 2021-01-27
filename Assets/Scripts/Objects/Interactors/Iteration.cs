@@ -42,6 +42,17 @@ public struct Iteration
     /// </summary>
     public bool Specific => specific;
 
+    /// <summary>
+    /// Constructor of the struct Iteration
+    /// </summary>
+    /// <param name="iter">Iteration Type</param>
+    public Iteration(IterationType iter = IterationType.Next)
+    {
+        iteration = iter;
+        specificState = 0;
+        specific = false;
+    }
+
 }
 
 

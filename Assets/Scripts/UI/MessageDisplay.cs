@@ -11,7 +11,10 @@ public class MessageDisplay : MonoBehaviour
     /// Sprites of the diferent types of icon interactions
     /// </summary>
     [SerializeField]
-    private Sprite grabIcon, interactIcon, talkIcon, exitIcon;
+    private Sprite grabIcon  = null,
+                interactIcon = null,
+                   talkIcon  = null,
+                   exitIcon  = null;
 
     /// <summary>
     /// Image of the icon to display

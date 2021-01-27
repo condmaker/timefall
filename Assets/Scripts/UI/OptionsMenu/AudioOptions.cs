@@ -7,7 +7,7 @@ public class AudioOptions : MonoBehaviour
     [SerializeField]
     private OptionSlider masterSlider;
     [SerializeField]
-    private OptionSlider[] audioSlider;
+    private OptionSlider[] audioSlider = null;
 
     [SerializeField]
     private SoundMng soundManager;
