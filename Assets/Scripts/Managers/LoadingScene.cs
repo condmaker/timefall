@@ -12,14 +12,8 @@ public class LoadingScene : MonoBehaviour
     private AsyncOperation loadingInfo;
     private Slider slider;
 
-    private void Start()
+    private void Awake()
     {
-        slider = GetComponent<Slider>();
-
-        loadingInfo = 
-            SceneManager.LoadSceneAsync(StratumManager.instance.SceneString);
+        SceneManager.LoadSceneAsync(StratumManager.instance.SceneString);
     }
-
-    private void Update() =>
-        slider.value = Mathf.Clamp01(loadingInfo.progress / 0.9f);
 }
