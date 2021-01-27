@@ -106,7 +106,11 @@ public class DialogueDisplayHandler : MonoBehaviour
             if (inDialogue)
             {
                 if (ended)
-                    NextLine(0);
+                {
+
+                    if (dialogueLine.OutPorts.Count == 0)
+                        NextLine(0);
+                }
                 else
                 {
                     dialogueDisplayTarget.text += dialogueText;
