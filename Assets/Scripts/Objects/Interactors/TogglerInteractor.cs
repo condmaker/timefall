@@ -1,8 +1,16 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Type of Interactor that uses a listo of StateHandlers and expects them to 
+/// have a certain state to Activate
+/// </summary>
 public class TogglerInteractor : Interactor
 {
+    /// <summary>
+    /// Property that defines if the Interactor was active in its previous 
+    /// configuration
+    /// </summary>
     private bool wasTriggered;
 
     [SerializeField]
@@ -15,7 +23,9 @@ public class TogglerInteractor : Interactor
     [SerializeField]
     private bool persistance;
 
-
+    /// <summary>
+    /// Dictionary of Object state handlers and their wanted states
+    /// </summary>
     private Dictionary<ObjectStateHandler, short> currentStates;
 
     /// <summary>
