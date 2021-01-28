@@ -14,7 +14,7 @@ public class OptionSlider : MonoBehaviour
     /// This name will be used when saving to the PlayerPrefs
     /// </summary>
     [SerializeField]
-    private string sliderName;
+    private string sliderName = default;
 
     /// <summary>
     /// Property that defines the component's name
@@ -30,7 +30,7 @@ public class OptionSlider : MonoBehaviour
     /// Text to display the slider value on
     /// </summary>
     [SerializeField]
-    private TextMeshProUGUI text;
+    private TextMeshProUGUI text = default;
 
     /// <summary>
     /// Event triggered when the slider changes values

@@ -6,10 +6,10 @@
 public class InventoryHandler : MonoBehaviour
 {
     /// <summary>
-    /// List of all InventorySlot that make up the Inventory
+    /// List of all InventorySlots that make up the Inventory
     /// </summary>
     [SerializeField]
-    private InventorySlot[] slots;
+    private InventorySlot[] slots = default;
 
     /// <summary>
     /// Data of the item currently equipped by the player

@@ -14,7 +14,7 @@ public class NextStratum : MonoBehaviour
     /// Name of the next scene the class will load
     /// </summary>
     [SerializeField]
-    private string sceneName;
+    private string sceneName = default;
 
     /// <summary>
     /// Object State Handler of Object this script is attached

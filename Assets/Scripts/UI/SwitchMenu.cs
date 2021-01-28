@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 /// <summary>
@@ -18,7 +16,7 @@ public class SwitchMenu : MonoBehaviour
     /// The object to open
     /// </summary>
     [SerializeField]
-    private GameObject menuToOpen;
+    private GameObject menuToOpen = default;
 
 
     /// <summary>

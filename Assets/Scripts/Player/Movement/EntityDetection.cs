@@ -25,13 +25,13 @@ public class EntityDetection : MonoBehaviour
     /// Instance of the Player's inventory.
     /// </summary>
     [SerializeField]
-    private InventoryHandler inventory;
+    private InventoryHandler inventory = default;
 
     /// <summary>
     /// Instance of the Dialogue Handler.
     /// </summary>
     [SerializeField]
-    private DialogueDisplayHandler dialogueHandler;
+    private DialogueDisplayHandler dialogueHandler = default;
 
     /// <summary>
     /// Variable that stores the GameObject that the player collided with.
@@ -43,7 +43,7 @@ public class EntityDetection : MonoBehaviour
     /// the object type.
     /// </summary>
     [SerializeField]
-    private MessageDisplay mD;
+    private MessageDisplay mD = default;
     /// <summary>
     /// Object data of the object the player collided with.
     /// </summary>
@@ -73,6 +73,9 @@ public class EntityDetection : MonoBehaviour
     /// </summary>
     private RaycastHit currentWorldObject;
 
+    /// <summary>
+    /// Method called when the object is created
+    /// </summary>
     public void Awake()
     {
         pI = GetComponent<PlayerInput>();

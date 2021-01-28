@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using System.Linq;
 
 /// <summary>
@@ -14,13 +13,13 @@ public class GraphicsOptions : MonoBehaviour
     /// Resolution Dropdown object.
     /// </summary>
     [SerializeField]
-    private TMP_Dropdown resolutionDropdown;
-    
+    private TMP_Dropdown resolutionDropdown = default;
+
     /// <summary>
     /// Fullscreen Dropdown object
     /// </summary>
     [SerializeField]
-    private TMP_Dropdown fullScreenDropdown;
+    private TMP_Dropdown fullScreenDropdown = default;
 
     private Resolution[] resolutions;
 

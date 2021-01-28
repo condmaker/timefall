@@ -13,7 +13,7 @@ public class DialogueDisplayHandler : MonoBehaviour
     /// Text component responsible for displaying the Dialogue text
     /// </summary>
     [SerializeField]
-    private TextMeshProUGUI dialogueDisplayTarget;
+    private TextMeshProUGUI dialogueDisplayTarget = default;
 
 
     /// <summary>
@@ -26,21 +26,21 @@ public class DialogueDisplayHandler : MonoBehaviour
     /// Time between each char of the Dialogue
     /// </summary>
     [SerializeField]
-    private float displaySpeed = 0;
+    private float displaySpeed = default;
 
 
     /// <summary>
     /// GameObject that defines the container of the ChoiceButtons
     /// </summary>
     [SerializeField]
-    private GameObject buttonLayout;
+    private GameObject buttonLayout = default;
     
 
     /// <summary>
     /// Prefab of the ChoiceButton
     /// </summary>
     [SerializeField]
-    private GameObject buttonPREFAB;
+    private GameObject buttonPREFAB = default;
 
 
     /// <summary>

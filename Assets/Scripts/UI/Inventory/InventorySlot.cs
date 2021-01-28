@@ -11,7 +11,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     /// Variable that stores an instance of the inventory
     /// </summary>
     [SerializeField]
-    private InventoryHandler inventory;
+    private InventoryHandler inventory = default;
 
     /// <summary>
     /// Property that defines if the slot is has an item or not
@@ -22,7 +22,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     /// Image of the current item
     /// </summary>
     [SerializeField]
-    private Image itemImage;
+    private Image itemImage = default;
 
     /// <summary>
     /// Property that defines the data related to the current item
@@ -47,7 +47,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     /// the slot
     /// </summary>
     [SerializeField]
-    private short id;
+    private short id = default;
 
     /// <summary>
     /// Update method of the class

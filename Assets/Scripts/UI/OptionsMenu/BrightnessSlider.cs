@@ -6,16 +6,21 @@ using UnityEngine.UI;
 /// </summary>
 public class BrightnessSlider : MonoBehaviour
 {
+
     private float gammaCorrection;
     private Slider slider;
 
     [SerializeField]
-    private Light PlayerLight;
+    private Light PlayerLight = default;
     private float minIntensity;
     private float maxIntensity;
     private float minRange;
     private float maxRange;
 
+
+    /// <summary>
+    /// Method called before the first frame of the Update
+    /// </summary>
     private void Start()
     {
         minIntensity = 3;
@@ -26,6 +31,10 @@ public class BrightnessSlider : MonoBehaviour
         slider = GetComponent<Slider>();
     }
 
+
+    /// <summary>
+    /// Method called once per frame
+    /// </summary>
     private void Update()
     {
         //gammaCorrection = slider.value;

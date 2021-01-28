@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Loads a selected song when the scene starts.
@@ -11,13 +9,13 @@ public class MusicLoader : MonoBehaviour
     /// The Sound Manager ScriptableObject that'll play the song.
     /// </summary>
     [SerializeField]
-    private SoundMng soundManager;
+    private SoundMng soundManager = default;
 
     /// <summary>
     /// The music intance that'll be played.
     /// </summary>
     [SerializeField]
-    private AudioClip music;
+    private AudioClip music = default;
 
     /// <summary>
     /// A bool that defines if either the song's gonna be looped or not.
@@ -25,6 +23,9 @@ public class MusicLoader : MonoBehaviour
     [SerializeField]
     private bool loop;
 
+    /// <summary>
+    /// Method called when the scene starts
+    /// </summary>
     private void Awake()
     {
         soundManager?.PlayMusic(music, loop);

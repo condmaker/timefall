@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Teleports the player around the scene.
@@ -11,7 +9,7 @@ public class Teleporter : MonoBehaviour
     /// Object that will be teleported.
     /// </summary>
     [SerializeField]
-    private GameObject ObjectToTeleport;
+    private GameObject ObjectToTeleport = default;
     //private LinkedList<GameObject> TeleportPoints;
 
     /// <summary>
@@ -25,8 +23,14 @@ public class Teleporter : MonoBehaviour
     /// </summary>
     private int currentTpPoint;
 
+    /// <summary>
+    /// Method called before the first frame of the Update
+    /// </summary>
     private void Start() => currentTpPoint = -1;
 
+    /// <summary>
+    /// Method called once per frame
+    /// </summary>
     private void Update()
     {
         if (PlayerPrefs.GetInt("teleport") == 0) return;

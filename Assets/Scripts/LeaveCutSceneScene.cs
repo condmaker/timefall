@@ -15,7 +15,7 @@ public class LeaveCutSceneScene : MonoBehaviour
     private VideoPlayer videoPlayer;
 
     [SerializeField]
-    private string sceneName;
+    private string sceneName = default;
 
     /// <summary>
     /// Method called when the scene starts

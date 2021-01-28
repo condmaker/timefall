@@ -16,7 +16,7 @@ public class OptionSelector : MonoBehaviour
     /// This will be used to store the information in a PlayerPref
     /// </summary>
     [SerializeField]
-    private string optionName;
+    private string optionName = default;
 
 
     /// <summary>
@@ -29,14 +29,14 @@ public class OptionSelector : MonoBehaviour
     /// List of all the available choices
     /// </summary>
     [SerializeField]
-    private string[] options;
+    private string[] options = default;
 
 
     /// <summary>
     /// Left and Right button to itarate the option
     /// </summary>
     [SerializeField]
-    private Button Left, Right;
+    private Button Left = default, Right = default;
 
 
     /// <summary>

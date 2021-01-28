@@ -10,7 +10,7 @@ public class DirectItemInteractor : ManualInteractor
     /// List of items id and the corresponding state to jump to
     /// </summary>
     [SerializeField]
-    private ItemStatePar[] par;
+    private ItemStatePar[] par = default;
 
     //// <summary>
     /// Method responsible for handling what happens when the player interacts

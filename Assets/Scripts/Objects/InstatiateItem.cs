@@ -16,7 +16,7 @@ public class InstatiateItem : MonoBehaviour
     /// Position offset from the center of the object
     /// </summary>
     [SerializeField]
-    private Vector3 positionOffset;
+    private Vector3 positionOffset = default;
 
     /// <summary>
     /// Object to be instatiated

@@ -10,7 +10,7 @@ public class ItemData : ObjectData
     /// Sprite of the item to be displayed in the UI
     /// </summary>
     [SerializeField]
-    private Sprite uiObjectSprite = null;
+    private Sprite uiObjectSprite = default;
 
     /// <summary>
     /// Property that defines the sprite of the item to be displayed in the UI
@@ -21,7 +21,7 @@ public class ItemData : ObjectData
     /// Mesh of the item
     /// </summary>
     [SerializeField]
-    private Mesh mesh;
+    private Mesh mesh = default;
 
     /// <summary>
     /// Property that defines the mesh of the item

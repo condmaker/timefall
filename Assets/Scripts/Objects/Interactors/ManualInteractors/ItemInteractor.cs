@@ -18,7 +18,7 @@ public class ItemInteractor : ManualInteractor
     /// List of items needed to activate the Interactor
     /// </summary>
     [SerializeField]
-    private List<short> unlockers;
+    private List<short> unlockers = default;
 
     /// <summary>
     /// List of items added by the player
@@ -26,7 +26,7 @@ public class ItemInteractor : ManualInteractor
     private ICollection<ItemData> itemsAdded;
 
     /// <summary>
-    /// This method is called when the scene starts
+    /// Method called when the object is created
     /// </summary>
     public void Awake()
     {

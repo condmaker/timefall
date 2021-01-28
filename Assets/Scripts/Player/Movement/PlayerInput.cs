@@ -31,23 +31,23 @@ public class PlayerInput : MonoBehaviour
     /// Player Binds that may store some input keys.
     /// </summary>
     [SerializeField]
-    private KeyBindings playerBinds;
+    private KeyBindings playerBinds = default;
 
     /// <summary>
     /// Walking SFX.
     /// </summary>
     [SerializeField]
-    private AudioClip stepSound;
+    private AudioClip stepSound = default;
     /// <summary>
     /// Bump SFX.
     /// </summary>
     [SerializeField]
-    private AudioClip bumpSound;
+    private AudioClip bumpSound = default;
     /// <summary>
     /// Instance of the SoundManager Scriptable Object.
     /// </summary>
     [SerializeField]
-    private SoundMng soundManager;
+    private SoundMng soundManager = default;
 
     /// <summary>
     /// Bool that can lock the player from inputting
@@ -64,7 +64,7 @@ public class PlayerInput : MonoBehaviour
     /// the player of inputting when he has the options menu open.
     /// </summary>
     [SerializeField]
-    private OptionEvent option;
+    private OptionEvent option = default;
 
     /// <summary>
     /// Property that returns the distance the player moves.

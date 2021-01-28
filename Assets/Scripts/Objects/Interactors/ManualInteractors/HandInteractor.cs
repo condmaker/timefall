@@ -11,13 +11,13 @@ public class HandInteractor : ManualInteractor
     /// Variable that defines if the Interacter needs an item to be activated
     /// </summary>
     [SerializeField]
-    private bool needsItem;
+    private bool needsItem = default;
 
     /// <summary>
     /// Id of the item that activates the Interactor
     /// </summary>
     [SerializeField]
-    private short unlockerId;
+    private short unlockerId = default;
 
     /// <summary>
     /// Method is called before the first fram of the update

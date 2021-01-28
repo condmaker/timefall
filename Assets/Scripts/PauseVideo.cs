@@ -12,28 +12,25 @@ public class PauseVideo : MonoBehaviour
     /// Scene to sckip to when the video is skipped
     /// </summary>
     [SerializeField]
-    private string sceneName;
+    private string sceneName = default;
 
     /// <summary>
     /// Pause menu displayed when the video is paused
     /// </summary>
     [SerializeField]
-    private GameObject pauseMenu = null;
+    private GameObject pauseMenu = default;
 
     /// <summary>
     /// Object that is controlling the video
     /// </summary>
     [SerializeField]
-    private PlayableDirector timeline = null;
+    private PlayableDirector timeline = default;
 
     /// <summary>
     /// Video that is currently playing
     /// </summary>
     [SerializeField]
     private VideoPlayer video = null;
-
-
-    private bool aux;
 
     /// <summary>
     /// Update is called once per frame

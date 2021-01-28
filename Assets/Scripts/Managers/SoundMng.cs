@@ -14,7 +14,7 @@ public class SoundMng : ScriptableObject
     /// The master volume of the whole game.
     /// </summary>
     [SerializeField]
-    private AudioMixerGroup master;
+    private AudioMixerGroup master = default;
     public AudioMixerGroup Master => master;
 
     /// <summary>

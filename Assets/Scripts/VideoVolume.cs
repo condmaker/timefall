@@ -12,8 +12,11 @@ public class VideoVolume : MonoBehaviour
     /// Video instance to change the audio volume.
     /// </summary>
     [SerializeField]
-    private VideoPlayer video;
+    private VideoPlayer video = default;
 
+    /// <summary>
+    /// Method called when the object is created
+    /// </summary>
     private void Awake() =>
         video.SetDirectAudioVolume(0,
             (float) PlayerPrefs.GetInt("Master Volume") / 100);
