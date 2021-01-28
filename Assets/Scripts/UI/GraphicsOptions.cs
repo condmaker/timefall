@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class GraphicsOptions : MonoBehaviour
 {
@@ -14,7 +15,10 @@ public class GraphicsOptions : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        resolutions = Screen.resolutions;
+        resolutions = Screen.resolutions.Select(resolution => new Resolution 
+            { width = resolution.width, 
+            height = resolution.height }).Distinct().ToArray();
+
         resolutionDropdown.ClearOptions();
 
         List<string> resos = new List<string>();
