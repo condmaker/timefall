@@ -12,7 +12,7 @@ public class GraphicsOptions : MonoBehaviour
     private int currentResolutionIndex;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
