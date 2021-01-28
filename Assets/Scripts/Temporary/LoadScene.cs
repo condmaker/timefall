@@ -21,4 +21,14 @@ public class LoadScene : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+    /// <summary>
+    /// Passes the scene name to the SceneManager to load it if the Futuristic
+    /// Check is 1 (true).
+    /// </summary>
+    public void PassSceneFCheck()
+    {
+        if (PlayerPrefs.GetFloat("F_Check") >= 1)
+            SceneManager.LoadScene(scene);
+    }
+
 }
