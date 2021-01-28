@@ -1,16 +1,31 @@
-﻿// This script must be executed after PlayerInput, due to the bump movement.
+﻿// THIS SCRIPT **MUST** BE EXECUTED AFTER PLAYERINPUT, DUE TO MOVEMENT.
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that makes the player move around the scene.
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
+    /// <summary>
+    /// A timer that determines when the player should stop moving.
+    /// </summary>
     public float TimeCounter { get; private set; }
 
+    /// <summary>
+    /// Instance of PlayerInput.
+    /// </summary>
     private PlayerInput pI;
+    /// <summary>
+    /// Instance of the player's Rigidbody. Used for acceleration.
+    /// </summary>
     private Rigidbody playerBody;
+    /// <summary>
+    /// The previous frame position of the player. Used to readjust positions
+    /// after bumping into something.
+    /// </summary>
     private Vector3 adjustPos;
 
     private void Start()
@@ -52,6 +67,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method that moves the player. Direction varies on PlayerInput.
+    /// </summary>
+    /// <param name="bump">Bool that specifies whether the player will
+    /// bump into something or not.</param>
     private void MovePlayer(bool bump = false)
     {
         Vector3 uV = new Vector3(0.0f, -1.0f, 0.0f);
@@ -93,6 +113,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Rotates the player on a certain direction.
+    /// </summary>
+    /// <param name="x">Rotation in euler at the X axis.</param>
+    /// <param name="y">Rotation in euler at the Y axis.</param>
+    /// <param name="z">Rotation in euler at the Z axis.</param>
     private void RotatePlayer(float x = 0, float y = 0, float z = 0)
     {
         playerBody.angularVelocity = (new Vector3(x, y, z)
