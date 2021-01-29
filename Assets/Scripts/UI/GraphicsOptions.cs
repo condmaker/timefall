@@ -164,8 +164,8 @@ public class GraphicsOptions : MonoBehaviour
             string aux = r.width + " x " + r.height;
             resolutionOptions.Add(aux);
 
-            if(r.width == Screen.currentResolution.width &&
-                r.height == Screen.currentResolution.height)
+            if(r.width == PlayerPrefs.GetInt("ResW") &&
+                r.height == PlayerPrefs.GetInt("ResH"))
             {
                 currentResolutionIndex = resolutionOptions.Count - 1;
             }
@@ -184,7 +184,12 @@ public class GraphicsOptions : MonoBehaviour
     public void SetResolution(int resolutionIndex)
     {
         Resolution res = resolutions[resolutionIndex];
-        Screen.SetResolution(res.width, res.height, Screen.fullScreenMode);
+
+        PlayerPrefs.SetInt("ResW", res.width);
+        PlayerPrefs.SetInt("ResH", res.height);
+
+        Screen.SetResolution(PlayerPrefs.GetInt("ResW"),
+            PlayerPrefs.GetInt("ResH"), Screen.fullScreenMode);
     }
 
     /// <summary>
@@ -207,6 +212,7 @@ public class GraphicsOptions : MonoBehaviour
                 mode = FullScreenMode.Windowed;
                 break;
         }
+
         Screen.fullScreenMode = mode;
     }
 

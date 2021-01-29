@@ -31,10 +31,9 @@ public class StratumPrefs : MonoBehaviour
     private void Awake()
     {
         // V Debug pra quando querermos colocar isto de volta a 0
-        //PlayerPrefs.SetInt("F_Check", 0);
 
         if (fCheck >= 1)
-            PlayerPrefs.SetInt("F_Check", 1);
+            PlayerPrefs.SetInt("fCheck", 1);
 
 
         // if (PlayerPrefs.GetInt("F_Check", 1) ...

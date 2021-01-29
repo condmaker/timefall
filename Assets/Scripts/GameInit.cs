@@ -15,7 +15,13 @@ public class GameInit : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        int checker = PlayerPrefs.GetInt("F_Check");
+        if (!PlayerPrefs.HasKey("firstT"))
+        {
+            PlayerPrefs.SetInt("fCheck", 0);
+            PlayerPrefs.SetInt("firstT", 0);
+        }
+
+        int checker = PlayerPrefs.GetInt("fCheck");
         if (checker == 0)
             SceneManager.LoadScene("MainMenu - Medieval");
         else if(checker == 1)
