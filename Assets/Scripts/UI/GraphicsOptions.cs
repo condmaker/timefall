@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -88,8 +89,10 @@ public class GraphicsOptions : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        InitLightValues();
-        SetBrightnessSlider();
+        if (PlayerLight != null)
+            InitLightValues();
+        if (brightnessSlider != null)
+            SetBrightnessSlider();
         SetResolutionsDropdown();
         SetFullscreenDropdown();
     }
