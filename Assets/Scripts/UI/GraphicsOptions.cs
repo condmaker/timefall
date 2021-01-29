@@ -164,8 +164,8 @@ public class GraphicsOptions : MonoBehaviour
             string aux = r.width + " x " + r.height;
             resolutionOptions.Add(aux);
 
-            if(r.width == PlayerPrefs.GetInt("ResW") &&
-                r.height == PlayerPrefs.GetInt("ResH"))
+            if(r.width == PlayerPrefs.GetInt("ResW", 1280) &&
+                r.height == PlayerPrefs.GetInt("ResH", 720))
             {
                 currentResolutionIndex = resolutionOptions.Count - 1;
             }
