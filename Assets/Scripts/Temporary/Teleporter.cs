@@ -35,14 +35,14 @@ public class Teleporter : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("teleport") == 0) return;
 
-        if (Input.GetKeyDown(KeyCode.LeftBracket))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             PreviousPoint();
             ObjectToTeleport.transform.position = 
                 TeleportPoints[currentTpPoint].transform.position;
         }
 
-        if (Input.GetKeyDown(KeyCode.RightBracket))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             NextPoint();
             ObjectToTeleport.transform.position = 
