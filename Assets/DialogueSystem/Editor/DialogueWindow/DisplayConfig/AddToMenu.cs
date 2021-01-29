@@ -7,10 +7,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class responsible for adding the option to create Dialogue System objects 
+/// in the create menu.
+/// </summary>
 public class AddToMenu
 {
 
-
+    /// <summary>
+    /// Add menu buttons.
+    /// </summary>
     [MenuItem("GameObject/UI/DialogueSystem/Dialogue Display", false, 2070)]
     static public void AddDisplay()
     {

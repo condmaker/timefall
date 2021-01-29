@@ -4,9 +4,19 @@ using UnityEditor;
 using UnityEngine;
 
 
+/// <summary>
+/// Class responsible for creating a custom editor for the Iterator Class.
+/// </summary>
 [CustomPropertyDrawer(typeof(Iteration))]
 public class IteratorEditor : PropertyDrawer
 {
+    /// <summary>
+    /// Override on the onGUI method.
+    /// </summary>
+    /// <param name="position">Position in the inspector.</param>
+    /// <param name="property">Information about the Iterator's variables and 
+    /// methods.</param>
+    /// <param name="label">Label in the inspector.</param>
     public override void OnGUI(Rect position, SerializedProperty property, 
         GUIContent label)
     {
@@ -55,6 +65,13 @@ public class IteratorEditor : PropertyDrawer
         EditorGUI.EndProperty();
     }
 
+    /// <summary>
+    /// Override on the GetPropertyHeight method.
+    /// </summary>
+    /// <param name="property">Information about the Iterator's variables and 
+    /// methods.</param>
+    /// <param name="label">Label in the Inspector.</param>
+    /// <returns></returns>
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         return 27;

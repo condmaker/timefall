@@ -1,6 +1,14 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Class used in the PSX retroshader.
+/// </summary>
+/// <remarks>
+/// The shader and addiotional info can be found 
+/// <a href="https://github.com/dsoft20/psx_retroshader">
+/// here </a>.
+/// </remarks>
 [ExecuteInEditMode]
 public class cPrecision : MonoBehaviour
 {

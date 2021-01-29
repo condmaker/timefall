@@ -5,7 +5,9 @@ using DialogueSystem;
 using TMPro;
 using System;
 
-//Class responsible for the handling of the Dialogue Display
+/// <summary>
+/// Class responsible for the handling of the Dialogue Display
+/// </summary>
 public class DialogueDisplayHandler : MonoBehaviour
 {
 

@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Class used in the PSX retroshader.
+/// </summary>
+/// <remarks>
+/// The shader and addiotional info can be found 
+/// <a href="https://github.com/dsoft20/psx_retroshader">
+/// here </a>.
+/// </remarks>
 public class billboard : MonoBehaviour
 {
 

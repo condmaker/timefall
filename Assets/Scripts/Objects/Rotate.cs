@@ -3,10 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class used for rotating objects.
+/// </summary>
 public class Rotate : MonoBehaviour
 {
+    /// <summary>
+    /// Angle of rotation.
+    /// </summary>
     [SerializeField]
     private float angle;
+
+    /// <summary>
+    /// Duration of rotation in frames.
+    /// </summary>
     [SerializeField]
     private float frames;
     private short previous;
