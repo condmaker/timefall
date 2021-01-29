@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 /// <summary>
@@ -21,6 +22,12 @@ public class GraphicsOptions : MonoBehaviour
     [SerializeField]
     private TMP_Dropdown fullScreenDropdown = default;
 
+    [SerializeField]
+    private Slider brightnessSlider = default;
+
+    [SerializeField]
+    private Light PlayerLight = default;
+
     private Resolution[] resolutions;
 
     /// <summary>
@@ -31,6 +38,11 @@ public class GraphicsOptions : MonoBehaviour
     {
         SetResolutionsDropdown();
         SetFullscreenDropdown();
+    }
+
+    private void SetBrightnessSlider()
+    {
+
     }
 
     /// <summary>

@@ -27,7 +27,7 @@ public class LoadScene : MonoBehaviour
     /// </summary>
     public void PassSceneFCheck()
     {
-        if (PlayerPrefs.GetFloat("F_Check") >= 1)
+        if (PlayerPrefs.GetInt("F_Check") >= 1)
             SceneManager.LoadScene(scene);
     }
 
