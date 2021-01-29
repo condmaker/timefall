@@ -28,14 +28,6 @@ public class MenuStateChanger : MonoBehaviour
     }
 
     /// <summary>
-    /// Method responsible for toggling the menu between on and off states.
-    /// </summary>
-    public void ToggleMenu()
-    {
-        menu.SetActive(!menu.activeSelf);
-    }
-
-    /// <summary>
     /// Method called once per frame.
     /// </summary>
     public void Update()

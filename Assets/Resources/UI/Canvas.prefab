@@ -2901,6 +2901,8 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 1416007559133524660}
   fullScreenDropdown: {fileID: 3983723993305363293}
   brightnessSlider: {fileID: 4820718547901402912}
+  mapSmall: {fileID: 5149245390151725190}
+  mapBig: {fileID: 6221710802552186178}
   PlayerLight: {fileID: 0}
 --- !u!1 &2092387309620942775
 GameObject:
@@ -6510,7 +6512,6 @@ GameObject:
   - component: {fileID: 6139518079505310346}
   - component: {fileID: 804059979610361327}
   - component: {fileID: 3595369849362546089}
-  - component: {fileID: 5468522435374852165}
   m_Layer: 5
   m_Name: Map Small
   m_TagString: Untagged
@@ -6616,19 +6617,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5468522435374852165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5149245390151725190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14289a0c4abfb6d4696bde94c3f926da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: {fileID: 5149245390151725190}
 --- !u!1 &5150093127267029461
 GameObject:
   m_ObjectHideFlags: 0
@@ -8150,7 +8138,6 @@ GameObject:
   - component: {fileID: 3597813235328420889}
   - component: {fileID: 9013950783979801962}
   - component: {fileID: 3039323375911906431}
-  - component: {fileID: 1308676597706151710}
   m_Layer: 5
   m_Name: Map
   m_TagString: Untagged
@@ -8256,19 +8243,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1308676597706151710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6221710802552186178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14289a0c4abfb6d4696bde94c3f926da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: {fileID: 6221710802552186178}
 --- !u!1 &6310001693010739290
 GameObject:
   m_ObjectHideFlags: 0
@@ -11517,21 +11491,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1308676597706151710}
-        m_TargetAssemblyTypeName: MenuStateChanger, Assembly-CSharp
-        m_MethodName: ToggleMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5468522435374852165}
-        m_TargetAssemblyTypeName: MenuStateChanger, Assembly-CSharp
-        m_MethodName: ToggleMenu
+      - m_Target: {fileID: 4340206449833852542}
+        m_TargetAssemblyTypeName: GraphicsOptions, Assembly-CSharp
+        m_MethodName: ToggleMap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

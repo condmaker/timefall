@@ -29,6 +29,18 @@ public class GraphicsOptions : MonoBehaviour
     private Slider brightnessSlider = default;
 
     /// <summary>
+    /// Small map object
+    /// </summary>
+    [SerializeField]
+    private GameObject mapSmall = default;
+
+    /// <summary>
+    /// Big map object
+    /// </summary>
+    [SerializeField]
+    private GameObject mapBig = default;
+
+    /// <summary>
     /// Array of all possible screen resolutions.
     /// </summary>
     private Resolution[] resolutions;
@@ -217,5 +229,14 @@ public class GraphicsOptions : MonoBehaviour
             (minIntensity + currentBrightness * (maxIntensity - minIntensity));
         PlayerLight.range =
             (minRange + currentBrightness * (maxRange - minRange));
+    }
+
+    /// <summary>
+    /// Method responsible for toggling the menu between on and off states.
+    /// </summary>
+    public void ToggleMap()
+    {
+        mapSmall.SetActive(!mapSmall.activeSelf);
+        mapBig.SetActive(!mapBig.activeSelf);
     }
 }
