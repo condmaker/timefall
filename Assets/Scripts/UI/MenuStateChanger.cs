@@ -12,7 +12,7 @@ public class MenuStateChanger : MonoBehaviour
     private GameObject menu = null;
 
     /// <summary>
-    /// Method responsible for activating the menu
+    /// Method responsible for activating the menu.
     /// </summary>
     public void OpenMenu()
     {
@@ -20,7 +20,7 @@ public class MenuStateChanger : MonoBehaviour
     }
 
     /// <summary>
-    /// Method responsible for deactivating the menu
+    /// Method responsible for deactivating the menu.
     /// </summary>
     public void CloseMenu()
     {
@@ -28,7 +28,15 @@ public class MenuStateChanger : MonoBehaviour
     }
 
     /// <summary>
-    /// Method called once per frame
+    /// Method responsible for toggling the menu between on and off states.
+    /// </summary>
+    public void ToggleMenu()
+    {
+        menu.SetActive(!menu.activeSelf);
+    }
+
+    /// <summary>
+    /// Method called once per frame.
     /// </summary>
     public void Update()
     {

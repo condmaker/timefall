@@ -22,13 +22,53 @@ public class GraphicsOptions : MonoBehaviour
     [SerializeField]
     private TMP_Dropdown fullScreenDropdown = default;
 
+    /// <summary>
+    /// Brightness slider object
+    /// </summary>
     [SerializeField]
     private Slider brightnessSlider = default;
 
+    /// <summary>
+    /// Array of all possible screen resolutions.
+    /// </summary>
+    private Resolution[] resolutions;
+
+    /// <summary>
+    /// Variable that controls whether it's the first slider update during 
+    /// canvas creation, or not.
+    /// </summary>
+    private bool? firstSliderUpdate;
+
+    /// <summary>
+    /// Player Light object.
+    /// </summary>
     [SerializeField]
     private Light PlayerLight = default;
 
-    private Resolution[] resolutions;
+    /// <summary>
+    /// Variable that controls the current brightness.
+    /// </summary>
+    private float currentBrightness;
+
+    /// <summary>
+    /// Minimum PlayerLight Intensity.
+    /// </summary>
+    private float minIntensity;
+
+    /// <summary>
+    /// Maximum PlayerLight Intensity.
+    /// </summary>
+    private float maxIntensity;
+
+    /// <summary>
+    /// Minimum PlayerLight Range.
+    /// </summary>
+    private float minRange;
+
+    /// <summary>
+    /// Maximum PlayerLight Range.
+    /// </summary>
+    private float maxRange;
 
     /// <summary>
     /// Called when the object is created. Sets the dropdown menus with all 
@@ -36,17 +76,34 @@ public class GraphicsOptions : MonoBehaviour
     /// </summary>
     void Awake()
     {
+        InitLightValues();
+        SetBrightnessSlider();
         SetResolutionsDropdown();
         SetFullscreenDropdown();
     }
 
-    private void SetBrightnessSlider()
+    /// <summary>
+    /// Method responsible for initializing the Light's values.
+    /// </summary>
+    private void InitLightValues()
     {
-
+        minIntensity = 3;
+        maxIntensity = 4;
+        minRange = 10;
+        maxRange = 30;
     }
 
     /// <summary>
-    /// Select the current full screen mode into the drop down menu.
+    /// Séts the current brightness value into the brightness slider.
+    /// </summary>
+    private void SetBrightnessSlider()
+    {
+        currentBrightness = PlayerPrefs.GetFloat("Brightness",  0.5f);
+        brightnessSlider.value = currentBrightness;
+    }
+
+    /// <summary>
+    /// Set the current full screen mode into the drop down menu.
     /// </summary>
     private void SetFullscreenDropdown()
     {
@@ -136,5 +193,29 @@ public class GraphicsOptions : MonoBehaviour
                 break;
         }
         Screen.fullScreenMode = mode;
+    }
+
+    /// <summary>
+    /// Sets the brightness slider value into the current brightness level 
+    /// and player pref variable.
+    /// </summary>
+    /// <param name="brightnessLevel">The selected value from the brightness 
+    /// slider.</param>
+    public void SetBrightness(float brightnessLevel)
+    {
+        currentBrightness = brightnessLevel;
+        UpdateLight();
+        PlayerPrefs.SetFloat("Brightness", currentBrightness);
+    }
+
+    /// <summary>
+    /// Updates the PlayerLight with the current brightness value.
+    /// </summary>
+    private void UpdateLight()
+    {
+        PlayerLight.intensity =
+            (minIntensity + currentBrightness * (maxIntensity - minIntensity));
+        PlayerLight.range =
+            (minRange + currentBrightness * (maxRange - minRange));
     }
 }

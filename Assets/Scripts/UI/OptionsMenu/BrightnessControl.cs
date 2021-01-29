@@ -4,7 +4,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Method responsible for handling the brightness slider
 /// </summary>
-public class BrightnessSlider : MonoBehaviour
+public class BrightnessControl : MonoBehaviour
 {
 
     private float gammaCorrection;
@@ -35,7 +35,7 @@ public class BrightnessSlider : MonoBehaviour
     /// <summary>
     /// Method called once per frame
     /// </summary>
-    private void Update()
+    public void UpdateLight()
     {
         //gammaCorrection = slider.value;
         PlayerLight.intensity = 
