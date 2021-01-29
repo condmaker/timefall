@@ -21,9 +21,9 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 416
-        y: 175.2
-        width: 311.2
-        height: 164
+        y: 175
+        width: 301
+        height: 209
       isStart: 1
       outPorts:
       - name: Read
@@ -36,10 +36,10 @@ MonoBehaviour:
       dialogue: You leave the book at the table.
       position:
         serializedVersion: 2
-        x: 819.2
-        y: 403.2
-        width: 217.60004
-        height: 119.20001
+        x: 819
+        y: 403
+        width: 214
+        height: 164
       isStart: 0
       outPorts: []
   - key: 6462621f-514f-4ef5-ad0f-dc3835f6bac9
@@ -54,9 +54,30 @@ MonoBehaviour:
         have to solve their riddle..."'
       position:
         serializedVersion: 2
-        x: 875.2
-        y: 189.59999
-        width: 369.60004
-        height: 148
+        x: 875
+        y: 190
+        width: 359
+        height: 194
+      isStart: 0
+      outPorts:
+      - name: Read more
+        id: dc09b9ec-4ce8-41d7-8116-60cb1bedb733
+  - key: dc09b9ec-4ce8-41d7-8116-60cb1bedb733
+    data:
+      guid: dc09b9ec-4ce8-41d7-8116-60cb1bedb733
+      dialogue: '"But from what we discovered, one of them is lying."
+
+
+
+
+
+
+'
+      position:
+        serializedVersion: 2
+        x: 1323
+        y: 194
+        width: 311
+        height: 254
       isStart: 0
       outPorts: []
