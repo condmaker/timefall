@@ -44,6 +44,9 @@ public class DialogueDisplayHandler : MonoBehaviour
     [SerializeField]
     private GameObject buttonPREFAB = default;
 
+    [SerializeField]
+    private GameObject shadow;
+
 
     /// <summary>
     /// Variable that defines the data of one line of dialogue
@@ -110,7 +113,9 @@ public class DialogueDisplayHandler : MonoBehaviour
                 if (ended)
                 {
 
-                    if (dialogueLine.OutPorts.Count == 0)
+                    if (dialogueLine.OutPorts.Count == 0 ||
+                        (dialogueLine.OutPorts.Count == 1 &&
+                        dialogueLine.OutPorts[0].Name == ""))
                         NextLine(0);
                 }
                 else
@@ -134,6 +139,8 @@ public class DialogueDisplayHandler : MonoBehaviour
     {
         //Display Specificationss
         effectSpeed = new WaitForSeconds(displaySpeed);
+
+        shadow.SetActive(true);
 
         //Initialize First Line
         dialogueLine = currentScript.GetNodeByIndex(0);
@@ -160,6 +167,8 @@ public class DialogueDisplayHandler : MonoBehaviour
 
         int choiceNumb = dialogueLine.OutPorts.Count;
         if (choiceNumb == 0) return;
+        else if (choiceNumb == 1)
+            if (dialogueLine.OutPorts[0].Name == "") return;
 
         for (int i = 0; i < choiceNumb; i++)
         {
@@ -209,6 +218,7 @@ public class DialogueDisplayHandler : MonoBehaviour
         inDialogue = false;
         dialogueDisplayTarget.text = "";
         endDialogue?.Invoke();
+        shadow.SetActive(false);
         StopCoroutine("TypeWriterEffect");
     }
 
